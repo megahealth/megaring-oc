@@ -22,6 +22,7 @@ MegaRing SDK &amp; Demo for iOS in Objective-C
 ## 关于 SDK
 
 ### 初始化
+
 	+[MRApi setUpWithAppId:appKey:];
 
 ### 连接过程
@@ -33,7 +34,9 @@ MegaRing SDK &amp; Demo for iOS in Objective-C
 5. 实现 -[MRConnecterDelegate connecter:didUpdateDeviceConnectState:], 设备被连接后会调用此方法;
 6. 连接完成后调用 -[MRConnecter stopScanning] 停止扫描;
 
+
 ###绑定过程
+
 1. 设置 MRDevice.delegate;
 2. 实现 -[MRDeviceDelegate bindUserIdentifier] 和 -[MRDeviceDelegate bindToken], 提供绑定用户的身份和 token 来验证是不是新用户;
 3. 实现 -[MRDeviceDelegate bindDeviceResp:] 接收验证结果, 老用户每次连接过程中只调用一次, 返回 MRBindRespOld 表示验证成功; 新用户完成连接过程中会调用三次, 若收到 MRBindRespChangeUser, 实现 -[MRDevice confirmChangingUser:] 决定是否继续连接, 若传入 YES, 会再收到 MRBindRespShake, 表示需要晃动指环来确认, 此时晃动指环, 最后收到 MRBindRespNew, 表示指环和新用户的绑定完成;
@@ -41,6 +44,7 @@ MegaRing SDK &amp; Demo for iOS in Objective-C
 5. 实现 -[MRDeviceDelegate bindUserInfo] 设置用户体征信息;
 
 ###设备状态
+
 MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, 如下:
 	
 	- (void)deviceDidUpdateConnectState;
