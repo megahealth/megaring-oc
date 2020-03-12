@@ -1,0 +1,66 @@
+/* 
+  Localizable.strings
+  MegaRingBLE
+
+  Created by cheng cheng on 2019/11/4.
+  Copyright © 2019 Superman. All rights reserved.
+*/
+
+
+
+"MRConnected" = "Connected";
+"MRDisconnected" = "Disconnected";
+"MRDisconnecting" = "Disconnecting";
+"MRConnecting" = "Connecting";
+
+"MRDevicemanager" = "Device manager";
+
+"MRDeviceInfo" = "Device information";
+"MRDeviceSn" = "SN";
+"MRDeviceSoftwareVer" = "Software version";
+
+"MRDeviceStatus" = "Device status";
+"MRConnectStatus" = "Connect status";
+"MRBatteryStatus" = "Battery status";
+"MRBatteryCharging" = "Charging";
+"MRBatteryFull" = "Full";
+"MRBatteryNormal" = "Normal";
+"MRBatteryError" = "Error";
+"MRBatteryShutdown" = "Shutdown";
+"MRBatteryLow" = "Low";
+"MRMonitorStatus" = "Monitor status";
+"MRMonitorOff" = "Off";
+"MRMonitorSleep" = "Sleep";
+"MRMonitorSport" = "Sport";
+"MRMonitorRealtime" = "Realtime";
+"MRMonitorBloodPressure" = "blood pressure";
+"MRLiveDataStatus" = "Live data status";
+
+"MRDeviceOpration" = "Device operation";
+"MRConnectDevice" = "Connect device";
+"MRDisconnectDevice" = "Disconnect device";
+"MREnableLiveData" = "Enable live data";
+"MRDisableLiveData" = "Disable live data";
+"MRSyncData" = "Sync data";
+"MRStartSleep" = "Start sleep monitor";
+"MRStartSport" = "Start sport monitor";
+"MRStartRealtime" = "Start realtime monitor";
+"MRStopMonitor" = "Stop monitor";
+"MRDeviceUpgrade" = "Upgrade device";
+"MREnableRawdata" = "Enable rawdata";
+"MRDisableRawdata" = "Disable rawdata";
+
+"MRConnectOldAlert" = "Connected old device";
+"MRConnectNewAlert" = "Connected new device";
+"MRShakeToPairAlert" = "Please shake the ring to pair";
+"MRLowBatteryAlert" = "Low battery";
+"MRConfirmOption" = "Got it";
+
+"MRUpgradeNODevice" = "No device";
+"MRUpgradeStarted" = "Upgrade started";
+"MRUpgradeReconnecting" = "Reconnecting...";
+"MRUpgradeReconnected" = "Reconnected";
+"MRUpgradeStartData" = "Start sending data";
+"MRUpgradeSendingData" = "Sending data";
+"MRUpgradeFinished" = "Upgrade finished";
+"MRUpgradeFailed" = "Upgrade failed";

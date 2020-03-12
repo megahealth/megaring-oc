@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  MegaRingBLE
+
+  Created by cheng cheng on 2019/11/4.
+  Copyright © 2019 Superman. All rights reserved.
+*/
+
+
+
+CFBundleDisplayName = "MegaRing";

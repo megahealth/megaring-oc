@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "目标版本:"; ObjectID = "0k0-Hn-x5m"; */
+"0k0-Hn-x5m.text" = "Target:";
+
+/* Class = "UILabel"; text = "1.0.1234"; ObjectID = "2oY-d7-7z0"; */
+"2oY-d7-7z0.text" = "1.0.1234";
+
+/* Class = "UIButton"; normalTitle = "开始升级"; ObjectID = "3II-xv-fgr"; */
+"3II-xv-fgr.normalTitle" = "UPGRADE";
+
+/* Class = "UILabel"; text = "升级过程中请保持蓝牙开启,不要退出"; ObjectID = "Jud-s4-cnR"; */
+"Jud-s4-cnR.text" = "Keep Bluetooth on, Do not leave this page";
+
+/* Class = "UILabel"; text = "软件版本:"; ObjectID = "TPO-i9-jiP"; */
+"TPO-i9-jiP.text" = "Software:";
+
+/* Class = "UILabel"; text = "状态:"; ObjectID = "al5-BB-RL3"; */
+"al5-BB-RL3.text" = "Status:";
+
+/* Class = "UILabel"; text = "50%"; ObjectID = "dea-Yr-CXo"; */
+"dea-Yr-CXo.text" = "-%";
+
+/* Class = "UILabel"; text = "固件2.2.2"; ObjectID = "iil-mP-PDe"; */
+"iil-mP-PDe.text" = "2.2.2";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "pRz-wD-bFj"; */
+"pRz-wD-bFj.text" = "1.0";
+
+/* Class = "UILabel"; text = "boot版本:"; ObjectID = "xBH-8t-aUR"; */
+"xBH-8t-aUR.text" = "Boot:";

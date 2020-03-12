@@ -1,0 +1,66 @@
+/* 
+  Localizable.strings
+  MegaRingBLE
+
+  Created by cheng cheng on 2019/11/4.
+  Copyright © 2019 Superman. All rights reserved.
+*/
+
+
+
+"MRConnected" = "已连接";
+"MRDisconnected" = "未连接";
+"MRDisconnecting" = "正在断开";
+"MRConnecting" = "正在连接";
+
+"MRDevicemanager" = "设备管理";
+
+"MRDeviceInfo" = "设备信息";
+"MRDeviceSn" = "序列号";
+"MRDeviceSoftwareVer" = "固件版本";
+
+"MRDeviceStatus" = "设备状态";
+"MRConnectStatus" = "连接状态";
+"MRBatteryStatus" = "电池状态";
+"MRBatteryCharging" = "充电";
+"MRBatteryFull" = "满电";
+"MRBatteryNormal" = "正常";
+"MRBatteryLow" = "低电";
+"MRBatteryError" = "异常";
+"MRBatteryShutdown" = "停摆";
+"MRMonitorStatus" = "监测状态";
+"MRMonitorOff" = "关";
+"MRMonitorSleep" = "睡眠";
+"MRMonitorSport" = "运动";
+"MRMonitorRealtime" = "实时";
+"MRMonitorBloodPressure" = "血压";
+"MRLiveDataStatus" = "实时数据状态";
+
+"MRDeviceOpration" = "操作选项";
+"MRConnectDevice" = "连接设备";
+"MRDisconnectDevice" = "断开设备";
+"MREnableLiveData" = "接收实时数据";
+"MRDisableLiveData" = "关闭实时数据";
+"MRSyncData" = "同步数据";
+"MRStartSleep" = "开启睡眠监测";
+"MRStartSport" = "开启运动监测";
+"MRStartRealtime" = "开启实时监测";
+"MRStopMonitor" = "关闭监测";
+"MRDeviceUpgrade" = "固件升级";
+"MREnableRawdata" = "开启rawdata";
+"MRDisableRawdata" = "关闭rawdata";
+
+"MRConnectOldAlert" = "已连接,旧设备";
+"MRConnectNewAlert" = "已连接,新设备";
+"MRShakeToPairAlert" = "请晃动指环完成绑定";
+"MRLowBatteryAlert" = "设备低点";
+"MRConfirmOption" = "知道了";
+
+"MRUpgradeNODevice" = "无设备";
+"MRUpgradeStarted" = "开始升级";
+"MRUpgradeReconnecting" = "正在重新连接...";
+"MRUpgradeReconnected" = "已重新连接";
+"MRUpgradeStartData" = "开始发送数据";
+"MRUpgradeSendingData" = "正在发送数据";
+"MRUpgradeFinished" = "升级完成";
+"MRUpgradeFailed" = "开始失败";

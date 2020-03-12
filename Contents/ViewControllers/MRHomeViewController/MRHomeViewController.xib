@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MRHomeViewController">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="title" value="MegaRing"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="homeView" destination="i5M-Pr-FkT" id="F6Z-P5-D6V"/>
+                <outlet property="rightItemView" destination="fqC-ht-rYJ" id="4dY-Ky-6LL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="MRHomeView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Kg-iH-A0C">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="te4-Vs-Eef">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <outlet property="dataSource" destination="i5M-Pr-FkT" id="dbl-c6-PUe"/>
+                                <outlet property="delegate" destination="i5M-Pr-FkT" id="1lu-g3-1ps"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="te4-Vs-Eef" firstAttribute="top" secondItem="3Kg-iH-A0C" secondAttribute="top" id="4Kh-RC-Agb"/>
+                        <constraint firstItem="te4-Vs-Eef" firstAttribute="leading" secondItem="3Kg-iH-A0C" secondAttribute="leading" id="G7N-f9-uSY"/>
+                        <constraint firstAttribute="bottom" secondItem="te4-Vs-Eef" secondAttribute="bottom" id="JEY-NR-FE0"/>
+                        <constraint firstAttribute="trailing" secondItem="te4-Vs-Eef" secondAttribute="trailing" id="i8M-Ct-BFI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="3Kg-iH-A0C" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="5fM-Wg-vnG"/>
+                <constraint firstAttribute="bottom" secondItem="3Kg-iH-A0C" secondAttribute="bottom" id="BVu-mQ-JlA"/>
+                <constraint firstItem="3Kg-iH-A0C" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="kGb-Sm-8ZE"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="3Kg-iH-A0C" secondAttribute="trailing" id="l9C-mS-8oU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <connections>
+                <outlet property="tableView" destination="te4-Vs-Eef" id="kg9-Ka-yrJ"/>
+            </connections>
+            <point key="canvasLocation" x="24" y="-50"/>
+        </view>
+        <view contentMode="scaleToFill" id="fqC-ht-rYJ">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06k-04-tvF">
+                    <rect key="frame" x="45" y="0.0" width="35" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="日志"/>
+                    <connections>
+                        <action selector="logButtonClicked:" destination="-1" eventType="touchUpInside" id="68b-Yr-JZS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUk-bc-n6R">
+                    <rect key="frame" x="0.0" y="0.0" width="35" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="过滤"/>
+                    <connections>
+                        <action selector="filterButtonClicked:" destination="-1" eventType="touchUpInside" id="EeV-4J-d6M"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="06k-04-tvF" firstAttribute="top" secondItem="vFe-Gr-Tbb" secondAttribute="top" id="0LQ-az-Ab2"/>
+                <constraint firstItem="YUk-bc-n6R" firstAttribute="leading" secondItem="vFe-Gr-Tbb" secondAttribute="leading" id="Ejh-oG-Xlr"/>
+                <constraint firstItem="vFe-Gr-Tbb" firstAttribute="bottom" secondItem="YUk-bc-n6R" secondAttribute="bottom" id="QVi-uV-FOM"/>
+                <constraint firstItem="vFe-Gr-Tbb" firstAttribute="bottom" secondItem="06k-04-tvF" secondAttribute="bottom" id="jdG-Ml-ghU"/>
+                <constraint firstItem="vFe-Gr-Tbb" firstAttribute="trailing" secondItem="06k-04-tvF" secondAttribute="trailing" id="loS-1d-Kbu"/>
+                <constraint firstItem="06k-04-tvF" firstAttribute="leading" secondItem="YUk-bc-n6R" secondAttribute="trailing" constant="10" id="rs4-jZ-l3h"/>
+                <constraint firstItem="YUk-bc-n6R" firstAttribute="width" secondItem="06k-04-tvF" secondAttribute="width" id="wU6-aR-XcL"/>
+                <constraint firstItem="YUk-bc-n6R" firstAttribute="top" secondItem="vFe-Gr-Tbb" secondAttribute="top" id="zyZ-qe-dTm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vFe-Gr-Tbb"/>
+            <point key="canvasLocation" x="514" y="-323"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "蓝牙关闭"; ObjectID = "Jrp-ZB-8o5"; */
+"Jrp-ZB-8o5.text" = "MegaRing requires Bluetooth";
+
+/* Class = "UILabel"; text = "请打开蓝牙来继续使用 app"; ObjectID = "Kov-3m-cGB"; */
+"Kov-3m-cGB.text" = "Please enable Bluetooth to continue using the app.";
