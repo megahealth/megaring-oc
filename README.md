@@ -35,7 +35,7 @@ MegaRing SDK &amp; Demo for iOS in Objective-C
 6. 连接完成后调用 -[MRConnecter stopScanning] 停止扫描;
 
 
-###绑定过程
+### 绑定过程
 
 1. 设置 MRDevice.delegate;
 2. 实现 -[MRDeviceDelegate bindUserIdentifier] 和 -[MRDeviceDelegate bindToken], 提供绑定用户的身份和 token 来验证是不是新用户;
@@ -43,7 +43,7 @@ MegaRing SDK &amp; Demo for iOS in Objective-C
 4. 实现 -[MRDeviceDelegate finishBindingWithToken:] 接收指环与新用户绑定后生成的 token; 
 5. 实现 -[MRDeviceDelegate bindUserInfo] 设置用户体征信息;
 
-###设备状态
+### 设备状态
 
 MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, 如下:
 	
@@ -59,7 +59,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 	- (void)operationFailWithErrorCode:(MRErrCode)errCode; 
 	- (void)redInfraredUpdated:(NSArray *)data; // 红光与红外光信号原始数据
 
-###设备控制
+### 设备控制
 1. 调用 -[MRDevice switchToSleepMode] 来开启睡眠监测;
 2. 调用 -[MRDevice switchToSportMode] 来开启运动监测;
 3. 调用 -[MRDevice switchToRealtimeMode] 来开启实时监测;
@@ -69,11 +69,11 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 7. 调用 -[MRDevice setRawdataEnabled:] 开关原始数据上报;
 
 
-###数据处理
+### 数据处理
 1. 调用 -[MRDevice requestData:progress:finish:] 检查和收取设备中的数据, 建议重复调用此方法, 直至得到的 data 为空, 即设备中数据已被全部取出;
 2. 调用 +[MRApi parseMonitorData:mode:completion:] 解析数据, 生成 report;
 
-###固件升级
+### 固件升级
 1. 使用 MRDeviceUpgrader 类来升级固件;
 2. 连接设备后, 指定需要升级的设备 device 固件 firmware, 调用 -[MRDeviceUpgrader start] 开始升级;
 3. 实现 MRDeviceUpgraderDelegate 的方法来监听升级过程的状态和进度;
