@@ -35,8 +35,8 @@
 		3C74708F236304D40093E5F3 /* MegaRingV2_V7964.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3C74708E236304D40093E5F3 /* MegaRingV2_V7964.zip */; };
 		3CC7BEE0237E93400096D93E /* test2 in Resources */ = {isa = PBXBuildFile; fileRef = 3CC7BEDE237E93400096D93E /* test2 */; };
 		3CC7BEE1237E93400096D93E /* test1 in Resources */ = {isa = PBXBuildFile; fileRef = 3CC7BEDF237E93400096D93E /* test1 */; };
-		3CD2CA4A241A3F63000C8F82 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD2CA49241A3F63000C8F82 /* MRFramework.framework */; };
-		3CD2CA4B241A3F7E000C8F82 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CD2CA49241A3F63000C8F82 /* MRFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3CCA8FE52445549D004CDA77 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CCA8FE42445549D004CDA77 /* MRFramework.framework */; };
+		3CCA8FE6244554BB004CDA77 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CCA8FE42445549D004CDA77 /* MRFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3CF0892D2390C48100004D3D /* MegaRingV3_V9154.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3CF0892C2390C48100004D3D /* MegaRingV3_V9154.zip */; };
 		CF088AD020AEB67300B5D499 /* DeviceManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF088AC120AEB67300B5D499 /* DeviceManagerViewController.xib */; };
 		CF088AD120AEB67300B5D499 /* DeviceManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF088AC220AEB67300B5D499 /* DeviceManagerViewController.m */; };
@@ -90,7 +90,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3CD2CA4B241A3F7E000C8F82 /* MRFramework.framework in CopyFiles */,
+				3CCA8FE6244554BB004CDA77 /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +156,7 @@
 		3C74708E236304D40093E5F3 /* MegaRingV2_V7964.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV2_V7964.zip; sourceTree = "<group>"; };
 		3CC7BEDE237E93400096D93E /* test2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2; sourceTree = "<group>"; };
 		3CC7BEDF237E93400096D93E /* test1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test1; sourceTree = "<group>"; };
-		3CD2CA49241A3F63000C8F82 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MRFramework.framework; path = ../mega/MRFramework/release/MRFramework1.6.1/universal/MRFramework.framework; sourceTree = "<group>"; };
+		3CCA8FE42445549D004CDA77 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		3CF0892C2390C48100004D3D /* MegaRingV3_V9154.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV3_V9154.zip; sourceTree = "<group>"; };
 		CF088AC020AEB67300B5D499 /* DeviceManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceManagerViewController.h; sourceTree = "<group>"; };
 		CF088AC120AEB67300B5D499 /* DeviceManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceManagerViewController.xib; sourceTree = "<group>"; };
@@ -177,7 +177,6 @@
 		CF088AE120AEB8D800B5D499 /* MRIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRIndicatorView.m; sourceTree = "<group>"; };
 		CF40867F209C026F00E3E8E7 /* MRNavigarionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRNavigarionController.h; sourceTree = "<group>"; };
 		CF408680209C026F00E3E8E7 /* MRNavigarionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRNavigarionController.m; sourceTree = "<group>"; };
-		CF4545222243925A003180A5 /* MRFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MRFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF530B2820B25C5F00554E9C /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		CF530B2920B25C5F00554E9C /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		CF530B2C20B25CDD00554E9C /* MRDefaultView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRDefaultView.h; sourceTree = "<group>"; };
@@ -214,7 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CD2CA4A241A3F63000C8F82 /* MRFramework.framework in Frameworks */,
+				3CCA8FE52445549D004CDA77 /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +446,6 @@
 		CF4545212243925A003180A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CF4545222243925A003180A5 /* MRFramework.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -467,7 +465,7 @@
 		CF665A07209B181A009EF6A6 = {
 			isa = PBXGroup;
 			children = (
-				3CD2CA49241A3F63000C8F82 /* MRFramework.framework */,
+				3CCA8FE42445549D004CDA77 /* MRFramework.framework */,
 				CF088ABD20AEB67300B5D499 /* Contents */,
 				CF665A12209B181A009EF6A6 /* MegaRingBLE */,
 				CF665A2B209B181B009EF6A6 /* MegaRingBLETests */,

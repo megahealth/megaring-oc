@@ -60,13 +60,13 @@
 
 - (void)MRCentralStateUpdated:(NSNotification *)noti {
     dispatch_async(dispatch_get_main_queue(), ^{
-        BOOL     isCentralPowerOn = [MRConnecter connecter].isCentralPowerOn;
+        BOOL     isCentralPowerOn = [MRConnecter defaultConnecter].isCentralPowerOn;
         
         [MRDefaultView showDefaultViewHidden:isCentralPowerOn];
         
         if (isCentralPowerOn) {
             [self.homeView.viewModel resetModel];
-            [[MRConnecter connecter] startScanning];
+            [[MRConnecter defaultConnecter] startScanning];
         } else {
             [self.homeView.viewModel updateAllDevices];
         }
@@ -86,7 +86,7 @@
     [super viewDidLoad];
 //    [self setUp];
     self.homeView.viewModel = [[MRHomeViewModel alloc] init];
-    [MRConnecter connecter].delegate = self;
+    [MRConnecter defaultConnecter].delegate = self;
     [self setViewActions];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MRCentralStateUpdated:) name:kMRCentralStateUpdatedNotification object:nil];
     

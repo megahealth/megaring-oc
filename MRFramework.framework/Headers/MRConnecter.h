@@ -15,7 +15,7 @@
 @interface MRConnecter : NSObject
 
 
-+ (instancetype)connecter;
++ (instancetype)defaultConnecter;
 
 
 @property (nonatomic, assign) BOOL	 isCentralPowerOn;

@@ -16,9 +16,9 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 
 - (void)connectDevice {
     if (self.device.connectState == MRDeviceStateConnected) {
-        [[MRConnecter connecter] disconnectDevice:self.device];
+        [[MRConnecter defaultConnecter] disconnectDevice:self.device];
     } else {
-        [[MRConnecter connecter] connectDevice:self.device];
+        [[MRConnecter defaultConnecter] connectDevice:self.device];
     }
 }
 
