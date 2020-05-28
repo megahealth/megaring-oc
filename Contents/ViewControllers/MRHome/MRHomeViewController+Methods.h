@@ -14,4 +14,6 @@
 
 - (void)testParseData;
 
+- (void)testParseDaily;
+
 @end

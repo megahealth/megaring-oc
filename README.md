@@ -58,15 +58,17 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 	- (void)screenStateUpdated; // isScreenOff
 	- (void)operationFailWithErrorCode:(MRErrCode)errCode; 
 	- (void)redInfraredUpdated:(NSArray *)data; // 红光与红外光信号原始数据
+	- (void)rawdataUpdated:(NSData *_Nullable)data;
 
 ### 设备控制
 1. 调用 -[MRDevice switchToSleepMode] 来开启睡眠监测;
 2. 调用 -[MRDevice switchToSportMode] 来开启运动监测;
 3. 调用 -[MRDevice switchToRealtimeMode] 来开启实时监测;
-4. 调用 -[MRDevice switchToNormalModel] 关闭监测;
-5. 调用 -[MRDevice startLiveData] 开启实时数据后, 监测状态下会每秒上报一组数据, 需要实现 -[MRDeviceDelegate liveDataValueUpdated:];
-6. 调用 -[MRDevice endLiveData] 关闭实时数据;
-7. 调用 -[MRDevice setRawdataEnabled:] 开关原始数据上报;
+4. 调用 -[MRDevice switchToPulseMode] 来开启脉诊仪模式;
+5. 调用 -[MRDevice switchToNormalModel] 关闭监测;
+6. 调用 -[MRDevice startLiveData] 开启实时数据后, 监测状态下会每秒上报一组数据, 需要实现 -[MRDeviceDelegate liveDataValueUpdated:];
+7. 调用 -[MRDevice endLiveData] 关闭实时数据;
+8. 调用 -[MRDevice setRawdataEnabled:] 开关原始数据上报，目前支持睡眠，运动，脉诊仪几种模式;
 
 
 ### 数据处理

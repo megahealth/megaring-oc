@@ -27,7 +27,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleDefault;
     }
     
-    if (cellModel.indexPath.section == 2 && cellModel.indexPath.row == 10) {
+    if (cellModel.indexPath.section == 2 && (cellModel.indexPath.row == 10 || cellModel.indexPath.row == 11)) {
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
         self.accessoryType = UITableViewCellAccessoryNone;

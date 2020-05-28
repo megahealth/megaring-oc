@@ -64,3 +64,9 @@ NSString *const MRUpgradeStartData = @"MRUpgradeStartData";
 NSString *const MRUpgradeSendingData = @"MRUpgradeSendingData";
 NSString *const MRUpgradeFinished = @"MRUpgradeFinished";
 NSString *const MRUpgradeFailed = @"MRUpgradeFailed";
+
+NSString *const MRMonitorPulse = @"MRMonitorPulse";
+NSString *const MRStartPulse = @"MRStartPulse";
+NSString *const MRSteps = @"MRSteps";
+NSString *const MRGetSteps = @"MRGetSteps";
+

@@ -14,6 +14,9 @@
 
 @property (nonatomic, assign) MRDeviceMonitorMode reportType;
 
+
+@property (nonatomic, copy) NSString *userId;
+
 @property (nonatomic, assign) int version;			// 数据格式版本 (version of data format)
 @property (nonatomic, assign) int handonDuration;	// 上手时长 (duration of on hand)
 @property (nonatomic, assign) int startTime;		// 算法得出的监测开启时间 (timestamp of start by algorithm)
@@ -60,7 +63,7 @@
 @property (nonatomic, assign) int deepMins;        	// 深睡分钟 (total minutes of deep sleep)
 @property (nonatomic, assign) int handOffMins;      // 离手分钟 (total minutes of invalid values)
 
-
+@property (nonatomic, assign) int steps;            // only for Exercise monitor
 
 
 

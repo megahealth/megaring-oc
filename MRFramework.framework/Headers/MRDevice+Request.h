@@ -45,12 +45,16 @@
 
 - (void)switchToRealtimeMode;   // 实时监测, 不会记录数据
 
+- (void)switchToPulseMode;      // 脉诊仪模式
+
+
 - (void)notiStartUpgrade;
 
 
 
 /*
  * 开关 rawdata
+ * support MRDeviceMonitorModeDefault，MRDeviceMonitorModeSleep，MRDeviceMonitorModeSport，MRDeviceMonitorModePulse
  */
 
 - (void)setRawdataEnabled:(BOOL)enabled;

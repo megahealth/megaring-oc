@@ -12,6 +12,7 @@
 #import "DeviceManagerViewModel.h"
 #import "DeviceManagerViewController+Methods.h"
 #import "DeviceUpgradeViewController.h"
+#import "SyncDailyViewController.h"
 
 
 #define TEST_USER_ID    @"5a4331011579a30038c790de"
@@ -75,6 +76,15 @@
                 [weakself.navigationController pushViewController:upgrade animated:YES];
             }
                 break;
+            case 11: {
+                SyncDailyViewController *daily = [[SyncDailyViewController alloc] initWithDevice:weakself.device];
+                [weakself.navigationController pushViewController:daily animated:YES];
+            }
+                break;
+                
+            case 12: {
+                [weakself.device switchToPulseMode];
+            }
                 
             default:
                 break;
@@ -198,6 +208,11 @@
     }
 }
 
+- (void)rawdataUpdated:(NSData *)data {
+    [self.deviceManagerView.viewModel updateRawdata:data];
+    [self.deviceManagerView refreshView];
+}
+
 
 #pragma mark -
 #pragma mark Notification Methods - kMRCentralStateUpdatedNotification
@@ -230,7 +245,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self test];
+//    [self test];
 }
 
 

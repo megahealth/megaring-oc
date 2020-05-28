@@ -40,6 +40,8 @@
 
 - (void)updateMonitorState;
 
+- (void)updateRawdata:(NSData *)data;
+
 
 /*
  * 还原

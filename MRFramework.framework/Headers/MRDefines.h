@@ -37,6 +37,7 @@ typedef NS_ENUM(Byte, MRCMD) {
     MRCMDSetRealtime                   	= 0XD7,			// 实时模式
     MRCMDHeartBeat                      = 0XD3,
     MRCMDDfuNoti                        = 0XD8,
+    MRCMDSetPulseImp                    = 0XDB,         // 脉诊模式
     MRCMDSetTime                        = 0XE0,
     MRCMDReset                          = 0XE2,
     MRCMDSetUserInfo                    = 0XE3,
@@ -79,6 +80,7 @@ typedef NS_ENUM(Byte, MRDeviceMonitorMode) {
     MRDeviceMonitorModeNormal,			// 日常模式, 空闲
     MRDeviceMonitorModeRealTime,        // 实时模式, 雪阳脉率监测, 但不会产生数据
     MRDeviceMonitorModeBloodPresure,    // 血压模式
+    MRDeviceMonitorModePulse,           // 脉诊仪模式
     MRDeviceMonitorModeNone     = 0x0f,
 };
 

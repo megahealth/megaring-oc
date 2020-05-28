@@ -92,6 +92,8 @@
 
 - (void)redInfraredUpdated:(NSArray *_Nullable)data;
 
+- (void)rawdataUpdated:(NSData *_Nullable)data;
+
 
 
 @end

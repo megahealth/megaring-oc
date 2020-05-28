@@ -64,3 +64,8 @@ extern NSString *const MRUpgradeStartData;
 extern NSString *const MRUpgradeSendingData;
 extern NSString *const MRUpgradeFinished;
 extern NSString *const MRUpgradeFailed;
+
+extern NSString *const MRMonitorPulse;
+extern NSString *const MRStartPulse;
+extern NSString *const MRSteps;
+extern NSString *const MRGetSteps;

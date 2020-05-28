@@ -64,3 +64,8 @@
 "MRUpgradeSendingData" = "Sending data";
 "MRUpgradeFinished" = "Upgrade finished";
 "MRUpgradeFailed" = "Upgrade failed";
+
+"MRMonitorPulse" = "Pulse";
+"MRStartPulse" = "Start Pulse";
+"MRSteps" = "Steps";
+"MRGetSteps" = "Get Steps";

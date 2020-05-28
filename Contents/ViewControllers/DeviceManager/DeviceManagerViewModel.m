@@ -65,7 +65,7 @@
 - (void)updateMonitorState {
     DeviceManagerViewCellModel	*cellModel1 = self.modelArr[1][2];
     MRDeviceMonitorMode mode = self.device.monitorMode;
-    NSArray *stateStrArr = @[NSLocalizedString(MRMonitorSleep, nil), NSLocalizedString(MRMonitorSleep, nil), NSLocalizedString(MRMonitorSport, nil), NSLocalizedString(MRMonitorOff, nil), NSLocalizedString(MRMonitorRealtime, nil), NSLocalizedString(MRMonitorBloodPressure, nil)];
+    NSArray *stateStrArr = @[NSLocalizedString(MRMonitorSleep, nil), NSLocalizedString(MRMonitorSleep, nil), NSLocalizedString(MRMonitorSport, nil), NSLocalizedString(MRMonitorOff, nil), NSLocalizedString(MRMonitorRealtime, nil), NSLocalizedString(MRMonitorBloodPressure, nil), NSLocalizedString(MRMonitorPulse, nil)];
     if (mode < stateStrArr.count && mode >= 0) {
         cellModel1.detail = stateStrArr[mode];
     }
@@ -73,6 +73,13 @@
 //    DeviceManagerViewCellModel	*cellModel2 = self.modelArr[2][3];
 //    cellModel2.title = self.device.isMonitorOn ? @"停止监测" : @"开始监测";
 }
+
+- (void)updateRawdata:(NSData *)data {
+    DeviceManagerViewCellModel    *cellModel = self.modelArr[1][4];
+    cellModel.detail = [NSString stringWithFormat:@"%@", data];
+    cellModel.isFresh = YES;
+}
+
 
 - (void)reset {
     for (NSInteger i=0; i<self.modelArr.count; i++) {
@@ -128,14 +135,14 @@
 - (NSArray *)defaultCellModelTitleArr {
     return @[
   @[@"MAC", NSLocalizedString(MRDeviceSn, nil), NSLocalizedString(MRDeviceSoftwareVer, nil)],
-  @[NSLocalizedString(MRConnectStatus, nil), NSLocalizedString(MRBatteryStatus, nil), NSLocalizedString(MRMonitorStatus, nil), NSLocalizedString(MRLiveDataStatus, nil)],
-  @[NSLocalizedString(MRConnectDevice, nil), NSLocalizedString(MREnableLiveData, nil), NSLocalizedString(MRDisableLiveData, nil), NSLocalizedString(MRSyncData, nil), NSLocalizedString(MRStartSleep, nil), NSLocalizedString(MRStartSport, nil), NSLocalizedString(MRStartRealtime, nil), NSLocalizedString(MRStopMonitor, nil), NSLocalizedString(MREnableRawdata, nil), NSLocalizedString(MRDisableRawdata, nil), NSLocalizedString(MRDeviceUpgrade, nil)]];
+  @[NSLocalizedString(MRConnectStatus, nil), NSLocalizedString(MRBatteryStatus, nil), NSLocalizedString(MRMonitorStatus, nil), NSLocalizedString(MRLiveDataStatus, nil), @"Rawdata"],
+  @[NSLocalizedString(MRConnectDevice, nil), NSLocalizedString(MREnableLiveData, nil), NSLocalizedString(MRDisableLiveData, nil), NSLocalizedString(MRSyncData, nil), NSLocalizedString(MRStartSleep, nil), NSLocalizedString(MRStartSport, nil), NSLocalizedString(MRStartRealtime, nil), NSLocalizedString(MRStopMonitor, nil), NSLocalizedString(MREnableRawdata, nil), NSLocalizedString(MRDisableRawdata, nil), NSLocalizedString(MRDeviceUpgrade, nil), NSLocalizedString(MRSteps, nil), NSLocalizedString(MRStartPulse, nil)]];
 }
 
 - (NSArray *)defaultCellModelDetailArr {
     NSString    *mac = self.device.mac ?: @"";
     NSString    *sn = self.device.sn ?: @"";
-    return @[@[mac, sn, @""], @[NSLocalizedString(MRDisconnected, nil), @"", @"", @"", @""], @[@"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @""]];
+    return @[@[mac, sn, @""], @[NSLocalizedString(MRDisconnected, nil), @"", @"", @"", @"", @""], @[@"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @""]];
 }
 
 - (NSArray *)batStateDescriptionArr {

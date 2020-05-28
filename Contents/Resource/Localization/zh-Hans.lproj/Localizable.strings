@@ -34,7 +34,7 @@
 "MRMonitorSport" = "运动";
 "MRMonitorRealtime" = "实时";
 "MRMonitorBloodPressure" = "血压";
-"MRLiveDataStatus" = "实时数据状态";
+"MRLiveDataStatus" = "实时数据";
 
 "MRDeviceOpration" = "操作选项";
 "MRConnectDevice" = "连接设备";
@@ -64,3 +64,8 @@
 "MRUpgradeSendingData" = "正在发送数据";
 "MRUpgradeFinished" = "升级完成";
 "MRUpgradeFailed" = "开始失败";
+
+"MRMonitorPulse" = "脉诊仪";
+"MRStartPulse" = "开启脉诊仪";
+"MRSteps" = "步数";
+"MRGetSteps" = "获取步数";
