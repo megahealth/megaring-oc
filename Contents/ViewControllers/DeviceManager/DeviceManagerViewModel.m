@@ -74,7 +74,7 @@
 //    cellModel2.title = self.device.isMonitorOn ? @"停止监测" : @"开始监测";
 }
 
-- (void)updateRawdata:(NSData *)data {
+- (void)updateRawdata:(NSString *)data {
     DeviceManagerViewCellModel    *cellModel = self.modelArr[1][4];
     cellModel.detail = [NSString stringWithFormat:@"%@", data];
     cellModel.isFresh = YES;

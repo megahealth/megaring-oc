@@ -192,25 +192,21 @@
     NSLog(@"err:%d", errCode);
 }
 
-// 红光与红外光信号原始数据
-- (void)redInfraredUpdated:(NSArray *)data {
+// 光通道数据
+- (void)rawdataUpdated:(NSArray *)data {
     NSMutableArray *strArr = [NSMutableArray new];
     for (NSArray *item in data) {
         if (item.count == 2) {
-            NSString *str = [NSString stringWithFormat:@"(red:%@ infrared:%@)", item.firstObject, item.lastObject];
+            NSString *str = [NSString stringWithFormat:@"(%@ %@)", item.firstObject, item.lastObject];
             [strArr addObject:str];
         }
     }
     
     if (strArr.count > 0) {
         NSString *str = [strArr componentsJoinedByString:@", "];
-        NSLog(@"%@", str);
+        [self.deviceManagerView.viewModel updateRawdata:str];
+        [self.deviceManagerView refreshView];
     }
-}
-
-- (void)rawdataUpdated:(NSData *)data {
-    [self.deviceManagerView.viewModel updateRawdata:data];
-    [self.deviceManagerView refreshView];
 }
 
 

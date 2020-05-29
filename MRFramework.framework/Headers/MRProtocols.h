@@ -90,9 +90,7 @@
 
 - (void)operationFailWithErrorCode:(MRErrCode)errCode;
 
-- (void)redInfraredUpdated:(NSArray *_Nullable)data;
-
-- (void)rawdataUpdated:(NSData *_Nullable)data;
+- (void)rawdataUpdated:(NSArray *_Nullable)data;
 
 
 
