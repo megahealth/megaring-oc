@@ -192,7 +192,7 @@
     NSLog(@"err:%d", errCode);
 }
 
-// 光通道数据
+// 红光与红外光信号原始数据
 - (void)rawdataUpdated:(NSArray *)data {
     NSMutableArray *strArr = [NSMutableArray new];
     for (NSArray *item in data) {

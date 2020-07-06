@@ -47,14 +47,6 @@
 		3C3E9AEE2480B4870087FD85 /* SyncDailyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AA52480B4870087FD85 /* SyncDailyViewController.m */; };
 		3C3E9AEF2480B4870087FD85 /* MegaRingV2_V7964.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AA82480B4870087FD85 /* MegaRingV2_V7964.zip */; };
 		3C3E9AF02480B4870087FD85 /* MegaRingV3_V9154.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AA92480B4870087FD85 /* MegaRingV3_V9154.zip */; };
-		3C3E9AF12480B4870087FD85 /* dailydata20200421 in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AAB2480B4870087FD85 /* dailydata20200421 */; };
-		3C3E9AF22480B4870087FD85 /* sdkdata_1557202185 in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AAC2480B4870087FD85 /* sdkdata_1557202185 */; };
-		3C3E9AF32480B4870087FD85 /* test1 in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AAE2480B4870087FD85 /* test1 */; };
-		3C3E9AF42480B4870087FD85 /* err_data in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AAF2480B4870087FD85 /* err_data */; };
-		3C3E9AF52480B4870087FD85 /* test2 in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AB02480B4870087FD85 /* test2 */; };
-		3C3E9AF62480B4870087FD85 /* ble_18_07_18_06_51_59.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AB12480B4870087FD85 /* ble_18_07_18_06_51_59.bin */; };
-		3C3E9AF72480B4870087FD85 /* circul_5ec2376b73e25500087c8f32 in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AB32480B4870087FD85 /* circul_5ec2376b73e25500087c8f32 */; };
-		3C3E9AF82480B4870087FD85 /* circul_5ec23768c96f350009160aed in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AB42480B4870087FD85 /* circul_5ec23768c96f350009160aed */; };
 		3C3E9AF92480B4870087FD85 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AB72480B4870087FD85 /* Localizable.strings */; };
 		3C3E9AFA2480B4870087FD85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AB92480B4870087FD85 /* InfoPlist.strings */; };
 		3C3E9AFB2480B4870087FD85 /* LocalStringKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9ABD2480B4870087FD85 /* LocalStringKeys.m */; };
@@ -65,6 +57,14 @@
 		3C3E9B012480B7FB0087FD85 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9B002480B7FB0087FD85 /* README.md */; };
 		3CCA8FE52445549D004CDA77 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CCA8FE42445549D004CDA77 /* MRFramework.framework */; };
 		3CCA8FE6244554BB004CDA77 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CCA8FE42445549D004CDA77 /* MRFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3CEC1A5024B2FF7700A87AB0 /* test1 in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC1A4624B2FF7700A87AB0 /* test1 */; };
+		3CEC1A5124B2FF7700A87AB0 /* err_data in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC1A4724B2FF7700A87AB0 /* err_data */; };
+		3CEC1A5224B2FF7700A87AB0 /* test2 in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC1A4824B2FF7700A87AB0 /* test2 */; };
+		3CEC1A5424B2FF7700A87AB0 /* circul_5ec2376b73e25500087c8f32 in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC1A4B24B2FF7700A87AB0 /* circul_5ec2376b73e25500087c8f32 */; };
+		3CEC1A5524B2FF7700A87AB0 /* circul_5ec23768c96f350009160aed in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC1A4C24B2FF7700A87AB0 /* circul_5ec23768c96f350009160aed */; };
+		3CEC1A5624B2FF7700A87AB0 /* dailydata20200421 in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC1A4E24B2FF7700A87AB0 /* dailydata20200421 */; };
+		3CEC1A5724B2FF7700A87AB0 /* sdkdata_1557202185 in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC1A4F24B2FF7700A87AB0 /* sdkdata_1557202185 */; };
+		3CEC1A5924B2FFA000A87AB0 /* ble_18_07_18_06_51_59.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC1A5824B2FFA000A87AB0 /* ble_18_07_18_06_51_59.bin */; };
 		CF408681209C026F00E3E8E7 /* MRNavigarionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF408680209C026F00E3E8E7 /* MRNavigarionController.m */; };
 		CF665A15209B181A009EF6A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF665A14209B181A009EF6A6 /* AppDelegate.m */; };
 		CF665A1B209B181A009EF6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF665A19209B181A009EF6A6 /* Main.storyboard */; };
@@ -183,14 +183,6 @@
 		3C3E9AA52480B4870087FD85 /* SyncDailyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncDailyViewController.m; sourceTree = "<group>"; };
 		3C3E9AA82480B4870087FD85 /* MegaRingV2_V7964.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV2_V7964.zip; sourceTree = "<group>"; };
 		3C3E9AA92480B4870087FD85 /* MegaRingV3_V9154.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV3_V9154.zip; sourceTree = "<group>"; };
-		3C3E9AAB2480B4870087FD85 /* dailydata20200421 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dailydata20200421; sourceTree = "<group>"; };
-		3C3E9AAC2480B4870087FD85 /* sdkdata_1557202185 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sdkdata_1557202185; sourceTree = "<group>"; };
-		3C3E9AAE2480B4870087FD85 /* test1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test1; sourceTree = "<group>"; };
-		3C3E9AAF2480B4870087FD85 /* err_data */ = {isa = PBXFileReference; lastKnownFileType = file; path = err_data; sourceTree = "<group>"; };
-		3C3E9AB02480B4870087FD85 /* test2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2; sourceTree = "<group>"; };
-		3C3E9AB12480B4870087FD85 /* ble_18_07_18_06_51_59.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = ble_18_07_18_06_51_59.bin; sourceTree = "<group>"; };
-		3C3E9AB32480B4870087FD85 /* circul_5ec2376b73e25500087c8f32 */ = {isa = PBXFileReference; lastKnownFileType = file; path = circul_5ec2376b73e25500087c8f32; sourceTree = "<group>"; };
-		3C3E9AB42480B4870087FD85 /* circul_5ec23768c96f350009160aed */ = {isa = PBXFileReference; lastKnownFileType = file; path = circul_5ec23768c96f350009160aed; sourceTree = "<group>"; };
 		3C3E9AB52480B4870087FD85 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3C3E9AB82480B4870087FD85 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3C3E9ABA2480B4870087FD85 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -207,6 +199,14 @@
 		3C3E9AC82480B4870087FD85 /* MRDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRDefaultView.m; sourceTree = "<group>"; };
 		3C3E9B002480B7FB0087FD85 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3CCA8FE42445549D004CDA77 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
+		3CEC1A4624B2FF7700A87AB0 /* test1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test1; sourceTree = "<group>"; };
+		3CEC1A4724B2FF7700A87AB0 /* err_data */ = {isa = PBXFileReference; lastKnownFileType = file; path = err_data; sourceTree = "<group>"; };
+		3CEC1A4824B2FF7700A87AB0 /* test2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2; sourceTree = "<group>"; };
+		3CEC1A4B24B2FF7700A87AB0 /* circul_5ec2376b73e25500087c8f32 */ = {isa = PBXFileReference; lastKnownFileType = file; path = circul_5ec2376b73e25500087c8f32; sourceTree = "<group>"; };
+		3CEC1A4C24B2FF7700A87AB0 /* circul_5ec23768c96f350009160aed */ = {isa = PBXFileReference; lastKnownFileType = file; path = circul_5ec23768c96f350009160aed; sourceTree = "<group>"; };
+		3CEC1A4E24B2FF7700A87AB0 /* dailydata20200421 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dailydata20200421; sourceTree = "<group>"; };
+		3CEC1A4F24B2FF7700A87AB0 /* sdkdata_1557202185 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sdkdata_1557202185; sourceTree = "<group>"; };
+		3CEC1A5824B2FFA000A87AB0 /* ble_18_07_18_06_51_59.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = ble_18_07_18_06_51_59.bin; sourceTree = "<group>"; };
 		CF40867F209C026F00E3E8E7 /* MRNavigarionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRNavigarionController.h; sourceTree = "<group>"; };
 		CF408680209C026F00E3E8E7 /* MRNavigarionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRNavigarionController.m; sourceTree = "<group>"; };
 		CF665A10209B181A009EF6A6 /* MegaRingBLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MegaRingBLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -417,8 +417,8 @@
 		3C3E9AA62480B4870087FD85 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3CEC1A4424B2FF7700A87AB0 /* SampleData */,
 				3C3E9AA72480B4870087FD85 /* Firmware */,
-				3C3E9AAA2480B4870087FD85 /* ReportData */,
 				3C3E9AB52480B4870087FD85 /* PrefixHeader.pch */,
 				3C3E9AB62480B4870087FD85 /* Localization */,
 			);
@@ -432,37 +432,6 @@
 				3C3E9AA92480B4870087FD85 /* MegaRingV3_V9154.zip */,
 			);
 			path = Firmware;
-			sourceTree = "<group>";
-		};
-		3C3E9AAA2480B4870087FD85 /* ReportData */ = {
-			isa = PBXGroup;
-			children = (
-				3C3E9AAB2480B4870087FD85 /* dailydata20200421 */,
-				3C3E9AAC2480B4870087FD85 /* sdkdata_1557202185 */,
-				3C3E9AAD2480B4870087FD85 /* sleep */,
-				3C3E9AB12480B4870087FD85 /* ble_18_07_18_06_51_59.bin */,
-				3C3E9AB22480B4870087FD85 /* sport */,
-			);
-			path = ReportData;
-			sourceTree = "<group>";
-		};
-		3C3E9AAD2480B4870087FD85 /* sleep */ = {
-			isa = PBXGroup;
-			children = (
-				3C3E9AAE2480B4870087FD85 /* test1 */,
-				3C3E9AAF2480B4870087FD85 /* err_data */,
-				3C3E9AB02480B4870087FD85 /* test2 */,
-			);
-			path = sleep;
-			sourceTree = "<group>";
-		};
-		3C3E9AB22480B4870087FD85 /* sport */ = {
-			isa = PBXGroup;
-			children = (
-				3C3E9AB32480B4870087FD85 /* circul_5ec2376b73e25500087c8f32 */,
-				3C3E9AB42480B4870087FD85 /* circul_5ec23768c96f350009160aed */,
-			);
-			path = sport;
 			sourceTree = "<group>";
 		};
 		3C3E9AB62480B4870087FD85 /* Localization */ = {
@@ -487,6 +456,45 @@
 				3C3E9AC82480B4870087FD85 /* MRDefaultView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3CEC1A4424B2FF7700A87AB0 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				3CEC1A4524B2FF7700A87AB0 /* sleep */,
+				3CEC1A4A24B2FF7700A87AB0 /* sport */,
+				3CEC1A4D24B2FF7700A87AB0 /* daily */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
+		3CEC1A4524B2FF7700A87AB0 /* sleep */ = {
+			isa = PBXGroup;
+			children = (
+				3CEC1A5824B2FFA000A87AB0 /* ble_18_07_18_06_51_59.bin */,
+				3CEC1A4624B2FF7700A87AB0 /* test1 */,
+				3CEC1A4724B2FF7700A87AB0 /* err_data */,
+				3CEC1A4824B2FF7700A87AB0 /* test2 */,
+			);
+			path = sleep;
+			sourceTree = "<group>";
+		};
+		3CEC1A4A24B2FF7700A87AB0 /* sport */ = {
+			isa = PBXGroup;
+			children = (
+				3CEC1A4B24B2FF7700A87AB0 /* circul_5ec2376b73e25500087c8f32 */,
+				3CEC1A4C24B2FF7700A87AB0 /* circul_5ec23768c96f350009160aed */,
+			);
+			path = sport;
+			sourceTree = "<group>";
+		};
+		3CEC1A4D24B2FF7700A87AB0 /* daily */ = {
+			isa = PBXGroup;
+			children = (
+				3CEC1A4E24B2FF7700A87AB0 /* dailydata20200421 */,
+				3CEC1A4F24B2FF7700A87AB0 /* sdkdata_1557202185 */,
+			);
+			path = daily;
 			sourceTree = "<group>";
 		};
 		CF4545212243925A003180A5 /* Frameworks */ = {
@@ -664,29 +672,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C3E9AF62480B4870087FD85 /* ble_18_07_18_06_51_59.bin in Resources */,
+				3CEC1A5024B2FF7700A87AB0 /* test1 in Resources */,
 				3C3E9AFD2480B4870087FD85 /* MRDefaultView.xib in Resources */,
 				3C3E9AFC2480B4870087FD85 /* MRDefaultView.strings in Resources */,
-				3C3E9AF32480B4870087FD85 /* test1 in Resources */,
+				3CEC1A5224B2FF7700A87AB0 /* test2 in Resources */,
+				3CEC1A5924B2FFA000A87AB0 /* ble_18_07_18_06_51_59.bin in Resources */,
 				3C3E9AF02480B4870087FD85 /* MegaRingV3_V9154.zip in Resources */,
 				3C3E9ADD2480B4870087FD85 /* MRHomeViewController.xib in Resources */,
 				3C3E9AEC2480B4870087FD85 /* DeviceUpgradeViewController.xib in Resources */,
+				3CEC1A5524B2FF7700A87AB0 /* circul_5ec23768c96f350009160aed in Resources */,
 				3C3E9AEF2480B4870087FD85 /* MegaRingV2_V7964.zip in Resources */,
-				3C3E9AF12480B4870087FD85 /* dailydata20200421 in Resources */,
 				3C3E9AE12480B4870087FD85 /* MRHomeViewCell.xib in Resources */,
 				3C3E9AEA2480B4870087FD85 /* DeviceUpgradeViewController.strings in Resources */,
+				3CEC1A5724B2FF7700A87AB0 /* sdkdata_1557202185 in Resources */,
 				3C3E9AFA2480B4870087FD85 /* InfoPlist.strings in Resources */,
 				3C3E9B012480B7FB0087FD85 /* README.md in Resources */,
 				CF665A20209B181B009EF6A6 /* LaunchScreen.storyboard in Resources */,
+				3CEC1A5124B2FF7700A87AB0 /* err_data in Resources */,
 				3C3E9AF92480B4870087FD85 /* Localizable.strings in Resources */,
-				3C3E9AF72480B4870087FD85 /* circul_5ec2376b73e25500087c8f32 in Resources */,
+				3CEC1A5624B2FF7700A87AB0 /* dailydata20200421 in Resources */,
 				CF665A1D209B181B009EF6A6 /* Assets.xcassets in Resources */,
-				3C3E9AF42480B4870087FD85 /* err_data in Resources */,
-				3C3E9AF82480B4870087FD85 /* circul_5ec23768c96f350009160aed in Resources */,
 				3C3E9AE42480B4870087FD85 /* DeviceManagerViewController.xib in Resources */,
 				3C3E9AED2480B4870087FD85 /* SyncDailyViewController.xib in Resources */,
-				3C3E9AF22480B4870087FD85 /* sdkdata_1557202185 in Resources */,
-				3C3E9AF52480B4870087FD85 /* test2 in Resources */,
+				3CEC1A5424B2FF7700A87AB0 /* circul_5ec2376b73e25500087c8f32 in Resources */,
 				3C3E9AE72480B4870087FD85 /* DeviceManagerViewCell.xib in Resources */,
 				CF665A1B209B181A009EF6A6 /* Main.storyboard in Resources */,
 			);

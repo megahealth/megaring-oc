@@ -38,9 +38,9 @@
 }
 
 - (void)testParseDaily {
-    NSString *dataFile = @"/Users/chengcheng/Documents/me-hub/MRFramework-ios/MegaRingBLE/Contents/Resource/ReportData/dailydata20200421";
+    NSString *dataFile = @"dailydata20200421";
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:dataFile ofType:nil];
-    NSData *data = [NSData dataWithContentsOfFile:dataFile];
+    NSData *data = [NSData dataWithContentsOfFile:dataPath];
     
     NSArray *steps = [self parseDaily:data swVersion:nil userId:nil];
     
