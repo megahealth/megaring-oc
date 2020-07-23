@@ -18,10 +18,10 @@
 
 
 - (void)testParseData {
-    NSString *dataName = @"/Users/chengcheng/Documents/me-hub/MRFramework-ios/MegaRingBLE/Contents/Resource/ReportData/sleep/err_data";
-//    NSString *dataPath = [[NSBundle mainBundle] pathForResource:dataName ofType:@"bin"];
+    NSString *dataName = @"ble_18_07_18_06_51_59";
+    NSString *dataPath = [[NSBundle mainBundle] pathForResource:dataName ofType:@"bin"];
     
-    NSData *data = [[NSData alloc] initWithContentsOfFile:dataName];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:dataPath];
     [MRApi parseMonitorData:data mode:MRDeviceMonitorModeSleep completion:^(MRReport *report, NSError *error) {
         if (error) {
             NSLog(@"error:%@", error);

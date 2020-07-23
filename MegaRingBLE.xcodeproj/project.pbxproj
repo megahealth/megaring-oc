@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C1F2F8624C996A900702EEA /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1F2F8524C996A900702EEA /* MRFramework.framework */; };
+		3C1F2F8824C996FA00702EEA /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C1F2F8524C996A900702EEA /* MRFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3C3E9AC92480B4870087FD85 /* crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9A532480B4870087FD85 /* crypt.c */; };
 		3C3E9ACA2480B4870087FD85 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9A542480B4870087FD85 /* unzip.c */; };
 		3C3E9ACB2480B4870087FD85 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9A552480B4870087FD85 /* zip.c */; };
@@ -55,8 +57,6 @@
 		3C3E9AFE2480B4870087FD85 /* IBCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC72480B4870087FD85 /* IBCustomView.m */; };
 		3C3E9AFF2480B4870087FD85 /* MRDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC82480B4870087FD85 /* MRDefaultView.m */; };
 		3C3E9B012480B7FB0087FD85 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9B002480B7FB0087FD85 /* README.md */; };
-		3CCA8FE52445549D004CDA77 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CCA8FE42445549D004CDA77 /* MRFramework.framework */; };
-		3CCA8FE6244554BB004CDA77 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CCA8FE42445549D004CDA77 /* MRFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3CEC1A5024B2FF7700A87AB0 /* test1 in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC1A4624B2FF7700A87AB0 /* test1 */; };
 		3CEC1A5124B2FF7700A87AB0 /* err_data in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC1A4724B2FF7700A87AB0 /* err_data */; };
 		3CEC1A5224B2FF7700A87AB0 /* test2 in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC1A4824B2FF7700A87AB0 /* test2 */; };
@@ -93,19 +93,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3CD2CA46241A3F16000C8F82 /* CopyFiles */ = {
+		3C1F2F8724C996E900702EEA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3CCA8FE6244554BB004CDA77 /* MRFramework.framework in CopyFiles */,
+				3C1F2F8824C996FA00702EEA /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3C1F2F8524C996A900702EEA /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		3C3E9A512480B4870087FD85 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		3C3E9A532480B4870087FD85 /* crypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crypt.c; sourceTree = "<group>"; };
 		3C3E9A542480B4870087FD85 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
@@ -198,7 +199,6 @@
 		3C3E9AC72480B4870087FD85 /* IBCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCustomView.m; sourceTree = "<group>"; };
 		3C3E9AC82480B4870087FD85 /* MRDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRDefaultView.m; sourceTree = "<group>"; };
 		3C3E9B002480B7FB0087FD85 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		3CCA8FE42445549D004CDA77 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		3CEC1A4624B2FF7700A87AB0 /* test1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test1; sourceTree = "<group>"; };
 		3CEC1A4724B2FF7700A87AB0 /* err_data */ = {isa = PBXFileReference; lastKnownFileType = file; path = err_data; sourceTree = "<group>"; };
 		3CEC1A4824B2FF7700A87AB0 /* test2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CCA8FE52445549D004CDA77 /* MRFramework.framework in Frameworks */,
+				3C1F2F8624C996A900702EEA /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,9 +507,9 @@
 		CF665A07209B181A009EF6A6 = {
 			isa = PBXGroup;
 			children = (
+				3C1F2F8524C996A900702EEA /* MRFramework.framework */,
 				3C3E9B002480B7FB0087FD85 /* README.md */,
 				3C3E9A4E2480B4870087FD85 /* Contents */,
-				3CCA8FE42445549D004CDA77 /* MRFramework.framework */,
 				CF665A12209B181A009EF6A6 /* MegaRingBLE */,
 				CF665A2B209B181B009EF6A6 /* MegaRingBLETests */,
 				CF665A36209B181B009EF6A6 /* MegaRingBLEUITests */,
@@ -572,7 +572,7 @@
 				CF665A0C209B181A009EF6A6 /* Sources */,
 				CF665A0D209B181A009EF6A6 /* Frameworks */,
 				CF665A0E209B181A009EF6A6 /* Resources */,
-				3CD2CA46241A3F16000C8F82 /* CopyFiles */,
+				3C1F2F8724C996E900702EEA /* CopyFiles */,
 			);
 			buildRules = (
 			);

@@ -95,7 +95,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    [self testParseDaily];
+    [self testParseData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
