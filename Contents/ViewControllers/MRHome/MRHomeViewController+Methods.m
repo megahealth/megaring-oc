@@ -18,8 +18,8 @@
 
 
 - (void)testParseData {
-    NSString *dataName = @"ble_18_07_18_06_51_59";
-    NSString *dataPath = [[NSBundle mainBundle] pathForResource:dataName ofType:@"bin"];
+    NSString *dataName = @"m9bbznlznGkKvDTk5MlU86PbJR21doazpsWJhGve.bin";
+    NSString *dataPath = [[NSBundle mainBundle] pathForResource:dataName ofType:nil];
     
     NSData *data = [[NSData alloc] initWithContentsOfFile:dataPath];
     [MRApi parseMonitorData:data mode:MRDeviceMonitorModeSleep completion:^(MRReport *report, NSError *error) {

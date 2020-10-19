@@ -60,5 +60,15 @@
 - (void)setRawdataEnabled:(BOOL)enabled;
 
 
+/*
+ * 设置定时监测
+ * 设备断开时，若处于定时监测时间段内，会自动开启监测
+ * 设备连接时，定时监测不生效
+ */
+
+- (void)setPeriodicMonitorOn:(BOOL)isOn afterSeconds:(int)seconds duration:(int)monitorDuration repeat:(BOOL)isRepeat;
+
+- (void)getMonitorTimer;
+
 
 @end

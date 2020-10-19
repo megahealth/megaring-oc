@@ -92,6 +92,10 @@
 
 - (void)rawdataUpdated:(NSArray *_Nullable)data;
 
+- (void)didSetPeriodicMonitorState:(MRPeriodicMonitorState)state start:(NSString *_Nullable)start duration:(int)duration repeat:(BOOL)repeat;
+
+- (void)didGetPeriodicMonitorState:(MRPeriodicMonitorState)state start:(NSString *_Nullable)start duration:(int)duration repeat:(BOOL)repeat;
+
 
 
 @end

@@ -69,4 +69,5 @@ NSString *const MRMonitorPulse = @"MRMonitorPulse";
 NSString *const MRStartPulse = @"MRStartPulse";
 NSString *const MRSteps = @"MRSteps";
 NSString *const MRGetSteps = @"MRGetSteps";
-
+NSString *const MRSetPeriodicMonitor = @"MRSetPeriodicMonitor";
+NSString *const MRGetPeriodicMonitor = @"MRGetPeriodicMonitor";

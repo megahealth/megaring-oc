@@ -69,3 +69,5 @@
 "MRStartPulse" = "Start Pulse";
 "MRSteps" = "Steps";
 "MRGetSteps" = "Get Steps";
+"MRSetPeriodicMonitor" = "Set Periodic Monitor";
+"MRGetPeriodicMonitor" = "Get Periodic Monitor";

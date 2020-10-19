@@ -69,7 +69,8 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 6. 调用 -[MRDevice startLiveData] 开启实时数据后, 监测状态下会每秒上报一组数据, 需要实现 -[MRDeviceDelegate liveDataValueUpdated:];
 7. 调用 -[MRDevice endLiveData] 关闭实时数据;
 8. 调用 -[MRDevice setRawdataEnabled:] 开关原始数据上报，目前支持睡眠，运动，脉诊仪几种模式;
-
+9. 调用 -[MRDevice setPeriodicMonitorOn:afterSeconds:duration:repeat:] 来设置定时监测，参数分别为开/关，开始时间距离现在的秒数，监测持续时长，是否每天重复;
+10. 调用 -[MRDevice getMonitorTimer] 来获取定时监测的状态;
 
 ### 数据处理
 1. 调用 -[MRDevice requestData:progress:finish:] 检查和收取设备中的数据, 建议重复调用此方法, 直至得到的 data 为空, 即设备中数据已被全部取出;

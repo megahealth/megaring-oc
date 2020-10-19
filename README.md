@@ -49,18 +49,21 @@ This text introduces the components of MRFramework, hoping to make it easier to 
 
 2. Call `-[MRDevice endLiveData]` to end the live data.
 
-2. Call `-[MRDevice switchToSleepMode]` to start sleep monitoring.
+3. Call `-[MRDevice switchToSleepMode]` to start sleep monitoring.
 
-2. Call `-[MRDevice switchToSportMode]` to start sport monitoring.
+4. Call `-[MRDevice switchToSportMode]` to start sport monitoring.
 
-2. Call `-[MRDevice switchToNormalModel]` to stop monitoring.
+5. Call `-[MRDevice switchToNormalModel]` to stop monitoring.
 
-2. Call `-[MRDevice switchToRealtimeMode]` to start realtime monitoring.
+6. Call `-[MRDevice switchToRealtimeMode]` to start realtime monitoring.
 
-2. Call `-[MRDevice switchToPulseMode]` to start pulse monitoring.
+7. Call `-[MRDevice switchToPulseMode]` to start pulse monitoring.
 
-2. Call `-[MRDevice setRawdataEnabled:]` to enable rawData, implement method `-[MRDeviceDelegate rawdataUpdated:]` to receive rawData.
+8. Call `-[MRDevice setRawdataEnabled:]` to enable rawData, implement method `-[MRDeviceDelegate rawdataUpdated:]` to receive rawData.
 
+9. Call -[MRDevice setPeriodicMonitorOn:afterSeconds:duration:repeat:] to set periodic monitor, the paras are on/off, seconds between now and start time, monitor duration, is repeat everyday;
+
+10. Call -[MRDevice getMonitorTimer] to get current periodic monitor state;
 
 
 ### Device status

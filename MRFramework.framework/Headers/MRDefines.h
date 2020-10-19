@@ -38,6 +38,7 @@ typedef NS_ENUM(Byte, MRCMD) {
     MRCMDHeartBeat                      = 0XD3,
     MRCMDDfuNoti                        = 0XD8,
     MRCMDSetPulseImp                    = 0XDB,         // 脉诊模式
+    MRCMDPeriodicMonitor                = 0XD9,
     MRCMDSetTime                        = 0XE0,
     MRCMDReset                          = 0XE2,
     MRCMDSetUserInfo                    = 0XE3,
@@ -51,6 +52,7 @@ typedef NS_ENUM(Byte, MRCMD) {
     MRCMDDailyDataDetail                = 0XF1,
     MRCMDCrashLog                       = 0XF3,
     MRCMDGetMonitorMode                 = 0XF6,
+    MRCMDGetMonitorTimer                = 0XF8,
 };
 
 
@@ -177,6 +179,17 @@ typedef NS_ENUM(int, MRUpgradeType) {
 typedef NS_ENUM(NSInteger, MRDeviceHome) {
     MRDeviceHomeMR,
     MRDeviceHomeLM,
+};
+
+/// Invalid: Periodic Monitor is off
+/// Free: Periodic Monitor is on, but device is not in monitoring
+/// Monitoring: Periodic Monitor is on, and device is in monitoring
+/// HangOn: May be concurrent with Free: 0x101
+typedef NS_OPTIONS(Byte, MRPeriodicMonitorState) {
+    MRPeriodicMonitorStateInvalid           = 0X00,
+    MRPeriodicMonitorStateFree              = 0X01,
+    MRPeriodicMonitorStateMonitoring        = 0X01 << 1,
+    MRPeriodicMonitorStateHangOn            = 0X01 << 2,
 };
 
 

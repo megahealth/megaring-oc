@@ -69,3 +69,5 @@
 "MRStartPulse" = "开启脉诊仪";
 "MRSteps" = "步数";
 "MRGetSteps" = "获取步数";
+"MRSetPeriodicMonitor" = "设置定时监测";
+"MRGetPeriodicMonitor" = "获取定时监测状态";

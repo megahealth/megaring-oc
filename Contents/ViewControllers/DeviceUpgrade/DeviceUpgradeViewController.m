@@ -89,7 +89,7 @@
 }
 
 - (NSString *)firmwareZip {
-    NSString *zipName = @"MegaRingV3_V9754.zip";
+    NSString *zipName = @"MegaRingV3_V9880.zip";
     NSString *zipPath = [[NSBundle mainBundle] pathForResource:zipName ofType:nil];
     return zipPath;
 }

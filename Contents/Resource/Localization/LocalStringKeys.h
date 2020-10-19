@@ -69,3 +69,5 @@ extern NSString *const MRMonitorPulse;
 extern NSString *const MRStartPulse;
 extern NSString *const MRSteps;
 extern NSString *const MRGetSteps;
+extern NSString *const MRSetPeriodicMonitor;
+extern NSString *const MRGetPeriodicMonitor;

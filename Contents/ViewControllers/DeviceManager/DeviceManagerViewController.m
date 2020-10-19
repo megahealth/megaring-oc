@@ -85,6 +85,21 @@
             case 12: {
                 [weakself.device switchToPulseMode];
             }
+                break;
+                
+            case 13: {
+                BOOL on = YES;
+                int seconds = 10;
+                int duration = 60 * 60 * 5;
+                BOOL repeat = NO;
+                [weakself.device setPeriodicMonitorOn:on afterSeconds:seconds duration:duration repeat:repeat];
+            }
+                break;
+                
+            case 14: {
+                [weakself.device getMonitorTimer];
+            }
+                break;
                 
             default:
                 break;
@@ -137,15 +152,17 @@
 }
 
 - (void)finishBindingWithToken:(NSString *)token {
-    NSLog(@"token:%@", token);
+    NSLog(@"new token:%@, sn:%@", token, self.device.sn);
     [self saveBindToken:token];
 }
 
 - (nullable NSString *)bindToken {
+    NSLog(@"use token:%@", [self cachedBindToken]);
     return [self cachedBindToken];
 }
 
 - (NSString *)bindUserIdentifier {
+    NSLog(@"user:%@", TEST_USER_ID);
     return TEST_USER_ID;
 }
 
@@ -207,6 +224,14 @@
         [self.deviceManagerView.viewModel updateRawdata:str];
         [self.deviceManagerView refreshView];
     }
+}
+
+- (void)didSetPeriodicMonitorState:(MRPeriodicMonitorState)state start:(NSString *)start duration:(int)duration repeat:(BOOL)repeat {
+    NSLog(@"set perioidic state:%d repeat:%d start:%@ duration:%d", state, repeat, start, duration);
+}
+
+- (void)didGetPeriodicMonitorState:(MRPeriodicMonitorState)state start:(NSString *)start duration:(int)duration repeat:(BOOL)repeat {
+    NSLog(@"get perioidic state:%d repeat:%d start:%@ duration:%d", state, repeat, start, duration);
 }
 
 
