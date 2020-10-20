@@ -29,7 +29,7 @@ This text introduces the components of MRFramework, hoping to make it easier to 
 
 1. Set MRDevice.delegate.
 
-2. Implement method `-[MRDeviceDelegate bindUserIdentifier]` and `-[MRDeviceDelegate bindToken]` to provide user id and token.
+2. Implement method `-[MRDeviceDelegate bindUserIdentifier]` and `-[MRDeviceDelegate bindToken]` to provide user id and token. The userid is a 24-bit hexadecimal string. Use the token you get in step 6 to connect the old device.
 
 3. Implement method `-[MRDeviceDelegate bindDeviceResp:]` to observe binding response. 
 
