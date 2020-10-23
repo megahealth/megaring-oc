@@ -58,7 +58,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 	- (void)deviceModeUpdated; // MRDeviceMode
 	- (void)screenStateUpdated; // isScreenOff
 	- (void)operationFailWithErrorCode:(MRErrCode)errCode; 
-	- (void)rawdataUpdated:(NSArray *_Nullable)data;
+	- (void)rawdataUpdated:(NSArray *_Nullable)data; // 只对某些版本开放
 
 ### 设备控制
 1. 调用 -[MRDevice switchToSleepMode] 来开启睡眠监测;
