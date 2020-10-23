@@ -63,31 +63,31 @@
                 [weakself.device switchToNormalModel];
                 break;
                 
-            case 8:
-                [weakself.device setRawdataEnabled:YES];
-                break;
+//            case 8:
+//                [weakself.device setRawdataEnabled:YES];
+//                break;
+//
+//            case 9:
+//                [weakself.device setRawdataEnabled:NO];
+//                break;
                 
-            case 9:
-                [weakself.device setRawdataEnabled:NO];
-                break;
-                
-            case 10: {
+            case 8: {
                 DeviceUpgradeViewController *upgrade = [[DeviceUpgradeViewController alloc] initWithDevice:weakself.device];
                 [weakself.navigationController pushViewController:upgrade animated:YES];
             }
                 break;
-            case 11: {
+            case 9: {
                 SyncDailyViewController *daily = [[SyncDailyViewController alloc] initWithDevice:weakself.device];
                 [weakself.navigationController pushViewController:daily animated:YES];
             }
                 break;
                 
-            case 12: {
+            case 10: {
                 [weakself.device switchToPulseMode];
             }
                 break;
                 
-            case 13: {
+            case 11: {
                 BOOL on = YES;
                 int seconds = 10;
                 int duration = 60 * 60 * 5;
@@ -96,7 +96,7 @@
             }
                 break;
                 
-            case 14: {
+            case 12: {
                 [weakself.device getMonitorTimer];
             }
                 break;
@@ -209,22 +209,22 @@
     NSLog(@"err:%d", errCode);
 }
 
-// 红光与红外光信号原始数据
-- (void)rawdataUpdated:(NSArray *)data {
-    NSMutableArray *strArr = [NSMutableArray new];
-    for (NSArray *item in data) {
-        if (item.count == 2) {
-            NSString *str = [NSString stringWithFormat:@"(%@ %@)", item.firstObject, item.lastObject];
-            [strArr addObject:str];
-        }
-    }
-    
-    if (strArr.count > 0) {
-        NSString *str = [strArr componentsJoinedByString:@", "];
-        [self.deviceManagerView.viewModel updateRawdata:str];
-        [self.deviceManagerView refreshView];
-    }
-}
+//// 红光与红外光信号原始数据
+//- (void)rawdataUpdated:(NSArray *)data {
+//    NSMutableArray *strArr = [NSMutableArray new];
+//    for (NSArray *item in data) {
+//        if (item.count == 2) {
+//            NSString *str = [NSString stringWithFormat:@"(%@ %@)", item.firstObject, item.lastObject];
+//            [strArr addObject:str];
+//        }
+//    }
+//
+//    if (strArr.count > 0) {
+//        NSString *str = [strArr componentsJoinedByString:@", "];
+//        [self.deviceManagerView.viewModel updateRawdata:str];
+//        [self.deviceManagerView refreshView];
+//    }
+//}
 
 - (void)didSetPeriodicMonitorState:(MRPeriodicMonitorState)state start:(NSString *)start duration:(int)duration repeat:(BOOL)repeat {
     NSLog(@"set perioidic state:%d repeat:%d start:%@ duration:%d", state, repeat, start, duration);

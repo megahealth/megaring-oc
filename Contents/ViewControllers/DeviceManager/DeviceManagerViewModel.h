@@ -40,7 +40,7 @@
 
 - (void)updateMonitorState;
 
-- (void)updateRawdata:(NSString *)data;
+//- (void)updateRawdata:(NSString *)data;
 
 
 /*

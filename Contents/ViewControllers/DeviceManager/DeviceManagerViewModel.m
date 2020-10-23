@@ -74,11 +74,11 @@
 //    cellModel2.title = self.device.isMonitorOn ? @"停止监测" : @"开始监测";
 }
 
-- (void)updateRawdata:(NSString *)data {
-    DeviceManagerViewCellModel    *cellModel = self.modelArr[1][4];
-    cellModel.detail = [NSString stringWithFormat:@"%@", data];
-    cellModel.isFresh = YES;
-}
+//- (void)updateRawdata:(NSString *)data {
+//    DeviceManagerViewCellModel    *cellModel = self.modelArr[1][4];
+//    cellModel.detail = [NSString stringWithFormat:@"%@", data];
+//    cellModel.isFresh = YES;
+//}
 
 
 - (void)reset {
@@ -144,7 +144,8 @@
     NSLocalizedString(MRBatteryStatus, nil),
     NSLocalizedString(MRMonitorStatus, nil),
     NSLocalizedString(MRLiveDataStatus, nil),
-    @"Rawdata"],
+//    @"Rawdata"
+  ],
   @[NSLocalizedString(MRConnectDevice, nil),
     NSLocalizedString(MREnableLiveData, nil),
     NSLocalizedString(MRDisableLiveData, nil),
@@ -153,8 +154,8 @@
     NSLocalizedString(MRStartSport, nil),
     NSLocalizedString(MRStartRealtime, nil),
     NSLocalizedString(MRStopMonitor, nil),
-    NSLocalizedString(MREnableRawdata, nil),
-    NSLocalizedString(MRDisableRawdata, nil),
+//    NSLocalizedString(MREnableRawdata, nil),
+//    NSLocalizedString(MRDisableRawdata, nil),
     NSLocalizedString(MRDeviceUpgrade, nil),
     NSLocalizedString(MRSteps, nil),
     NSLocalizedString(MRStartPulse, nil),
