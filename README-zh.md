@@ -54,7 +54,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 	- (void)deviceBatteryUpdated; // batState batValue
 	- (void)liveDataStateUpdated; // MRLiveDataState
 	- (void)monitorStateUpdated; // isMonitorOn
-	- (void)liveDataValueUpdated:(NSArray *)liveData; // [血氧,脉率,有效性,监测时长]
+	- (void)liveDataValueUpdated:(NSArray *)liveData; // [血氧,脉率,有效性,监测时长,accx,accy,accz]
 	- (void)deviceModeUpdated; // MRDeviceMode
 	- (void)screenStateUpdated; // isScreenOff
 	- (void)operationFailWithErrorCode:(MRErrCode)errCode; 
@@ -80,3 +80,18 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 1. 使用 MRDeviceUpgrader 类来升级固件;
 2. 连接设备后, 指定需要升级的设备 device 固件 firmware, 调用 -[MRDeviceUpgrader start] 开始升级;
 3. 实现 MRDeviceUpgraderDelegate 的方法来监听升级过程的状态和进度;
+
+### 佩戴检测
+* 可通过以下方法检测用户佩戴正确与否。
+	* 切换到实时模式 `-[MRDevice switchToRealtimeMode]`。
+	* 打开数据上报 `-[MRDevice startLiveData]`。
+	* 通过 `-(void)liveDataValueUpdated:(NSArray *)liveData` 实时获取 ACC 值。
+	* 引导用户摆出指定手势，若用户正确佩戴指环：四指向下时，accy > 0；手心向上时，accz > 0。
+
+
+
+
+
+
+
+

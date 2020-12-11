@@ -185,9 +185,9 @@
     [self.deviceManagerView refreshView];
 }
 
-// [血氧,脉率,有效性,监测时长]
+// [血氧,脉率,有效性,监测时长,accx,accy,accz]
 - (void)liveDataValueUpdated:(NSArray *)liveData {
-    NSString *liveDataStr = [NSString stringWithFormat:@"sp:%@, hr:%@, state:%@, duration:%@", liveData[0], liveData[1], liveData[2], liveData[3]];
+    NSString *liveDataStr = [NSString stringWithFormat:@"sp:%@, hr:%@, state:%@, duration:%@, accx:%@, accy:%@, accz:%@", liveData[0], liveData[1], liveData[2], liveData[3], liveData[4], liveData[5], liveData[6]];
     NSLog(@"live:%@", liveDataStr);
     [self.deviceManagerView.viewModel updateLiveDataValue:liveData];
     [self.deviceManagerView refreshView];

@@ -83,7 +83,7 @@ This are some methods that can help getting device's status in protocol `MRDevic
 
 - (void)monitorStateUpdated; // isMonitorOn
 
-- (void)liveDataValueUpdated:(NSArray *)liveData; // [SpO2, PR, state, duration]
+- (void)liveDataValueUpdated:(NSArray *)liveData; // [SpO2, PR, state, duration, accx, accy, accz]
 
 - (void)deviceModeUpdated; // MRDeviceMode
 
@@ -104,3 +104,11 @@ This are some methods that can help getting device's status in protocol `MRDevic
 1. Use class `MRDeviceUpgrader` to upgrade device's firmware.
 2. After device connected, assgin a firmware's absolute path to `-[MRDeviceUpgrader defaultInstance]`, then call `-[MRDeviceUpgrader start]` to start.
 3. Implement the functions in protocol `MRDeviceUpgraderDelegate` to observe the status of the upgrade.
+
+
+### Wearing Test
+* The method to detect whether the user wears it correctly or not.
+	* Switch to realtime mode `-[MRDevice switchToRealtimeMode]`.
+	* Enable data notifying `-[MRDevice startLiveData]`.
+	* Get acc values `-(void)liveDataValueUpdated:(NSArray *)liveData`.
+	* Guide user to pose the specified gestures. If the user wears the ring correctly: accy > 0 when fingers point to the ground; accz > 0 when Palms up.
