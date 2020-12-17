@@ -1,6 +1,6 @@
 [EN](./README.md) | 中文
 
-MegaRing SDK &amp; Demo for iOS in Objective-C
+MegaRing SDK & Demo for iOS in Objective-C
 
 为了更容易理解硬件和 SDK 的使用, 下面给出了指环的几个特征和 SDK 一些组件的说明;
 

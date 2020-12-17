@@ -52,13 +52,13 @@
 
 
 
-/*
- * 开关 rawdata
- * support MRDeviceMonitorModeDefault，MRDeviceMonitorModeSleep，MRDeviceMonitorModeSport，MRDeviceMonitorModePulse
- * deprecated 1.8.2
+/*!
+ * @discussion 开关 rawdata support MRDeviceMonitorModeDefault，MRDeviceMonitorModeSleep，MRDeviceMonitorModeSport，MRDeviceMonitorModePulse
+ * @updated deprecated in 1.8.2
+ * @updated restored in 1.8.4
  */
 
-//- (void)setRawdataEnabled:(BOOL)enabled;
+- (void)setRawdataEnabled:(BOOL)enabled;
 
 
 /*

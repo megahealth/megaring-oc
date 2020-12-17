@@ -90,7 +90,7 @@
     [self setViewActions];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MRCentralStateUpdated:) name:kMRCentralStateUpdatedNotification object:nil];
     
-    NSLog(@"SDK version:%s, algorithm:%d", MRFrameworkVersionString, kMRAlgorithmVersion);
+    NSLog(@"SDK version:%s algorithm:%d", MRFrameworkVersionString, kMRAlgorithmVersion);
 }
 
 - (void)viewWillAppear:(BOOL)animated {

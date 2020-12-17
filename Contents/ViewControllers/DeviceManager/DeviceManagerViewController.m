@@ -206,7 +206,7 @@
 }
 
 - (void)operationFailWithErrorCode:(MRErrCode)errCode {
-    NSLog(@"err:%d", errCode);
+    NSLog(@"err:%X", errCode);
 }
 
 //// 红光与红外光信号原始数据
