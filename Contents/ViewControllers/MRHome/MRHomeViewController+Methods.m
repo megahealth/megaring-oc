@@ -18,11 +18,11 @@
 
 
 - (void)testParseData {
-    NSString *dataName = @"m9bbznlznGkKvDTk5MlU86PbJR21doazpsWJhGve.bin";
+    NSString *dataName = @"data6-2";
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:dataName ofType:nil];
     
     NSData *data = [[NSData alloc] initWithContentsOfFile:dataPath];
-    [MRApi parseMonitorData:data mode:MRDeviceMonitorModeSleep completion:^(MRReport *report, NSError *error) {
+    [MRApi parseMonitorData:data completion:^(MRReport *report, NSError *error) {
         if (error) {
             NSLog(@"error:%@", error);
         } else {

@@ -112,11 +112,13 @@
 #pragma mark Delegate Methods - MRDeviceDelegate
 
 - (void)deviceDidUpdateConnectState {
+    NSLog(@"connected:%d", self.device.connectState);
     [self.deviceManagerView.viewModel reloadModel];
     [self.deviceManagerView refreshView];
 }
 
 - (void)deviceIsReady:(BOOL)isReady {
+    NSLog(@"ready:%d", isReady);
     [self.deviceManagerView.viewModel reloadModel];
     [self.deviceManagerView refreshView];
 }

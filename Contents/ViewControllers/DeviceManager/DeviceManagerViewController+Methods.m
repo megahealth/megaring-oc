@@ -41,7 +41,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
         NSLog(@"data:%@", data);
         if (data) {
-            [MRApi parseMonitorData:data mode:mode completion:^(MRReport *report, NSError *error) {
+            [MRApi parseMonitorData:data completion:^(MRReport *report, NSError *error) {
                 NSLog(@"start:%d", report.startTime);
                 NSLog(@"duration:%d", report.duration);
                 NSLog(@"avg:%.f, min:%.f", report.avgSp, report.minSp);

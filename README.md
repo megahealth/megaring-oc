@@ -97,7 +97,7 @@ This are some methods that can help getting device's status in protocol `MRDevic
 
 1. Call `-[MRDevice requestData:progress:finish:]` to get data from device. Call it again until the data is nil, which means there is no more data in it.
 
-2. Call `+[MRApi parseMonitorData:mode:completion:]` to parse data, you will receive a `MRReport` object.
+2. Call `+[MRApi parseMonitorData:completion:]` to parse data, you will receive a `MRReport` object.
 
 
 ### Device upgrade

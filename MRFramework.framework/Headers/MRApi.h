@@ -39,7 +39,7 @@ FOUNDATION_EXTERN int kMRAlgorithmVersion;
 + (void)setMRLogEnabled:(BOOL)isEnabled;
 
 // parse data to report;
-+ (void)parseMonitorData:(NSData *)data mode:(MRDeviceMonitorMode)mode completion:(void (^)(MRReport *report, NSError *error))completion;
++ (void)parseMonitorData:(NSData *)data completion:(void (^)(MRReport *report, NSError *error))completion;
 
 + (void)setDataUploadEnabled:(BOOL)isEnabled;
 

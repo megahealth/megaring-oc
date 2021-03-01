@@ -72,12 +72,12 @@
 
 - (void)monitorStateUpdated;
 
-/*
+/**
  * If call [MRDevice startLiveData] && monitor is on, an number array will received every second;
  * Format: [SpO2, PR, state, duration]
- * SpO2: oxygen saturation level
+ * SpO2 oxygen saturation level
  * PR: pulse rate
- * state: MRLiveDataState
+ * @see MRLiveDataState
  * duration: since monitor started
  */
 - (void)liveDataValueUpdated:(NSArray *_Nullable)liveData;

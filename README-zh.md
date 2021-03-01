@@ -74,7 +74,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 
 ### 数据处理
 1. 调用 -[MRDevice requestData:progress:finish:] 检查和收取设备中的数据, 建议重复调用此方法, 直至得到的 data 为空, 即设备中数据已被全部取出;
-2. 调用 +[MRApi parseMonitorData:mode:completion:] 解析数据, 生成 report;
+2. 调用 +[MRApi parseMonitorData:completion:] 解析数据, 生成 report;
 
 ### 固件升级
 1. 使用 MRDeviceUpgrader 类来升级固件;
