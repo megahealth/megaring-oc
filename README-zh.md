@@ -88,9 +88,9 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 	* 通过 `-(void)liveDataValueUpdated:(NSArray *)liveData` 实时获取 ACC 值。
 	* 引导用户摆出指定手势，若用户正确佩戴指环：四指向下时，accy > 0；手心向上时，accz > 0。
 
+### 推荐交互流程
 
-
-
+![流程图](./流程图.pdf)
 
 
 
