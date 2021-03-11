@@ -18,22 +18,16 @@
 
 
 - (void)testParseData {
-    NSString *dataName = @"data6-2";
+    NSString *dataName = @"data1-2";
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:dataName ofType:nil];
     
     NSData *data = [[NSData alloc] initWithContentsOfFile:dataPath];
     [MRApi parseMonitorData:data completion:^(MRReport *report, NSError *error) {
-        if (error) {
-            NSLog(@"error:%@", error);
-        } else {
-            NSLog(@"new style");
-            NSLog(@"start:%d, end:%d", report.startTime, report.originEnd);
-            NSLog(@"duration:%d", report.duration);
-            NSLog(@"avg:%f, min:%f", report.avgSp, report.minSp);
-            NSLog(@"max:%d, min:%d, avg:%d", report.maxPr, report.minPr, report.avgPr);
-            NSLog(@"%f, %d", report.odIndex, report.odCount);
-//            NSLog(@"sp:%@\npr:%@", report.spArr, report.prArr);
-        }
+        NSLog(@"user:%@, report type:%d", report.userId, report.reportType);
+        NSLog(@"start:%d, duration:%d", report.startTime, report.duration);
+        NSLog(@"sp avg:%.f, min:%.f", report.avgSp, report.minSp);
+        NSLog(@"pr max:%d, min:%d, avg:%d", report.maxPr, report.minPr, report.avgPr);
+        NSLog(@"sp:%lu\npr:%lu", (unsigned long)report.spArr.count, (unsigned long)report.prArr.count);
     }];
 }
 

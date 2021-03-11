@@ -70,10 +70,13 @@
 // sleep stages
 
 @property (nonatomic, strong) NSArray *stageArr;    // 分期数组 (sleep stages in minutes)
-@property (nonatomic, assign) int wakeMins;            // 清醒分钟 (total minutes of awake)
-@property (nonatomic, assign) int remMins;             // 眼动分钟 (total minutes of rapid eye movement)
-@property (nonatomic, assign) int lightMins;           // 浅睡分钟 (total minutes of light sleep)
-@property (nonatomic, assign) int deepMins;            // 深睡分钟 (total minutes of deep sleep)
+@property (nonatomic, assign) int wakeMins;         // 清醒分钟 (total minutes of awake)
+@property (nonatomic, assign) int remMins;          // 眼动分钟 (total minutes of rapid eye movement)
+@property (nonatomic, assign) int lightMins;        // 浅睡分钟 (total minutes of light sleep)
+@property (nonatomic, assign) int deepMins;         // 深睡分钟 (total minutes of deep sleep)
+
+@property (nonatomic, assign) int fallSleepMins;    // 入睡等待时长
+@property (nonatomic, assign) int wakeInSleepMins;  // 入睡后觉醒时长
 
 
 // ODI3 result
