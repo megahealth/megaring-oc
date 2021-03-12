@@ -46,7 +46,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
                 NSLog(@"start:%d, duration:%d", report.startTime, report.duration);
                 NSLog(@"sp avg:%.f, min:%.f", report.avgSp, report.minSp);
                 NSLog(@"pr max:%d, min:%d, avg:%d", report.maxPr, report.minPr, report.avgPr);
-                NSLog(@"sp:%lu\npr:%lu", (unsigned long)report.spArr.count, (unsigned long)report.prArr.count);
+                NSLog(@"sp len:%lu, pr len:%lu", (unsigned long)report.spArr.count, (unsigned long)report.prArr.count);
             }];
         }
     }];
