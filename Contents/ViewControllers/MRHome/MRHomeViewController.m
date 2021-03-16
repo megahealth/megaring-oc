@@ -34,8 +34,8 @@
 - (void)setViewActions {
     __weak typeof(self) weakself = self;
     self.homeView.selectAction = ^(NSIndexPath *indexPath) {
-        MRDevice	*device = weakself.homeView.viewModel.deviceArr[indexPath.row];
-        DeviceManagerViewController	*deviceVC = [[DeviceManagerViewController alloc] initWithDevice:device];
+        MRDevice    *device = weakself.homeView.viewModel.deviceArr[indexPath.row];
+        DeviceManagerViewController    *deviceVC = [[DeviceManagerViewController alloc] initWithDevice:device];
         [weakself.navigationController pushViewController:deviceVC animated:YES];
     };
 }
@@ -45,12 +45,12 @@
 #pragma mark Delegate Methods - MRConnecterDelegate
 
 - (void)connecter:(MRConnecter *)connecter didDiscoverDevice:(MRDevice *)device {
-    NSInteger	 index = [self.homeView.viewModel deviceDiscovered:device];
+    NSInteger     index = [self.homeView.viewModel deviceDiscovered:device];
     [self.homeView reloadTableAtIndex:index];
 }
 
 - (void)connecter:(MRConnecter *)connecter didUpdateDeviceConnectState:(MRDevice *)device {
-    NSInteger	 index = [self.homeView.viewModel updateOldDevice:device];
+    NSInteger     index = [self.homeView.viewModel updateOldDevice:device];
     [self.homeView reloadTableAtIndex:index];
 }
 
@@ -59,22 +59,23 @@
 #pragma mark Notification Methods - kMRCentralStateUpdatedNotification
 
 - (void)MRCentralStateUpdated:(NSNotification *)noti {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        BOOL     isCentralPowerOn = [MRConnecter defaultConnecter].isCentralPowerOn;
-        
-        [MRDefaultView showDefaultViewHidden:isCentralPowerOn];
-        
-        if (isCentralPowerOn) {
-            [self.homeView.viewModel resetModel];
-            [[MRConnecter defaultConnecter] startScanning];
-        } else {
-            [self.homeView.viewModel updateAllDevices];
-        }
-        [self.homeView.tableView reloadData];
-    });
+    BOOL     isCentralPowerOn = [MRConnecter defaultConnecter].isCentralPowerOn;
+    
+    [MRDefaultView showDefaultViewHidden:isCentralPowerOn];
+    
+    if (isCentralPowerOn) {
+        [self.homeView.viewModel resetModel];
+        [[MRConnecter defaultConnecter] startScanning];
+    } else {
+        [self.homeView.viewModel updateAllDevices];
+    }
+    [self.homeView.tableView reloadData];
 }
 
-
+- (void)deviceConnecteStateUpdated:(NSNotification *)noti {
+    MRDevice *device = noti.object;
+    NSLog(@"%@ connecte state: %d", device.name, device.connectState);
+}
 
 
 
@@ -89,6 +90,7 @@
     [MRConnecter defaultConnecter].delegate = self;
     [self setViewActions];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MRCentralStateUpdated:) name:kMRCentralStateUpdatedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceConnecteStateUpdated:) name:MRDeviceConnectStateUpdatedNotification object:nil];
     
     NSLog(@"SDK version:%s algorithm:%d", MRFrameworkVersionString, kMRAlgorithmVersion);
 }

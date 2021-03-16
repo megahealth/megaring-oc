@@ -18,7 +18,7 @@
 
 
 - (void)testParseData {
-    NSString *dataName = @"tempdata";
+    NSString *dataName = @"data-1";
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:dataName ofType:nil];
     
     NSData *data = [[NSData alloc] initWithContentsOfFile:dataPath];
@@ -28,11 +28,13 @@
         NSLog(@"sp avg:%.f, min:%.f", report.avgSp, report.minSp);
         NSLog(@"pr max:%d, min:%d, avg:%d", report.maxPr, report.minPr, report.avgPr);
         NSLog(@"sp len:%lu, pr len:%lu", (unsigned long)report.spArr.count, (unsigned long)report.prArr.count);
+        
+        NSLog(@"%@", [NSThread currentThread]);
     }];
 }
 
 - (void)testParseDaily {
-    NSString *dataFile = @"dailydata20200421";
+    NSString *dataFile = @"data";
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:dataFile ofType:nil];
     NSData *data = [NSData dataWithContentsOfFile:dataPath];
     

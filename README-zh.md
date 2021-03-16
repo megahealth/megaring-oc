@@ -29,7 +29,7 @@ MegaRing SDK & Demo for iOS in Objective-C
 ### 连接过程
 
 1. 注册通知 kMRCentralStateUpdatedNotification 可以观察系统蓝牙的状态; 设置 [MRConnecter defaultConnecter].delegate;
-2. 调用 -[MRConnecter startScanning] 开始时扫描设备, 确保设备电量充足并在可连接范围内;
+2. 调用 -[MRConnecter startScanning] 开始扫描设备, 确保设备电量充足并在可连接范围内;
 3. 实现 -[MRConnecterDelegate connecter:didDiscoverDevice:], 设备被搜索到时会调用此方法;
 4. 搜索到目标设备后调用 -[MRConnecter connectDevice:] 连接该设备;
 5. 实现 -[MRConnecterDelegate connecter:didUpdateDeviceConnectState:], 设备被连接后会调用此方法;

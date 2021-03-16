@@ -25,6 +25,7 @@
 
 
 FOUNDATION_EXPORT NSString *const kMRCentralStateUpdatedNotification;
+FOUNDATION_EXPORT NSNotificationName const MRDeviceConnectStateUpdatedNotification;
 FOUNDATION_EXTERN NSNotificationName const MRUpgradeStateUpdatedNotification;
 FOUNDATION_EXTERN NSNotificationName const MRUpgradeProgressUpdatedNotification;
 
