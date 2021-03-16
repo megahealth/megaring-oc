@@ -50,13 +50,14 @@
 }
 
 - (void)connecter:(MRConnecter *)connecter didUpdateDeviceConnectState:(MRDevice *)device {
+    NSLog(@"%@ connecte state: %d", device.name, device.connectState);
     NSInteger     index = [self.homeView.viewModel updateOldDevice:device];
     [self.homeView reloadTableAtIndex:index];
 }
 
 
 #pragma mark -
-#pragma mark Notification Methods - kMRCentralStateUpdatedNotification
+#pragma mark Notification Methods - kMRCentralStateUpdatedNotification, MRDeviceConnectStateUpdatedNotification
 
 - (void)MRCentralStateUpdated:(NSNotification *)noti {
     BOOL     isCentralPowerOn = [MRConnecter defaultConnecter].isCentralPowerOn;
@@ -74,7 +75,7 @@
 
 - (void)deviceConnecteStateUpdated:(NSNotification *)noti {
     MRDevice *device = noti.object;
-    NSLog(@"%@ connecte state: %d", device.name, device.connectState);
+    NSLog(@"%@ connecte state noti: %d", device.name, device.connectState);
 }
 
 
