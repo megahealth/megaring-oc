@@ -53,6 +53,12 @@
     NSLog(@"%@ connecte state: %d", device.name, device.connectState);
     NSInteger     index = [self.homeView.viewModel updateOldDevice:device];
     [self.homeView reloadTableAtIndex:index];
+    
+    for (DeviceManagerViewController *vc in self.navigationController.viewControllers) {
+        if ([vc isKindOfClass:[DeviceManagerViewController class]]) {
+            vc.device = device;
+        }
+    }
 }
 
 

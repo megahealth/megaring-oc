@@ -253,9 +253,13 @@
 - (instancetype)initWithDevice:(MRDevice *)device {
     if (self = [super init]) {
         self.device = device;
-        device.delegate = self;
     }
     return self;
+}
+
+- (void)setDevice:(MRDevice *)device {
+    _device = device;
+    device.delegate = self;
 }
 
 - (void)viewDidLoad {
