@@ -93,5 +93,8 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 ![流程图](./流程图.png)
 
 
+### 导入 Swift 工程
 
+将 framework 文件放入 Swift 工程，选择 Embed & Sign 即可。
+![](./Embed.png)
 

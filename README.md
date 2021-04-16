@@ -112,3 +112,10 @@ This are some methods that can help getting device's status in protocol `MRDevic
 	* Enable data notifying `-[MRDevice startLiveData]`.
 	* Get acc values `-(void)liveDataValueUpdated:(NSArray *)liveData`.
 	* Guide user to pose the specified gestures. If the user wears the ring correctly: accy > 0 when fingers point to the ground; accz > 0 when Palms up.
+
+
+### For Swift project
+
+You just need to put the ".framework" file into your project and select Embed & Sign.  
+![](./Embed.png)
+
