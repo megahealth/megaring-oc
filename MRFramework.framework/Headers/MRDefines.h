@@ -203,9 +203,9 @@ typedef NS_OPTIONS(Byte, MRPeriodicMonitorState) {
 
 typedef NS_ENUM(int, MRGLUModeInterval) {
     MRGLUModeIntervalOff,
-    MRGLUModeInterval5Mins,
-    MRGLUModeInterval10Mins,
-    MRGLUModeInterval15Mins,
+    MRGLUModeInterval1,
+    MRGLUModeInterval2,
+    MRGLUModeInterval3,
 };
 
 

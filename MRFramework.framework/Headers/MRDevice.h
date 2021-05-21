@@ -52,6 +52,8 @@
 
 @property (nonatomic, assign) MRDeviceMonitorMode monitorMode;
 
+@property (nonatomic, assign) MRGLUModeInterval gluInterval;
+
 @property (nonatomic, assign) int monitorDuration; // 监测时长;
 
 @property (nonatomic, assign, getter=isScreenOff) BOOL	 screenOff;
