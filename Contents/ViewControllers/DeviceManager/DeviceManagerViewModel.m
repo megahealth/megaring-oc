@@ -65,7 +65,7 @@
 - (void)updateMonitorState {
     DeviceManagerViewCellModel	*cellModel1 = self.modelArr[1][2];
     MRDeviceMonitorMode mode = self.device.monitorMode;
-    NSArray *stateStrArr = @[NSLocalizedString(MRMonitorSleep, nil), NSLocalizedString(MRMonitorSleep, nil), NSLocalizedString(MRMonitorSport, nil), NSLocalizedString(MRMonitorOff, nil), NSLocalizedString(MRMonitorRealtime, nil), NSLocalizedString(MRMonitorBloodPressure, nil), NSLocalizedString(MRMonitorPulse, nil)];
+    NSArray *stateStrArr = @[NSLocalizedString(MRMonitorOff, nil), NSLocalizedString(MRMonitorSleep, nil), NSLocalizedString(MRMonitorSport, nil), NSLocalizedString(MRMonitorOff, nil), NSLocalizedString(MRMonitorRealtime, nil), NSLocalizedString(MRMonitorBloodPressure, nil), NSLocalizedString(MRMonitorPulse, nil)];
     if (mode < stateStrArr.count && mode >= 0) {
         cellModel1.detail = stateStrArr[mode];
     }

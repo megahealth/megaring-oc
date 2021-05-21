@@ -2,18 +2,11 @@
 //  MRDeviceUpgrader.h
 //  MRFramework
 //
-//  Created by cheng cheng on 2019/10/23.
-//  Copyright © 2019 Superman. All rights reserved.
+//  Created by cheng cheng on 21/5/2021.
+//  Copyright © 2021 Superman. All rights reserved.
 //
 
-/*
- * 设备升级
- * 固件版本要和硬件相对应, 比如2代指环要使用 V2 固件;
- * 升级过程中需要断开重连, 请保持蓝牙开启;
- * 升级完成后设备自动断开;
- */
-
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "MRDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -36,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+
+
 @interface MRDeviceUpgrader : NSObject
 
 + (instancetype)defaultInstance;
@@ -54,7 +49,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)start;
 
 - (void)stop;
-
 
 @end
 

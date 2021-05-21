@@ -64,6 +64,7 @@ This text introduces the components of MRFramework, hoping to make it easier to 
 9. Call -[MRDevice setPeriodicMonitorOn:afterSeconds:duration:repeat:] to set periodic monitor, the paras are on/off, seconds between now and start time, monitor duration, is repeat everyday;
 
 10. Call -[MRDevice getMonitorTimer] to get current periodic monitor state;
+11. Call -[MRDevice setGLUMode:] to start GLU monitoring;
 
 
 ### Device status
@@ -96,6 +97,9 @@ This are some methods that can help getting device's status in protocol `MRDevic
 ### Data processing
 
 1. Call `-[MRDevice requestData:progress:finish:]` to get data from device. Call it again until the data is nil, which means there is no more data in it.
+	1. MRDataTypeMonitor, sport & sleep data
+	2. MRDataTypeDaily, daily data
+	3. MRDataTypeGLU, GLU data
 
 2. Call `+[MRApi parseMonitorData:completion:]` to parse data, you will receive a `MRReport` object.
 

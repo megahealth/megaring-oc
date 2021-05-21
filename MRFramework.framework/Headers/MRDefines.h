@@ -39,6 +39,7 @@ typedef NS_ENUM(Byte, MRCMD) {
     MRCMDDfuNoti                        = 0XD8,
     MRCMDSetPulseImp                    = 0XDB,         // 脉诊模式
     MRCMDPeriodicMonitor                = 0XD9,
+    MRCMDSetGLU                         = 0XDD,         // 血糖模式
     MRCMDSetTime                        = 0XE0,
     MRCMDReset                          = 0XE2,
     MRCMDSetUserInfo                    = 0XE3,
@@ -50,6 +51,7 @@ typedef NS_ENUM(Byte, MRCMD) {
     MRCMDGetScreenState                 = 0XEE,
     MRCMDMonitorDataDetail              = 0XEF,
     MRCMDDailyDataDetail                = 0XF1,
+    MRCMDGLUDataDetail                  = 0XFA,
     MRCMDCrashLog                       = 0XF3,
     MRCMDGetMonitorMode                 = 0XF6,
     MRCMDGetMonitorTimer                = 0XF8,
@@ -76,7 +78,7 @@ typedef NS_ENUM(Byte, MRBindResp) {
  * For now, device mode is either sleep or normal
  */
 typedef NS_ENUM(Byte, MRDeviceMonitorMode) {
-    MRDeviceMonitorModeDefault,         // 一代指环的睡眠监测模式
+    MRDeviceMonitorModeIdle,            // 空闲
     MRDeviceMonitorModeSleep,			// 睡眠模式, 血氧脉率监测
     MRDeviceMonitorModeSport,           // 运动模式, 心率监测
     MRDeviceMonitorModeNormal,			// 日常模式, 空闲
@@ -84,6 +86,7 @@ typedef NS_ENUM(Byte, MRDeviceMonitorMode) {
     MRDeviceMonitorModeBloodPresure,    // 血压模式
     MRDeviceMonitorModePulse,           // 脉诊仪模式
     MRDeviceMonitorModeHRV      = 0x08,
+    MRDeviceMonitorModeGLU      = 0x09, // 血糖模式
     MRDeviceMonitorModeNone     = 0x0f,
 };
 
@@ -99,6 +102,9 @@ typedef NS_ENUM(Byte, MRMonitorStopType) {
     MRMonitorStopLowPower,		// Low battery power
     MRMonitorStopCharge,		// charge when monitoring
     MRMonitorStopFlashErr,		// something wrong with flash
+    MRMonitorStopBQErr,
+    MRMonitorStopACCErr,
+    MRMonitorStopAFEErr,
 };
 
 
@@ -118,6 +124,7 @@ typedef NS_ENUM(NSInteger, MRDeviceType) {
 typedef NS_ENUM(Byte, MRDataType) {
     MRDataTypeMonitor                	= 0XEF,
     MRDataTypeDaily                   	= 0XF1,
+    MRDataTypeGLU                       = 0XFA,
 };
 
 
@@ -168,6 +175,7 @@ typedef NS_ENUM(int, MRUpgradeState) {
     MRUpgradeStateReconnected,
     MRUpgradeStateSendData,
     MRUpgradeStateFinish,
+    MRUpgradeStateSendCommand,
     MRUpgradeStateFail                 	= 0X0F,
 };
 
@@ -191,6 +199,13 @@ typedef NS_OPTIONS(Byte, MRPeriodicMonitorState) {
     MRPeriodicMonitorStateFree              = 0X01,
     MRPeriodicMonitorStateMonitoring        = 0X01 << 1,
     MRPeriodicMonitorStateHangOn            = 0X01 << 2,
+};
+
+typedef NS_ENUM(int, MRGLUModeInterval) {
+    MRGLUModeIntervalOff,
+    MRGLUModeInterval5Mins,
+    MRGLUModeInterval10Mins,
+    MRGLUModeInterval15Mins,
 };
 
 

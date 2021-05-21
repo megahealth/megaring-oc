@@ -47,6 +47,8 @@
 
 - (void)switchToPulseMode;      // 脉诊仪模式
 
+- (void)setGLUMode:(MRGLUModeInterval)interval;        // 血糖模式
+
 
 - (void)notiStartUpgrade;
 
@@ -64,7 +66,6 @@
 /*
  * 设置定时监测
  * 设备断开时，若处于定时监测时间段内，会自动开启监测
- * 设备连接时，定时监测不生效
  */
 
 - (void)setPeriodicMonitorOn:(BOOL)isOn afterSeconds:(int)seconds duration:(int)monitorDuration repeat:(BOOL)isRepeat;
