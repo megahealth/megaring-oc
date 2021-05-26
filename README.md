@@ -21,7 +21,7 @@ This text introduces the components of MRFramework, hoping to make it easier to 
 
 5. Implement method `-[MRConnecterDelegate connecter:didUpdateDeviceConnectState:]`, The method will be called once a device is connected.
 
-6. Then call `-[MRConnecter stopScanning]` to stop scanning.
+6. Then call `-[MRConnecter stopScanning]` to stop scanning. Or set `autoStopScanning = true` to automatically stop scanning after connecting the device.
 
 
 

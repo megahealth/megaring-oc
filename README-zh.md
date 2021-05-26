@@ -33,7 +33,7 @@ MegaRing SDK & Demo for iOS in Objective-C
 3. 实现 -[MRConnecterDelegate connecter:didDiscoverDevice:], 设备被搜索到时会调用此方法;
 4. 搜索到目标设备后调用 -[MRConnecter connectDevice:] 连接该设备;
 5. 实现 -[MRConnecterDelegate connecter:didUpdateDeviceConnectState:], 设备被连接后会调用此方法;
-6. 连接完成后调用 -[MRConnecter stopScanning] 停止扫描;
+6. 调用 -[MRConnecter stopScanning] 停止扫描，或者通过设置 `autoStopScanning = true` 在连接设备后自动终止扫描;
 
 
 ### 绑定过程

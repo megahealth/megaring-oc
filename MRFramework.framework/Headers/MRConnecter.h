@@ -20,6 +20,10 @@
 
 @property (nonatomic, assign) BOOL	 isCentralPowerOn;
 
+
+// Stop scanning after device is connected automatically.
+@property (nonatomic, assign) BOOL   autoStopScanning;
+
 @property (nonatomic, weak) id<MRConnecterDelegate>	 delegate;
 
 
