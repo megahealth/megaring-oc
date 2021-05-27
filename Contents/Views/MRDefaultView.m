@@ -20,12 +20,12 @@
     return defaultView;
 }
 
-+ (void)showDefaultViewHidden:(BOOL)isHidden {
++ (void)showDefaultView:(BOOL)show {
     UIWindow	*window = [UIApplication sharedApplication].keyWindow;
-    if (isHidden) {
-        [[self defaultView] removeFromSuperview];
-    } else {
+    if (show) {
         [window addSubview:[self defaultView]];
+    } else {
+        [[self defaultView] removeFromSuperview];
     }
 }
 

@@ -33,8 +33,6 @@
 
 
 
-
-
 /*
  * default is NO;
  * if a nonull value is set to RSSIFilter, the value of isRSSIFilterOn would turn YES immediately;
@@ -43,15 +41,31 @@
 
 @property (nonatomic, strong) NSNumber	*RSSIFilter;
 
-
-
-
 - (void)connectDevice:(MRDevice *)device;
 
 - (void)disconnectDevice:(MRDevice *)device;
 
 
+@end
 
 
+
+
+
+@class CBPeripheral;
+
+@interface MRConnecter (MRCustomConnecter)
+
+@property (nonatomic, strong) CBCentralManager    *customCentral;
+
+- (void)centralManagerDidUpdateState:(CBCentralManager *)central;
+
+- (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *,id> *)advertisementData RSSI:(NSNumber *)RSSI;
+
+- (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral;
+
+- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;
+
+- (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;
 
 @end

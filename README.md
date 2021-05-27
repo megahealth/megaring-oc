@@ -66,6 +66,7 @@ This text introduces the components of MRFramework, hoping to make it easier to 
 10. Call -[MRDevice getMonitorTimer] to get current periodic monitor state;
 
 
+
 ### Device status
 
 This are some methods that can help getting device's status in protocol `MRDeviceDelegate`:

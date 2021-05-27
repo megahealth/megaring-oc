@@ -7,11 +7,8 @@
 //
 
 
-#ifdef DEBUG
 #    define MRLog(FORMAT, ...)    NSLog(@"#MRLog# "FORMAT, ##__VA_ARGS__)
-#else
-#    define MRLog(FORMAT, ...)
-#endif
+
 
 
 

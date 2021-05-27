@@ -36,7 +36,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 
 // 收取数据并解析
 - (void)requestReportData {
-    [self.device requestData:MRDataTypeMonitor progress:^(float progress) {
+    [self.device requestData:MRDataTypeGLU progress:^(float progress) {
         NSLog(@"progress:%.4f", progress);
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
         NSLog(@"data:%@", data);
@@ -53,9 +53,9 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 }
 
 - (void)changeUserAlert {
-    NSString    *message = [NSString stringWithFormat:@"设备%@已有绑定用户,是否要继续更改用户?", self.device.mac];
-    UIAlertController    *alert = [UIAlertController alertControllerWithTitle:@"更改用户" message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction    *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    NSString	*message = [NSString stringWithFormat:@"设备%@已有绑定用户,是否要继续更改用户?", self.device.mac];
+    UIAlertController	*alert = [UIAlertController alertControllerWithTitle:@"更改用户" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction	*cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self.device confirmChangingUser:NO];
     }];
     UIAlertAction    *confirmAction = [UIAlertAction actionWithTitle:@"继续" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -77,8 +77,8 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 }
 
 - (void)showAlertWithTitle:(NSString *)title dissmissAfterDelay:(NSTimeInterval)delay {
-    UIAlertController    *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction    *confirmAction = [UIAlertAction actionWithTitle:NSLocalizedString(MRConfirmOption, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertController	*alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction	*confirmAction = [UIAlertAction actionWithTitle:NSLocalizedString(MRConfirmOption, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self dismissAlert:alert];
     }];
     [alert addAction:confirmAction];

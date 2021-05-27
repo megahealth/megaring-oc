@@ -14,7 +14,7 @@ IB_DESIGNABLE
 
 + (instancetype)defaultView;
 
-+ (void)showDefaultViewHidden:(BOOL)isHidden;
++ (void)showDefaultView:(BOOL)show;
 
 
 @end

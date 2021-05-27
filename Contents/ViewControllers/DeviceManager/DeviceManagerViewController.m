@@ -88,10 +88,10 @@
                 break;
                 
             case 11: {
-                BOOL on = YES;
-                int seconds = 10;
+                BOOL on = NO;
+                int seconds = 60;
                 int duration = 60 * 60 * 5;
-                BOOL repeat = NO;
+                BOOL repeat = YES;
                 [weakself.device setPeriodicMonitorOn:on afterSeconds:seconds duration:duration repeat:repeat];
             }
                 break;
@@ -240,11 +240,7 @@
 #pragma mark -
 #pragma mark Notification Methods - kMRCentralStateUpdatedNotification
 
-- (void)MRCentralStateUpdated:(NSNotification *)noti {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.navigationController popViewControllerAnimated:YES];
-    });
-}
+- (void)MRCentralStateUpdated:(NSNotification *)noti {}
 
 
 #pragma mark -

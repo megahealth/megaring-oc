@@ -15,8 +15,15 @@
 #import "DeviceManagerViewController.h"
 #import "MRIndicatorView.h"
 #import "MRDefaultView.h"
+#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface MRHomeViewController () <MRConnecterDelegate>
+
+@interface MRHomeViewController () <MRConnecterDelegate, CBCentralManagerDelegate>
+
+@property (nonatomic, assign) BOOL usingCustomConnecter;
+
+@property (nonatomic, strong) CBCentralManager *central;
+
 
 @end
 
@@ -34,8 +41,8 @@
 - (void)setViewActions {
     __weak typeof(self) weakself = self;
     self.homeView.selectAction = ^(NSIndexPath *indexPath) {
-        MRDevice    *device = weakself.homeView.viewModel.deviceArr[indexPath.row];
-        DeviceManagerViewController    *deviceVC = [[DeviceManagerViewController alloc] initWithDevice:device];
+        MRDevice	*device = weakself.homeView.viewModel.deviceArr[indexPath.row];
+        DeviceManagerViewController	*deviceVC = [[DeviceManagerViewController alloc] initWithDevice:device];
         [weakself.navigationController pushViewController:deviceVC animated:YES];
     };
 }
@@ -45,13 +52,12 @@
 #pragma mark Delegate Methods - MRConnecterDelegate
 
 - (void)connecter:(MRConnecter *)connecter didDiscoverDevice:(MRDevice *)device {
-    NSInteger     index = [self.homeView.viewModel deviceDiscovered:device];
+    NSInteger	 index = [self.homeView.viewModel deviceDiscovered:device];
     [self.homeView reloadTableAtIndex:index];
 }
 
 - (void)connecter:(MRConnecter *)connecter didUpdateDeviceConnectState:(MRDevice *)device {
-    NSLog(@"%@ connecte state: %d", device.name, device.connectState);
-    NSInteger     index = [self.homeView.viewModel updateOldDevice:device];
+    NSInteger	 index = [self.homeView.viewModel updateOldDevice:device];
     [self.homeView reloadTableAtIndex:index];
     
     for (DeviceManagerViewController *vc in self.navigationController.viewControllers) {
@@ -63,12 +69,38 @@
 
 
 #pragma mark -
-#pragma mark Notification Methods - kMRCentralStateUpdatedNotification, MRDeviceConnectStateUpdatedNotification
+#pragma mark Delegate Methods - CBCentralManagerDelegate
+
+- (void)centralManagerDidUpdateState:(CBCentralManager *)central {
+    [[MRConnecter defaultConnecter] centralManagerDidUpdateState:central];
+}
+
+- (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *,id> *)advertisementData RSSI:(NSNumber *)RSSI {
+    [[MRConnecter defaultConnecter] centralManager:central didDiscoverPeripheral:peripheral advertisementData:advertisementData RSSI:RSSI];
+}
+
+- (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
+    [[MRConnecter defaultConnecter] centralManager:central didConnectPeripheral:peripheral];
+}
+
+- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+    [[MRConnecter defaultConnecter] centralManager:central didDisconnectPeripheral:peripheral error:error];
+}
+
+- (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+    [[MRConnecter defaultConnecter] centralManager:central didFailToConnectPeripheral:peripheral error:error];
+}
+
+
+
+
+#pragma mark -
+#pragma mark Notification Methods - kMRCentralStateUpdatedNotification
 
 - (void)MRCentralStateUpdated:(NSNotification *)noti {
     BOOL     isCentralPowerOn = [MRConnecter defaultConnecter].isCentralPowerOn;
     
-    [MRDefaultView showDefaultViewHidden:isCentralPowerOn];
+    [MRDefaultView showDefaultView:isCentralPowerOn == NO];
     
     if (isCentralPowerOn) {
         [self.homeView.viewModel resetModel];
@@ -81,7 +113,7 @@
 
 - (void)deviceConnecteStateUpdated:(NSNotification *)noti {
     MRDevice *device = noti.object;
-    NSLog(@"%@ connecte state noti: %d", device.name, device.connectState);
+    NSLog(@"%@ connecte state: %d", device.name, device.connectState);
 }
 
 
@@ -94,7 +126,19 @@
     [super viewDidLoad];
 //    [self setUp];
     self.homeView.viewModel = [[MRHomeViewModel alloc] init];
+    
+    self.usingCustomConnecter = YES;
+    if (self.usingCustomConnecter) {
+        dispatch_queue_t     queue = dispatch_queue_create("CustomConnecterQueue", NULL);
+        NSDictionary    *options = @{CBCentralManagerOptionShowPowerAlertKey:@NO};
+        self.central = [[CBCentralManager alloc] initWithDelegate:self queue:queue options:options];
+        [MRConnecter defaultConnecter].customCentral = self.central;
+        [MRConnecter defaultConnecter].autoStopScanning = YES;
+    }
+    
     [MRConnecter defaultConnecter].delegate = self;
+    
+    
     [self setViewActions];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MRCentralStateUpdated:) name:kMRCentralStateUpdatedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceConnecteStateUpdated:) name:MRDeviceConnectStateUpdatedNotification object:nil];
