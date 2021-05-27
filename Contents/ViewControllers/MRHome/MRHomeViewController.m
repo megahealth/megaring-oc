@@ -133,10 +133,10 @@
         NSDictionary    *options = @{CBCentralManagerOptionShowPowerAlertKey:@NO};
         self.central = [[CBCentralManager alloc] initWithDelegate:self queue:queue options:options];
         [MRConnecter defaultConnecter].customCentral = self.central;
-        [MRConnecter defaultConnecter].autoStopScanning = YES;
     }
     
     [MRConnecter defaultConnecter].delegate = self;
+    [MRConnecter defaultConnecter].autoStopScanning = YES;
     
     
     [self setViewActions];
