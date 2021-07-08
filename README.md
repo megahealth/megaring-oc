@@ -118,7 +118,7 @@ This are some methods that can help getting device's status in protocol `MRDevic
 
 ### Recommended Workflow
 
-![Workflow](./Recommended Workflow.png)
+![Workflow](./RecommendedWorkflow.png)
 
 
 

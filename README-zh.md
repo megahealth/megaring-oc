@@ -92,7 +92,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 
 ### 推荐交互流程
 
-![流程图](./Recommended Workflow-zh.png)
+![流程图](./RecommendedWorkflow-zh.png)
 
 
 ### 导入 Swift 工程
