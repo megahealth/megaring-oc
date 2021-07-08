@@ -36,7 +36,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 
 // 收取数据并解析
 - (void)requestReportData {
-    [self.device requestData:MRDataTypeGLU progress:^(float progress) {
+    [self.device requestData:MRDataTypeMonitor progress:^(float progress) {
         NSLog(@"progress:%.4f", progress);
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
         NSLog(@"data:%@", data);

@@ -116,6 +116,11 @@ This are some methods that can help getting device's status in protocol `MRDevic
 	* Get acc values `-(void)liveDataValueUpdated:(NSArray *)liveData`.
 	* Guide user to pose the specified gestures. If the user wears the ring correctly: accy > 0 when fingers point to the ground; accz > 0 when Palms up.
 
+### Recommended Workflow
+
+![Workflow](./Recommended Workflow.png)
+
+
 
 ### For Swift project
 

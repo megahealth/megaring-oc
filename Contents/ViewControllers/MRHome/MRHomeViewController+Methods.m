@@ -18,7 +18,7 @@
 
 
 - (void)testParseData {
-    NSString *dataName = @"data1-6";
+    NSString *dataName = @"64data.bin";
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:dataName ofType:nil];
     
     NSData *data = [[NSData alloc] initWithContentsOfFile:dataPath];
