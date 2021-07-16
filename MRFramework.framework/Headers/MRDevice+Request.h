@@ -49,6 +49,7 @@
 
 - (void)setGLUMode:(MRGLUModeInterval)interval;        // 血糖模式
 
+- (void)switchToBPMode;
 
 - (void)notiStartUpgrade;
 

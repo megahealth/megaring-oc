@@ -21,7 +21,7 @@
 @property (nonatomic, assign) BOOL	 isCentralPowerOn;
 
 
-// Stop scanning after device is connected automatically.
+// Stop scanning automatically after device is connected.
 @property (nonatomic, assign) BOOL   autoStopScanning;
 
 @property (nonatomic, weak) id<MRConnecterDelegate>	 delegate;
@@ -67,5 +67,8 @@
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;
+
+- (MRDevice *)deviceWithPeripheral:(CBPeripheral *)peripheral adData:(NSDictionary *)adData RSSI:(NSNumber *)RSSI;
+
 
 @end

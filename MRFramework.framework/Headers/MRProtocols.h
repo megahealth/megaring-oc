@@ -34,7 +34,7 @@
 
 @protocol MRDeviceDelegate <NSObject>
 
-@optional
+@required
 
 // Device connect state updated
 - (void)deviceDidUpdateConnectState;
@@ -61,8 +61,12 @@
  * User physical signs which may affect final report
  * Format: [age, gender, height, weight], 0 for female, 1 for male
  */
-- (NSArray *_Nonnull)bindUserInfo;
 
+
+@optional
+
+
+- (NSArray *_Nonnull)bindUserInfo;
 
 - (void)deviceInfoUpdated;
 

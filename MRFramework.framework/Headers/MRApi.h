@@ -28,6 +28,8 @@ FOUNDATION_EXTERN NSNotificationName const MRUpgradeProgressUpdatedNotification;
 
 FOUNDATION_EXTERN int kMRAlgorithmVersion;
 
+FOUNDATION_EXTERN NSString *kMRFrameworkVersion;
+
 
 @interface MRApi : NSObject
 
