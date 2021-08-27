@@ -13,7 +13,7 @@
 
 
 
-@class MRDevice, MRConnecter;
+@class MRDevice, MRConnecter, MRRawData;
 
 
 @protocol MRConnecterDelegate <NSObject>
@@ -94,7 +94,7 @@
 
 - (void)operationFailWithErrorCode:(MRErrCode)errCode;
 
-- (void)rawdataUpdated:(NSArray *_Nullable)data;
+- (void)rawdataUpdated:(NSArray<MRRawData *> *_Nonnull)arr;
 
 - (void)didSetPeriodicMonitorState:(MRPeriodicMonitorState)state start:(NSString *_Nullable)start duration:(int)duration repeat:(BOOL)repeat;
 

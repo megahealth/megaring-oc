@@ -15,6 +15,7 @@
 #import <MRFramework/MRDevice+Request.h>
 #import <MRFramework/MRReport.h>
 #import <MRFramework/MRDeviceUpgrader.h>
+#import <MRFramework/MRRawData.h>
 
 
 //! Project version number for MRFramework.

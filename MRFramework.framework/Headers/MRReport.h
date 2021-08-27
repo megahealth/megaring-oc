@@ -10,6 +10,13 @@
 #import "MRDefines.h"
 
 
+@interface MRSpo2Event : NSObject
+
+@property (assign) int startTime;
+@property (assign) int duration;
+
+@end
+
 @interface MRReport : NSObject
 
 @property (nonatomic, copy) NSString *platform;     // iOS
@@ -31,8 +38,8 @@
 @property (nonatomic, assign) int startTime;		// 算法得出的监测开启时间 (timestamp of start by algorithm)
 @property (nonatomic, assign) int duration;			// 监测时长 (monitor duration)
 
-@property (nonatomic, strong) NSArray *spArr;		// 血氧饱和度数组, 每秒一个值 (SpO2 value every second)
-@property (nonatomic, strong) NSArray *prArr;		// 脉率数组, 每秒一个值 (PR value every second)
+@property (nonatomic, strong) NSArray <NSNumber *>*spArr;		// 血氧饱和度数组, 每秒一个值 (SpO2 value every second)
+@property (nonatomic, strong) NSArray <NSNumber *>*prArr;		// 脉率数组, 每秒一个值 (PR value every second)
 @property (nonatomic, strong) NSArray *handoffArr;	// 离手数组, 子数组包含每次离手的始末时间
 
 @property (nonatomic, copy) NSString *errInfo;		// 错误信息
@@ -169,6 +176,11 @@
 @property (nonatomic, assign) float ODI4Less60sPercent;
 @property (nonatomic, assign) float ODI4Longer60sPercent;
 
+///
+/// 氧减事件随时间的分布
+///
+@property (nonatomic, strong) NSArray <MRSpo2Event *> *spo2Events3;
+@property (nonatomic, strong) NSArray <MRSpo2Event *> *spo2Events4;
 
 @end
 
