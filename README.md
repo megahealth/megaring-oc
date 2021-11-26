@@ -65,6 +65,10 @@ This text introduces the components of MRFramework, hoping to make it easier to 
 
 10. Call -[MRDevice getMonitorTimer] to get current periodic monitor state;
 
+11. Call -[MRDevice clearCache] to clear ring's monitor data if you don't want it. Software with version 11312 or less is not supported.
+
+12. Call -[MRDevice switchToBPMode] to measure blood pressure, see  DeviceManagerViewController.m.
+
 
 
 ### Device status
@@ -91,6 +95,10 @@ This are some methods that can help getting device's status in protocol `MRDevic
 - (void)screenStateUpdated; // isScreenOff
 
 - (void)operationFailWithErrorCode:(MRErrCode)errCode; 
+
+- (void)rawdataUpdated:(NSArray *_Nullable)data; 
+
+- (void)bpDataUpdated:(NSData *)data // receive blood pressure data
 ```
 
 
@@ -101,6 +109,10 @@ This are some methods that can help getting device's status in protocol `MRDevic
 	2. MRDataTypeDaily, daily data
 
 2. Call `+[MRApi parseMonitorData:completion:]` to parse data, you will receive a `MRReport` object.
+
+3. Call `+[MRApi parseBPData:time:caliSBP:caliDBP:block:]` to parse blood pressure data.
+
+4. Call +[MRApi parseDaily:data] to parse daily data, then you'll get temperature data, only valid duration sleep monitoring;
 
 
 ### Device upgrade

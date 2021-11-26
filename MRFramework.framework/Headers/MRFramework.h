@@ -14,6 +14,8 @@
 #import <MRFramework/MRDevice.h>
 #import <MRFramework/MRDevice+Request.h>
 #import <MRFramework/MRReport.h>
+#import <MRFramework/MRBPReport.h>
+#import <MRFramework/MRDailyReport.h>
 #import <MRFramework/MRDeviceUpgrader.h>
 #import <MRFramework/MRRawData.h>
 

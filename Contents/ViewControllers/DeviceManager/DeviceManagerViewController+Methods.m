@@ -52,6 +52,18 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     }];
 }
 
+- (void)requestDailyData {
+    [self.device requestData:MRDataTypeDaily progress:^(float progress) {
+        NSLog(@"progress:%.4f", progress);
+    } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
+        NSLog(@"data:%@", data);
+        if (data) {
+            NSArray *dailyReports = [MRApi parseDaily:data];
+            NSLog(@"%@", dailyReports);
+        }
+    }];
+}
+
 - (void)changeUserAlert {
     NSString	*message = [NSString stringWithFormat:@"设备%@已有绑定用户,是否要继续更改用户?", self.device.mac];
     UIAlertController	*alert = [UIAlertController alertControllerWithTitle:@"更改用户" message:message preferredStyle:UIAlertControllerStyleAlert];

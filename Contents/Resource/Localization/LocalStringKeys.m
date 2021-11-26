@@ -71,3 +71,5 @@ NSString *const MRSteps = @"MRSteps";
 NSString *const MRGetSteps = @"MRGetSteps";
 NSString *const MRSetPeriodicMonitor = @"MRSetPeriodicMonitor";
 NSString *const MRGetPeriodicMonitor = @"MRGetPeriodicMonitor";
+NSString *const MRStartBPMonitor = @"MRStartBPMonitor";
+NSString *const MRSyncDailyData = @"MRSyncDailyData";

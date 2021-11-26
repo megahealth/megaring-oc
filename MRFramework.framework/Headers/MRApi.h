@@ -19,6 +19,8 @@
 
 
 @class MRReport;
+@class MRBPReport;
+@class MRDailyReport;
 
 
 FOUNDATION_EXPORT NSString *const kMRCentralStateUpdatedNotification;
@@ -40,6 +42,10 @@ FOUNDATION_EXTERN NSString *kMRFrameworkVersion;
 
 // parse data to report;
 + (void)parseMonitorData:(NSData *)data completion:(void (^)(MRReport *report, NSError *error))completion;
+
++ (void)parseBPData:(NSData *)data time:(int)time caliSBP:(double)caliSBP caliDBP:(double)caliDBP block:(void (^)(MRBPReport *report, NSError *error))completion;
+
++ (NSArray<MRDailyReport *> *)parseDaily:(NSData *)data;
 
 + (void)setDataUploadEnabled:(BOOL)isEnabled;
 

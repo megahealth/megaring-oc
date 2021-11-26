@@ -160,13 +160,15 @@
     NSLocalizedString(MRSteps, nil),
     NSLocalizedString(MRStartPulse, nil),
     NSLocalizedString(MRSetPeriodicMonitor, nil),
-    NSLocalizedString(MRGetPeriodicMonitor, nil)]];
+    NSLocalizedString(MRGetPeriodicMonitor, nil),
+    NSLocalizedString(MRStartBPMonitor, nil),
+    NSLocalizedString(MRSyncDailyData, nil)]];
 }
 
 - (NSArray *)defaultCellModelDetailArr {
     NSString    *mac = self.device.mac ?: @"";
     NSString    *sn = self.device.sn ?: @"";
-    return @[@[mac, sn, @""], @[NSLocalizedString(MRDisconnected, nil), @"", @"", @"", @"", @""], @[@"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @""]];
+    return @[@[mac, sn, @""], @[NSLocalizedString(MRDisconnected, nil), @"", @"", @"", @"", @""], @[@"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @""]];
 }
 
 - (NSArray *)batStateDescriptionArr {

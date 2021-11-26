@@ -20,6 +20,8 @@
 
 - (void)requestReportData;
 
+- (void)requestDailyData;
+
 - (void)changeUserAlert;
 
 - (void)saveBindToken:(NSString *)token;

@@ -71,3 +71,6 @@ extern NSString *const MRSteps;
 extern NSString *const MRGetSteps;
 extern NSString *const MRSetPeriodicMonitor;
 extern NSString *const MRGetPeriodicMonitor;
+extern NSString *const MRStartBPMonitor;
+extern NSString *const MRSyncDailyData;
+

@@ -59,6 +59,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 	- (void)screenStateUpdated; // isScreenOff
 	- (void)operationFailWithErrorCode:(MRErrCode)errCode; 
 	- (void)rawdataUpdated:(NSArray *_Nullable)data; // 只对某些版本开放
+	- (void)bpDataUpdated:(NSData *)data // 接收血压测量数据
 
 ### 设备控制
 1. 调用 -[MRDevice switchToSleepMode] 来开启睡眠监测;
@@ -71,12 +72,16 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 8. 调用 -[MRDevice setRawdataEnabled:] 开关原始数据上报，目前支持睡眠，运动，脉诊仪几种模式;
 9. 调用 -[MRDevice setPeriodicMonitorOn:afterSeconds:duration:repeat:] 来设置定时监测，参数分别为开/关，开始时间距离现在的秒数，监测持续时长，是否每天重复;
 10. 调用 -[MRDevice getMonitorTimer] 来获取定时监测的状态;
+11. 调用 -[MRDevice clearCache] 清除指环中的监测数据，版本在11312及以下的固件不支持此功能。
+12. 调用 -[MRDevice switchToBPMode] 测量血压，见 DeviceManagerViewController.m。
 
 ### 数据处理
 1. 调用 -[MRDevice requestData:progress:finish:] 检查和收取设备中的数据, 建议重复调用此方法, 直至得到的 data 为空, 即设备中数据已被全部取出;
 	1. MRDataTypeMonitor 运动、睡眠监测数据
 	2. MRDataTypeDaily 日常监测数据
 2. 调用 +[MRApi parseMonitorData:completion:] 解析数据, 生成 report;
+3. 调用 +[MRApi parseBPData:time:caliSBP:caliDBP:block:] 解析血压数据, 生成血压测量报告;
+4. 调用 +[MRApi parseDaily:data] 解析日常数据，获得体温等数据，只在睡眠监测期间有温度数据;
 
 ### 固件升级
 1. 使用 MRDeviceUpgrader 类来升级固件;

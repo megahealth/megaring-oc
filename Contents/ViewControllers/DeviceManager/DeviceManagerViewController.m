@@ -20,6 +20,9 @@
 
 @interface DeviceManagerViewController () <MRDeviceDelegate>
 
+@property (nonatomic, strong) NSMutableData *bpData;
+@property (nonatomic, strong) NSDate *bpStart;
+
 @end
 
 @implementation DeviceManagerViewController
@@ -98,6 +101,18 @@
                 
             case 12: {
                 [weakself.device getMonitorTimer];
+            }
+                break;
+                
+            case 13: {
+                [weakself.device switchToBPMode];
+                weakself.bpData = [NSMutableData new];
+                weakself.bpStart = [NSDate date];
+            }
+                break;
+                
+            case 14: {
+                [weakself requestDailyData];
             }
                 break;
                 
@@ -211,22 +226,9 @@
     NSLog(@"err:%X", errCode);
 }
 
-//// 红光与红外光信号原始数据
-//- (void)rawdataUpdated:(NSArray *)data {
-//    NSMutableArray *strArr = [NSMutableArray new];
-//    for (NSArray *item in data) {
-//        if (item.count == 2) {
-//            NSString *str = [NSString stringWithFormat:@"(%@ %@)", item.firstObject, item.lastObject];
-//            [strArr addObject:str];
-//        }
-//    }
-//
-//    if (strArr.count > 0) {
-//        NSString *str = [strArr componentsJoinedByString:@", "];
-//        [self.deviceManagerView.viewModel updateRawdata:str];
-//        [self.deviceManagerView refreshView];
-//    }
-//}
+- (void)rawdataUpdated:(NSArray<MRRawData *> *)arr {
+    NSLog(@"%@", arr);
+}
 
 - (void)didSetPeriodicMonitorState:(MRPeriodicMonitorState)state start:(NSString *)start duration:(int)duration repeat:(BOOL)repeat {
     NSLog(@"set perioidic state:%d repeat:%d start:%@ duration:%d", state, repeat, start, duration);
@@ -234,6 +236,27 @@
 
 - (void)didGetPeriodicMonitorState:(MRPeriodicMonitorState)state start:(NSString *)start duration:(int)duration repeat:(BOOL)repeat {
     NSLog(@"get perioidic state:%d repeat:%d start:%@ duration:%d", state, repeat, start, duration);
+}
+
+/// data of blood pressure
+- (void)bpDataUpdated:(NSData *)data {
+    [self.bpData appendData:data];
+    NSInteger duration = self.bpData.length / data.length / 10;
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    [fmt setDateFormat:@"HHmm"];
+    int time = [[fmt stringFromDate:self.bpStart] intValue];
+    [MRApi parseBPData:self.bpData time:time caliSBP:120 caliDBP:80 block:^(MRBPReport *report, NSError *error) {
+        NSLog(@"sbp:%.1f, dbp:%.1f, flag:%d", report.SBP, report.DBP, report.flag);
+        BOOL finish = report.flag == 1;
+        BOOL failure = report.flag == 2 || duration >= 60;  // failed or timeout
+        if (finish || failure) {
+            [self stopBPMode];
+        }
+    }];
+}
+
+- (void)stopBPMode {
+    [self.device switchToNormalModel];
 }
 
 

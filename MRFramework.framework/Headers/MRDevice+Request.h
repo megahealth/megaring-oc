@@ -73,5 +73,10 @@
 
 - (void)getMonitorTimer;
 
+// Added by chengxr, 28/09/2021
+// Software with version 11312 or less is not supported.
+- (void)clearCache;
+
+
 
 @end

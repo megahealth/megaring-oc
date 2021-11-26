@@ -55,6 +55,7 @@ typedef NS_ENUM(Byte, MRCMD) {
     MRCMDCrashLog                       = 0XF3,
     MRCMDGetMonitorMode                 = 0XF6,
     MRCMDGetMonitorTimer                = 0XF8,
+    MRCMDClearCache                     = 0XFC,
 };
 
 

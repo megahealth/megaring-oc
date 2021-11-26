@@ -182,5 +182,14 @@
 @property (nonatomic, strong) NSArray <MRSpo2Event *> *spo2Events3;
 @property (nonatomic, strong) NSArray <MRSpo2Event *> *spo2Events4;
 
+
+
+
+/// blood pressure
+
+@property (nonatomic, assign) double SBP;
+@property (nonatomic, assign) double DBP;
+
+
 @end
 

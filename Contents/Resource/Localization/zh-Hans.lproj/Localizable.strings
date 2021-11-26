@@ -71,3 +71,5 @@
 "MRGetSteps" = "获取步数";
 "MRSetPeriodicMonitor" = "设置定时监测";
 "MRGetPeriodicMonitor" = "获取定时监测状态";
+"MRStartBPMonitor" = "测量血压";
+"MRSyncDailyData" = "同步日常数据";
