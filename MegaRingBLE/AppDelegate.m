@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    // log and hrv data
     [MRApi setUpWithAppId:@"D4CE5DD515F81247" appKey:@"uedQ2MgVEFlsGIWSgofHYHNdZSyHmmJ5"];
     [MRApi setMRLogEnabled:YES];
     
