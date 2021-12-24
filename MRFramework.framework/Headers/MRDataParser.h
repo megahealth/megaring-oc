@@ -17,6 +17,7 @@
 
 @interface MRDataParser : NSObject
 
+
 + (void)parseData:(NSData *)data block:(void (^)(MRReport *report))block;
 
 
@@ -24,5 +25,6 @@
 
 
 + (NSArray<MRDailyReport *> *)parseDaily:(NSData *)data;
+
 
 @end

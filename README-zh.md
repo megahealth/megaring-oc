@@ -79,14 +79,15 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 1. 调用 -[MRDevice requestData:progress:finish:] 检查和收取设备中的数据, 建议重复调用此方法, 直至得到的 data 为空, 即设备中数据已被全部取出;
 	1. MRDataTypeMonitor 运动、睡眠监测数据
 	2. MRDataTypeDaily 日常监测数据
-2. 调用 +[MRApi parseMonitorData:completion:] 解析数据, 生成 report;
+2. 调用 +[MRApi parseMonitorData:completion:] 解析数据 及(HRV数据), 生成 report;
 3. 调用 +[MRApi parseBPData:time:caliSBP:caliDBP:block:] 解析血压数据, 生成血压测量报告;
 4. 调用 +[MRApi parseDaily:data] 解析日常数据，获得体温等数据，只在睡眠监测期间有温度数据;
-
+5. 当生成HRV数据报告时 +[MRApi parseMonitorData:completion:] 解析数据后，生成HRV的报告,可以查看 (MRReport.h) 的属性说明。
 ### 固件升级
 1. 使用 MRDeviceUpgrader 类来升级固件;
 2. 连接设备后, 指定需要升级的设备 device 固件 firmware, 调用 -[MRDeviceUpgrader start] 开始升级;
 3. 实现 MRDeviceUpgraderDelegate 的方法来监听升级过程的状态和进度;
+4. 测试固件升级时最好[[不要从高版本固件升级到低版本固件]]可能会导致指环出错而不能使用。 
 
 ### 佩戴检测
 * 可通过以下方法检测用户佩戴正确与否。
@@ -94,7 +95,15 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 	* 打开数据上报 `-[MRDevice startLiveData]`。
 	* 通过 `-(void)liveDataValueUpdated:(NSArray *)liveData` 实时获取 ACC 值。
 	* 引导用户摆出指定手势，若用户正确佩戴指环：四指向下时，accy > 0；手心向上时，accz > 0。
-
+ ### 日志
+ * 设置日志存储打印是否开启` -[MRApi setMRLogEnabled:YES].
+ * 设置日志的存储路径，存储大小最大值等 ` -[MRApi setLogsPathName:@"xxxddMegaXX" tempLogFileName:@"Megaxx.txt" pathSize:500000 noTempLogFile:YES]; 
+     当大于自己设置值时(500000 ---- > 500K) 会新生成文件 时间戳.txt。
+ * 获取日志的路径：`[MRApi getLogsForUpload]; 
+ * 删除一个日志： `-[MRApi deleteLog:@"2011111xxxx.txt"];
+ * 切换生成一个新的日志txt文件: `-[MRApi switchToNewLog];
+ * 也可以到（MRApi.h）去查看方法的一下注释说明。   
+ 
 ### 推荐交互流程
 
 ![流程图](./RecommendedWorkflow-zh.png)

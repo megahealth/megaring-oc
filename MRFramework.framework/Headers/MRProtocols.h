@@ -9,7 +9,8 @@
 #ifndef MRProtocols_h
 #define MRProtocols_h
 
-#import "MRDefines.h"
+
+#import <MRFramework/MRDefines.h>
 
 
 

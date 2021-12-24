@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23A4EA4F2775DDE80090A840 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4C2775DDE80090A840 /* README.md */; };
+		23A4EA502775DDE80090A840 /* README-zh.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4D2775DDE80090A840 /* README-zh.md */; };
+		23A4EA512775DDFC0090A840 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A4EA4B2775DDE80090A840 /* MRFramework.framework */; platformFilter = ios; };
+		23A4EA522775DDFC0090A840 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23A4EA4B2775DDE80090A840 /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3C0842D025ECF4CC008508D4 /* MegaRingV3_V10761.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3C0842CF25ECF4CC008508D4 /* MegaRingV3_V10761.zip */; };
 		3C0842DD25ECF63A008508D4 /* data6-1 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0842D725ECF63A008508D4 /* data6-1 */; };
 		3C0842DE25ECF63A008508D4 /* data6-2 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0842D825ECF63A008508D4 /* data6-2 */; };
@@ -14,8 +18,6 @@
 		3C0842E025ECF63B008508D4 /* data1-2 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0842DA25ECF63A008508D4 /* data1-2 */; };
 		3C0842E125ECF63B008508D4 /* data2-1 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0842DB25ECF63A008508D4 /* data2-1 */; };
 		3C0842E225ECF63B008508D4 /* data2-2 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0842DC25ECF63A008508D4 /* data2-2 */; };
-		3C1F2F8624C996A900702EEA /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1F2F8524C996A900702EEA /* MRFramework.framework */; };
-		3C1F2F8824C996FA00702EEA /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C1F2F8524C996A900702EEA /* MRFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3C3E9AC92480B4870087FD85 /* crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9A532480B4870087FD85 /* crypt.c */; };
 		3C3E9ACA2480B4870087FD85 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9A542480B4870087FD85 /* unzip.c */; };
 		3C3E9ACB2480B4870087FD85 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9A552480B4870087FD85 /* zip.c */; };
@@ -61,8 +63,6 @@
 		3C3E9AFD2480B4870087FD85 /* MRDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC52480B4870087FD85 /* MRDefaultView.xib */; };
 		3C3E9AFE2480B4870087FD85 /* IBCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC72480B4870087FD85 /* IBCustomView.m */; };
 		3C3E9AFF2480B4870087FD85 /* MRDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC82480B4870087FD85 /* MRDefaultView.m */; };
-		3C3E9B012480B7FB0087FD85 /* README-zh.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9B002480B7FB0087FD85 /* README-zh.md */; };
-		3C4859A12509DF550018FDA2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C4859A02509DF550018FDA2 /* README.md */; };
 		CF408681209C026F00E3E8E7 /* MRNavigarionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF408680209C026F00E3E8E7 /* MRNavigarionController.m */; };
 		CF665A15209B181A009EF6A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF665A14209B181A009EF6A6 /* AppDelegate.m */; };
 		CF665A1B209B181A009EF6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF665A19209B181A009EF6A6 /* Main.storyboard */; };
@@ -97,13 +97,16 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3C1F2F8824C996FA00702EEA /* MRFramework.framework in CopyFiles */,
+				23A4EA522775DDFC0090A840 /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		23A4EA4B2775DDE80090A840 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
+		23A4EA4C2775DDE80090A840 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		23A4EA4D2775DDE80090A840 /* README-zh.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "README-zh.md"; sourceTree = "<group>"; };
 		3C0842CF25ECF4CC008508D4 /* MegaRingV3_V10761.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV3_V10761.zip; sourceTree = "<group>"; };
 		3C0842D725ECF63A008508D4 /* data6-1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "data6-1"; sourceTree = "<group>"; };
 		3C0842D825ECF63A008508D4 /* data6-2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "data6-2"; sourceTree = "<group>"; };
@@ -111,7 +114,6 @@
 		3C0842DA25ECF63A008508D4 /* data1-2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "data1-2"; sourceTree = "<group>"; };
 		3C0842DB25ECF63A008508D4 /* data2-1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "data2-1"; sourceTree = "<group>"; };
 		3C0842DC25ECF63A008508D4 /* data2-2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "data2-2"; sourceTree = "<group>"; };
-		3C1F2F8524C996A900702EEA /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		3C3E9A512480B4870087FD85 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		3C3E9A532480B4870087FD85 /* crypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crypt.c; sourceTree = "<group>"; };
 		3C3E9A542480B4870087FD85 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
@@ -201,8 +203,6 @@
 		3C3E9AC62480B4870087FD85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MRDefaultView.xib; sourceTree = "<group>"; };
 		3C3E9AC72480B4870087FD85 /* IBCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCustomView.m; sourceTree = "<group>"; };
 		3C3E9AC82480B4870087FD85 /* MRDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRDefaultView.m; sourceTree = "<group>"; };
-		3C3E9B002480B7FB0087FD85 /* README-zh.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "README-zh.md"; sourceTree = "<group>"; };
-		3C4859A02509DF550018FDA2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CF40867F209C026F00E3E8E7 /* MRNavigarionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRNavigarionController.h; sourceTree = "<group>"; };
 		CF408680209C026F00E3E8E7 /* MRNavigarionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRNavigarionController.m; sourceTree = "<group>"; };
 		CF665A10209B181A009EF6A6 /* MegaRingBLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MegaRingBLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C1F2F8624C996A900702EEA /* MRFramework.framework in Frameworks */,
+				23A4EA512775DDFC0090A840 /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,9 +476,9 @@
 		CF665A07209B181A009EF6A6 = {
 			isa = PBXGroup;
 			children = (
-				3C1F2F8524C996A900702EEA /* MRFramework.framework */,
-				3C3E9B002480B7FB0087FD85 /* README-zh.md */,
-				3C4859A02509DF550018FDA2 /* README.md */,
+				23A4EA4B2775DDE80090A840 /* MRFramework.framework */,
+				23A4EA4D2775DDE80090A840 /* README-zh.md */,
+				23A4EA4C2775DDE80090A840 /* README.md */,
 				3C3E9A4E2480B4870087FD85 /* Contents */,
 				CF665A12209B181A009EF6A6 /* MegaRingBLE */,
 				CF665A2B209B181B009EF6A6 /* MegaRingBLETests */,
@@ -644,7 +644,6 @@
 			files = (
 				3C3E9AFD2480B4870087FD85 /* MRDefaultView.xib in Resources */,
 				3C3E9AFC2480B4870087FD85 /* MRDefaultView.strings in Resources */,
-				3C4859A12509DF550018FDA2 /* README.md in Resources */,
 				3C3E9ADD2480B4870087FD85 /* MRHomeViewController.xib in Resources */,
 				3C0842DF25ECF63A008508D4 /* data1-1 in Resources */,
 				3C3E9AEC2480B4870087FD85 /* DeviceUpgradeViewController.xib in Resources */,
@@ -652,7 +651,7 @@
 				3C3E9AEA2480B4870087FD85 /* DeviceUpgradeViewController.strings in Resources */,
 				3C3E9AFA2480B4870087FD85 /* InfoPlist.strings in Resources */,
 				3C0842E025ECF63B008508D4 /* data1-2 in Resources */,
-				3C3E9B012480B7FB0087FD85 /* README-zh.md in Resources */,
+				23A4EA502775DDE80090A840 /* README-zh.md in Resources */,
 				3C0842E125ECF63B008508D4 /* data2-1 in Resources */,
 				3C0842DE25ECF63A008508D4 /* data6-2 in Resources */,
 				3C0842E225ECF63B008508D4 /* data2-2 in Resources */,
@@ -664,6 +663,7 @@
 				3C3E9AED2480B4870087FD85 /* SyncDailyViewController.xib in Resources */,
 				3C0842DD25ECF63A008508D4 /* data6-1 in Resources */,
 				3C3E9AE72480B4870087FD85 /* DeviceManagerViewCell.xib in Resources */,
+				23A4EA4F2775DDE80090A840 /* README.md in Resources */,
 				CF665A1B209B181A009EF6A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

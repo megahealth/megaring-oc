@@ -108,18 +108,18 @@ This are some methods that can help getting device's status in protocol `MRDevic
 	1. MRDataTypeMonitor, sport & sleep data
 	2. MRDataTypeDaily, daily data
 
-2. Call `+[MRApi parseMonitorData:completion:]` to parse data, you will receive a `MRReport` object.
+2. Call `+[MRApi parseMonitorData:completion:]` to parse data (And HRV data), you will receive a `MRReport` object.
 
 3. Call `+[MRApi parseBPData:time:caliSBP:caliDBP:block:]` to parse blood pressure data.
 
 4. Call +[MRApi parseDaily:data] to parse daily data, then you'll get temperature data, only valid duration sleep monitoring;
-
+5. When generating an HRV data report, call + [MRApi parsemonitordata: completion:] to parse the data and generate an HRV report. You can view the attribute description of ([MRReport.h]).
 
 ### Device upgrade
 1. Use class `MRDeviceUpgrader` to upgrade device's firmware.
 2. After device connected, assgin a firmware's absolute path to `-[MRDeviceUpgrader defaultInstance]`, then call `-[MRDeviceUpgrader start]` to start.
 3. Implement the functions in protocol `MRDeviceUpgraderDelegate` to observe the status of the upgrade.
-
+4. It is better to [#[do not upgrade from high version firmware to low version firmware]#] when testing firmware upgrade, which may cause ring error and cannot be used.
 
 ### Wearing Test
 * The method to detect whether the user wears it correctly or not.
@@ -127,6 +127,16 @@ This are some methods that can help getting device's status in protocol `MRDevic
 	* Enable data notifying `-[MRDevice startLiveData]`.
 	* Get acc values `-(void)liveDataValueUpdated:(NSArray *)liveData`.
 	* Guide user to pose the specified gestures. If the user wears the ring correctly: accy > 0 when fingers point to the ground; accz > 0 when Palms up.
+
+ ### Log   
+ * Set whether log storage printing is enabled ` -[MRApi setMRLogEnabled:YES].
+ * Set the storage path size and content of logs  ` -[MRApi setLogsPathName:@"xxxddMegaXX" tempLogFileName:@"Megaxx.txt" pathSize:500000 noTempLogFile:YES];  When it is greater than the set value (500000 ---- > 500K), a new file timestamp will be generated txt。。
+    
+ * Path to get log: `[MRApi getLogsForUpload]; 
+ * Delete a log: `-[MRApi deleteLog:@"2011111xxxx.txt"];
+ * Switch to generate a new log TXT file: `-[MRApi switchToNewLog]
+
+ * For the log, you can also go to (MRApi.h) to view the annotation description of the method
 
 ### Recommended Workflow
 

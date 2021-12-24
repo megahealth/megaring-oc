@@ -191,5 +191,36 @@
 @property (nonatomic, assign) double DBP;
 
 
+
+/// HRV data
+
+@property (nonatomic, assign) int heartBeat; //分析的心搏数 Heart beat number
+@property (nonatomic, assign) float meanBpm; // 平均心率  Average heart rate
+@property (nonatomic, assign) int maxRRInterval; //最大的RR间隔 Maximum RR interval
+@property (nonatomic, assign) int maxRRTime; // 最大RR间隔发生时间 Maximum RR interval occurrence time
+@property (nonatomic, assign) int maxHRTime; // 最快心率发生时间 Maximum heart rate occurrence time
+@property (nonatomic, assign) int minHRTime; // 最慢心率发生时间  Occurrence time of slowest heart rate
+@property (nonatomic, assign) int tBeat; //心动过速博数 Tachycardia wave number
+@property (nonatomic, assign) float tBeatProportion; //心动过速占比 Proportion of tachycardia
+@property (nonatomic, assign) int bBeat; //心动过缓博数 Bradycardia number
+@property (nonatomic, assign) float bBeatProportion; //心动过缓占比 Proportion of bradycardia
+
+@property (nonatomic, assign) double SDNN;
+@property (nonatomic, assign) double SDANN;
+@property (nonatomic, assign) double RMSSD;
+@property (nonatomic, assign) int NN50;
+@property (nonatomic, assign) double pNN50;
+@property (nonatomic, assign) double tIdx;  //三角指数 Triangle index
+@property (nonatomic, assign) double hfp;
+@property (nonatomic, assign) double lfp;
+@property (nonatomic, assign) double vlfp;
+
+@property (nonatomic, strong) NSArray *histArr; // 直方图数组  Histogram array
+@property (nonatomic, strong) NSArray *hrvArr; //心率数组 Heart rate array
+@property (nonatomic, strong) NSArray *freqArr;  //频率数组 Frequency array
+@property (nonatomic, strong) NSArray *rrArr; // 心率曲线 Heart rate curve
+
+
+
 @end
 
