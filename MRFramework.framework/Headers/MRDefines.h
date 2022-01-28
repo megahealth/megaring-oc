@@ -92,6 +92,15 @@ typedef NS_ENUM(Byte, MRDeviceMonitorMode) {
 };
 
 
+//typedef NS_ENUM(Byte, MHBLEDataRequestType) {
+//    MHBLEDataRequestTypeMonitor                = 0XEF,
+//    MHBLEDataRequestTypeDaily                 = 0XF1,
+//    MHBLEDataRequestTypeGLU                 = 0XFA,
+//    MHBLEDataRequestTypeHRV                 = 0XFB,
+//};
+
+
+
 /*
  * Monitor could end automatically or by user.
  */
@@ -126,6 +135,7 @@ typedef NS_ENUM(Byte, MRDataType) {
     MRDataTypeMonitor                	= 0XEF,
     MRDataTypeDaily                   	= 0XF1,
     MRDataTypeGLU                       = 0XFA,
+    MHBLEDataRequestTypeHRV                 = 0XFB,
 };
 
 

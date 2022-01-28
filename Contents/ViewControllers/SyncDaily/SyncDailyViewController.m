@@ -45,10 +45,23 @@
         return;
     }
     
+//    @Required
+    
+    if (self.device.isDownloadingData == YES) {
+        NSLog(@"syncing data, mission cancel");
+        return;
+    }
+    
+    @weakify(self);
     [self.device requestData:MRDataTypeDaily progress:^(float progress) {
         NSLog(@"progress:%.4f", progress);
         self.state.text = [NSString stringWithFormat:@"progress:%.4f", progress];
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
+        @strongify(self);
+        self.device.isDownloadingData = NO; // @Required
+    
+        
+        
         self.state.text = @"Sync steps finished";
         NSLog(@"data:%@", data);
         [self dealData:data];

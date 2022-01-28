@@ -50,6 +50,21 @@
 
 @property (nonatomic, assign, getter=isMonitorOn) BOOL monitorOn; // 监测状态
 
+
+@property (nonatomic, assign) BOOL isScreenOn;
+
+@property (nonatomic, assign) BOOL isDownloadingData; // is if syn data ？ YES  is syn data . 
+
+@property (nonatomic, assign) BOOL isReady;
+
+@property (nonatomic, assign) int chargeDuration;        // 充电分钟数
+
+
+
+
+
+
+
 @property (nonatomic, assign) MRDeviceMonitorMode monitorMode;
 
 @property (nonatomic, assign) MRGLUModeInterval gluInterval;

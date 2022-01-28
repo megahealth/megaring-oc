@@ -107,6 +107,7 @@ This are some methods that can help getting device's status in protocol `MRDevic
 1. Call `-[MRDevice requestData:progress:finish:]` to get data from device. Call it again until the data is nil, which means there is no more data in it.
 	1. MRDataTypeMonitor, sport & sleep data
 	2. MRDataTypeDaily, daily data
+    3. To prevent data operations from being synchronized all the time, after method finish: add xxxDevice.isDownloadingData = NO， Judge before calling this method：  when xxxDevice.isDownloadingData = YES，The return operation prevents ongoing data synchronization operations，（See DeviceManagerViewController+Methods.h use of instances）.   
 
 2. Call `+[MRApi parseMonitorData:completion:]` to parse data (And HRV data), you will receive a `MRReport` object.
 

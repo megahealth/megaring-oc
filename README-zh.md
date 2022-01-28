@@ -79,6 +79,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 1. 调用 -[MRDevice requestData:progress:finish:] 检查和收取设备中的数据, 建议重复调用此方法, 直至得到的 data 为空, 即设备中数据已被全部取出;
 	1. MRDataTypeMonitor 运动、睡眠监测数据
 	2. MRDataTypeDaily 日常监测数据
+    3. 为防止一直同步数据操作，在finish：后添加 xxxDevice.isDownloadingData = NO，多次调用此方法时，调用此方法前要判断 xxxDevice.isDownloadingData = YES时，进行return操作防止正在进行的同步数据操作，（可看DeviceManagerViewController+Methods.h实例的使用）;
 2. 调用 +[MRApi parseMonitorData:completion:] 解析数据 及(HRV数据), 生成 report;
 3. 调用 +[MRApi parseBPData:time:caliSBP:caliDBP:block:] 解析血压数据, 生成血压测量报告;
 4. 调用 +[MRApi parseDaily:data] 解析日常数据，获得体温等数据，只在睡眠监测期间有温度数据;

@@ -18,6 +18,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     if (self.device.connectState == MRDeviceStateConnected) {
         [[MRConnecter defaultConnecter] disconnectDevice:self.device];
     } else {
+        NSLog(@"---self.device-------%@",self.device);
         [[MRConnecter defaultConnecter] connectDevice:self.device];
     }
 }
@@ -33,13 +34,38 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 - (void)changeMonitorState {
     [self.device setMonitorState:!self.device.isMonitorOn];
 }
-
+/**
+ 
+ Requestdata: Finish: followed by   xxxdevice.isDownloadingData = NO;
+ 
+ 1.@Required
+ 2.@ Required
+ 
+ */
 // 收取数据并解析
 - (void)requestReportData {
+    
+//    @Required
+    if (self.device.isDownloadingData == YES) {
+        NSLog(@"syncing data, mission cancel");
+        return;
+    }
+    
+    @weakify(self);
     [self.device requestData:MRDataTypeMonitor progress:^(float progress) {
         NSLog(@"progress:%.4f", progress);
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
-        NSLog(@"data:%@", data);
+        @strongify(self);
+//        @Required
+        self.device.isDownloadingData = NO;
+        
+//        if (data != nil) {
+//            [self deatalData:data];
+//            [self  requestReportData];
+//        }
+        
+        NSLog(@"daily data length:%lu, stopType:%d, mode:%d", (unsigned long)data.length, stopType, mode);
+        
         if (data) {
             [MRApi parseMonitorData:data completion:^(MRReport *report, NSError *error) {
                 NSLog(@"user:%@, report type:%d", report.userId, report.reportType);
@@ -52,11 +78,33 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     }];
 }
 
+/**
+ 
+ Requestdata: Finish: followed by   xxxdevice.isDownloadingData = NO;
+ 
+ 1.@Required
+ 2.@ Required
+ 
+ */
 - (void)requestDailyData {
+    
+//    judge  @Required
+    if (self.device.isDownloadingData == YES) {
+        NSLog(@"syncing data, mission cancel");
+        return;
+
+    }
+    @weakify(self);
     [self.device requestData:MRDataTypeDaily progress:^(float progress) {
         NSLog(@"progress:%.4f", progress);
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
-        NSLog(@"data:%@", data);
+        @strongify(self);
+        // @ Required
+        self.device.isDownloadingData = NO;
+        
+    
+        NSLog(@"daily data length:%lu, stopType:%d, mode:%d", (unsigned long)data.length, stopType, mode);
+        
         if (data) {
             NSArray *dailyReports = [MRApi parseDaily:data];
             NSLog(@"%@", dailyReports);
