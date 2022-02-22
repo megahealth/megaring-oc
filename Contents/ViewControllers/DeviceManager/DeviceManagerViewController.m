@@ -226,8 +226,9 @@
     NSLog(@"err:%X", errCode);
 }
 
+#pragma mark
 - (void)rawdataUpdated:(NSArray<MRRawData *> *)arr {
-    NSLog(@"%@", arr);
+    NSLog(@"---rawData-------%@", arr);
 }
 
 - (void)didSetPeriodicMonitorState:(MRPeriodicMonitorState)state start:(NSString *)start duration:(int)duration repeat:(BOOL)repeat {
