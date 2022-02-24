@@ -80,10 +80,10 @@
             }
                 break;
             case 9: {
-//                SyncDailyViewController *daily = [[SyncDailyViewController alloc] initWithDevice:weakself.device];
-//                [weakself.navigationController pushViewController:daily animated:YES];
+                SyncDailyViewController *daily = [[SyncDailyViewController alloc] initWithDevice:weakself.device];
+                [weakself.navigationController pushViewController:daily animated:YES];
                 
-                [weakself.device setRawdataEnabled:YES];
+//                [weakself.device setRawdataEnabled:YES];
                 
             }
                 break;
