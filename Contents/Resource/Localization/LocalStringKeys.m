@@ -73,3 +73,4 @@ NSString *const MRSetPeriodicMonitor = @"MRSetPeriodicMonitor";
 NSString *const MRGetPeriodicMonitor = @"MRGetPeriodicMonitor";
 NSString *const MRStartBPMonitor = @"MRStartBPMonitor";
 NSString *const MRSyncDailyData = @"MRSyncDailyData";
+NSString *const MRStarGLU = @"MRStarGLU";

@@ -73,3 +73,4 @@
 "MRGetPeriodicMonitor" = "Get Periodic Monitor";
 "MRStartBPMonitor" = "Measure Blood Pressure";
 "MRSyncDailyData" = "Sync daily data";
+"MRStarGLU" = "Start GLU";

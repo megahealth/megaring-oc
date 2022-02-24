@@ -39,6 +39,11 @@
 @property (nonatomic, assign) BOOL	 isGSensorOk;      	// GSensor OK
 @property (nonatomic, assign) BOOL	 is4404Ok;         	// 4404 OK
 
+//MARK://TODO...
+@property (nonatomic, assign) BOOL     deviceOK;             // The above three are yes, the watch is the ring is good （example：(device.deviceOK == YES && device.deviceType == MRDeviceTypeC)）
+
+
+
 @property (nonatomic, assign) BOOL lmRegistered;
 
 

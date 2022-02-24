@@ -73,4 +73,4 @@ extern NSString *const MRSetPeriodicMonitor;
 extern NSString *const MRGetPeriodicMonitor;
 extern NSString *const MRStartBPMonitor;
 extern NSString *const MRSyncDailyData;
-
+extern NSString *const MRStarGLU;

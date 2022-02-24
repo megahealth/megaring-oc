@@ -80,8 +80,11 @@
             }
                 break;
             case 9: {
-                SyncDailyViewController *daily = [[SyncDailyViewController alloc] initWithDevice:weakself.device];
-                [weakself.navigationController pushViewController:daily animated:YES];
+//                SyncDailyViewController *daily = [[SyncDailyViewController alloc] initWithDevice:weakself.device];
+//                [weakself.navigationController pushViewController:daily animated:YES];
+                
+                [weakself.device setRawdataEnabled:YES];
+                
             }
                 break;
                 
@@ -90,7 +93,11 @@
             }
                 break;
                 
-            case 11: {
+            case 11:{
+                [weakself.device setGLUMode:MRGLUModeInterval5Mins];;
+            }
+                break;
+            case 12: {
                 BOOL on = NO;
                 int seconds = 60;
                 int duration = 60 * 60 * 5;
@@ -99,19 +106,19 @@
             }
                 break;
                 
-            case 12: {
+            case 13: {
                 [weakself.device getMonitorTimer];
             }
                 break;
                 
-            case 13: {
+            case 14: {
                 [weakself.device switchToBPMode];
                 weakself.bpData = [NSMutableData new];
                 weakself.bpStart = [NSDate date];
             }
                 break;
                 
-            case 14: {
+            case 15: {
                 [weakself requestDailyData];
             }
                 break;
@@ -226,7 +233,7 @@
     NSLog(@"err:%X", errCode);
 }
 
-#pragma mark
+#pragma mark ------
 - (void)rawdataUpdated:(NSArray<MRRawData *> *)arr {
     NSLog(@"---rawData-------%@", arr);
 }
