@@ -7,7 +7,7 @@ This text introduces the components of MRFramework, hoping to make it easier to 
 ### Initialize
 
 1. Import the SDK to your Project.
-2. Call `+[MRApi setUpWithAppId:appKey:]` to setup. Contact the SDK Provider for `id` & `key`.
+2. Call `+[MRApi setUpWithAppId:appKey:completion:];` to setup. Contact the SDK Provider for `id` & `key`. （Callback results described in MRApi.h）
 
 ### Connection
 

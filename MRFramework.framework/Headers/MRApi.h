@@ -38,7 +38,31 @@ FOUNDATION_EXTERN NSString *kMRFrameworkVersion;
 
 @interface MRApi : NSObject
 
-+ (void)setUpWithAppId:(NSString *)appId appKey:(NSString *)appKey;
+/**
+ Parameter Description:
+ 
+ @required: appId
+ @required: appKey
+ 
+ completion -> return: (isValid)  isValid == 1 (valid) isValid == 0 (invalid)
+ 
+ error:
+ 
+ error.code
+ 
+ kMRErrorNoError                        = 0, no error
+ kMRErrorInternalSDK                 = 1,
+ kMRErrorUnauthorized                  = 2,
+ kMRErrorInputNullData                = 3,
+ 
+
+   
+ 
+ 
+ */
+
+
++ (void)setUpWithAppId:(NSString *)appId appKey:(NSString *)appKey completion:(void(^)(BOOL isValid,NSError * error))completion;
 
 /**
     @Optional   pathName: path name.   --> mark path name （It's best for different users to use different file names） define  "MegaLog"

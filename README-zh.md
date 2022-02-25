@@ -24,7 +24,7 @@ MegaRing SDK & Demo for iOS in Objective-C
 
 ### 初始化
 
-	+[MRApi setUpWithAppId:appKey:];
+	+[MRApi setUpWithAppId:appKey:completion:]; (在MRApi.h中有说明的回调结果)
 
 ### 连接过程
 
