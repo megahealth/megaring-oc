@@ -64,7 +64,9 @@
                  
                  1.If you need data, you can turn on sleep monitoring.With the ring, 82s it will generate valid data;
                  
-                 2.If you don't need data, you can turn on real-time monitoring mode.
+                 2.If you don't need data, you can turn on real-time monitoring mode，And view real-time data changes.
+                 
+                 3. When the sleep mode is turned on for at least 30 minutes, the sleep data can be obtained.
                  
                  */
                                 
