@@ -59,7 +59,11 @@
                 break;
                 
             case 6:
-                [weakself.device switchToRealtimeMode];
+//                [weakself.device switchToRealtimeMode];  open realtime  mode //0XD7
+                
+                [weakself changeMonitorState]; // open spo2 0XD0.
+                
+                
                 break;
                 
             case 7:
@@ -213,6 +217,7 @@
 - (void)liveDataValueUpdated:(NSArray *)liveData {
     NSString *liveDataStr = [NSString stringWithFormat:@"sp:%@, hr:%@, state:%@, duration:%@, accx:%@, accy:%@, accz:%@", liveData[0], liveData[1], liveData[2], liveData[3], liveData[4], liveData[5], liveData[6]];
     NSLog(@"live:%@", liveDataStr);
+    
     [self.deviceManagerView.viewModel updateLiveDataValue:liveData];
     [self.deviceManagerView refreshView];
 }
@@ -223,8 +228,13 @@
     [self.deviceManagerView refreshView];
 }
 
+#pragma mark -- 模式状态 -- 。
 - (void)monitorModeUpdated {
     NSLog(@"monitorModeUpdated:%d", self.device.monitorMode);
+    if (self.device.monitorMode == MRDeviceMonitorModeNormal) {
+        
+    }
+
     [self.deviceManagerView.viewModel updateMonitorState];
     [self.deviceManagerView refreshView];
 }
@@ -254,7 +264,7 @@
     [fmt setDateFormat:@"HHmm"];
     int time = [[fmt stringFromDate:self.bpStart] intValue];
     [MRApi parseBPData:self.bpData time:time caliSBP:120 caliDBP:80 block:^(MRBPReport *report, NSError *error) {
-        NSLog(@"sbp:%.1f, dbp:%.1f, flag:%d", report.SBP, report.DBP, report.flag);
+        NSLog(@"sbp:%.1f, dbp:%.1f, flag:%d，ecg:%@", report.SBP, report.DBP, report.flag,report.ecg);
         BOOL finish = report.flag == 1;
         BOOL failure = report.flag == 2 || duration >= 60;  // failed or timeout
         if (finish || failure) {

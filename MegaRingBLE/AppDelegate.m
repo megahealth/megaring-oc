@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    [MRApi setMRLogEnabled:YES]; // open log
+    [MRApi setMRLogEnabled:YES]; // open log
     [MRApi setUpWithAppId:@"D4CE5DD515F81247" appKey:@"uedQ2MgVEFlsGIWSgofHYHNdZSyHmmJ5" completion:^(BOOL isValid, NSError *error) {
         NSLog(@"isValid-----------%d-------error-------%ld",isValid,(long)error.code);
         

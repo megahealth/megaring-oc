@@ -30,5 +30,7 @@
 
 - (void)showAlertWithTitle:(NSString *)title dissmissAfterDelay:(NSTimeInterval)delay;
 
+-(void)requestDailyDataWithReportData;
+
 
 @end

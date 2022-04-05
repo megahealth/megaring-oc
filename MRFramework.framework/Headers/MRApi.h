@@ -44,19 +44,10 @@ FOUNDATION_EXTERN NSString *kMRFrameworkVersion;
  @required: appId
  @required: appKey
  
- completion -> return: (isValid)  isValid == 1 (valid) isValid == 0 (invalid)
+ completion -> return: (isValid)  isValid == 1 (valid) isValid == 0 (error)
  
- error:
+ error: 
  
- error.code
- 
- kMRErrorNoError                        = 0, no error
- kMRErrorInternalSDK                 = 1,
- kMRErrorUnauthorized                  = 2,
- kMRErrorInputNullData                = 3,
- 
-
-   
  
  
  */

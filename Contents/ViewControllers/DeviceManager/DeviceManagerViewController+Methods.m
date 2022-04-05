@@ -59,10 +59,17 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 //        @Required
         self.device.isDownloadingData = NO;
         
+        self.title = [NSString stringWithFormat:@"data: %@",data];
+        
 //        if (data != nil) {
 //            [self deatalData:data];
 //            [self  requestReportData];
 //        }
+        
+//        NSLog(@"data-----------: %@",data);
+//
+        
+        self.title = [NSString stringWithFormat:@"data: %@",data];
         
         NSLog(@"daily data length:%lu, stopType:%d, mode:%d", (unsigned long)data.length, stopType, mode);
         
@@ -112,6 +119,35 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     }];
 }
 
+-(void)requestDailyDataWithReportData {
+    
+    if (self.device.isDownloadingData == YES) {
+        NSLog(@"syncing data, mission cancel");
+        return;
+    }
+    [self.device requestData:MRDataTypeDaily progress:^(float progress) {
+        
+        NSLog(@"接收数据的提示只显示在首页或监测页面 MegaRingManager.m ----- ...progress------------%f",progress);
+    } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
+        NSLog(@"daily data length:%lu, stopType:%d, mode:%d", (unsigned long)data.length, stopType, mode);
+        self.device.isDownloadingData = NO;
+        if (data != nil) {
+//            DLog(@"get   -- daily data:%@", data);
+//            [self dealDailyData:data]; // 存放data数据 。
+            
+            [self requestDailyDataWithReportData];
+        } else {
+//            [self uploadDailyData]; // 没有数据时... 上传数据到
+//            if (shouldSyncData) {
+//            [self requestMonitorDataType:MHBLEDataRequestTypeMonitor];
+//            }
+            
+        }
+    }];
+    
+}
+
+
 - (void)changeUserAlert {
     NSString	*message = [NSString stringWithFormat:@"设备%@已有绑定用户,是否要继续更改用户?", self.device.mac];
     UIAlertController	*alert = [UIAlertController alertControllerWithTitle:@"更改用户" message:message preferredStyle:UIAlertControllerStyleAlert];
@@ -159,7 +195,50 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     [super presentViewController:viewControllerToPresent animated:flag completion:completion];
 }
 
-
+// 收取数据并解析
+- (void)requestReportData:(MRDataType)type {
+    
+//    @Required
+    if (self.device.isDownloadingData == YES) {
+        NSLog(@"syncing data, mission cancel");
+        return;
+    }
+    
+    @weakify(self);
+    [self.device requestData:type progress:^(float progress) {
+        NSLog(@"progress:%.4f", progress);
+    } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
+        @strongify(self);
+//        @Required
+        self.device.isDownloadingData = NO;
+        
+//        if (data != nil) {
+//            [self deatalData:data];
+//            [self  requestReportData];
+//        }
+        
+        if (type != MHBLEDataRequestTypeHRV) {
+            [self requestReportData:MHBLEDataRequestTypeHRV];
+        }
+        
+        
+        
+        
+        
+        
+//        NSLog(@"daily data length:%lu, stopType:%d, mode:%d", (unsigned long)data.length, stopType, mode);
+//
+//        if (data) {
+//            [MRApi parseMonitorData:data completion:^(MRReport *report, NSError *error) {
+//                NSLog(@"user:%@, report type:%d", report.userId, report.reportType);
+//                NSLog(@"start:%d, duration:%d", report.startTime, report.duration);
+//                NSLog(@"sp avg:%.f, min:%.f", report.avgSp, report.minSp);
+//                NSLog(@"pr max:%d, min:%d, avg:%d", report.maxPr, report.minPr, report.avgPr);
+//                NSLog(@"sp len:%lu, pr len:%lu", (unsigned long)report.spArr.count, (unsigned long)report.prArr.count);
+//            }];
+//        }
+    }];
+}
 
 
 

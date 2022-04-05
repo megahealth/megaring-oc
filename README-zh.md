@@ -62,9 +62,9 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 	- (void)bpDataUpdated:(NSData *)data // 接收血压测量数据
 
 ### 设备控制
-1. 调用 -[MRDevice switchToSleepMode] 来开启睡眠监测;
-2. 调用 -[MRDevice switchToSportMode] 来开启运动监测;
-3. 调用 -[MRDevice switchToRealtimeMode] 来开启实时监测;
+1. 调用 -[MRDevice switchToSleepMode] 来开启睡眠监测(至少监测30分钟得到有效数据);
+2. 调用 -[MRDevice switchToSportMode] 来开启运动监测（监测至少10分钟得到有效数据）;
+3. 调用 -[MRDevice switchToRealtimeMode] 来开启实时监测（监测至少82秒得到有效数据）;
 4. 调用 -[MRDevice switchToPulseMode] 来开启脉诊仪模式;
 5. 调用 -[MRDevice switchToNormalModel] 关闭监测;
 6. 调用 -[MRDevice startLiveData] 开启实时数据后, 监测状态下会每秒上报一组数据, 需要实现 -[MRDeviceDelegate liveDataValueUpdated:];
@@ -84,6 +84,10 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 3. 调用 +[MRApi parseBPData:time:caliSBP:caliDBP:block:] 解析血压数据, 生成血压测量报告;
 4. 调用 +[MRApi parseDaily:data] 解析日常数据，获得体温等数据，只在睡眠监测期间有温度数据;
 5. 当生成HRV数据报告时 +[MRApi parseMonitorData:completion:] 解析数据后，生成HRV的报告,可以查看 (MRReport.h) 的属性说明。
+6. HRV的说明：开启睡眠监测之后，当[手指与指环保持静止不动]至少28分钟，会产生HRV的数据。（测试的时候，不是很好测量，最好长时间进行测试，因为短时间测试手指晃动了可能就不会产生HRV数据了，建议带回家睡觉的时候开启睡眠监测，第二天开始收数据）。
+
+7.   ECG的说明: 开启血压检测完成之后，解析数据得到ECG数据。
+
 ### 固件升级
 1. 使用 MRDeviceUpgrader 类来升级固件;
 2. 连接设备后, 指定需要升级的设备 device 固件 firmware, 调用 -[MRDeviceUpgrader start] 开始升级;
