@@ -60,10 +60,17 @@
                 
             case 6:
 //                [weakself.device switchToRealtimeMode];  open realtime  mode //0XD7
+                /***
+                 
+                 1.If you need data, you can turn on sleep monitoring.With the ring, 82s it will generate valid data;
+                 
+                 2.If you don't need data, you can turn on real-time monitoring mode.
+                 
+                 */
+                                
+                // [weakself changeMonitorState];  or  [weakself.device switchToSleepMode];
                 
-                [weakself changeMonitorState]; // open spo2 0XD0.
-                
-                
+                [weakself.device switchToSleepMode]; // open sleep get data （spo2 0XD0）
                 break;
                 
             case 7:
