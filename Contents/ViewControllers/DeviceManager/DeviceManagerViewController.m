@@ -7,7 +7,7 @@
 //
 
 #import "DeviceManagerViewController.h"
-#import <MRFramework/MRFramework.h>
+
 #import "DeviceManagerView.h"
 #import "DeviceManagerViewModel.h"
 #import "DeviceManagerViewController+Methods.h"
@@ -48,6 +48,7 @@
                 
             case 3:
                 [weakself requestReportData];
+//                [weakself requestDailySleepHRVSportDataTest];
                 break;
                 
             case 4:
@@ -95,9 +96,6 @@
             case 9: {
                 SyncDailyViewController *daily = [[SyncDailyViewController alloc] initWithDevice:weakself.device];
                 [weakself.navigationController pushViewController:daily animated:YES];
-                
-//                [weakself.device setRawdataEnabled:YES];
-                
             }
                 break;
                 
@@ -240,8 +238,9 @@
 #pragma mark -- 模式状态 -- 。
 - (void)monitorModeUpdated {
     NSLog(@"monitorModeUpdated:%d", self.device.monitorMode);
-    if (self.device.monitorMode == MRDeviceMonitorModeNormal) {
-        
+    if (self.device.monitorMode == MRDeviceMonitorModeSleep || self.device.monitorMode == MRDeviceMonitorModeSport || self.device.monitorMode == MRDeviceMonitorModeHRV) {
+//        test mark 。
+        self.shouldSyncData = YES;
     }
 
     [self.deviceManagerView.viewModel updateMonitorState];
@@ -311,9 +310,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = NSLocalizedString(MRDevicemanager, nil);
+//    test mark
+    self.shouldSyncData = YES;
+    
     self.deviceManagerView.viewModel = [[DeviceManagerViewModel alloc] initWithDevice:self.device];
     [self setUpViewActions];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MRCentralStateUpdated:) name:kMRCentralStateUpdatedNotification object:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceConnecteStateUpdated:) name:MRDeviceConnectStateUpdatedNotification object:nil];
+}
+
+-(void)deviceConnecteStateUpdated:(NSNotification *)noti {
+    
+    MRDevice *device = noti.object;
+    ///test mark Need to synchronize monitoring data
+    self.shouldSyncData = YES;
+    
+    NSLog(@"device.connectState----------%d",device.connectState);
+    
+    if (device.connectState == MRDeviceStateConnected) {
+        device.isDownloadingData = NO;
+    }
+    
+//    NSLog(@"%@ connecte state: %d", device.name, device.connectState);
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -113,6 +113,7 @@
 
 - (void)deviceConnecteStateUpdated:(NSNotification *)noti {
     MRDevice *device = noti.object;
+    //mark test
     NSLog(@"%@ connecte state: %d", device.name, device.connectState);
 }
 

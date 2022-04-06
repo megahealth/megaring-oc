@@ -7,7 +7,7 @@
 //
 
 #import "DeviceManagerViewController.h"
-
+#import <MRFramework/MRFramework.h>
 @interface DeviceManagerViewController (Methods)
 
 - (void)connectDevice;
@@ -30,7 +30,7 @@
 
 - (void)showAlertWithTitle:(NSString *)title dissmissAfterDelay:(NSTimeInterval)delay;
 
--(void)requestDailyDataWithReportData;
 
-
+//Test method.
+- (void)requestDailySleepHRVSportDataTest;
 @end

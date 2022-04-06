@@ -12,6 +12,9 @@
 
 @interface DeviceManagerViewController : UIViewController
 
+//test hrv mark.
+@property (nonatomic ,assign)BOOL shouldSyncData;
+
 @property (nonatomic, strong) MRDevice	*device;
 
 - (instancetype)initWithDevice:(MRDevice *)device;

@@ -52,6 +52,8 @@ typedef NS_ENUM(Byte, MRCMD) {
     MRCMDMonitorDataDetail              = 0XEF,
     MRCMDDailyDataDetail                = 0XF1,
     MRCMDGLUDataDetail                  = 0XFA,
+    MRCMDHRVDataDetail                  = 0XFB,
+    
     MRCMDCrashLog                       = 0XF3,
     MRCMDGetMonitorMode                 = 0XF6,
     MRCMDGetMonitorTimer                = 0XF8,
@@ -79,15 +81,15 @@ typedef NS_ENUM(Byte, MRBindResp) {
  * For now, device mode is either sleep or normal
  */
 typedef NS_ENUM(Byte, MRDeviceMonitorMode) {
-    MRDeviceMonitorModeIdle,            // 空闲
-    MRDeviceMonitorModeSleep,			// 睡眠模式, 血氧脉率监测
-    MRDeviceMonitorModeSport,           // 运动模式, 心率监测
-    MRDeviceMonitorModeNormal,			// 日常模式, 空闲
-    MRDeviceMonitorModeRealTime,        // 实时模式, 雪阳脉率监测, 但不会产生数据
-    MRDeviceMonitorModeBloodPresure,    // 血压模式
-    MRDeviceMonitorModePulse,           // 脉诊仪模式
-    MRDeviceMonitorModeHRV      = 0x08,
+    MRDeviceMonitorModeIdle,            //0 空闲
+    MRDeviceMonitorModeSleep,			// 1 睡眠模式, 血氧脉率监测
+    MRDeviceMonitorModeSport,           // 2 运动模式, 心率监测
+    MRDeviceMonitorModeNormal,			// 3 日常模式, 空闲
+    MRDeviceMonitorModeRealTime,        // 4 实时模式, 雪阳脉率监测, 但不会产生数据
+    MRDeviceMonitorModeBloodPresure,    // 5 血压模式
+    MRDeviceMonitorModePulse,           // 6 脉诊仪模式
     MRDeviceMonitorModeGLU      = 0x09, // 血糖模式
+    MRDeviceMonitorModeHRV      = 0x0a,
     MRDeviceMonitorModeNone     = 0x0f,
 };
 
