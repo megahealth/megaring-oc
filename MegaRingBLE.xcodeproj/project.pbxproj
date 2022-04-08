@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2376561627FD39060054E8BE /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2376561427FD30060054E8BE /* MRFramework.framework */; platformFilter = ios; };
-		2376561727FD39060054E8BE /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2376561427FD30060054E8BE /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		23735AF827FFF0A000787694 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23735AF627FFF09900787694 /* MRFramework.framework */; platformFilter = ios; };
+		23735AF927FFF0A000787694 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23735AF627FFF09900787694 /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		23A4EA4F2775DDE80090A840 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4C2775DDE80090A840 /* README.md */; };
 		23A4EA502775DDE80090A840 /* README-zh.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4D2775DDE80090A840 /* README-zh.md */; };
 		3C0842D025ECF4CC008508D4 /* MegaRingV3_V10761.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3C0842CF25ECF4CC008508D4 /* MegaRingV3_V10761.zip */; };
@@ -97,14 +97,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2376561727FD39060054E8BE /* MRFramework.framework in CopyFiles */,
+				23735AF927FFF0A000787694 /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2376561427FD30060054E8BE /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
+		23735AF627FFF09900787694 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		23A4EA4C2775DDE80090A840 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		23A4EA4D2775DDE80090A840 /* README-zh.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "README-zh.md"; sourceTree = "<group>"; };
 		3C0842CF25ECF4CC008508D4 /* MegaRingV3_V10761.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV3_V10761.zip; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2376561627FD39060054E8BE /* MRFramework.framework in Frameworks */,
+				23735AF827FFF0A000787694 /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,7 +476,7 @@
 		CF665A07209B181A009EF6A6 = {
 			isa = PBXGroup;
 			children = (
-				2376561427FD30060054E8BE /* MRFramework.framework */,
+				23735AF627FFF09900787694 /* MRFramework.framework */,
 				23A4EA4D2775DDE80090A840 /* README-zh.md */,
 				23A4EA4C2775DDE80090A840 /* README.md */,
 				3C3E9A4E2480B4870087FD85 /* Contents */,
@@ -951,7 +951,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.11.6;
+				CURRENT_PROJECT_VERSION = 1.11.61;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -967,7 +967,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.11.6;
+				MARKETING_VERSION = 1.11.61;
 				PRODUCT_BUNDLE_IDENTIFIER = com.megahealth.MegaRingBLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -979,7 +979,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.11.6;
+				CURRENT_PROJECT_VERSION = 1.11.61;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -995,7 +995,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.11.6;
+				MARKETING_VERSION = 1.11.61;
 				PRODUCT_BUNDLE_IDENTIFIER = com.megahealth.MegaRingBLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
