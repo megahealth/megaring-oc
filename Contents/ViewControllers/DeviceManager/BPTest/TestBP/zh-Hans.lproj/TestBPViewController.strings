@@ -1,0 +1,109 @@
+
+/* Class = "UILabel"; text = "是否有高血压"; ObjectID = "2BG-14-rht"; */
+"2BG-14-rht.text" = "是否有高血压";
+
+/* Class = "UILabel"; text = "请用手指紧密接触指环下部表面电极"; ObjectID = "5xf-Fk-0RB"; */
+"5xf-Fk-0RB.text" = "请用手指紧密接触指环下部表面电极";
+
+/* Class = "UILabel"; text = "舒张压(低压)"; ObjectID = "6g9-ZF-nXh"; */
+"6g9-ZF-nXh.text" = "舒张压(低压)";
+
+/* Class = "UIButton"; normalTitle = "重新校准"; ObjectID = "Acm-NS-LpD"; */
+"Acm-NS-LpD.normalTitle" = "重新校准";
+
+/* Class = "UIButton"; normalTitle = "有"; ObjectID = "D3j-2j-6sa"; */
+"D3j-2j-6sa.normalTitle" = "有";
+
+/* Class = "UILabel"; text = "舒张压(低压)"; ObjectID = "DDM-dt-Qwn"; */
+"DDM-dt-Qwn.text" = "舒张压(低压)";
+
+/* Class = "UILabel"; text = "收缩压(高压)"; ObjectID = "Gp5-as-RUd"; */
+"Gp5-as-RUd.text" = "收缩压(高压)";
+
+/* Class = "UILabel"; text = "即将开始，请做好准备"; ObjectID = "HGW-0e-4hf"; */
+"HGW-0e-4hf.text" = "即将开始，请做好准备";
+
+/* Class = "UIButton"; normalTitle = "120"; ObjectID = "LEF-WA-Ghu"; */
+"LEF-WA-Ghu.normalTitle" = "120";
+
+/* Class = "UILabel"; text = "测量失败"; ObjectID = "M8h-m7-SH1"; */
+"M8h-m7-SH1.text" = "测量失败";
+
+/* Class = "UIButton"; normalTitle = "没有"; ObjectID = "O9t-Vd-gna"; */
+"O9t-Vd-gna.normalTitle" = "没有";
+
+/* Class = "UILabel"; text = "请用手指紧密接触下部表面电极，直到测量结束"; ObjectID = "OLf-Vv-4FN"; */
+"OLf-Vv-4FN.text" = "请用手指紧密接触下部表面电极，直到测量结束";
+
+/* Class = "UILabel"; text = "即将开始，请做好准备"; ObjectID = "R2S-s4-PeT"; */
+"R2S-s4-PeT.text" = "即将开始，请做好准备";
+
+/* Class = "UILabel"; text = "收缩压(高压)"; ObjectID = "SYM-tL-ZM4"; */
+"SYM-tL-ZM4.text" = "收缩压(高压)";
+
+/* Class = "UILabel"; text = "血压监测"; ObjectID = "Tx9-Tv-Fiu"; */
+"Tx9-Tv-Fiu.text" = "血压监测";
+
+/* Class = "UILabel"; text = "请输入实测值或既往血压值"; ObjectID = "WXY-vL-FYx"; */
+"WXY-vL-FYx.text" = "请输入实测值或既往血压值";
+
+/* Class = "UIButton"; normalTitle = "重新测量"; ObjectID = "Wdj-7m-tnA"; */
+"Wdj-7m-tnA.normalTitle" = "重新测量";
+
+/* Class = "UILabel"; text = "14:28"; ObjectID = "Zu1-kr-tmF"; */
+"Zu1-kr-tmF.text" = "14:28";
+
+/* Class = "UIButton"; normalTitle = "提交"; ObjectID = "a4J-8q-ot4"; */
+"a4J-8q-ot4.normalTitle" = "提交";
+
+/* Class = "UILabel"; text = "开始时间"; ObjectID = "akm-Zd-uzd"; */
+"akm-Zd-uzd.text" = "开始时间";
+
+/* Class = "UILabel"; text = "次/分钟"; ObjectID = "bry-gD-Kgc"; */
+"bry-gD-Kgc.text" = "次/分钟";
+
+/* Class = "UILabel"; text = "注意事项"; ObjectID = "fU0-99-nWm"; */
+"fU0-99-nWm.text" = "注意事项";
+
+/* Class = "UIButton"; normalTitle = "结束监测"; ObjectID = "flR-MR-MBF"; */
+"flR-MR-MBF.normalTitle" = "退出";
+
+/* Class = "UILabel"; text = "开始时间"; ObjectID = "gpE-wQ-xEK"; */
+"gpE-wQ-xEK.text" = "开始时间";
+
+/* Class = "UILabel"; text = "测量完成"; ObjectID = "hs4-Do-mS3"; */
+"hs4-Do-mS3.text" = "测量完成";
+
+/* Class = "UILabel"; text = "脉率(次/分钟)"; ObjectID = "n9H-zP-j47"; */
+"n9H-zP-j47.text" = "心率(次/分钟)";
+
+/* Class = "UILabel"; text = "血压监测"; ObjectID = "puo-Py-ESd"; */
+"puo-Py-ESd.text" = "血压监测";
+
+/* Class = "UILabel"; text = "请用手指紧密接触指环下部表面电极"; ObjectID = "qce-fw-3mP"; */
+"qce-fw-3mP.text" = "请用手指紧密接触指环下部表面电极";
+
+/* Class = "UIButton"; normalTitle = "80"; ObjectID = "ryP-rk-wYl"; */
+"ryP-rk-wYl.normalTitle" = "80";
+
+/* Class = "UILabel"; text = "注意事项"; ObjectID = "tze-22-r8B"; */
+"tze-22-r8B.text" = "注意事项";
+
+/* Class = "UIButton"; normalTitle = "我已知晓，下一步"; ObjectID = "ukU-Nn-24T"; */
+"ukU-Nn-24T.normalTitle" = "我已知晓，下一步";
+
+/* Class = "UILabel"; text = "测量时长"; ObjectID = "uqk-zd-rc8"; */
+"uqk-zd-rc8.text" = "测量时长";
+
+/* Class = "UILabel"; text = "录入血压"; ObjectID = "vW9-4f-ri7"; */
+"vW9-4f-ri7.text" = "录入血压";
+
+/* Class = "UILabel"; text = "血压监测"; ObjectID = "xue-ZM-GzL"; */
+"xue-ZM-GzL.text" = "血压监测";
+
+/* Class = "UIButton"; normalTitle = "完成"; ObjectID = "yLs-iS-WmP"; */
+"yLs-iS-WmP.normalTitle" = "完成";
+
+
+"Oo6-Vd-ewx.normalTitle" = "数据不准？";
+"oel-wP-yJS.normalTitle" = "什么是实测值&既往血压值？";

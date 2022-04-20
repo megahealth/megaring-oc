@@ -13,7 +13,7 @@
 #import "DeviceManagerViewController+Methods.h"
 #import "DeviceUpgradeViewController.h"
 #import "SyncDailyViewController.h"
-
+#import "TestBPViewController.h"
 
 #define TEST_USER_ID    @"5a4331011579a30038c790de"
 //#define TEST_USER_ID    @"c22a674665e1388d020d3c856"
@@ -126,6 +126,12 @@
                 [weakself.device switchToBPMode];
                 weakself.bpData = [NSMutableData new];
                 weakself.bpStart = [NSDate date];
+            
+                
+//                TestBPViewController *vc = [[TestBPViewController alloc] init];
+//                vc.device = weakself.device;
+//                [weakself.navigationController pushViewController:vc animated:YES];
+                
             }
                 break;
                 
@@ -271,13 +277,25 @@
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
     [fmt setDateFormat:@"HHmm"];
     int time = [[fmt stringFromDate:self.bpStart] intValue];
+    @weakify(self);
+//  caliSBP: caliDBP:  Highest range value of DBP and SBP parsed
     [MRApi parseBPData:self.bpData time:time caliSBP:120 caliDBP:80 block:^(MRBPReport *report, NSError *error) {
+        @strongify(self);
+        
         NSLog(@"sbp:%.1f, dbp:%.1f, flag:%d，ecg:%@", report.SBP, report.DBP, report.flag,report.ecg);
         BOOL finish = report.flag == 1;
         BOOL failure = report.flag == 2 || duration >= 60;  // failed or timeout
         if (finish || failure) {
             [self stopBPMode];
         }
+        
+        if (failure) {
+            NSLog(@"failure!");
+        }
+        if (finish) {
+            NSLog(@"finished"); // and you can save the report data.    
+        }
+        
     }];
 }
 

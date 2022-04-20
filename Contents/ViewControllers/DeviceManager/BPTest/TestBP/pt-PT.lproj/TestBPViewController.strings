@@ -1,0 +1,242 @@
+
+
+
+
+
+//MARK://
+///* Class = "UILabel"; text = "是否有高血压"; ObjectID = "2BG-14-rht"; */
+//"2BG-14-rht.text" = "Há tensão arterial alta?";
+//
+///* Class = "UILabel"; text = "请用手指紧密接触指环下部表面电极"; ObjectID = "5xf-Fk-0RB"; */
+//"5xf-Fk-0RB.text" = "Por favor, toque o eletrodo na superfície inferior do anel do dedo de perto com os dedos.";
+//
+///* Class = "UILabel"; text = "舒张压(低压)"; ObjectID = "6g9-ZF-nXh"; */
+//"6g9-ZF-nXh.text" = "Pressão diastólica\n(baixa pressão)";
+//
+///* Class = "UIButton"; normalTitle = "重新校准"; ObjectID = "Acm-NS-LpD"; */
+//"Acm-NS-LpD.normalTitle" = "Recalibração";
+//
+///* Class = "UIButton"; normalTitle = "有"; ObjectID = "D3j-2j-6sa"; */
+//"D3j-2j-6sa.normalTitle" = "YES";
+//
+///* Class = "UILabel"; text = "舒张压(低压)"; ObjectID = "DDM-dt-Qwn"; */
+//"DDM-dt-Qwn.text" = "Pressão diastólica\n(baixa pressão)";
+//
+///* Class = "UILabel"; text = "收缩压(高压)"; ObjectID = "Gp5-as-RUd"; */
+//"Gp5-as-RUd.text" = "Pressão sistólica\n(alta pressão)";
+//
+///* Class = "UILabel"; text = "即将开始，请做好准备"; ObjectID = "HGW-0e-4hf"; */
+//"HGW-0e-4hf.text" = "Por favor, preparem-se.";
+//
+///* Class = "UIButton"; normalTitle = "120"; ObjectID = "LEF-WA-Ghu"; */
+//"LEF-WA-Ghu.normalTitle" = "120";
+//
+///* Class = "UILabel"; text = "测量失败"; ObjectID = "M8h-m7-SH1"; */
+//"M8h-m7-SH1.text" = "Falha na medição";
+//
+///* Class = "UIButton"; normalTitle = "没有"; ObjectID = "O9t-Vd-gna"; */
+//"O9t-Vd-gna.normalTitle" = "NO";
+//
+///* Class = "UILabel"; text = "请用手指紧密接触下部表面电极，直到测量结束"; ObjectID = "OLf-Vv-4FN"; */
+//"OLf-Vv-4FN.text" = "Entre em contato com o eletrodo na superfície inferior com os dedos até que a medição esteja concluída.";
+//
+///* Class = "UILabel"; text = "即将开始，请做好准备"; ObjectID = "R2S-s4-PeT"; */
+//"R2S-s4-PeT.text" = "Por favor, preparem-se.";
+//
+///* Class = "UILabel"; text = "收缩压(高压)"; ObjectID = "SYM-tL-ZM4"; */
+//"SYM-tL-ZM4.text" = "Pressão sistólica\n(alta pressão)";
+//
+///* Class = "UILabel"; text = "血压监测"; ObjectID = "Tx9-Tv-Fiu"; */
+//"Tx9-Tv-Fiu.text" = "Pressão arterial";
+//
+///* Class = "UILabel"; text = "请输入实测值或既往血压值"; ObjectID = "WXY-vL-FYx"; */
+//"WXY-vL-FYx.text" = "Introduza o valor medido ou o valor da pressão arterial anterior.";
+//
+///* Class = "UIButton"; normalTitle = "重新测量"; ObjectID = "Wdj-7m-tnA"; */
+//"Wdj-7m-tnA.normalTitle" = "Remédio";
+//
+///* Class = "UILabel"; text = "14:28"; ObjectID = "Zu1-kr-tmF"; */
+//"Zu1-kr-tmF.text" = "14:28";
+//
+///* Class = "UIButton"; normalTitle = "提交"; ObjectID = "a4J-8q-ot4"; */
+//"a4J-8q-ot4.normalTitle" = "Enviar";
+//
+///* Class = "UILabel"; text = "开始时间"; ObjectID = "akm-Zd-uzd"; */
+//"akm-Zd-uzd.text" = "Hora de Início";
+//
+///* Class = "UILabel"; text = "次/分钟"; ObjectID = "bry-gD-Kgc"; */
+//"bry-gD-Kgc.text" = "batidas/minuto";
+//
+///* Class = "UILabel"; text = "注意事项"; ObjectID = "fU0-99-nWm"; */
+//"fU0-99-nWm.text" = "assuntos precisam de atenção";
+//
+///* Class = "UIButton"; normalTitle = "结束监测"; ObjectID = "flR-MR-MBF"; */
+//"flR-MR-MBF.normalTitle" = "Sair";
+//
+///* Class = "UILabel"; text = "开始时间"; ObjectID = "gpE-wQ-xEK"; */
+//"gpE-wQ-xEK.text" = "Hora de Início";
+//
+///* Class = "UILabel"; text = "测量完成"; ObjectID = "hs4-Do-mS3"; */
+//"hs4-Do-mS3.text" = "Medição concluída";
+//
+///* Class = "UILabel"; text = "脉率(次/分钟)"; ObjectID = "n9H-zP-j47"; */
+//"n9H-zP-j47.text" = "Frequência de pulso\n(batidas/minuto)";
+//
+///* Class = "UILabel"; text = "血压监测"; ObjectID = "puo-Py-ESd"; */
+//"puo-Py-ESd.text" = "Pressão arterial";
+//
+///* Class = "UILabel"; text = "请用手指紧密接触指环下部表面电极"; ObjectID = "qce-fw-3mP"; */
+//"qce-fw-3mP.text" = "Por favor, toque o eletrodo na superfície inferior do anel do dedo de perto com os dedos.";
+//
+///* Class = "UIButton"; normalTitle = "80"; ObjectID = "ryP-rk-wYl"; */
+//"ryP-rk-wYl.normalTitle" = "80";
+//
+///* Class = "UILabel"; text = "注意事项"; ObjectID = "tze-22-r8B"; */
+//"tze-22-r8B.text" = "assuntos precisam de atenção";
+//
+///* Class = "UIButton"; normalTitle = "我已知晓，下一步"; ObjectID = "ukU-Nn-24T"; */
+//"ukU-Nn-24T.normalTitle" = "Eu sei, o próximo passo.";
+//
+///* Class = "UILabel"; text = "测量时长"; ObjectID = "uqk-zd-rc8"; */
+//"uqk-zd-rc8.text" = "Duração da medição";
+//
+///* Class = "UILabel"; text = "录入血压"; ObjectID = "vW9-4f-ri7"; */
+//"vW9-4f-ri7.text" = "Introduzir a pressão arterial";
+//
+///* Class = "UILabel"; text = "血压监测"; ObjectID = "xue-ZM-GzL"; */
+//"xue-ZM-GzL.text" = "Pressão arterial";
+//
+///* Class = "UIButton"; normalTitle = "完成"; ObjectID = "yLs-iS-WmP"; */
+//"yLs-iS-WmP.normalTitle" = "Completo";
+//
+//"dD7-6L-0iN.text" = "1. Por favor, mantenha os dedos molhados. Demasiado seco pode levar a medição imprecisa ou má qualidade do sinal de exibição.";
+//"ZCG-UE-Dre.text" = "2. Se os dedos e eletrodos estiverem em mau contato, o gráfico mostrará os seguintes erros. Recomenda-se verificar novamente e garantir que os dedos e eletrodos estejam em bom contato.";
+//"Qd0-AU-X1A.text" = "3. a fim de garantir a precisão da medição, por favor preencha sua pressão sistólica e pressão diastólica, para que possamos calibrar e fazer um julgamento preciso de acordo com seu corpo.";
+//
+//"L6n-Lc-BIB.text" = "1. Por favor, mantenha os dedos molhados. Demasiado seco pode levar a medição imprecisa ou má qualidade do sinal de exibição.";
+//"IkH-ax-TJb.text" = "2. Se os dedos e eletrodos estiverem em mau contato, o gráfico mostrará os seguintes erros. Recomenda-se verificar novamente e garantir que os dedos e eletrodos estejam em bom contato.";
+//"406-Lc-Fl7.text" = "3. a fim de garantir a precisão da medição, por favor preencha sua pressão sistólica e pressão diastólica, para que possamos calibrar e fazer um julgamento preciso de acordo com seu corpo.";
+//
+//"Oo6-Vd-ewx.normalTitle" = "Dúvidas sobre os dados?";
+//"oel-wP-yJS.normalTitle" = "Qual é o valor medido & \nPressão arterial anterior?";
+
+
+
+
+
+
+/* Class = "UILabel"; text = "是否有高血压"; ObjectID = "2BG-14-rht"; */
+"2BG-14-rht.text" = "Is there high blood pressure?";
+
+/* Class = "UILabel"; text = "请用手指紧密接触指环下部表面电极"; ObjectID = "5xf-Fk-0RB"; */
+"5xf-Fk-0RB.text" = "Please touch the electrode on the lower surface of the finger ring closely with your fingers.";
+
+/* Class = "UILabel"; text = "舒张压(低压)"; ObjectID = "6g9-ZF-nXh"; */
+"6g9-ZF-nXh.text" = "Diastolic pressure\n(low pressure)";
+
+/* Class = "UIButton"; normalTitle = "重新校准"; ObjectID = "Acm-NS-LpD"; */
+"Acm-NS-LpD.normalTitle" = "Recalibration";
+
+/* Class = "UIButton"; normalTitle = "有"; ObjectID = "D3j-2j-6sa"; */
+"D3j-2j-6sa.normalTitle" = "YES";
+
+/* Class = "UILabel"; text = "舒张压(低压)"; ObjectID = "DDM-dt-Qwn"; */
+"DDM-dt-Qwn.text" = "Diastolic pressure\n(low pressure)";
+
+/* Class = "UILabel"; text = "收缩压(高压)"; ObjectID = "Gp5-as-RUd"; */
+"Gp5-as-RUd.text" = "Systolic pressure\n(high pressure)";
+
+/* Class = "UILabel"; text = "即将开始，请做好准备"; ObjectID = "HGW-0e-4hf"; */
+"HGW-0e-4hf.text" = "It's about to start, please get ready.";
+
+/* Class = "UIButton"; normalTitle = "120"; ObjectID = "LEF-WA-Ghu"; */
+"LEF-WA-Ghu.normalTitle" = "120";
+
+/* Class = "UILabel"; text = "测量失败"; ObjectID = "M8h-m7-SH1"; */
+"M8h-m7-SH1.text" = "Measurement failure";
+
+/* Class = "UIButton"; normalTitle = "没有"; ObjectID = "O9t-Vd-gna"; */
+"O9t-Vd-gna.normalTitle" = "NO";
+
+/* Class = "UILabel"; text = "请用手指紧密接触下部表面电极，直到测量结束"; ObjectID = "OLf-Vv-4FN"; */
+"OLf-Vv-4FN.text" = "Please contact the electrode on the lower surface with your fingers until the measurement is finished.";
+
+/* Class = "UILabel"; text = "即将开始，请做好准备"; ObjectID = "R2S-s4-PeT"; */
+"R2S-s4-PeT.text" = "It's about to start, please get ready.";
+
+/* Class = "UILabel"; text = "收缩压(高压)"; ObjectID = "SYM-tL-ZM4"; */
+"SYM-tL-ZM4.text" = "Systolic pressure\n(high pressure)";
+
+/* Class = "UILabel"; text = "血压监测"; ObjectID = "Tx9-Tv-Fiu"; */
+"Tx9-Tv-Fiu.text" = "Blood pressure";
+
+/* Class = "UILabel"; text = "请输入实测值或既往血压值"; ObjectID = "WXY-vL-FYx"; */
+"WXY-vL-FYx.text" = "Please enter the measured value or previous blood pressure value.";
+
+/* Class = "UIButton"; normalTitle = "重新测量"; ObjectID = "Wdj-7m-tnA"; */
+"Wdj-7m-tnA.normalTitle" = "Remeasure";
+
+/* Class = "UILabel"; text = "14:28"; ObjectID = "Zu1-kr-tmF"; */
+"Zu1-kr-tmF.text" = "14:28";
+
+/* Class = "UIButton"; normalTitle = "提交"; ObjectID = "a4J-8q-ot4"; */
+"a4J-8q-ot4.normalTitle" = "Submit";
+
+/* Class = "UILabel"; text = "开始时间"; ObjectID = "akm-Zd-uzd"; */
+"akm-Zd-uzd.text" = "Start Time";
+
+/* Class = "UILabel"; text = "次/分钟"; ObjectID = "bry-gD-Kgc"; */
+"bry-gD-Kgc.text" = "beats/minute";
+
+/* Class = "UILabel"; text = "注意事项"; ObjectID = "fU0-99-nWm"; */
+"fU0-99-nWm.text" = "matters need attention";
+
+/* Class = "UIButton"; normalTitle = "结束监测"; ObjectID = "flR-MR-MBF"; */
+"flR-MR-MBF.normalTitle" = "Exit";
+
+/* Class = "UILabel"; text = "开始时间"; ObjectID = "gpE-wQ-xEK"; */
+"gpE-wQ-xEK.text" = "Start Time";
+
+/* Class = "UILabel"; text = "测量完成"; ObjectID = "hs4-Do-mS3"; */
+"hs4-Do-mS3.text" = "Measurement complete";
+
+/* Class = "UILabel"; text = "脉率(次/分钟)"; ObjectID = "n9H-zP-j47"; */
+"n9H-zP-j47.text" = "Heart rate\n(beats/minute)";
+
+/* Class = "UILabel"; text = "血压监测"; ObjectID = "puo-Py-ESd"; */
+"puo-Py-ESd.text" = "Blood pressure";
+
+/* Class = "UILabel"; text = "请用手指紧密接触指环下部表面电极"; ObjectID = "qce-fw-3mP"; */
+"qce-fw-3mP.text" = "Please touch the electrode on the lower surface of the finger ring closely with your fingers.";
+
+/* Class = "UIButton"; normalTitle = "80"; ObjectID = "ryP-rk-wYl"; */
+"ryP-rk-wYl.normalTitle" = "80";
+
+/* Class = "UILabel"; text = "注意事项"; ObjectID = "tze-22-r8B"; */
+"tze-22-r8B.text" = "matters need attention";
+
+/* Class = "UIButton"; normalTitle = "我已知晓，下一步"; ObjectID = "ukU-Nn-24T"; */
+"ukU-Nn-24T.normalTitle" = "I know, the next step.";
+
+/* Class = "UILabel"; text = "测量时长"; ObjectID = "uqk-zd-rc8"; */
+"uqk-zd-rc8.text" = "Measurement duration";
+
+/* Class = "UILabel"; text = "录入血压"; ObjectID = "vW9-4f-ri7"; */
+"vW9-4f-ri7.text" = "Enter blood pressure";
+
+/* Class = "UILabel"; text = "血压监测"; ObjectID = "xue-ZM-GzL"; */
+"xue-ZM-GzL.text" = "Blood pressure";
+
+/* Class = "UIButton"; normalTitle = "完成"; ObjectID = "yLs-iS-WmP"; */
+"yLs-iS-WmP.normalTitle" = "Complete";
+
+"dD7-6L-0iN.text" = "1. Please keep your fingers wet. Too dry may lead to inaccurate measurement or poor display signal quality.";
+"ZCG-UE-Dre.text" = "2. If the fingers and electrodes are in poor contact, the chart will show the following errors. It is recommended to re-check and ensure that the fingers and electrodes are in good contact.";
+"Qd0-AU-X1A.text" = "3. In order to ensure the accuracy of the measurement, please fill in your systolic pressure and diastolic pressure, so that we can calibrate and make an accurate judgment according to your body.";
+
+"L6n-Lc-BIB.text" = "1. Please keep your fingers wet. Too dry may lead to inaccurate measurement or poor display signal quality.";
+"IkH-ax-TJb.text" = "2. If the fingers and electrodes are in poor contact, the chart will show the following errors. It is recommended to re-check and ensure that the fingers and electrodes are in good contact.";
+"406-Lc-Fl7.text" = "3. In order to ensure the accuracy of the measurement, please fill in your systolic pressure and diastolic pressure, so that we can calibrate and make an accurate judgment according to your body.";
+
+"Oo6-Vd-ewx.normalTitle" = "Doubt about the data?";
+"oel-wP-yJS.normalTitle" = "What is the measured value & \nprevious blood pressure value?";

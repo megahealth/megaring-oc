@@ -31,6 +31,8 @@ FOUNDATION_EXPORT NSNotificationName const MRDeviceConnectStateUpdatedNotificati
 FOUNDATION_EXTERN NSNotificationName const MRUpgradeStateUpdatedNotification;
 FOUNDATION_EXTERN NSNotificationName const MRUpgradeProgressUpdatedNotification;
 
+FOUNDATION_EXTERN NSNotificationName const MRRawdataReceivedNotification; // During blood pressure monitoring
+
 FOUNDATION_EXTERN int kMRAlgorithmVersion;
 
 FOUNDATION_EXTERN NSString *kMRFrameworkVersion;

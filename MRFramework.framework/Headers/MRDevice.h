@@ -79,6 +79,7 @@
 @property (nonatomic, assign, getter=isScreenOff) BOOL	 screenOff;
 
 @property (nonatomic, assign) BOOL isDFUMode;
+@property (nonatomic ,assign) BOOL isOpenBloodNoti; // if set YES , MRDeviceDelegate method ---> - (void)bpDataUpdated:(NSData *)data (invalid) use notification --->  name: (MRRawdataReceivedNotification) ;
 
 
 @property (nonatomic, weak) id<MRDeviceDelegate>	 delegate;
