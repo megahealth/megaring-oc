@@ -128,8 +128,8 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
    2.指环的hrv数据不好测量，最好带回家测第二天获取指环的数据.
      The HRV data of the ring is not easy to measure. You'd better take it home and get the ring data the next day.
   
-   3.当开启睡眠模式 --- > 至少82s产生日常血氧数据 ---- > 至少30分钟产生睡眠数据 ----->      28分钟产生hrv数据（在手指与指环一直保持不动的情况下）
-     When the sleep mode is turned on -- > generate daily blood oxygen data for at least 82S -- > generate sleep data for at least 30 minutes -- > generate HRV data for 28 minutes (when the fingers and rings remain stationary)
+   3.当开启睡眠模式 --- > 至少82s产生日常血氧数据 ---- > 至少30分钟产生睡眠数据 ----->      30 分钟产生hrv数据（在手指与指环一直保持不动的情况下）
+     When the sleep mode is turned on -- > generate daily blood oxygen data for at least 82S -- > generate sleep data for at least 30 minutes -- > generate HRV data for 30 minutes (when the fingers and rings remain stationary)
  *
  */
 - (void)requestDailySleepHRVSportDataTest {
