@@ -1,0 +1,66 @@
+调用函数：void parse_HRV(char* data_in, int data_len, void* hrv_result);
+输入数据：data_in；  输入数据长度：data_len
+结果参数接口：typedef struct {
+		int version;	//data format version
+		int data_type;
+
+		HRV_Para hrv_para_result;//计算结果
+		uint32_t time_t[200];//时间戳数组
+		int time_cnt;//时间戳数组长度
+	}hrv_analysis_t;
+
+其中，计算结果hrv_para_result的内容如下：
+	starttime;//测试起始时间
+	lasttime;//测试持续时间
+	tTimePara;//时域参数
+	tFreqPara;//频域参数
+	DNNCnt;//SDNN数目
+	SDNNVect;//SDNN数组地址
+	HRcnt;//心率数目
+	HRVect;//心率数组地址
+	HistVCnt; //直方图数组长度
+	HistVect;//直方图数组地址
+	FreqVCnt; //频率显示数组长度
+	FreqVect;//频率显示数组地址
+
+其中时域参数包括：
+typedef struct
+{
+	int cnt;//分析的心搏数
+	AlgData_t meanbpm;//平均心率
+	AlgData_t SDNN;//
+	AlgData_t SDANN;//
+	AlgData_t RMSSD;//
+	int NN50;//
+	AlgData_t pNN50;//
+	AlgData_t TrangleIdx;//三角指数
+	int MaxRR;//最大RR间隔
+	int MaxRRTimeStamp;//最大RR间隔发生时间
+	int MinBpm;//最慢心率
+	int MinBpmTimeStamp;//最慢心率发生时间
+	int MaxBpm;//最快心率
+	int MaxBpmTimeStamp;//最快心率发生时间
+	int FastBpmCnt;//心动过速博数
+	AlgData_t FastBpmRate;//心动过速占比
+	int SlowBpmCnt;//心动过缓博数
+	AlgData_t SlowBpmRate;//心动过缓占比
+}Time_Para;
+
+频域参数包括：
+typedef struct
+{
+	AlgData_t TP;//
+	AlgData_t VLFP;//
+	AlgData_t LFP;//
+	AlgData_t HFP;//
+	AlgData_t LHFR;//
+}Freq_Para;
+
+各数组接口：
+SDNNVect[RESULT_SAVED_MINUTES];//SDNN数组
+HRVect[3600 * 24 * 4];//心率数组
+HistVect[VECT_OUT_LEN];//直方图数组
+FreqVect[VECT_OUT_LEN];//频率显示数组
+
+
+

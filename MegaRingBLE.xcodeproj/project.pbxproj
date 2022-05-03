@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2395DC18280FEC9700193808 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2395DC16280FEC7F00193808 /* MRFramework.framework */; platformFilter = ios; };
-		2395DC19280FEC9700193808 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2395DC16280FEC7F00193808 /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2374DF582820EB4900E08CBF /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2374DF562820EB3C00E08CBF /* MRFramework.framework */; platformFilter = ios; };
+		2374DF592820EB4900E08CBF /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2374DF562820EB3C00E08CBF /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2395DC6B280FEDF300193808 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC20280FEDF300193808 /* MJPropertyType.m */; };
 		2395DC6C280FEDF300193808 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC23280FEDF300193808 /* NSObject+MJKeyValue.m */; };
 		2395DC6D280FEDF300193808 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC24280FEDF300193808 /* MJProperty.m */; };
@@ -125,14 +125,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2395DC19280FEC9700193808 /* MRFramework.framework in CopyFiles */,
+				2374DF592820EB4900E08CBF /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2395DC16280FEC7F00193808 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
+		2374DF562820EB3C00E08CBF /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		2395DC1D280FEDF300193808 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
 		2395DC1E280FEDF300193808 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
 		2395DC1F280FEDF300193808 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
@@ -329,7 +329,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2395DC18280FEC9700193808 /* MRFramework.framework in Frameworks */,
+				2374DF582820EB4900E08CBF /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,7 +704,7 @@
 		CF665A07209B181A009EF6A6 = {
 			isa = PBXGroup;
 			children = (
-				2395DC16280FEC7F00193808 /* MRFramework.framework */,
+				2374DF562820EB3C00E08CBF /* MRFramework.framework */,
 				23A4EA4D2775DDE80090A840 /* README-zh.md */,
 				23A4EA4C2775DDE80090A840 /* README.md */,
 				3C3E9A4E2480B4870087FD85 /* Contents */,
