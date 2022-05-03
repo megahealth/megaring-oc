@@ -14,6 +14,7 @@
 #import "DeviceUpgradeViewController.h"
 #import "SyncDailyViewController.h"
 #import "TestBPViewController.h"
+#import "MJExtension.h"
 
 #define TEST_USER_ID    @"5a4331011579a30038c790de"
 //#define TEST_USER_ID    @"c22a674665e1388d020d3c856"
@@ -47,8 +48,17 @@
                 break;
                 
             case 3:
-                [weakself requestReportData];
-//                [weakself requestDailySleepHRVSportDataTest];
+//                [weakself requestReportData];
+                
+                
+                // sleep hrv ... data  You can view the notes of HRV and other data obtained by this test method
+                [weakself requestDailySleepHRVSportDataTest];
+//
+
+                 //  Obtain HRV data through separate test
+                 // [weakself requestReportDataTestType:MHBLEDataRequestTypeHRV];
+                                
+            
                 break;
                 
             case 4:
@@ -80,13 +90,6 @@
                 [weakself.device switchToNormalModel];
                 break;
                 
-//            case 8:
-//                [weakself.device setRawdataEnabled:YES];
-//                break;
-//
-//            case 9:
-//                [weakself.device setRawdataEnabled:NO];
-//                break;
                 
             case 8: {
                 DeviceUpgradeViewController *upgrade = [[DeviceUpgradeViewController alloc] initWithDevice:weakself.device];
@@ -123,14 +126,16 @@
                 break;
                 
             case 14: {
-                [weakself.device switchToBPMode];
-                weakself.bpData = [NSMutableData new];
-                weakself.bpStart = [NSDate date];
-            
+//                [weakself.device switchToBPMode];
+//                weakself.bpData = [NSMutableData new];
+//                weakself.bpStart = [NSDate date];
+//
                 
-//                TestBPViewController *vc = [[TestBPViewController alloc] init];
-//                vc.device = weakself.device;
-//                [weakself.navigationController pushViewController:vc animated:YES];
+                
+// test:    View the measurement of test blood pressure and how the ECG UI plots.
+               TestBPViewController *vc = [[TestBPViewController alloc] init];
+                vc.device = weakself.device;
+                [weakself.navigationController pushViewController:vc animated:YES];
                 
             }
                 break;

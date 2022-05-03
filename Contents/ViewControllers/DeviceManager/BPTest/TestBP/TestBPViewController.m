@@ -170,14 +170,17 @@
  
  if  set  self.device.isOpenBloodNoti = YES , MRDeviceDelegate method ---> - (void)bpDataUpdated:(NSData *)data (invalid) use notification --->  notification name: (MRRawdataReceivedNotification)  see viewDidLoad----
  
+ 
+ 
  */
-
 
 //- (void)bpDataUpdated:(NSData *)data {
 //    [self bpDataWithReportEcg:data];
 //}
-//
-
+/**
+ *
+ *
+ */
 #pragma mark  --- blood noti -----
 -(void)bpDataUpdatednoti:(NSNotification *)noti {
     
