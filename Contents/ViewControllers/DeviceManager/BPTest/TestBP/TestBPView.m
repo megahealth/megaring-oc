@@ -96,6 +96,7 @@
     self.hasHBP = NO;
 }
 
+#pragma mark -- total -------....
 - (IBAction)bpInfoClicked:(UIButton *)sender {
 //    [HDReportsInfoCardView showCardOnView:APPDELEGATE.window type:sender.tag];
 }

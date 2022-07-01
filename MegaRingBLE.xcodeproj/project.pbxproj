@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2374DF582820EB4900E08CBF /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2374DF562820EB3C00E08CBF /* MRFramework.framework */; platformFilter = ios; };
-		2374DF592820EB4900E08CBF /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2374DF562820EB3C00E08CBF /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		237DEB04286EF6AB00D68414 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237DEB02286EF6A100D68414 /* MRFramework.framework */; platformFilter = ios; };
+		237DEB05286EF6AB00D68414 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 237DEB02286EF6A100D68414 /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		237DEB32286EFBF200D68414 /* BPReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB27286EFBF200D68414 /* BPReportViewController.m */; };
+		237DEB33286EFBF200D68414 /* BPReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2A286EFBF200D68414 /* BPReportView.m */; };
+		237DEB34286EFBF200D68414 /* BPReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2B286EFBF200D68414 /* BPReportViewModel.m */; };
+		237DEB35286EFBF200D68414 /* BPReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237DEB2C286EFBF200D68414 /* BPReportViewController.xib */; };
 		2395DC6B280FEDF300193808 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC20280FEDF300193808 /* MJPropertyType.m */; };
 		2395DC6C280FEDF300193808 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC23280FEDF300193808 /* NSObject+MJKeyValue.m */; };
 		2395DC6D280FEDF300193808 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC24280FEDF300193808 /* MJProperty.m */; };
@@ -20,11 +24,6 @@
 		2395DC73280FEDF300193808 /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC2D280FEDF300193808 /* MJPropertyKey.m */; };
 		2395DC74280FEDF300193808 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC31280FEDF300193808 /* MJFoundation.m */; };
 		2395DC75280FEDF300193808 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2395DC32280FEDF300193808 /* LICENSE */; };
-		2395DC7B280FEDF300193808 /* BPReportViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2395DC45280FEDF300193808 /* BPReportViewController.strings */; };
-		2395DC7C280FEDF300193808 /* BPReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC47280FEDF300193808 /* BPReportViewController.m */; };
-		2395DC7D280FEDF300193808 /* BPReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC4A280FEDF300193808 /* BPReportView.m */; };
-		2395DC7E280FEDF300193808 /* BPReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC4E280FEDF300193808 /* BPReportViewModel.m */; };
-		2395DC7F280FEDF300193808 /* BPReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2395DC4F280FEDF300193808 /* BPReportViewController.xib */; };
 		2395DC80280FEDF300193808 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC58280FEDF300193808 /* UIImage+Extension.m */; };
 		2395DC81280FEDF300193808 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC5C280FEDF300193808 /* UIColor+Extension.m */; };
 		2395DC82280FEDF300193808 /* UIView+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC5E280FEDF300193808 /* UIView+Animations.m */; };
@@ -33,7 +32,6 @@
 		2395DC85280FEDF300193808 /* UIView+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC61280FEDF300193808 /* UIView+Property.m */; };
 		2395DC86280FEDF300193808 /* IBCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC69280FEDF300193808 /* IBCustomButton.m */; };
 		2395DC87280FEDF300193808 /* UIView+View.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC6A280FEDF300193808 /* UIView+View.m */; };
-		2395DD112810012D00193808 /* TestBPViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2395DD002810012D00193808 /* TestBPViewController.strings */; };
 		2395DD152810012D00193808 /* TestBPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2395DD0A2810012D00193808 /* TestBPViewController.xib */; };
 		2395DD1B281001B900193808 /* TestBPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DD18281001B800193808 /* TestBPView.m */; };
 		2395DD1C281001B900193808 /* TestBPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DD19281001B800193808 /* TestBPViewController.m */; };
@@ -79,7 +77,6 @@
 		3C3E9AE72480B4870087FD85 /* DeviceManagerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9A972480B4870087FD85 /* DeviceManagerViewCell.xib */; };
 		3C3E9AE82480B4870087FD85 /* DeviceManagerViewController+Methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9A982480B4870087FD85 /* DeviceManagerViewController+Methods.m */; };
 		3C3E9AE92480B4870087FD85 /* DeviceManagerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9A992480B4870087FD85 /* DeviceManagerViewCell.m */; };
-		3C3E9AEA2480B4870087FD85 /* DeviceUpgradeViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9A9B2480B4870087FD85 /* DeviceUpgradeViewController.strings */; };
 		3C3E9AEB2480B4870087FD85 /* DeviceUpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9A9E2480B4870087FD85 /* DeviceUpgradeViewController.m */; };
 		3C3E9AEC2480B4870087FD85 /* DeviceUpgradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9A9F2480B4870087FD85 /* DeviceUpgradeViewController.xib */; };
 		3C3E9AED2480B4870087FD85 /* SyncDailyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AA42480B4870087FD85 /* SyncDailyViewController.xib */; };
@@ -87,7 +84,6 @@
 		3C3E9AF92480B4870087FD85 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AB72480B4870087FD85 /* Localizable.strings */; };
 		3C3E9AFA2480B4870087FD85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AB92480B4870087FD85 /* InfoPlist.strings */; };
 		3C3E9AFB2480B4870087FD85 /* LocalStringKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9ABD2480B4870087FD85 /* LocalStringKeys.m */; };
-		3C3E9AFC2480B4870087FD85 /* MRDefaultView.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC02480B4870087FD85 /* MRDefaultView.strings */; };
 		3C3E9AFD2480B4870087FD85 /* MRDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC52480B4870087FD85 /* MRDefaultView.xib */; };
 		3C3E9AFE2480B4870087FD85 /* IBCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC72480B4870087FD85 /* IBCustomView.m */; };
 		3C3E9AFF2480B4870087FD85 /* MRDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC82480B4870087FD85 /* MRDefaultView.m */; };
@@ -125,14 +121,27 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2374DF592820EB4900E08CBF /* MRFramework.framework in CopyFiles */,
+				237DEB05286EF6AB00D68414 /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2374DF562820EB3C00E08CBF /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
+		237DEB02286EF6A100D68414 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
+		237DEB27286EFBF200D68414 /* BPReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportViewController.m; sourceTree = "<group>"; };
+		237DEB2A286EFBF200D68414 /* BPReportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportView.m; sourceTree = "<group>"; };
+		237DEB2B286EFBF200D68414 /* BPReportViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportViewModel.m; sourceTree = "<group>"; };
+		237DEB2D286EFBF200D68414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BPReportViewController.xib; sourceTree = "<group>"; };
+		237DEB2E286EFBF200D68414 /* BPReportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPReportView.h; sourceTree = "<group>"; };
+		237DEB2F286EFBF200D68414 /* BPReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPReportViewController.h; sourceTree = "<group>"; };
+		237DEB30286EFBF200D68414 /* BPReportViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPReportViewModel.h; sourceTree = "<group>"; };
+		237DEB3E286EFC2600D68414 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BPReportViewController.strings"; sourceTree = "<group>"; };
+		237DEB3F286EFC2900D68414 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BPReportViewController.strings; sourceTree = "<group>"; };
+		237DEB40286EFC3B00D68414 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeviceUpgradeViewController.strings; sourceTree = "<group>"; };
+		237DEB41286EFC3E00D68414 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceUpgradeViewController.strings"; sourceTree = "<group>"; };
+		237DEB4A286EFC9800D68414 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MRDefaultView.strings; sourceTree = "<group>"; };
+		237DEB4B286EFC9B00D68414 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MRDefaultView.strings"; sourceTree = "<group>"; };
 		2395DC1D280FEDF300193808 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
 		2395DC1E280FEDF300193808 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
 		2395DC1F280FEDF300193808 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
@@ -155,21 +164,6 @@
 		2395DC30280FEDF300193808 /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
 		2395DC31280FEDF300193808 /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
 		2395DC32280FEDF300193808 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		2395DC46280FEDF300193808 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/BPReportViewController.strings; sourceTree = "<group>"; };
-		2395DC47280FEDF300193808 /* BPReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportViewController.m; sourceTree = "<group>"; };
-		2395DC48280FEDF300193808 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BPReportViewController.strings"; sourceTree = "<group>"; };
-		2395DC49280FEDF300193808 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BPReportViewController.strings; sourceTree = "<group>"; };
-		2395DC4A280FEDF300193808 /* BPReportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportView.m; sourceTree = "<group>"; };
-		2395DC4B280FEDF300193808 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/BPReportViewController.strings; sourceTree = "<group>"; };
-		2395DC4C280FEDF300193808 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/BPReportViewController.strings; sourceTree = "<group>"; };
-		2395DC4D280FEDF300193808 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/BPReportViewController.strings; sourceTree = "<group>"; };
-		2395DC4E280FEDF300193808 /* BPReportViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportViewModel.m; sourceTree = "<group>"; };
-		2395DC50280FEDF300193808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BPReportViewController.xib; sourceTree = "<group>"; };
-		2395DC51280FEDF300193808 /* BPReportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPReportView.h; sourceTree = "<group>"; };
-		2395DC52280FEDF300193808 /* BPReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPReportViewController.h; sourceTree = "<group>"; };
-		2395DC53280FEDF300193808 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/BPReportViewController.strings; sourceTree = "<group>"; };
-		2395DC54280FEDF300193808 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/BPReportViewController.strings"; sourceTree = "<group>"; };
-		2395DC55280FEDF300193808 /* BPReportViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPReportViewModel.h; sourceTree = "<group>"; };
 		2395DC58280FEDF300193808 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		2395DC59280FEDF300193808 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		2395DC5B280FEDF300193808 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
@@ -187,27 +181,13 @@
 		2395DC68280FEDF300193808 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		2395DC69280FEDF300193808 /* IBCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCustomButton.m; sourceTree = "<group>"; };
 		2395DC6A280FEDF300193808 /* UIView+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+View.m"; sourceTree = "<group>"; };
-		2395DD012810012D00193808 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
-		2395DD022810012D00193808 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TestBPViewController.strings"; sourceTree = "<group>"; };
-		2395DD032810012D00193808 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
-		2395DD042810012D00193808 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
-		2395DD062810012D00193808 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
-		2395DD082810012D00193808 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
 		2395DD0B2810012D00193808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TestBPViewController.xib; sourceTree = "<group>"; };
-		2395DD0D2810012D00193808 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
-		2395DD0E2810012D00193808 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/TestBPViewController.strings"; sourceTree = "<group>"; };
 		2395DD17281001B800193808 /* TestBPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBPViewController.h; sourceTree = "<group>"; };
 		2395DD18281001B800193808 /* TestBPView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBPView.m; sourceTree = "<group>"; };
 		2395DD19281001B800193808 /* TestBPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBPViewController.m; sourceTree = "<group>"; };
 		2395DD1A281001B800193808 /* TestBPView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBPView.h; sourceTree = "<group>"; };
 		2395DD1D281001BF00193808 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
 		2395DD1E281001C100193808 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TestBPViewController.strings"; sourceTree = "<group>"; };
-		2395DD1F281001C400193808 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
-		2395DD20281001C600193808 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
-		2395DD21281001C900193808 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
-		2395DD22281001CB00193808 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
-		2395DD23281001CF00193808 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/TestBPViewController.strings"; sourceTree = "<group>"; };
-		2395DD24281001D200193808 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
 		23A4EA4C2775DDE80090A840 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		23A4EA4D2775DDE80090A840 /* README-zh.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "README-zh.md"; sourceTree = "<group>"; };
 		3C0842CF25ECF4CC008508D4 /* MegaRingV3_V10761.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV3_V10761.zip; sourceTree = "<group>"; };
@@ -284,8 +264,6 @@
 		3C3E9A972480B4870087FD85 /* DeviceManagerViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceManagerViewCell.xib; sourceTree = "<group>"; };
 		3C3E9A982480B4870087FD85 /* DeviceManagerViewController+Methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DeviceManagerViewController+Methods.m"; sourceTree = "<group>"; };
 		3C3E9A992480B4870087FD85 /* DeviceManagerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceManagerViewCell.m; sourceTree = "<group>"; };
-		3C3E9A9C2480B4870087FD85 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceUpgradeViewController.strings"; sourceTree = "<group>"; };
-		3C3E9A9D2480B4870087FD85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DeviceUpgradeViewController.strings; sourceTree = "<group>"; };
 		3C3E9A9E2480B4870087FD85 /* DeviceUpgradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceUpgradeViewController.m; sourceTree = "<group>"; };
 		3C3E9AA02480B4870087FD85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DeviceUpgradeViewController.xib; sourceTree = "<group>"; };
 		3C3E9AA12480B4870087FD85 /* DeviceUpgradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceUpgradeViewController.h; sourceTree = "<group>"; };
@@ -299,8 +277,6 @@
 		3C3E9ABC2480B4870087FD85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C3E9ABD2480B4870087FD85 /* LocalStringKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalStringKeys.m; sourceTree = "<group>"; };
 		3C3E9ABE2480B4870087FD85 /* LocalStringKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalStringKeys.h; sourceTree = "<group>"; };
-		3C3E9AC12480B4870087FD85 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MRDefaultView.strings"; sourceTree = "<group>"; };
-		3C3E9AC22480B4870087FD85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MRDefaultView.strings; sourceTree = "<group>"; };
 		3C3E9AC32480B4870087FD85 /* IBCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCustomView.h; sourceTree = "<group>"; };
 		3C3E9AC42480B4870087FD85 /* MRDefaultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRDefaultView.h; sourceTree = "<group>"; };
 		3C3E9AC62480B4870087FD85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MRDefaultView.xib; sourceTree = "<group>"; };
@@ -329,7 +305,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2374DF582820EB4900E08CBF /* MRFramework.framework in Frameworks */,
+				237DEB04286EF6AB00D68414 /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,12 +326,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		237DEB24286EFBF200D68414 /* BPReport */ = {
+			isa = PBXGroup;
+			children = (
+				237DEB27286EFBF200D68414 /* BPReportViewController.m */,
+				237DEB2A286EFBF200D68414 /* BPReportView.m */,
+				237DEB2B286EFBF200D68414 /* BPReportViewModel.m */,
+				237DEB2C286EFBF200D68414 /* BPReportViewController.xib */,
+				237DEB2E286EFBF200D68414 /* BPReportView.h */,
+				237DEB2F286EFBF200D68414 /* BPReportViewController.h */,
+				237DEB30286EFBF200D68414 /* BPReportViewModel.h */,
+			);
+			path = BPReport;
+			sourceTree = "<group>";
+		};
 		2395DC1A280FEDF300193808 /* BPTest */ = {
 			isa = PBXGroup;
 			children = (
+				237DEB24286EFBF200D68414 /* BPReport */,
 				2395DCFF2810012D00193808 /* TestBP */,
 				2395DC1B280FEDF300193808 /* MJExtension */,
-				2395DC44280FEDF300193808 /* BPReport */,
 				2395DC56280FEDF300193808 /* Categorys */,
 			);
 			path = BPTest;
@@ -396,21 +386,6 @@
 				2395DC31280FEDF300193808 /* MJFoundation.m */,
 			);
 			path = MJExtension;
-			sourceTree = "<group>";
-		};
-		2395DC44280FEDF300193808 /* BPReport */ = {
-			isa = PBXGroup;
-			children = (
-				2395DC45280FEDF300193808 /* BPReportViewController.strings */,
-				2395DC47280FEDF300193808 /* BPReportViewController.m */,
-				2395DC4A280FEDF300193808 /* BPReportView.m */,
-				2395DC4E280FEDF300193808 /* BPReportViewModel.m */,
-				2395DC4F280FEDF300193808 /* BPReportViewController.xib */,
-				2395DC51280FEDF300193808 /* BPReportView.h */,
-				2395DC52280FEDF300193808 /* BPReportViewController.h */,
-				2395DC55280FEDF300193808 /* BPReportViewModel.h */,
-			);
-			path = BPReport;
 			sourceTree = "<group>";
 		};
 		2395DC56280FEDF300193808 /* Categorys */ = {
@@ -468,7 +443,6 @@
 				2395DD18281001B800193808 /* TestBPView.m */,
 				2395DD17281001B800193808 /* TestBPViewController.h */,
 				2395DD19281001B800193808 /* TestBPViewController.m */,
-				2395DD002810012D00193808 /* TestBPViewController.strings */,
 				2395DD0A2810012D00193808 /* TestBPViewController.xib */,
 			);
 			path = TestBP;
@@ -623,7 +597,6 @@
 				3C3E9AA12480B4870087FD85 /* DeviceUpgradeViewController.h */,
 				3C3E9A9E2480B4870087FD85 /* DeviceUpgradeViewController.m */,
 				3C3E9A9F2480B4870087FD85 /* DeviceUpgradeViewController.xib */,
-				3C3E9A9B2480B4870087FD85 /* DeviceUpgradeViewController.strings */,
 			);
 			path = DeviceUpgrade;
 			sourceTree = "<group>";
@@ -671,7 +644,6 @@
 		3C3E9ABF2480B4870087FD85 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3C3E9AC02480B4870087FD85 /* MRDefaultView.strings */,
 				3C3E9AC32480B4870087FD85 /* IBCustomView.h */,
 				3C3E9AC42480B4870087FD85 /* MRDefaultView.h */,
 				3C3E9AC52480B4870087FD85 /* MRDefaultView.xib */,
@@ -704,7 +676,7 @@
 		CF665A07209B181A009EF6A6 = {
 			isa = PBXGroup;
 			children = (
-				2374DF562820EB3C00E08CBF /* MRFramework.framework */,
+				237DEB02286EF6A100D68414 /* MRFramework.framework */,
 				23A4EA4D2775DDE80090A840 /* README-zh.md */,
 				23A4EA4C2775DDE80090A840 /* README.md */,
 				3C3E9A4E2480B4870087FD85 /* Contents */,
@@ -852,12 +824,6 @@
 				en,
 				Base,
 				"zh-Hans",
-				de,
-				es,
-				it,
-				cs,
-				fr,
-				"pt-PT",
 			);
 			mainGroup = CF665A07209B181A009EF6A6;
 			productRefGroup = CF665A11209B181A009EF6A6 /* Products */;
@@ -877,14 +843,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C3E9AFD2480B4870087FD85 /* MRDefaultView.xib in Resources */,
-				3C3E9AFC2480B4870087FD85 /* MRDefaultView.strings in Resources */,
 				3C3E9ADD2480B4870087FD85 /* MRHomeViewController.xib in Resources */,
-				2395DD112810012D00193808 /* TestBPViewController.strings in Resources */,
 				3C0842DF25ECF63A008508D4 /* data1-1 in Resources */,
 				3C3E9AEC2480B4870087FD85 /* DeviceUpgradeViewController.xib in Resources */,
 				2395DD152810012D00193808 /* TestBPViewController.xib in Resources */,
+				237DEB35286EFBF200D68414 /* BPReportViewController.xib in Resources */,
 				3C3E9AE12480B4870087FD85 /* MRHomeViewCell.xib in Resources */,
-				3C3E9AEA2480B4870087FD85 /* DeviceUpgradeViewController.strings in Resources */,
 				3C3E9AFA2480B4870087FD85 /* InfoPlist.strings in Resources */,
 				3C0842E025ECF63B008508D4 /* data1-2 in Resources */,
 				23A4EA502775DDE80090A840 /* README-zh.md in Resources */,
@@ -898,11 +862,9 @@
 				3C3E9AE42480B4870087FD85 /* DeviceManagerViewController.xib in Resources */,
 				2395DC75280FEDF300193808 /* LICENSE in Resources */,
 				3C3E9AED2480B4870087FD85 /* SyncDailyViewController.xib in Resources */,
-				2395DC7B280FEDF300193808 /* BPReportViewController.strings in Resources */,
 				3C0842DD25ECF63A008508D4 /* data6-1 in Resources */,
 				3C3E9AE72480B4870087FD85 /* DeviceManagerViewCell.xib in Resources */,
 				23A4EA4F2775DDE80090A840 /* README.md in Resources */,
-				2395DC7F280FEDF300193808 /* BPReportViewController.xib in Resources */,
 				CF665A1B209B181A009EF6A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -947,6 +909,7 @@
 				2395DC84280FEDF300193808 /* UIView+Location.m in Sources */,
 				3C3E9AD02480B4870087FD85 /* aeskey.c in Sources */,
 				2395DC6E280FEDF300193808 /* NSObject+MJCoding.m in Sources */,
+				237DEB33286EFBF200D68414 /* BPReportView.m in Sources */,
 				3C3E9ACA2480B4870087FD85 /* unzip.c in Sources */,
 				3C3E9AD62480B4870087FD85 /* prng.c in Sources */,
 				3C3E9AEE2480B4870087FD85 /* SyncDailyViewController.m in Sources */,
@@ -956,6 +919,7 @@
 				2395DC71280FEDF300193808 /* NSObject+MJClass.m in Sources */,
 				3C3E9AE82480B4870087FD85 /* DeviceManagerViewController+Methods.m in Sources */,
 				3C3E9ADA2480B4870087FD85 /* UIViewController+Extension.m in Sources */,
+				237DEB32286EFBF200D68414 /* BPReportViewController.m in Sources */,
 				3C3E9AD52480B4870087FD85 /* aes_ni.c in Sources */,
 				2395DC85280FEDF300193808 /* UIView+Property.m in Sources */,
 				CF665A23209B181B009EF6A6 /* main.m in Sources */,
@@ -971,16 +935,14 @@
 				3C3E9AD32480B4870087FD85 /* fileenc.c in Sources */,
 				3C3E9AD92480B4870087FD85 /* SSZipArchive.m in Sources */,
 				2395DC70280FEDF300193808 /* NSObject+MJProperty.m in Sources */,
-				2395DC7D280FEDF300193808 /* BPReportView.m in Sources */,
 				3C3E9AE92480B4870087FD85 /* DeviceManagerViewCell.m in Sources */,
 				2395DC80280FEDF300193808 /* UIImage+Extension.m in Sources */,
 				2395DC86280FEDF300193808 /* IBCustomButton.m in Sources */,
-				2395DC7C280FEDF300193808 /* BPReportViewController.m in Sources */,
 				2395DC6C280FEDF300193808 /* NSObject+MJKeyValue.m in Sources */,
 				3C3E9AE02480B4870087FD85 /* MRHomeViewModel.m in Sources */,
 				3C3E9AE62480B4870087FD85 /* DeviceManagerView.m in Sources */,
 				3C3E9AFF2480B4870087FD85 /* MRDefaultView.m in Sources */,
-				2395DC7E280FEDF300193808 /* BPReportViewModel.m in Sources */,
+				237DEB34286EFBF200D68414 /* BPReportViewModel.m in Sources */,
 				2395DC6B280FEDF300193808 /* MJPropertyType.m in Sources */,
 				3C3E9AD72480B4870087FD85 /* pwd2key.c in Sources */,
 				3C3E9ACF2480B4870087FD85 /* minishared.c in Sources */,
@@ -1023,42 +985,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2395DC45280FEDF300193808 /* BPReportViewController.strings */ = {
+		237DEB2C286EFBF200D68414 /* BPReportViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2395DC46280FEDF300193808 /* de */,
-				2395DC48280FEDF300193808 /* zh-Hans */,
-				2395DC49280FEDF300193808 /* en */,
-				2395DC4B280FEDF300193808 /* es */,
-				2395DC4C280FEDF300193808 /* it */,
-				2395DC4D280FEDF300193808 /* cs */,
-				2395DC53280FEDF300193808 /* fr */,
-				2395DC54280FEDF300193808 /* pt-PT */,
-			);
-			name = BPReportViewController.strings;
-			sourceTree = "<group>";
-		};
-		2395DC4F280FEDF300193808 /* BPReportViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2395DC50280FEDF300193808 /* Base */,
+				237DEB2D286EFBF200D68414 /* Base */,
+				237DEB3E286EFC2600D68414 /* zh-Hans */,
+				237DEB3F286EFC2900D68414 /* en */,
 			);
 			name = BPReportViewController.xib;
-			sourceTree = "<group>";
-		};
-		2395DD002810012D00193808 /* TestBPViewController.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2395DD012810012D00193808 /* de */,
-				2395DD022810012D00193808 /* zh-Hans */,
-				2395DD032810012D00193808 /* en */,
-				2395DD042810012D00193808 /* es */,
-				2395DD062810012D00193808 /* it */,
-				2395DD082810012D00193808 /* cs */,
-				2395DD0D2810012D00193808 /* fr */,
-				2395DD0E2810012D00193808 /* pt-PT */,
-			);
-			name = TestBPViewController.strings;
 			sourceTree = "<group>";
 		};
 		2395DD0A2810012D00193808 /* TestBPViewController.xib */ = {
@@ -1067,29 +1001,16 @@
 				2395DD0B2810012D00193808 /* Base */,
 				2395DD1D281001BF00193808 /* en */,
 				2395DD1E281001C100193808 /* zh-Hans */,
-				2395DD1F281001C400193808 /* cs */,
-				2395DD20281001C600193808 /* fr */,
-				2395DD21281001C900193808 /* de */,
-				2395DD22281001CB00193808 /* it */,
-				2395DD23281001CF00193808 /* pt-PT */,
-				2395DD24281001D200193808 /* es */,
 			);
 			name = TestBPViewController.xib;
-			sourceTree = "<group>";
-		};
-		3C3E9A9B2480B4870087FD85 /* DeviceUpgradeViewController.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C3E9A9C2480B4870087FD85 /* zh-Hans */,
-				3C3E9A9D2480B4870087FD85 /* en */,
-			);
-			name = DeviceUpgradeViewController.strings;
 			sourceTree = "<group>";
 		};
 		3C3E9A9F2480B4870087FD85 /* DeviceUpgradeViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3C3E9AA02480B4870087FD85 /* Base */,
+				237DEB40286EFC3B00D68414 /* en */,
+				237DEB41286EFC3E00D68414 /* zh-Hans */,
 			);
 			name = DeviceUpgradeViewController.xib;
 			sourceTree = "<group>";
@@ -1112,19 +1033,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		3C3E9AC02480B4870087FD85 /* MRDefaultView.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C3E9AC12480B4870087FD85 /* zh-Hans */,
-				3C3E9AC22480B4870087FD85 /* en */,
-			);
-			name = MRDefaultView.strings;
-			sourceTree = "<group>";
-		};
 		3C3E9AC52480B4870087FD85 /* MRDefaultView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3C3E9AC62480B4870087FD85 /* Base */,
+				237DEB4A286EFC9800D68414 /* en */,
+				237DEB4B286EFC9B00D68414 /* zh-Hans */,
 			);
 			name = MRDefaultView.xib;
 			sourceTree = "<group>";
@@ -1267,7 +1181,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.11.61;
+				CURRENT_PROJECT_VERSION = 1.11.8;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1283,7 +1197,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.11.61;
+				MARKETING_VERSION = 1.11.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.megahealth.MegaRingBLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1295,7 +1209,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.11.61;
+				CURRENT_PROJECT_VERSION = 1.11.8;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1311,7 +1225,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.11.61;
+				MARKETING_VERSION = 1.11.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.megahealth.MegaRingBLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

@@ -144,18 +144,24 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
         self.device.isDownloadingData = NO;
         NSLog(@"Dailydata:%@", data);
+        
        if (data) {
             NSArray *dailyReports = [MRApi parseDaily:data];
             NSLog(@"dailyReports----%@", dailyReports);
-//            1.  deal data ... save daily data.
+//            1.  deal data ... save daily data.  可以保存daily data 到本地。
            
            //2. Method....
            [self requestDailySleepHRVSportDataTest];
        }else{
-           //1 . updata daily data/
+           //1 . updata daily data/  可以把daily data 上传到服务器..
+           
           //  2.  Whether the ring has other data.
+           
+           NSLog(@"self.shouldSyncData---------%d",self.shouldSyncData);
+           
            if (self.shouldSyncData) {
-               [self requestReportDataTestType:MRDataTypeMonitor];
+               
+               [self requestReportDataTestType:MRDataTypeMonitor]; // 获取指环中的睡眠运动数据....
            }
        }
     }];
@@ -176,6 +182,17 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
    3.当开启睡眠模式 --- > 至少82s产生日常血氧数据 ---- > 至少30分钟产生睡眠数据 ----->      至少30分钟产生hrv数据（在手指与指环一直保持不动的情况下）
      When the sleep mode is turned on -- > generate daily blood oxygen data for at least 82S -- > generate sleep data for at least 30 minutes -- > generate HRV data for 30 minutes (when the fingers and rings remain stationary)
  *
+ *使用iOS SDK测试：
+ *  1. 指环连接成功好之后， 然后开启睡眠监测（手指与指环至少保持30分钟静止不动）
+ *
+ *  2. 结束监测, 点击同步数据。（收取 daily data（MRDataTypeDaily） 和 MRDataTypeMonitor 数据  ） ios 测试方法：[self requestDailySleepHRVSportDataTest] ;
+ *
+ *  3. 当收取完成数据解析查看是否产生了（report.SDNN，report.rrArr...）---- > HRV (report.reportType == 10 hrv的类型);
+ *
+ *  （可查看(DeviceManagerViewContoller + methods)和（DeviceManagerViewController）的 测试使用情况）
+ *
+ *
+ *
  */
 #pragma mark test method
 -(void)requestReportDataTestType:(MRDataType)type {
@@ -187,6 +204,14 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     
     [self.device requestData:type progress:^(float progress) {
         NSLog(@"progress:%.4f", progress);
+        
+        self.titleNavView.text = [NSString stringWithFormat:@"%@: %.4f",NSLocalizedString(MRGetDataProgress, nil),progress];
+        
+        if (progress >=1) {
+            self.titleNavView.text = NSLocalizedString(MRGetDataFinished, nil);
+        }
+        
+        
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
         self.device.isDownloadingData = NO;
         self.shouldSyncData = NO;
@@ -204,10 +229,14 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
                     NSLog(@"pr max:%d, min:%d, avg:%d", report.maxPr, report.minPr, report.avgPr);
                     NSLog(@"sp len:%lu, pr len:%lu", (unsigned long)report.spArr.count, (unsigned long)report.prArr.count);
                     
-                    NSLog(@"SDNN===========%f",report.SDNN);
+//                    NSLog(@"SDNN===========%f",report.SDNN);
                 
                 if (report.reportType == 10) {
-                    QMRLog(@"hrvData----------------%@",[report mj_keyValues]);
+
+                    NSLog(@"report.SDNN--------%f--------report.rrArr---------%@",report.SDNN,report.rrArr);
+                    
+                    
+//                 test ...  save hrv data ... 
                     [[NSUserDefaults standardUserDefaults]setValue:[report mj_keyValues] forKey:@"testHRVData"];
                     [[NSUserDefaults standardUserDefaults]synchronize];
                     

@@ -74,3 +74,9 @@
 "MRStartBPMonitor" = "Measure Blood Pressure";
 "MRSyncDailyData" = "Sync daily data";
 "MRStarGLU" = "Start GLU";
+"MRDeviceConnected" = "Device connected";
+"MRDeviceDisconnected" = "Device disconnected";
+"MRDeviceDisReconnecting" = "Device disconnect,Reconnecting...";
+"MRClickReconnect" = "Reconnect";
+"MRGetDataProgress" = "Get data progress:";
+"MRGetDataFinished" = "Get data finished";

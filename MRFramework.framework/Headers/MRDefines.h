@@ -27,7 +27,7 @@ typedef NS_ENUM(Byte, MRBatteryState) {
 };
 
 typedef NS_ENUM(Byte, MRCMD) {
-    MRCMDBind                         	= 0XB0,      	// 绑定
+    MRCMDBind                         	= 0XB0,      	// Bind 绑定
     MRCMDShake                        	= 0XB1,
     MRCMDShutdown                       = 0XB2,
     MRCMDSetMonitor                     = 0XD0,			// 血氧监测模式
@@ -81,16 +81,16 @@ typedef NS_ENUM(Byte, MRBindResp) {
  * For now, device mode is either sleep or normal
  */
 typedef NS_ENUM(Byte, MRDeviceMonitorMode) {
-    MRDeviceMonitorModeIdle,            //0 空闲
-    MRDeviceMonitorModeSleep,			// 1 睡眠模式, 血氧脉率监测
-    MRDeviceMonitorModeSport,           // 2 运动模式, 心率监测
-    MRDeviceMonitorModeNormal,			// 3 日常模式, 空闲
-    MRDeviceMonitorModeRealTime,        // 4 实时模式, 雪阳脉率监测, 但不会产生数据
-    MRDeviceMonitorModeBloodPresure,    // 5 血压模式
-    MRDeviceMonitorModePulse,           // 6 脉诊仪模式
-    MRDeviceMonitorModeGLU      = 0x09, // 血糖模式
-    MRDeviceMonitorModeHRV      = 0x0a,
-    MRDeviceMonitorModeNone     = 0x0f,
+    MRDeviceMonitorModeIdle,            // 0 Idle mode 空闲
+    MRDeviceMonitorModeSleep,			// 1 Sleep mode 睡眠模式, 血氧脉率监测
+    MRDeviceMonitorModeSport,           // 2 Sport Mode 运动模式, 心率监测
+    MRDeviceMonitorModeNormal,			// 3 Normal mode （free） 日常模式, 空闲
+    MRDeviceMonitorModeRealTime,        // 4 Real time mode, blood oxygen pulse rate monitoring，But no data will be generated 实时模式, 血氧脉率监测, 但不会产生数据
+    MRDeviceMonitorModeBloodPresure,    // 5  Blood pressure mode 血压模式
+    MRDeviceMonitorModePulse,           // 6 Pulse detector mode 脉诊仪模式
+    MRDeviceMonitorModeGLU      = 0x09, // 9 Blood glucose pattern 血糖模式
+    MRDeviceMonitorModeHRV      = 0x0a, // 10 Turn on sleep to generate HRV data  hrv 开启睡眠后，手指与指环保持不动至少30 会产生HRV type 的数据。
+    MRDeviceMonitorModeNone     = 0x0f, // no mode.
 };
 
 

@@ -43,8 +43,10 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self._view.model.ecg = self.report.ecg;
-    [self._view updateEcg];
+//    self._view.model.ecg = self.report.ecg;
+//    [self._view updateEcg];
+    
+    
 }
 
 - (void)loadReport {
@@ -55,15 +57,20 @@
     self._view.model.sbp = [NSString stringWithFormat:@"%.1f", self.report.SBP];
     self._view.model.dbp = [NSString stringWithFormat:@"%.1f", self.report.DBP];
     [self._view updateData];
+//    [[NSUserDefaults standardUserDefaults]setValue:@(sbp) forKey:@"UserID_SBP"];
+    
+    NSNumber * sbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserID_SBP"];
+    
+    NSNumber * dbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserId_DBP"];
 
-    
-//    [MRApi parseBPData:self.report.data time:1326 caliSBP:120 caliDBP:80 block:^(MRBPReport *report, NSError *error) {
-//
+    NSLog(@"sbp------%@------dbp-------%@",sbp,dbp);
+    [MRApi parseBPData:self.report.data time:1326 caliSBP:sbp.doubleValue caliDBP:dbp.doubleValue block:^(MRBPReport *report, NSError *error) {
+
 //  or  in  viewDidAppear:
-//        self._view.model.ecg = report.ecg;
-//        [self._view updateEcg];
+        self._view.model.ecg = report.ecg;
+        [self._view updateEcg];
     
-//    }];
+    }];
 
 }
 

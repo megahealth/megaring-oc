@@ -74,3 +74,9 @@
 "MRStartBPMonitor" = "测量血压";
 "MRSyncDailyData" = "同步日常数据";
 "MRStarGLU" = "开启血糖";
+"MRDeviceConnected" = "设备已连接";
+"MRDeviceDisconnected" = "设备已断开";
+"MRDeviceDisReconnecting" = "设备已断开,正在重连中...";
+"MRClickReconnect" = "点击重连";
+"MRGetDataProgress" = "获取数据的进度:";
+"MRGetDataFinished" = "数据获取完成";

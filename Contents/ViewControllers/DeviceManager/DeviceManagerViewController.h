@@ -20,7 +20,8 @@
 - (instancetype)initWithDevice:(MRDevice *)device;
 
 @property (strong, nonatomic) IBOutlet DeviceManagerView *deviceManagerView;
-
+// title... 
+@property (nonatomic, strong)UILabel * titleNavView;
 
 
 @end

@@ -220,6 +220,7 @@
 @property (nonatomic, strong) NSArray *freqArr;  //频率数组 Frequency array
 @property (nonatomic, strong) NSArray *rrArr; // 心率曲线 Heart rate curve
 
+@property (nonatomic, assign) BOOL durationValid;
 
 
 @end

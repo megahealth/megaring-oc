@@ -128,7 +128,7 @@
 //    [self setUp];
     self.homeView.viewModel = [[MRHomeViewModel alloc] init];
     
-    self.usingCustomConnecter = YES;
+    self.usingCustomConnecter = NO;
     if (self.usingCustomConnecter) {
         dispatch_queue_t     queue = dispatch_queue_create("CustomConnecterQueue", NULL);
         NSDictionary    *options = @{CBCentralManagerOptionShowPowerAlertKey:@NO};

@@ -118,7 +118,7 @@ This are some methods that can help getting device's status in protocol `MRDevic
 
 6. Description of HRV: after turning on sleep monitoring, HRV data will be generated when [fingers and rings remain stationary] for at least 28 minutes. (during the test, it's not easy to measure. It's best to test for a long time, because the HRV data may not be generated if the test finger shakes for a short time. It's recommended to start sleep monitoring when taking it home to sleep and collect the data the next day).
 
-7. ECG Description: after the blood pressure detection is started, the ECG data is obtained by analyzing the data.
+7. ECG Description: after the blood pressure detection is started, the ECG data is obtained by analyzing the data. [Turn on blood pressure monitoring and view the UI drawing details of ECG after measurement]
 
 
 ### Device upgrade
@@ -155,3 +155,21 @@ This are some methods that can help getting device's status in protocol `MRDevic
 You just need to put the ".framework" file into your project and select Embed & Sign.  
 ![](./Embed.png)
 
+
+
+###****** development note - the ring may sometimes be disconnected******
+
+1. When the signal is weak.
+2. Connect frequently in a short time.
+3. When the monitoring mode is switched many times in a short time.
+4. When binding a new device, the ring does not shake.
+5. Such as low power, charging, full space, use for more than 12 hours, etc;
+
+When monitoring is enabled: [if the ring generates data every time a monitoring mode is enabled, the data in the ring will be collected to ensure that the data in the ring is empty before a monitoring mode is enabled]
+
+
+ *** Tip：please test the use in (DeviceManagerViewController.m and DeviceManagerViewController+Methods) to help you : 
+
+        1. Data collection: after the monitoring is turned on, the ring generates data. After the monitoring is completed (after power failure and reconnection, and after restarting the app), the ring collects data: (as long as the post monitoring inspection mode is turned off, the data is collected at the beginning). You can check the simple process.
+        
+        2. You can check the simple process of reconnecting after disconnection.

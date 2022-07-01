@@ -35,7 +35,15 @@
 }
 
 - (IBAction)submitClicked:(UIButton *)sender {
+        int sbp = self._view.SBP;
+        int dbp = self._view.DBP;
+    [[NSUserDefaults standardUserDefaults]setValue:@(sbp) forKey:@"UserID_SBP"];
+    
+    [[NSUserDefaults standardUserDefaults]setValue:@(dbp) forKey:@"UserId_DBP"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    
     [self leave];
+    
     return;
     
 //    static BOOL updating = NO;
@@ -88,8 +96,14 @@
 //    self.patient = [MHPatientInfoManager currentPatient];
     self._view.skipEditBP = YES;
 //    self.patient.DBP > 0 && self.patient.SBP > 0;
-    self._view.SBP =  120;
-    self._view.DBP =  80;
+    
+//    test : dbp --- 
+   NSNumber * dbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserID_DBP"];
+    NSNumber * sbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserID_SBP"];
+    
+    
+    self._view.SBP =  sbp ? sbp.intValue : 120;
+    self._view.DBP =  dbp ? dbp.intValue : 80;
     self._view.hasHBP = NO;
     
 //    self.patient.hasHBP;
@@ -157,7 +171,7 @@
 }
 
 - (void)monitorModeUpdated {
-    NSLog(@"monitorModeUpdated:%d", self.device.monitorMode);
+    NSLog(@"testBpViewController------monitorModeUpdated:%d", self.device.monitorMode);
     
     if (self.device.monitorMode != MRDeviceMonitorModeBloodPresure && self._view.progress > TestBPProgressTesting && self._view.progress < TestBPProgressFinish) {
         [self presentDisconncetAlert];
@@ -169,9 +183,6 @@
  test ....
  
  if  set  self.device.isOpenBloodNoti = YES , MRDeviceDelegate method ---> - (void)bpDataUpdated:(NSData *)data (invalid) use notification --->  notification name: (MRRawdataReceivedNotification)  see viewDidLoad----
- 
- 
- 
  */
 
 //- (void)bpDataUpdated:(NSData *)data {

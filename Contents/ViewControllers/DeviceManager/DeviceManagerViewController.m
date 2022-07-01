@@ -15,36 +15,82 @@
 #import "SyncDailyViewController.h"
 #import "TestBPViewController.h"
 #import "MJExtension.h"
+#import <CoreBluetooth/CoreBluetooth.h>
 
 #define TEST_USER_ID    @"5a4331011579a30038c790de"
 //#define TEST_USER_ID    @"c22a674665e1388d020d3c856"
+
+static const NSInteger kCheckDiscoveredDeviceForConnectionDuration = 5;
+static const NSInteger kScanDeviceTimeoutDuration = 30;
+
 
 @interface DeviceManagerViewController () <MRDeviceDelegate>
 
 @property (nonatomic, strong) NSMutableData *bpData;
 @property (nonatomic, strong) NSDate *bpStart;
 
+@property (nonatomic, strong) NSTimer *scanTimer;
+@property (nonatomic, assign) NSInteger scanTimerCount;
+
+@property (nonatomic, strong)UIButton * reconnectBtn;
+
 @end
 
 @implementation DeviceManagerViewController
+
+
+-(UILabel *)titleNavView {
+    if (_titleNavView == nil) {
+        _titleNavView  = [[UILabel alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width - 100, 30)];
+        _titleNavView.font = [UIFont boldSystemFontOfSize:12];
+        _titleNavView.textAlignment = 1;
+        _titleNavView.textColor = [UIColor redColor];
+        
+    }
+    return _titleNavView;
+}
+
+-(UIButton *)reconnectBtn {
+    if (_reconnectBtn == nil) {
+        _reconnectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _reconnectBtn.frame = CGRectMake(0, 0, 60, 30);
+        [_reconnectBtn addTarget:self action:@selector(buttonClickReconnect:) forControlEvents:UIControlEventTouchUpInside];
+        [_reconnectBtn setTitle:NSLocalizedString(MRClickReconnect, nil) forState:UIControlStateNormal];
+        [_reconnectBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        _reconnectBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+        _reconnectBtn.hidden = YES;
+    }
+    return _reconnectBtn;
+}
 
 #pragma mark -
 #pragma mark User Actions
 
 - (void)setUpViewActions {
-    __weak typeof(self) weakself = self;
+//    __weak typeof(self) weakself = self;
+    
+//    @strongify(self);
+    
+    @weakify(self);
     self.deviceManagerView.selectAction = ^(NSIndexPath *indexPath) {
+        @strongify(self);
+        
         switch (indexPath.row) {
             case 0:
-                [weakself connectDevice];
+                [self connectDevice];
                 break;
             
             case 1:
-                [weakself startLiveData];
+                [self startLiveData];
+                
+//                [self.device setRawdataEnabled:YES]; // You can open it to receive raw data
+                
+
                 break;
                 
             case 2:
-                [weakself endLiveData];
+                [self endLiveData];
+                
                 break;
                 
             case 3:
@@ -52,25 +98,26 @@
                 
                 
                 // sleep hrv ... data  You can view the notes of HRV and other data obtained by this test method
-                [weakself requestDailySleepHRVSportDataTest];
-//
-
+                [self requestDailySleepHRVSportDataTest];
+                
                  //  Obtain HRV data through separate test
                  // [weakself requestReportDataTestType:MHBLEDataRequestTypeHRV];
-                                
+                
             
                 break;
                 
             case 4:
-                [weakself.device switchToSleepMode];
+                [self.device switchToSleepMode];
+                
                 break;
                 
             case 5:
-                [weakself.device switchToSportMode];
+                [self.device switchToSportMode];
                 break;
                 
             case 6:
-//                [weakself.device switchToRealtimeMode];  open realtime  mode //0XD7
+                
+                [self.device switchToRealtimeMode];  //open realtime  mode //0XD7  See the notes below.
                 /***
                  
                  1.If you need data, you can turn on sleep monitoring.With the ring, 82s it will generate valid data;
@@ -83,32 +130,32 @@
                                 
                 // [weakself changeMonitorState];  or  [weakself.device switchToSleepMode];
                 
-                [weakself.device switchToSleepMode]; // open sleep get data （spo2 0XD0）
+//                [self.device switchToSleepMode]; // open sleep get data （spo2 0XD0）
                 break;
                 
             case 7:
-                [weakself.device switchToNormalModel];
+                [self.device switchToNormalModel];
                 break;
                 
                 
             case 8: {
-                DeviceUpgradeViewController *upgrade = [[DeviceUpgradeViewController alloc] initWithDevice:weakself.device];
-                [weakself.navigationController pushViewController:upgrade animated:YES];
+                DeviceUpgradeViewController *upgrade = [[DeviceUpgradeViewController alloc] initWithDevice:self.device];
+                [self.navigationController pushViewController:upgrade animated:YES];
             }
                 break;
             case 9: {
-                SyncDailyViewController *daily = [[SyncDailyViewController alloc] initWithDevice:weakself.device];
-                [weakself.navigationController pushViewController:daily animated:YES];
+                SyncDailyViewController *daily = [[SyncDailyViewController alloc] initWithDevice:self.device];
+                [self.navigationController pushViewController:daily animated:YES];
             }
                 break;
                 
             case 10: {
-                [weakself.device switchToPulseMode];
+                [self.device switchToPulseMode];
             }
                 break;
                 
             case 11:{
-                [weakself.device setGLUMode:MRGLUModeInterval5Mins];;
+                [self.device setGLUMode:MRGLUModeInterval5Mins];;
             }
                 break;
             case 12: {
@@ -116,12 +163,12 @@
                 int seconds = 60;
                 int duration = 60 * 60 * 5;
                 BOOL repeat = YES;
-                [weakself.device setPeriodicMonitorOn:on afterSeconds:seconds duration:duration repeat:repeat];
+                [self.device setPeriodicMonitorOn:on afterSeconds:seconds duration:duration repeat:repeat];
             }
                 break;
                 
             case 13: {
-                [weakself.device getMonitorTimer];
+                [self.device getMonitorTimer];
             }
                 break;
                 
@@ -129,19 +176,19 @@
 //                [weakself.device switchToBPMode];
 //                weakself.bpData = [NSMutableData new];
 //                weakself.bpStart = [NSDate date];
-//
-                
                 
 // test:    View the measurement of test blood pressure and how the ECG UI plots.
                TestBPViewController *vc = [[TestBPViewController alloc] init];
-                vc.device = weakself.device;
-                [weakself.navigationController pushViewController:vc animated:YES];
+                vc.device = self.device;
+                [self.navigationController pushViewController:vc animated:YES];
                 
             }
                 break;
                 
             case 15: {
-                [weakself requestDailyData];
+                
+//
+//                [self requestDailyData];
             }
                 break;
                 
@@ -152,11 +199,14 @@
 }
 
 
-#pragma mark -
+
 #pragma mark Delegate Methods - MRDeviceDelegate
 
 - (void)deviceDidUpdateConnectState {
     NSLog(@"connected:%d", self.device.connectState);
+    
+    self.titleNavView.text = (self.device.connectState == 2) ? NSLocalizedString(MRDeviceConnected, nil) :NSLocalizedString(MRDeviceDisReconnecting, nil);
+    
     [self.deviceManagerView.viewModel reloadModel];
     [self.deviceManagerView refreshView];
 }
@@ -246,23 +296,133 @@
     [self.deviceManagerView refreshView];
 }
 
-#pragma mark -- 模式状态 -- 。
+#pragma mark --  After the mode switching, what needs to be done in which modes after the proxy connection is successful
 - (void)monitorModeUpdated {
-    NSLog(@"monitorModeUpdated:%d", self.device.monitorMode);
-    if (self.device.monitorMode == MRDeviceMonitorModeSleep || self.device.monitorMode == MRDeviceMonitorModeSport || self.device.monitorMode == MRDeviceMonitorModeHRV) {
-//        test mark 。
-        self.shouldSyncData = YES;
-    }
+    NSLog(@"DeviceManagerViewController --  monitorModeUpdated:%d", self.device.monitorMode);
+//    if (self.device.monitorMode == MRDeviceMonitorModeSleep || self.device.monitorMode == MRDeviceMonitorModeSport || self.device.monitorMode == MRDeviceMonitorModeHRV) {
+////        test mark 。
+//        self.shouldSyncData = YES;
+//    }
+    
+    // test :
+    
+    if ((self.device.monitorMode == MRDeviceMonitorModeIdle || self.device.monitorMode == MRDeviceMonitorModeNormal || self.device.monitorMode == MRDeviceMonitorModeRealTime) && self.device.isDownloadingData == NO) {
 
+        [self requestDailySleepHRVSportDataTest];   //MARK: ---    Get ring data synchronously , Make sure to clear the data in the ring before starting the monitoring (that is, check the data in the ring)
+        
+    }else if (self.device.monitorMode == MRDeviceMonitorModeSleep || self.device.monitorMode == MRDeviceMonitorModeSport){
+        
+        [self startLiveData]; // is if open liveData ？
+        
+    }else {
+        //.....
+        
+    }
+    
     [self.deviceManagerView.viewModel updateMonitorState];
     [self.deviceManagerView refreshView];
+}
+
+#pragma mark -- 1. start scanning --
+
+- (void)startScanningDevice {
+    
+    if ([MRConnecter defaultConnecter].centralManager.isScanning  == NO && self.device.connectState == MRDeviceStateDisconnected && [MRConnecter defaultConnecter].isCentralPowerOn == YES) {
+        
+        [[MRConnecter defaultConnecter] startScanning];
+        if (self.scanTimer.valid == NO) {
+            self.scanTimerCount = 0;
+            self.scanTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(scanTimerAction:) userInfo:nil repeats:YES];
+        }
+    }
+      QMRLog(@"scan timer valid:%d", self.scanTimer.isValid);
+}
+- (void)scanTimerAction:(NSTimer *)timer {
+    
+    self.scanTimerCount ++;
+// :    5s -- connect device....
+    if (self.scanTimerCount % kCheckDiscoveredDeviceForConnectionDuration == 0) {
+        [self connectNearestDevice];
+    }
+    if (self.scanTimerCount > kScanDeviceTimeoutDuration) {
+        NSLog(@"scanceTimeCount------> 30s  - stop scanning...");
+        [self stopScanningDevcie];
+    }
+}
+#pragma mark -- stop  scanning -- > 30s    Click by yourself  Reconnect ^-^
+- (void)stopScanningDevcie {
+    
+    NSLog(@"----[MRConnecter defaultConnecter].centralManager.isScanning======%d",[MRConnecter defaultConnecter].centralManager.isScanning);
+    if ([MRConnecter defaultConnecter].centralManager.isScanning) {
+        
+        NSLog(@"isscansing----------1---");
+        self.titleNavView.text = NSLocalizedString(MRDeviceDisconnected, nil);
+        self.reconnectBtn.hidden = NO;
+        self.scanTimerCount = 0;
+        [[MRConnecter defaultConnecter] stopScanning];
+        
+    }
+    [self.scanTimer invalidate];
+     QMRLog(@"scan timer valid:%d", self.scanTimer.isValid);
+}
+#pragma mark = connect device
+- (void)connectNearestDevice {
+    
+    MRDevice *device = [self getNearestDevice];
+    QMRLog(@"start connect:%@", device);
+    
+    [[MRConnecter defaultConnecter]connectDevice:device];
+}
+
+#pragma mark --- get near device...
+- (MRDevice *)getNearestDevice {
+//    MRDevice *near = [[MRConnecter defaultConnecter].discoveredDevices firstObject];
+//    for (MRDevice *device in [MRConnecter defaultConnecter].discoveredDevices) {
+//        int nearRSSI = near.RSSI.intValue;
+//        int deviceRSSI = device.RSSI.intValue;
+//
+//        if (nearRSSI < deviceRSSI ||  nearRSSI >= 0) {
+//            near = device;
+//        }
+//    }
+//
+//
+    
+    MRDevice *near = nil;
+    
+    for (MRDevice * nearDevice in [MRConnecter defaultConnecter].discoveredDevices) {
+        
+        if ([nearDevice.sn isEqualToString:self.device.sn]) {
+            
+            NSLog(@"======have old device===");
+            
+            near = nearDevice;
+            
+            break;
+            
+        }else{
+            
+            NSLog(@"--------no find  use new near Device-----");
+            int nearRSSI = nearDevice.RSSI.intValue;
+            int deviceRSSI = nearDevice.RSSI.intValue;
+         
+            if (nearRSSI < deviceRSSI ||  nearRSSI >= 0) {
+                     near = nearDevice;
+            }
+            
+        }
+        
+        
+    }
+    
+    return near;
 }
 
 - (void)operationFailWithErrorCode:(MRErrCode)errCode {
     NSLog(@"err:%X", errCode);
 }
 
-#pragma mark ------
+#pragma mark ------ raw data --
 - (void)rawdataUpdated:(NSArray<MRRawData *> *)arr {
     NSLog(@"---rawData-------%@", arr);
 }
@@ -332,9 +492,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = NSLocalizedString(MRDevicemanager, nil);
+    self.titleNavView.text = NSLocalizedString(MRDevicemanager, nil);
 //    test mark
     self.shouldSyncData = YES;
+    
+    self.navigationItem.titleView = self.titleNavView;
+    
+    UIBarButtonItem * barItem = [[UIBarButtonItem alloc]initWithCustomView:self.reconnectBtn];
+    
+    self.navigationItem.rightBarButtonItem = barItem;
     
     self.deviceManagerView.viewModel = [[DeviceManagerViewModel alloc] initWithDevice:self.device];
     [self setUpViewActions];
@@ -342,22 +508,55 @@
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceConnecteStateUpdated:) name:MRDeviceConnectStateUpdatedNotification object:nil];
+    
+// test use hrvData....
+    
+//  NSDictionary * dict =  [[NSUserDefaults standardUserDefaults]objectForKey:@"testHRVData"];
+//    
+//    
+//    QMRLog(@"dict------------%@",dict);
+//    
+//    MRReport * report = [MRReport mj_objectWithKeyValues:dict];
+//    
 }
 
+#pragma mark -- reconnect ---
+-(void)buttonClickReconnect:(UIBarButtonItem *)item {
+    
+    self.titleNavView.text =  NSLocalizedString(MRDeviceDisReconnecting, nil);
+    
+//     @"Device disconnected，Reconnecting...";
+    
+    [self startScanningDevice];
+}
+
+#pragma mark --    connect notificationi --
 -(void)deviceConnecteStateUpdated:(NSNotification *)noti {
     
     MRDevice *device = noti.object;
     ///test mark Need to synchronize monitoring data
     self.shouldSyncData = YES;
     
-    NSLog(@"device.connectState----------%d",device.connectState);
-    
     if (device.connectState == MRDeviceStateConnected) {
         device.isDownloadingData = NO;
+        NSLog(@"connect successed");
+        self.reconnectBtn.hidden = YES;
+        [self stopScanningDevcie];
+        
+    }else if(device.connectState == MRDeviceStateDisconnected){
+      
+//MARK:    ---  After the device is disconnected, start scanning the connection
+        NSLog(@"disconnected");
+        [self startScanningDevice];
+        
+    }else{
+        
+        
+        
+        
     }
     
-//    NSLog(@"%@ connecte state: %d", device.name, device.connectState);
-    
+    NSLog(@"%@ connecte state: %d", device.name, device.connectState);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
