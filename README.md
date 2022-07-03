@@ -156,18 +156,22 @@ You just need to put the ".framework" file into your project and select Embed & 
 ![](./Embed.png)
 
 
+--------------------------------Some descriptions are as follows----------
 
+One:
 ###****** development note - the ring may sometimes be disconnected******
 
 1. When the signal is weak.
 2. Connect frequently in a short time.
 3. When the monitoring mode is switched many times in a short time.
 4. When binding a new device, the ring does not shake.
-5. Such as low power, charging, full space, use for more than 12 hours, etc;
 
-When monitoring is enabled: [if the ring generates data every time a monitoring mode is enabled, the data in the ring will be collected to ensure that the data in the ring is empty before a monitoring mode is enabled]
+Two: Some situations of ending monitoring 
+     If the battery is low, charged, the space is full, and it is used for more than 12 hours, the monitoring will end -- > and it will switch to mrdevicemonitormodenormal mode;
 
+Three: When monitoring is enabled: [if the ring generates data every time a monitoring mode is enabled, the data in the ring will be collected to ensure that the data in the ring is empty before a monitoring mode is enabled]
 
+Four: 
  *** Tip：please test the use in (DeviceManagerViewController.m and DeviceManagerViewController+Methods) to help you : 
 
         1. Data collection: after the monitoring is turned on, the ring generates data. After the monitoring is completed (after power failure and reconnection, and after restarting the app), the ring collects data: (as long as the post monitoring inspection mode is turned off, the data is collected at the beginning). You can check the simple process.
