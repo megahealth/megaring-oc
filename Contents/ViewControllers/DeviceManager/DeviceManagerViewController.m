@@ -178,16 +178,31 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 //                weakself.bpStart = [NSDate date];
                 
 // test:    View the measurement of test blood pressure and how the ECG UI plots.
-               TestBPViewController *vc = [[TestBPViewController alloc] init];
-                vc.device = self.device;
-                [self.navigationController pushViewController:vc animated:YES];
+                
+                if (self.device.bloodPressureSupported) { // is if support bloodPressure?   (.bloodPressureSupported)
+                    TestBPViewController *vc = [[TestBPViewController alloc] init];
+                 
+                     vc.device = self.device;
+                    
+                    if (self.device.deviceOK == YES) { // device is ok
+                        [self.navigationController pushViewController:vc animated:YES];
+                    }
+                    
+                   
+                }else
+                {
+                    
+                    NSLog(@"This ring does not support blood pressure monitoring function for the time being");
+                    
+                    
+                }
                 
             }
                 break;
                 
             case 15: {
                 
-//
+                NSLog(@"This method has been transferred-----see  Line 4: Click Sync data (data collection process)  zh：直接查看第四行，收取数据的过程");
 //                [self requestDailyData];
             }
                 break;
@@ -197,7 +212,11 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
         }
     };
 }
-
+//- (BOOL)bloodPressureSupported {
+//    NSString *version = self.sw;
+//    BOOL valid = [version hasPrefix:@"5."];
+//    return valid;
+//}
 
 
 #pragma mark Delegate Methods - MRDeviceDelegate
@@ -281,7 +300,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     [self.deviceManagerView refreshView];
 }
 
-// [血氧,脉率,有效性,监测时长,accx,accy,accz]
+// [SpO2,heart rate,valid,duration,accx,accy,accz]
 - (void)liveDataValueUpdated:(NSArray *)liveData {
     NSString *liveDataStr = [NSString stringWithFormat:@"sp:%@, hr:%@, state:%@, duration:%@, accx:%@, accy:%@, accz:%@", liveData[0], liveData[1], liveData[2], liveData[3], liveData[4], liveData[5], liveData[6]];
     NSLog(@"live:%@", liveDataStr);
@@ -296,13 +315,9 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     [self.deviceManagerView refreshView];
 }
 
-#pragma mark --  After the mode switching, what needs to be done in which modes after the proxy connection is successful
+#pragma mark -- Devie  delegate :  After the mode switching, what needs to be done in which modes after the proxy connection is successful
 - (void)monitorModeUpdated {
     NSLog(@"DeviceManagerViewController --  monitorModeUpdated:%d", self.device.monitorMode);
-//    if (self.device.monitorMode == MRDeviceMonitorModeSleep || self.device.monitorMode == MRDeviceMonitorModeSport || self.device.monitorMode == MRDeviceMonitorModeHRV) {
-////        test mark 。
-//        self.shouldSyncData = YES;
-//    }
     
     // test :
     
@@ -337,6 +352,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     }
       QMRLog(@"scan timer valid:%d", self.scanTimer.isValid);
 }
+#pragma mark -- 2. timer method.
 - (void)scanTimerAction:(NSTimer *)timer {
     
     self.scanTimerCount ++;
@@ -365,7 +381,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     [self.scanTimer invalidate];
      QMRLog(@"scan timer valid:%d", self.scanTimer.isValid);
 }
-#pragma mark = connect device
+#pragma mark = connect  device
 - (void)connectNearestDevice {
     
     MRDevice *device = [self getNearestDevice];
@@ -436,37 +452,37 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 }
 
 /// data of blood pressure
-- (void)bpDataUpdated:(NSData *)data {
-    [self.bpData appendData:data];
-    NSInteger duration = self.bpData.length / data.length / 10;
-    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-    [fmt setDateFormat:@"HHmm"];
-    int time = [[fmt stringFromDate:self.bpStart] intValue];
-    @weakify(self);
-//  caliSBP: caliDBP:  Highest range value of DBP and SBP parsed
-    [MRApi parseBPData:self.bpData time:time caliSBP:120 caliDBP:80 block:^(MRBPReport *report, NSError *error) {
-        @strongify(self);
-        
-        NSLog(@"sbp:%.1f, dbp:%.1f, flag:%d，ecg:%@", report.SBP, report.DBP, report.flag,report.ecg);
-        BOOL finish = report.flag == 1;
-        BOOL failure = report.flag == 2 || duration >= 60;  // failed or timeout
-        if (finish || failure) {
-            [self stopBPMode];
-        }
-        
-        if (failure) {
-            NSLog(@"failure!");
-        }
-        if (finish) {
-            NSLog(@"finished"); // and you can save the report data.    
-        }
-        
-    }];
-}
+//- (void)bpDataUpdated:(NSData *)data {
+//    [self.bpData appendData:data];
+//    NSInteger duration = self.bpData.length / data.length / 10;
+//    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+//    [fmt setDateFormat:@"HHmm"];
+//    int time = [[fmt stringFromDate:self.bpStart] intValue];
+//    @weakify(self);
+////  caliSBP: caliDBP:  Highest range value of DBP and SBP parsed
+//    [MRApi parseBPData:self.bpData time:time caliSBP:120 caliDBP:80 block:^(MRBPReport *report, NSError *error) {
+//        @strongify(self);
+//
+//        NSLog(@"sbp:%.1f, dbp:%.1f, flag:%d，ecg:%@", report.SBP, report.DBP, report.flag,report.ecg);
+//        BOOL finish = report.flag == 1;
+//        BOOL failure = report.flag == 2 || duration >= 60;  // failed or timeout
+//        if (finish || failure) {
+//            [self stopBPMode];
+//        }
+//
+//        if (failure) {
+//            NSLog(@"failure!");
+//        }
+//        if (finish) {
+//            NSLog(@"finished"); // and you can save the report data.
+//        }
+//
+//    }];
+//}
 
-- (void)stopBPMode {
-    [self.device switchToNormalModel];
-}
+//- (void)stopBPMode {
+//    [self.device switchToNormalModel];
+//}
 
 
 #pragma mark -

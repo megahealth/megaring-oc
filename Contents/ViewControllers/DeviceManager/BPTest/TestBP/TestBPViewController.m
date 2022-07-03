@@ -70,6 +70,8 @@
         MRBPReport * report = [MRBPReport mj_objectWithKeyValues:dict];
         
         BPReportViewController * vc = [[BPReportViewController alloc]initWithReport:report];
+        int time = [stringFromDate(self.start, @"HHmm") intValue];
+        vc.parseTime = time;
         [self.navigationController pushViewController:vc animated:YES];
         
         return;
@@ -93,10 +95,8 @@
 
 // MARK: data & methods
 - (void)prepareData {
-//    self.patient = [MHPatientInfoManager currentPatient];
-    self._view.skipEditBP = YES;
-//    self.patient.DBP > 0 && self.patient.SBP > 0;
     
+    self._view.skipEditBP = YES;
 //    test : dbp --- 
    NSNumber * dbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserID_DBP"];
     NSNumber * sbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserID_SBP"];
@@ -106,7 +106,6 @@
     self._view.DBP =  dbp ? dbp.intValue : 80;
     self._view.hasHBP = NO;
     
-//    self.patient.hasHBP;
 }
 
 - (void)startBP {
@@ -226,8 +225,7 @@
     if (count % 10 == 0) {
         int time = [stringFromDate(self.start, @"HHmm") intValue];
         NSDate *start = [NSDate date];
-//        NSLog(@"parse bp start: %@, dataLen:%lu", stringFromDate(start, @"HH:mm:ss.SSS"), (unsigned long)self.data.length);
-        [MRApi parseBPData:self.data time:time caliSBP:120 caliDBP:80 block:^(MRBPReport *report, NSError *error) {
+        [MRApi parseBPData:self.data time:time caliSBP:self._view.SBP caliDBP:self._view.DBP block:^(MRBPReport *report, NSError *error) {
             NSDate *end = [NSDate date];
             NSTimeInterval interval = [end timeIntervalSinceDate:start];
             NSLog(@"parse bp end: %@, cost:%f-----report.flag-------%d", stringFromDate(end, @"HH:mm:ss.SSS"), interval,report.flag);
@@ -264,7 +262,7 @@
 
 // Please reconnect to check for real-time monitoring
 - (void)connectStateUpdated:(NSNotification *)noti {
-//    MHBLEDevice *device = [MegaRingManager manager].megaRing;
+    
     if (self.device.connectState == MRDeviceStateConnected) {
       
     } else {

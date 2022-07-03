@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		237DEB04286EF6AB00D68414 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237DEB02286EF6A100D68414 /* MRFramework.framework */; platformFilter = ios; };
-		237DEB05286EF6AB00D68414 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 237DEB02286EF6A100D68414 /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		237982A3287188FB002F7C3D /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237982A1287188F5002F7C3D /* MRFramework.framework */; platformFilter = ios; };
+		237982A4287188FB002F7C3D /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 237982A1287188F5002F7C3D /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		237DEB32286EFBF200D68414 /* BPReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB27286EFBF200D68414 /* BPReportViewController.m */; };
 		237DEB33286EFBF200D68414 /* BPReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2A286EFBF200D68414 /* BPReportView.m */; };
 		237DEB34286EFBF200D68414 /* BPReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2B286EFBF200D68414 /* BPReportViewModel.m */; };
@@ -121,14 +121,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				237DEB05286EF6AB00D68414 /* MRFramework.framework in CopyFiles */,
+				237982A4287188FB002F7C3D /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		237DEB02286EF6A100D68414 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
+		237982A1287188F5002F7C3D /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		237DEB27286EFBF200D68414 /* BPReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportViewController.m; sourceTree = "<group>"; };
 		237DEB2A286EFBF200D68414 /* BPReportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportView.m; sourceTree = "<group>"; };
 		237DEB2B286EFBF200D68414 /* BPReportViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportViewModel.m; sourceTree = "<group>"; };
@@ -305,7 +305,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				237DEB04286EF6AB00D68414 /* MRFramework.framework in Frameworks */,
+				237982A3287188FB002F7C3D /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,13 +329,13 @@
 		237DEB24286EFBF200D68414 /* BPReport */ = {
 			isa = PBXGroup;
 			children = (
+				237DEB2F286EFBF200D68414 /* BPReportViewController.h */,
 				237DEB27286EFBF200D68414 /* BPReportViewController.m */,
-				237DEB2A286EFBF200D68414 /* BPReportView.m */,
-				237DEB2B286EFBF200D68414 /* BPReportViewModel.m */,
 				237DEB2C286EFBF200D68414 /* BPReportViewController.xib */,
 				237DEB2E286EFBF200D68414 /* BPReportView.h */,
-				237DEB2F286EFBF200D68414 /* BPReportViewController.h */,
+				237DEB2A286EFBF200D68414 /* BPReportView.m */,
 				237DEB30286EFBF200D68414 /* BPReportViewModel.h */,
+				237DEB2B286EFBF200D68414 /* BPReportViewModel.m */,
 			);
 			path = BPReport;
 			sourceTree = "<group>";
@@ -401,8 +401,8 @@
 		2395DC57280FEDF300193808 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
-				2395DC58280FEDF300193808 /* UIImage+Extension.m */,
 				2395DC59280FEDF300193808 /* UIImage+Extension.h */,
+				2395DC58280FEDF300193808 /* UIImage+Extension.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -419,18 +419,18 @@
 		2395DC5D280FEDF300193808 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				2395DC68280FEDF300193808 /* UIViewExt.h */,
+				2395DC65280FEDF300193808 /* UIView+Animations.h */,
 				2395DC5E280FEDF300193808 /* UIView+Animations.m */,
+				2395DC64280FEDF300193808 /* UIView+Rect.h */,
 				2395DC5F280FEDF300193808 /* UIView+Rect.m */,
+				2395DC67280FEDF300193808 /* UIView+Location.h */,
 				2395DC60280FEDF300193808 /* UIView+Location.m */,
+				2395DC66280FEDF300193808 /* UIView+Property.h */,
 				2395DC61280FEDF300193808 /* UIView+Property.m */,
 				2395DC62280FEDF300193808 /* IBCustomButton.h */,
-				2395DC63280FEDF300193808 /* UIView+View.h */,
-				2395DC64280FEDF300193808 /* UIView+Rect.h */,
-				2395DC65280FEDF300193808 /* UIView+Animations.h */,
-				2395DC66280FEDF300193808 /* UIView+Property.h */,
-				2395DC67280FEDF300193808 /* UIView+Location.h */,
-				2395DC68280FEDF300193808 /* UIViewExt.h */,
 				2395DC69280FEDF300193808 /* IBCustomButton.m */,
+				2395DC63280FEDF300193808 /* UIView+View.h */,
 				2395DC6A280FEDF300193808 /* UIView+View.m */,
 			);
 			path = UIView;
@@ -472,10 +472,10 @@
 			isa = PBXGroup;
 			children = (
 				3C3E9A512480B4870087FD85 /* ZipArchive.h */,
-				3C3E9A522480B4870087FD85 /* minizip */,
 				3C3E9A762480B4870087FD85 /* SSZipArchive.h */,
 				3C3E9A772480B4870087FD85 /* SSZipCommon.h */,
 				3C3E9A782480B4870087FD85 /* SSZipArchive.m */,
+				3C3E9A522480B4870087FD85 /* minizip */,
 			);
 			path = SSZipArchive;
 			sourceTree = "<group>";
@@ -535,8 +535,8 @@
 				3C3E9A7A2480B4870087FD85 /* DemoDefines.h */,
 				3C3E9A7B2480B4870087FD85 /* MRIndicatorView.h */,
 				3C3E9A7E2480B4870087FD85 /* MRIndicatorView.m */,
-				3C3E9A7C2480B4870087FD85 /* UIViewController+Extension.m */,
 				3C3E9A7D2480B4870087FD85 /* UIViewController+Extension.h */,
+				3C3E9A7C2480B4870087FD85 /* UIViewController+Extension.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -558,8 +558,8 @@
 				3C3E9A872480B4870087FD85 /* MRHomeViewController.h */,
 				3C3E9A812480B4870087FD85 /* MRHomeViewController.m */,
 				3C3E9A822480B4870087FD85 /* MRHomeViewController.xib */,
-				3C3E9A842480B4870087FD85 /* MRHomeViewController+Methods.m */,
 				3C3E9A882480B4870087FD85 /* MRHomeViewController+Methods.h */,
+				3C3E9A842480B4870087FD85 /* MRHomeViewController+Methods.m */,
 				3C3E9A8C2480B4870087FD85 /* MRHomeViewModel.h */,
 				3C3E9A852480B4870087FD85 /* MRHomeViewModel.m */,
 				3C3E9A862480B4870087FD85 /* MRHomeView.h */,
@@ -635,8 +635,8 @@
 			children = (
 				3C3E9AB72480B4870087FD85 /* Localizable.strings */,
 				3C3E9AB92480B4870087FD85 /* InfoPlist.strings */,
-				3C3E9ABD2480B4870087FD85 /* LocalStringKeys.m */,
 				3C3E9ABE2480B4870087FD85 /* LocalStringKeys.h */,
+				3C3E9ABD2480B4870087FD85 /* LocalStringKeys.m */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -645,10 +645,10 @@
 			isa = PBXGroup;
 			children = (
 				3C3E9AC32480B4870087FD85 /* IBCustomView.h */,
-				3C3E9AC42480B4870087FD85 /* MRDefaultView.h */,
-				3C3E9AC52480B4870087FD85 /* MRDefaultView.xib */,
 				3C3E9AC72480B4870087FD85 /* IBCustomView.m */,
+				3C3E9AC42480B4870087FD85 /* MRDefaultView.h */,
 				3C3E9AC82480B4870087FD85 /* MRDefaultView.m */,
+				3C3E9AC52480B4870087FD85 /* MRDefaultView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -676,7 +676,7 @@
 		CF665A07209B181A009EF6A6 = {
 			isa = PBXGroup;
 			children = (
-				237DEB02286EF6A100D68414 /* MRFramework.framework */,
+				237982A1287188F5002F7C3D /* MRFramework.framework */,
 				23A4EA4D2775DDE80090A840 /* README-zh.md */,
 				23A4EA4C2775DDE80090A840 /* README.md */,
 				3C3E9A4E2480B4870087FD85 /* Contents */,

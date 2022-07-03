@@ -1,10 +1,4 @@
-//
-//  BPReportViewController.m
-//  BHealth
-//
-//  Created by Ulric on 15/11/2021.
-//  Copyright © 2021 zhaoguan. All rights reserved.
-//
+
 
 #import "BPReportViewController.h"
 #import "BPReportView.h"
@@ -43,10 +37,8 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-//    self._view.model.ecg = self.report.ecg;
-//    [self._view updateEcg];
-    
-    
+    self._view.model.ecg = self.report.ecg;
+    [self._view updateEcg];
 }
 
 - (void)loadReport {
@@ -57,20 +49,21 @@
     self._view.model.sbp = [NSString stringWithFormat:@"%.1f", self.report.SBP];
     self._view.model.dbp = [NSString stringWithFormat:@"%.1f", self.report.DBP];
     [self._view updateData];
-//    [[NSUserDefaults standardUserDefaults]setValue:@(sbp) forKey:@"UserID_SBP"];
-    
-    NSNumber * sbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserID_SBP"];
-    
-    NSNumber * dbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserId_DBP"];
 
-    NSLog(@"sbp------%@------dbp-------%@",sbp,dbp);
-    [MRApi parseBPData:self.report.data time:1326 caliSBP:sbp.doubleValue caliDBP:dbp.doubleValue block:^(MRBPReport *report, NSError *error) {
-
-//  or  in  viewDidAppear:
-        self._view.model.ecg = report.ecg;
-        [self._view updateEcg];
     
-    }];
+////    parse ecg :
+//    NSNumber * sbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserID_SBP"];
+//
+//    NSNumber * dbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserId_DBP"];
+//
+//    NSLog(@"sbp------%@------dbp-------%@",sbp,dbp);
+//    [MRApi parseBPData:self.report.data time:self.parseTime caliSBP:sbp.doubleValue caliDBP:dbp.doubleValue block:^(MRBPReport *report, NSError *error) {
+//
+////  or  in  viewDidAppear:
+//        self._view.model.ecg = report.ecg;
+//        [self._view updateEcg];
+//
+//    }];
 
 }
 

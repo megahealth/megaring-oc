@@ -13,6 +13,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TestBPViewController : UIViewController
+@property (nonatomic ,strong)NSDate * bpStartDate;
+
 @property (nonatomic, strong) MRDevice    *device;
 
 @end

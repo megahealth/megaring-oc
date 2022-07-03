@@ -1,10 +1,4 @@
-//
-//  BPReportView.m
-//  BHealth
-//
-//  Created by Ulric on 15/11/2021.
-//  Copyright © 2021 zhaoguan. All rights reserved.
-//
+
 
 #import "BPReportView.h"
 #import "BPReportViewModel.h"
