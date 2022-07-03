@@ -306,7 +306,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     
     // test :
     
-    if ((self.device.monitorMode == MRDeviceMonitorModeIdle || self.device.monitorMode == MRDeviceMonitorModeNormal || self.device.monitorMode == MRDeviceMonitorModeRealTime) && self.device.isDownloadingData == NO) {
+    if ((self.device.monitorMode == MRDeviceMonitorModeIdle || self.device.monitorMode == MRDeviceMonitorModeNormal) && self.device.isDownloadingData == NO) {
 
         [self requestDailySleepHRVSportDataTest];   //MARK: ---    Get ring data synchronously , Make sure to clear the data in the ring before starting the monitoring (that is, check the data in the ring)
         
