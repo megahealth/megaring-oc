@@ -62,9 +62,9 @@
 
 @property (nonatomic, assign) BOOL isReady;
 
-@property (nonatomic, assign) int chargeDuration;        // Charging minutes
+@property (nonatomic, assign) int chargeDuration;        // 充电分钟数
 
-@property (nonatomic, assign, readonly) BOOL bloodPressureSupported; // Does the ring support blood pressure function 。
+@property (nonatomic, assign, readonly) BOOL bloodPressureSupported;
 
 
 
@@ -74,7 +74,7 @@
 
 @property (nonatomic, assign) MRGLUModeInterval gluInterval;
 
-@property (nonatomic, assign) int monitorDuration; // Monitoring duration;
+@property (nonatomic, assign) int monitorDuration; // 监测时长;
 
 @property (nonatomic, assign, getter=isScreenOff) BOOL	 screenOff;
 
