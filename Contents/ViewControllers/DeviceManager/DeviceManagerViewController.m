@@ -392,18 +392,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 
 #pragma mark --- get near device...
 - (MRDevice *)getNearestDevice {
-//    MRDevice *near = [[MRConnecter defaultConnecter].discoveredDevices firstObject];
-//    for (MRDevice *device in [MRConnecter defaultConnecter].discoveredDevices) {
-//        int nearRSSI = near.RSSI.intValue;
-//        int deviceRSSI = device.RSSI.intValue;
-//
-//        if (nearRSSI < deviceRSSI ||  nearRSSI >= 0) {
-//            near = device;
-//        }
-//    }
-//
-//
-    
+
     MRDevice *near = nil;
     
     for (MRDevice * nearDevice in [MRConnecter defaultConnecter].discoveredDevices) {
@@ -417,20 +406,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
             break;
             
         }
-        
-//        else{
-//
-//            NSLog(@"--------no find  use new near Device-----");
-//            int nearRSSI = nearDevice.RSSI.intValue;
-//            int deviceRSSI = nearDevice.RSSI.intValue;
-//
-//            if (nearRSSI < deviceRSSI ||  nearRSSI >= 0) {
-//                     near = nearDevice;
-//            }
-//
-//        }
-        
-        
     }
     
     return near;
