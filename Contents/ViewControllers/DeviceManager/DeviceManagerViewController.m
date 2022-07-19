@@ -386,7 +386,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     
     MRDevice *device = [self getNearestDevice];
     QMRLog(@"start connect:%@", device);
-    
+    [self stopScanningDevcie];
     [[MRConnecter defaultConnecter]connectDevice:device];
 }
 
@@ -416,17 +416,19 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
             
             break;
             
-        }else{
-            
-            NSLog(@"--------no find  use new near Device-----");
-            int nearRSSI = nearDevice.RSSI.intValue;
-            int deviceRSSI = nearDevice.RSSI.intValue;
-         
-            if (nearRSSI < deviceRSSI ||  nearRSSI >= 0) {
-                     near = nearDevice;
-            }
-            
         }
+        
+//        else{
+//
+//            NSLog(@"--------no find  use new near Device-----");
+//            int nearRSSI = nearDevice.RSSI.intValue;
+//            int deviceRSSI = nearDevice.RSSI.intValue;
+//
+//            if (nearRSSI < deviceRSSI ||  nearRSSI >= 0) {
+//                     near = nearDevice;
+//            }
+//
+//        }
         
         
     }
