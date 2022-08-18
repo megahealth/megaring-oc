@@ -233,14 +233,14 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
                     
 //                    NSLog(@"SDNN===========%f",report.SDNN);
                 
-//                if (report.reportType == 10) {
-//
-//                    NSLog(@"report.SDNN--------%f--------report.rrArr---------%@",report.SDNN,report.rrArr);
-////                 test ...  save hrv data ...
-//                    [[NSUserDefaults standardUserDefaults]setValue:[report mj_keyValues] forKey:@"testHRVData"];
-//                    [[NSUserDefaults standardUserDefaults]synchronize];
-//
-//                }
+                if (report.reportType == 10) {
+
+                    NSLog(@"report.SDNN--------%f--------report.rrArr---------%@",report.SDNN,report.rrArr);
+//                 test ...  save hrv data ...
+                    [[NSUserDefaults standardUserDefaults]setValue:[report mj_keyValues] forKey:@"testHRVData"];
+                    [[NSUserDefaults standardUserDefaults]synchronize];
+
+                }
                 
                 
             }];
@@ -291,64 +291,8 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 
 - (void)dismissAlert:(UIAlertController *)alert {
     [alert dismissViewControllerAnimated:YES completion:^{
-        
-        
-        UIViewController * vc  = [UIViewController currentViewController];
-        if ([vc isKindOfClass:[DeviceManagerViewController class]]) {
-            
-            [self goToDFUViewController];
-        }
+
     }];
-}
--(void)goToDFUViewController {
-    
-    
-    NSString * curSwVersion = [self.device.swVersion componentsSeparatedByString:@"."][2];
-    NSString *curVersion = [self.device.btVersion componentsSeparatedByString:@"."][1];
-    
-    // 从服务器获取相关版本。。。。。。进行比较。 先bootLoder版本。
-    NSString * stringServerBootLoader =  @"0.7.zip";
-    NSArray *verComps = [stringServerBootLoader componentsSeparatedByString:@"."];
-    
-    int serverBootLoaderVersion = [verComps[1] intValue];
-    
-    NSString * servserSwVersioString = @"20105.zip";
-    NSArray *servserSwComps = [servserSwVersioString componentsSeparatedByString:@"."];
-    
-    int serverSwVersion = [servserSwComps[0] intValue];
-    
-    BOOL isServerBt = [curVersion intValue] < serverBootLoaderVersion;
-    
-    BOOL isServerSw  = [curSwVersion intValue] < serverSwVersion;
-    
-if ([curVersion intValue] == 0 || [curSwVersion intValue] == 0) {
-return;
-}
-
-    NSLog(@"curVersion----------%@=========curswVersion===========%@",curVersion,curSwVersion);
-    
-    
-//    NSLog(@"---self.deviec===========%@-=----------单利-----------devie--------%@",self.device,[MRConnectedDevice sharedInstanceType].device);
-    
-    if (isServerBt || isServerSw) {
-        
-        
-        [self goToDfu];
-        
-    }
-}
-
--(void)goToDfu {
-    
-    
-    
-    
-    DeviceUpgradeViewController *upgrade = [[DeviceUpgradeViewController alloc] initWithDevice:self.device];
-    
-    [self.navigationController pushViewController:upgrade animated:YES];
-    
-    
-    
 }
 - (void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion {
     UIViewController    *vc = [UIViewController currentViewController];
