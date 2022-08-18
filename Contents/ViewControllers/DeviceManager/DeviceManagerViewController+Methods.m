@@ -220,6 +220,8 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
         NSLog(@"data:%@----------mode----------%d", data,mode);
         
         if (data) {
+            
+//            解析数据展示UI. 需要网络验证 ..
             [MRApi parseMonitorData:data completion:^(MRReport *report, NSError *error) {
                 
                     NSLog(@"report.reportType=======%d",report.reportType);
@@ -231,16 +233,14 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
                     
 //                    NSLog(@"SDNN===========%f",report.SDNN);
                 
-                if (report.reportType == 10) {
-
-                    NSLog(@"report.SDNN--------%f--------report.rrArr---------%@",report.SDNN,report.rrArr);
-                    
-                    
-//                 test ...  save hrv data ... 
-                    [[NSUserDefaults standardUserDefaults]setValue:[report mj_keyValues] forKey:@"testHRVData"];
-                    [[NSUserDefaults standardUserDefaults]synchronize];
-                    
-                }
+//                if (report.reportType == 10) {
+//
+//                    NSLog(@"report.SDNN--------%f--------report.rrArr---------%@",report.SDNN,report.rrArr);
+////                 test ...  save hrv data ...
+//                    [[NSUserDefaults standardUserDefaults]setValue:[report mj_keyValues] forKey:@"testHRVData"];
+//                    [[NSUserDefaults standardUserDefaults]synchronize];
+//
+//                }
                 
                 
             }];
