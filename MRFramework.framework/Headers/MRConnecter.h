@@ -26,7 +26,7 @@
 
 @property (nonatomic, weak) id<MRConnecterDelegate>	 delegate;
 
-@property (nonatomic, strong) NSMutableArray    *discoveredDevices;
+@property (nonatomic, strong) NSMutableArray    *discoveredDevices; // device array ;
 
 @property (nonatomic, strong) CBCentralManager    *centralManager;
 
