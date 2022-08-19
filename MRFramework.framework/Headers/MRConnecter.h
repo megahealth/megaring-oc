@@ -27,6 +27,7 @@
 @property (nonatomic, weak) id<MRConnecterDelegate>	 delegate;
 
 @property (nonatomic, strong) NSMutableArray    *discoveredDevices; // device array ;
+//@property (nonatomic, assign, getter=isScanning) BOOL scanning;
 
 @property (nonatomic, strong) CBCentralManager    *centralManager;
 

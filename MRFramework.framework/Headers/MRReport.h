@@ -82,15 +82,15 @@
 @property (nonatomic, assign) int lightMins;        // 浅睡分钟 (total minutes of light sleep)
 @property (nonatomic, assign) int deepMins;         // 深睡分钟 (total minutes of deep sleep)
 
-@property (nonatomic, assign) int fallSleepMins;    // 入睡等待时长
-@property (nonatomic, assign) int wakeInSleepMins;  // 入睡后觉醒时长
+@property (nonatomic, assign) int fallSleepMins;    // 入睡等待时长 (Waiting time for sleeping)
+@property (nonatomic, assign) int wakeInSleepMins;  // 入睡后觉醒时长 (Duration of awakening after falling asleep)
 
 
 // ODI3 result
 @property (nonatomic, assign) int odCount;			// 氧减次数 (oxygen desaturation count)
 @property (nonatomic, assign) int maxOdDuration;	// 最长氧减时间, 该指标当前未使用
 @property (nonatomic, assign) float odIndex;        // 氧减指数 (oxygen desaturation index)
-@property (nonatomic, assign) float odIndexW;       // 氧减指数 对整晚数据，不做分期的统计
+@property (nonatomic, assign) float odIndexW;       // 氧减指数 对整晚数据，不做分期的统计(Oxygen subtraction index: the data of the whole night will not be counted by stages)
 
 // ODI4 result
 @property (nonatomic, assign) int od4Count;            // 氧减次数 (oxygen desaturation count)
@@ -101,44 +101,44 @@
 
 // ODI3 result
 
-@property (nonatomic, assign) int ODI3Less100Cnt;   // 血氧低于100高于95的事件个数
-@property (nonatomic, assign) int ODI3Less95Cnt;    // 血氧低于95高于90的事件个数
+@property (nonatomic, assign) int ODI3Less100Cnt;   // 血氧低于100高于95的事件个数(Number of events with blood oxygen lower than 100 and higher than 95)
+@property (nonatomic, assign) int ODI3Less95Cnt;    // 血氧低于95高于90的事件个数(Number of events with blood oxygen lower than 95 and higher than 90) ....
 @property (nonatomic, assign) int ODI3Less90Cnt;
 @property (nonatomic, assign) int ODI3Less85Cnt;
 @property (nonatomic, assign) int ODI3Less80Cnt;
 @property (nonatomic, assign) int ODI3Less75Cnt;
 @property (nonatomic, assign) int ODI3Less70Cnt;
 @property (nonatomic, assign) int ODI3Less65Cnt;
-@property (nonatomic, assign) int ODI3Less60Cnt;    // 血氧低于60的事件个数
+@property (nonatomic, assign) int ODI3Less60Cnt;    // 血氧低于60的事件个数 (Number of events with blood oxygen lower than 60)
 
-@property (nonatomic, assign) float ODI3Less100Percent; // 血氧低于100高于95的事件占比
-@property (nonatomic, assign) float ODI3Less95Percent;  // 血氧低于95高于90的事件占比
+@property (nonatomic, assign) float ODI3Less100Percent; // 血氧低于100高于95的事件占比(Proportion of events with blood oxygen lower than 100 and higher than 95)
+@property (nonatomic, assign) float ODI3Less95Percent;  // 血氧低于95高于90的事件占比(Proportion of events with blood oxygen lower than 95 and higher than 90)
 @property (nonatomic, assign) float ODI3Less90Percent;
 @property (nonatomic, assign) float ODI3Less85Percent;
 @property (nonatomic, assign) float ODI3Less80Percent;
 @property (nonatomic, assign) float ODI3Less75Percent;
 @property (nonatomic, assign) float ODI3Less70Percent;
 @property (nonatomic, assign) float ODI3Less65Percent;
-@property (nonatomic, assign) float ODI3Less60Percent;  // 血氧低于60的事件占比
+@property (nonatomic, assign) float ODI3Less60Percent;  // 血氧低于60的事件占比(Proportion of events with blood oxygen lower than 60)
 
-@property (nonatomic, assign) int ODI3Less10sCnt;       // 时间少于10秒的事件个数
-@property (nonatomic, assign) int ODI3Less20sCnt;       // 时间少于20秒大于10秒的事件个数
+@property (nonatomic, assign) int ODI3Less10sCnt;       // 时间少于10秒的事件个数(Number of events with time less than 10 seconds)
+@property (nonatomic, assign) int ODI3Less20sCnt;       // 时间少于20秒大于10秒的事件个数(Number of events with time less than 20 seconds and more than 10 seconds)
 @property (nonatomic, assign) int ODI3Less30sCnt;
 @property (nonatomic, assign) int ODI3Less40sCnt;
 @property (nonatomic, assign) int ODI3Less50sCnt;
 @property (nonatomic, assign) int ODI3Less60sCnt;
-@property (nonatomic, assign) int ODI3Longer60sCnt;     // 时间大于60秒的事件个数
+@property (nonatomic, assign) int ODI3Longer60sCnt;     // 时间大于60秒的事件个数(Number of events with time greater than 60 seconds)
 
-@property (nonatomic, assign) float ODI3Less10sPercent; // 时间少于10秒的事件占比
-@property (nonatomic, assign) float ODI3Less20sPercent; // 时间少于20秒大于10秒的事件占比
+@property (nonatomic, assign) float ODI3Less10sPercent; // 时间少于10秒的事件占比(Proportion of events with time less than 10 seconds)
+@property (nonatomic, assign) float ODI3Less20sPercent; // 时间少于20秒大于10秒的事件占比(Proportion of events with time less than 20 seconds and more than 10 seconds)
 @property (nonatomic, assign) float ODI3Less30sPercent;
 @property (nonatomic, assign) float ODI3Less40sPercent;
 @property (nonatomic, assign) float ODI3Less50sPercent;
 @property (nonatomic, assign) float ODI3Less60sPercent;
-@property (nonatomic, assign) float ODI3Longer60sPercent;   // 时间大于60秒的事件占比
+@property (nonatomic, assign) float ODI3Longer60sPercent;   // 时间大于60秒的事件占比(Proportion of events with time greater than 60 seconds)
 
 
-// ODI4 result
+// ODI4 result --- as  oid3...
 
 @property (nonatomic, assign) int ODI4Less100Cnt;
 @property (nonatomic, assign) int ODI4Less95Cnt;
@@ -177,7 +177,7 @@
 @property (nonatomic, assign) float ODI4Longer60sPercent;
 
 ///
-/// 氧减事件随时间的分布
+/// 氧减事件随时间的分布 (Distribution of oxygen reduction events with time)
 ///
 @property (nonatomic, strong) NSArray <MRSpo2Event *> *spo2Events3;
 @property (nonatomic, strong) NSArray <MRSpo2Event *> *spo2Events4;
@@ -187,8 +187,8 @@
 
 /// blood pressure
 
-@property (nonatomic, assign) double SBP;
-@property (nonatomic, assign) double DBP;
+@property (nonatomic, assign) double SBP; //SBP
+@property (nonatomic, assign) double DBP; //DBP
 
 
 
@@ -205,7 +205,8 @@
 @property (nonatomic, assign) int bBeat; //心动过缓博数 Bradycardia number
 @property (nonatomic, assign) float bBeatProportion; //心动过缓占比 Proportion of bradycardia
 
-@property (nonatomic, assign) double SDNN;
+// hrv-----
+@property (nonatomic, assign) double SDNN; // 
 @property (nonatomic, assign) double SDANN;
 @property (nonatomic, assign) double RMSSD;
 @property (nonatomic, assign) int NN50;

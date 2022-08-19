@@ -21,6 +21,10 @@
 
 @optional
 
+
+- (void)scanStateDidUpdate;
+
+
 - (void)connecter:(MRConnecter *_Nullable)connecter didDiscoverDevice:(MRDevice *_Nullable)device;
 
 - (void)connecter:(MRConnecter *_Nullable)connecter didUpdateDeviceConnectState:(MRDevice *_Nullable)device;

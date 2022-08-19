@@ -43,7 +43,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
  2.@ Required
  
  */
-// 收取数据并解析
+// 收取数据并解析 -- MRDataTypeMonitor -- data. 
 - (void)requestReportData {
     
 //    @Required
@@ -59,13 +59,6 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
         @strongify(self);
 //        @Required
         self.device.isDownloadingData = NO;
-        
-        self.title = [NSString stringWithFormat:@"data: %@",data];
-        
-//        if (data != nil) {
-//            [self deatalData:data];
-//            [self  requestReportData];
-//        }
         
 //        NSLog(@"data-----------: %@",data);
         
@@ -132,8 +125,19 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
      When the sleep mode is turned on -- > generate daily blood oxygen data for at least 82S -- > generate sleep data for at least 30 minutes -- > generate HRV data for 30 minutes (when the fingers and rings remain stationary)
  *
  */
+
+
+/**
+ 
+ requestdata: Finish: followed by   xxxdevice.isDownloadingData = NO;
+ 
+ 1.@Required
+ 2.@ Required
+ 
+ */
 - (void)requestDailySleepHRVSportDataTest {
     
+    //    @Required
     if (self.device.isDownloadingData == YES) {
        NSLog(@"syncing data, mission cancel");
         return;
@@ -142,7 +146,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     [self.device requestData:MRDataTypeDaily progress:^(float progress) {
         NSLog(@"----get---progress:%.4f", progress);
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
-        self.device.isDownloadingData = NO;
+        self.device.isDownloadingData = NO; //    @Required
         NSLog(@"Dailydata:%@", data);
         
        if (data) {
@@ -195,9 +199,17 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
  *
  */
 #pragma mark test method
+/**
+ 
+ requestdata: Finish: followed by   xxxdevice.isDownloadingData = NO;
+ 
+ 1.@Required
+ 2.@ Required
+ 
+ */
 -(void)requestReportDataTestType:(MRDataType)type {
     
-    if (self.device.isDownloadingData == YES) {
+    if (self.device.isDownloadingData == YES) {// @ Required
         NSLog(@"syncing data, mission cancel");
         return;
     }
@@ -213,7 +225,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
         
         
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
-        self.device.isDownloadingData = NO;
+        self.device.isDownloadingData = NO;// @ Required
         self.shouldSyncData = NO;
         
         //deal data .
@@ -253,14 +265,13 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 }
 
 
-
 - (void)changeUserAlert {
-    NSString	*message = [NSString stringWithFormat:@"设备%@已有绑定用户,是否要继续更改用户?", self.device.mac];
-    UIAlertController	*alert = [UIAlertController alertControllerWithTitle:@"更改用户" message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction	*cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    NSString	*message = [NSString stringWithFormat:@"The device%@ has bound users. Do you want to continue changing users?", self.device.mac];
+    UIAlertController	*alert = [UIAlertController alertControllerWithTitle:@"Change user" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction	*cancelAction = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self.device confirmChangingUser:NO];
     }];
-    UIAlertAction    *confirmAction = [UIAlertAction actionWithTitle:@"继续" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction    *confirmAction = [UIAlertAction actionWithTitle:@"continue" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self.device confirmChangingUser:YES];
     }];
 
@@ -301,63 +312,6 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     }
     [super presentViewController:viewControllerToPresent animated:flag completion:completion];
 }
-
-// 收取数据并解析
-- (void)requestReportData:(MRDataType)type {
-    
-//    @Required
-    if (self.device.isDownloadingData == YES) {
-        NSLog(@"syncing data, mission cancel");
-        return;
-    }
-    
-    @weakify(self);
-    [self.device requestData:type progress:^(float progress) {
-        NSLog(@"progress:%.4f", progress);
-    } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
-        @strongify(self);
-//        @Required
-        self.device.isDownloadingData = NO;
-        
-//        if (data != nil) {
-//            [self deatalData:data];
-//            [self  requestReportData];
-//        }
-        
-    //   if (type != MHBLEDataRequestTypeHRV) {
-      //     [self requestReportData:MHBLEDataRequestTypeHRV];
-     // }
-//
-        
-        
-//        NSLog(@"data: %@",data);
-        
-        self.title = [NSString stringWithFormat:@"data: %@",data];
-        
-        
-        
-        
-        NSLog(@"daily data length:%lu, stopType:%d, mode:%d", (unsigned long)data.length, stopType, mode);
-//
-        if (data) {
-            [MRApi parseMonitorData:data completion:^(MRReport *report, NSError *error) {
-                NSLog(@"user:%@, report type:%d", report.userId, report.reportType);
-                NSLog(@"start:%d, duration:%d", report.startTime, report.duration);
-                NSLog(@"sp avg:%.f, min:%.f", report.avgSp, report.minSp);
-                NSLog(@"pr max:%d, min:%d, avg:%d", report.maxPr, report.minPr, report.avgPr);
-                NSLog(@"sp len:%lu, pr len:%lu", (unsigned long)report.spArr.count, (unsigned long)report.prArr.count);
-                
-                
-                NSLog(@"SDNN-------------%f",report.SDNN);
-                
-            }];
-        }
-    }];
-}
-
-
-
-
 
 
 @end

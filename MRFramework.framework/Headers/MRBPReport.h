@@ -18,9 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) int frame_count;
 @property (nonatomic, assign) int data_block_size;
 @property (nonatomic, assign) uint8_t status;
-@property (nonatomic, assign) uint8_t flag;
+@property (nonatomic, assign) uint8_t flag; 
 
-@property (nonatomic, strong) NSArray *ecg;
+@property (nonatomic, strong) NSArray *ecg; // Ecg array.
 
 
 

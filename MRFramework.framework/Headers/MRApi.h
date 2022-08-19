@@ -94,9 +94,9 @@ FOUNDATION_EXTERN NSString *kMRFrameworkVersion;
 
 // parse data to report;
 + (void)parseMonitorData:(NSData *)data completion:(void (^)(MRReport *report, NSError *error))completion;
-
+//parse BP data to report;
 + (void)parseBPData:(NSData *)data time:(int)time caliSBP:(double)caliSBP caliDBP:(double)caliDBP block:(void (^)(MRBPReport *report, NSError *error))completion;
-
+//parse Daily data
 + (NSArray<MRDailyReport *> *)parseDaily:(NSData *)data;
 
 + (void)setDataUploadEnabled:(BOOL)isEnabled;

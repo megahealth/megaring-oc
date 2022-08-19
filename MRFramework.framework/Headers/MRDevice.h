@@ -10,7 +10,7 @@
 #import "MRDefines.h"
 
 
-
+@class CBPeripheral;
 @protocol MRDeviceDelegate;
 
 @interface MRDevice : NSObject
@@ -25,7 +25,7 @@
 @property (nonatomic, assign) BOOL	 connectable;
 @property (nonatomic, assign) MRDeviceState	 connectState; // The status of the device connection.
 @property (nonatomic, strong) NSNumber	*RSSI; // Signal of equipment
-@property (nonatomic, assign) int	 RSSILevel;// Signal level of equipment: 1-4
+@property (nonatomic, assign) int	 RSSILevel;// Signal level of equipment: 0-4
 
 @property (nonatomic, copy) NSString	*sn; // 设备的编号，可以作为标识 （Equipment number, which can be used as identification）
 @property (nonatomic, copy) NSString	*btVersion;
@@ -35,7 +35,7 @@
 @property (nonatomic, strong) NSData *snData;
 @property (nonatomic, strong) NSData *verData;
 
-
+@property (nonatomic, strong) CBPeripheral    *peripheral;
 // 通过查看IICOk ，GSensorOk， 4404Ok 查看硬件是否 OK; 都是等于 == 1 说明硬件没有问题；否则有问题；（Translated as: Check whether the hardware is OK by checking iicok, gsensorok and 4404ok; All are equal to = = 1, indicating that there is no problem with the hardware; Otherwise there will be problems;）
 @property (nonatomic, assign) BOOL	 isIICOk;          	// IIC OK
 @property (nonatomic, assign) BOOL	 isGSensorOk;      	// GSensor OK
@@ -88,7 +88,7 @@
 
 - (NSArray *)RSSIInLast10seconds;
 
-
+- (void)stopTimer;
 
 @end
 

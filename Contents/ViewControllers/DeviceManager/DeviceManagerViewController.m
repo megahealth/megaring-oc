@@ -85,7 +85,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 
 //                [self.device setRawdataEnabled:YES]; // You can open it to receive raw data
                 
-
                 break;
                 
             case 2:
@@ -94,7 +93,8 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 break;
                 
             case 3:
-//                [weakself requestReportData];
+                
+                NSLog(@"(或 查看 点击关闭监测时 收取数据的过程) Or view the process of collecting data when clicking 'close monitoring'");
                 
                 
                 // sleep hrv ... data  You can view the notes of HRV and other data obtained by this test method
@@ -103,7 +103,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                  //  Obtain HRV data through separate test
                  // [weakself requestReportDataTestType:MHBLEDataRequestTypeHRV];
                 
-            
                 break;
                 
             case 4:
@@ -134,7 +133,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 break;
                 
             case 7:
-                [self.device switchToNormalModel];
+                [self.device switchToNormalModel]; // Turn off monitoring
                 break;
                 
                 
@@ -173,9 +172,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 break;
                 
             case 14: {
-//                [weakself.device switchToBPMode];
-//                weakself.bpData = [NSMutableData new];
-//                weakself.bpStart = [NSDate date];
                 
 // test:    View the measurement of test blood pressure and how the ECG UI plots.
                 
@@ -188,7 +184,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                         [self.navigationController pushViewController:vc animated:YES];
                     }
                     
-                   
                 }else
                 {
                     
@@ -202,7 +197,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 
             case 15: {
                 
-                NSLog(@"This method has been transferred-----see  Line 4: Click Sync data (data collection process)  zh：直接查看第四行，收取数据的过程");
+                NSLog(@"This method has been transferred-----see  Line 4: Click Sync data (data collection process  Or click to close the process of collecting data during monitoring)  Method:   [self requestDailySleepHRVSportDataTest];   zh：直接查看第四行，收取数据的过程 或点击 关闭监测时 收取数据的过程.....");
 //                [self requestDailyData];
             }
                 break;
@@ -212,12 +207,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
         }
     };
 }
-//- (BOOL)bloodPressureSupported {
-//    NSString *version = self.sw;
-//    BOOL valid = [version hasPrefix:@"5."];
-//    return valid;
-//}
-
 
 #pragma mark Delegate Methods - MRDeviceDelegate
 
@@ -315,6 +304,25 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     [self.deviceManagerView refreshView];
 }
 
+/***
+ 1. 测试：
+    1.1 点击关闭监测，查看数据的收取;
+    1.2 点击断开设备，查看重连过程；
+    1.3 上电，查看重连及收取数据；
+    ......
+    查看 self.titleNavView.text 的变化.
+ 
+ 1. Test:
+     1.1 click close monitoring to view data collection;
+     1.2 click disconnect device to view the reconnection process;
+     1.3 power on, check reconnection and collect data;
+     ......
+      See the change of 'self.titleNavView.text'.
+ 
+ 收取数据，扫描，重连等简单过程,如下 (Simple processes such as data collection, scanning and reconnection are as follows:)
+ 
+ */
+
 #pragma mark -- Devie  delegate :  After the mode switching, what needs to be done in which modes after the proxy connection is successful
 - (void)monitorModeUpdated {
     NSLog(@"DeviceManagerViewController --  monitorModeUpdated:%d", self.device.monitorMode);
@@ -369,9 +377,9 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 - (void)stopScanningDevcie {
     
     NSLog(@"----[MRConnecter defaultConnecter].centralManager.isScanning======%d",[MRConnecter defaultConnecter].centralManager.isScanning);
+    
     if ([MRConnecter defaultConnecter].centralManager.isScanning) {
         
-        NSLog(@"isscansing----------1---");
         self.titleNavView.text = NSLocalizedString(MRDeviceDisconnected, nil);
         self.reconnectBtn.hidden = NO;
         self.scanTimerCount = 0;
@@ -386,13 +394,13 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     
     MRDevice *device = [self getNearestDevice];
     QMRLog(@"start connect:%@", device);
-    [self stopScanningDevcie];
+//    [self stopScanningDevcie];
     [[MRConnecter defaultConnecter]connectDevice:device];
 }
 
 #pragma mark --- get near device...
 - (MRDevice *)getNearestDevice {
-
+    
     MRDevice *near = nil;
     
     for (MRDevice * nearDevice in [MRConnecter defaultConnecter].discoveredDevices) {
@@ -411,6 +419,12 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     return near;
 }
 
+
+
+
+
+
+
 - (void)operationFailWithErrorCode:(MRErrCode)errCode {
     NSLog(@"err:%X", errCode);
 }
@@ -427,40 +441,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 - (void)didGetPeriodicMonitorState:(MRPeriodicMonitorState)state start:(NSString *)start duration:(int)duration repeat:(BOOL)repeat {
     NSLog(@"get perioidic state:%d repeat:%d start:%@ duration:%d", state, repeat, start, duration);
 }
-
-/// data of blood pressure
-//- (void)bpDataUpdated:(NSData *)data {
-//    [self.bpData appendData:data];
-//    NSInteger duration = self.bpData.length / data.length / 10;
-//    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-//    [fmt setDateFormat:@"HHmm"];
-//    int time = [[fmt stringFromDate:self.bpStart] intValue];
-//    @weakify(self);
-////  caliSBP: caliDBP:  Highest range value of DBP and SBP parsed
-//    [MRApi parseBPData:self.bpData time:time caliSBP:120 caliDBP:80 block:^(MRBPReport *report, NSError *error) {
-//        @strongify(self);
-//
-//        NSLog(@"sbp:%.1f, dbp:%.1f, flag:%d，ecg:%@", report.SBP, report.DBP, report.flag,report.ecg);
-//        BOOL finish = report.flag == 1;
-//        BOOL failure = report.flag == 2 || duration >= 60;  // failed or timeout
-//        if (finish || failure) {
-//            [self stopBPMode];
-//        }
-//
-//        if (failure) {
-//            NSLog(@"failure!");
-//        }
-//        if (finish) {
-//            NSLog(@"finished"); // and you can save the report data.
-//        }
-//
-//    }];
-//}
-
-//- (void)stopBPMode {
-//    [self.device switchToNormalModel];
-//}
-
 
 #pragma mark -
 #pragma mark Notification Methods - kMRCentralStateUpdatedNotification
@@ -492,9 +472,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     self.navigationItem.titleView = self.titleNavView;
     
     UIBarButtonItem * barItem = [[UIBarButtonItem alloc]initWithCustomView:self.reconnectBtn];
-    
     self.navigationItem.rightBarButtonItem = barItem;
-    
     self.deviceManagerView.viewModel = [[DeviceManagerViewModel alloc] initWithDevice:self.device];
     [self setUpViewActions];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MRCentralStateUpdated:) name:kMRCentralStateUpdatedNotification object:nil];
@@ -502,7 +480,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceConnecteStateUpdated:) name:MRDeviceConnectStateUpdatedNotification object:nil];
     
-// test use hrvData....
+// ***** test use hrvData....
     
 //  NSDictionary * dict =  [[NSUserDefaults standardUserDefaults]objectForKey:@"testHRVData"];
 //    
@@ -513,13 +491,11 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 //    
 }
 
-#pragma mark -- reconnect ---
+#pragma mark --click  reconnect ---
 -(void)buttonClickReconnect:(UIBarButtonItem *)item {
     
     self.titleNavView.text =  NSLocalizedString(MRDeviceDisReconnecting, nil);
-    
-//     @"Device disconnected，Reconnecting...";
-    
+//     @"Device disconnected，Reconnecting...
     [self startScanningDevice];
 }
 
@@ -544,9 +520,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
         
     }else{
         
-        
-        
-        
     }
     
     NSLog(@"%@ connecte state: %d", device.name, device.connectState);
@@ -554,42 +527,12 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    [self test];
+    
 }
 
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
-- (void)test {
-    typedef union _frame_control_t {
-        struct frame_t {
-            uint16_t reserved : 3;      //保留
-            uint16_t priority : 2;      //事件优先级:0-3
-            uint16_t identify : 1;      //一般用于设备注册时辨别设备使用
-            uint16_t connect : 1;       //有数据需要同步
-            uint16_t has_mac : 1;       //是否有 MAC Address
-
-            uint16_t encrypted : 1;     //报文是否已加密
-            uint16_t bind : 1;          //是否已经绑定
-            uint16_t frame_type : 2;    //报文类型
-            uint16_t version : 4;       //AIOT 蓝牙协议版本号
-        } frame;
-        uint8_t udata[2];
-    } frame_control_t;
-    
-    Byte buffer[] = {0x90, 0x00, 0x13, 0x98};
-    
-    frame_control_t frame = *(frame_control_t *)(buffer+1);
-    
-    printf("bind:%d", frame.frame.bind);
-}
-
-
-
-
-
-
 
 @end
