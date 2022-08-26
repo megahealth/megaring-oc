@@ -53,7 +53,11 @@
 
 - (void)notiStartUpgrade;
 
-
+/*  set hrv. 
+ * enable:YES, Open hrv ；NO: Close hrv.
+ 
+ */
+- (void)setHrvModeEnable:(BOOL)enable;
 
 /*!
  * @discussion 开关 rawdata support MRDeviceMonitorModeDefault，MRDeviceMonitorModeSleep，MRDeviceMonitorModeSport，MRDeviceMonitorModePulse

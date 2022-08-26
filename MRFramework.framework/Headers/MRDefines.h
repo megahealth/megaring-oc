@@ -30,6 +30,7 @@ typedef NS_ENUM(Byte, MRCMD) {
     MRCMDBind                         	= 0XB0,      	// Bind 绑定
     MRCMDShake                        	= 0XB1,
     MRCMDShutdown                       = 0XB2,
+    MRCMDOpenOrCloseHrv              = 0XCD,         //hrv
     MRCMDSetMonitor                     = 0XD0,			// 血氧监测模式
     MRCMDSetBloodPressure            	= 0XD4,			// 血压模式
     MRCMDSetSport                     	= 0XD5,			// 运动模式

@@ -69,6 +69,8 @@ This text introduces the components of MRFramework, hoping to make it easier to 
 
 12. Call -[MRDevice switchToBPMode] to measure blood pressure, see  DeviceManagerViewController.m.
 
+13. Call -[MRDevice setHrvModeEnable:]  Set yes or no to determine whether HRV function is enabled; When you click sleep, the HRV function is turned on by default. When you turn off the HRV function, you can save the battery power; Note: Only 28 rings (rings that support the blood pressure monitoring function) and the firmware version is greater than or equal to 5.0.11803, the switch HRV function is supported (see the demo for how to judge.).
+
 
 
 ### Device status

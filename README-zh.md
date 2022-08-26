@@ -74,6 +74,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 10. 调用 -[MRDevice getMonitorTimer] 来获取定时监测的状态;
 11. 调用 -[MRDevice clearCache] 清除指环中的监测数据，版本在11312及以下的固件不支持此功能。
 12. 调用 -[MRDevice switchToBPMode] 测量血压，见 DeviceManagerViewController.m。
+13. 调用 -[MRDevice setHrvModeEnable:] 设置YES 或 NO,来判断是否开启HRV功能；点击睡眠的时候默认是开启HRV功能的，当关闭HRV功能可以节约电池的电量; 注意：只有是28指环（支持血压监测功能的指环），而且固件版本大于等于5.0.11803的时候，才支持开关HRV功能. （如何判断请看demo.）
 
 ### 数据处理
 1. 调用 -[MRDevice requestData:progress:finish:] 检查和收取设备中的数据, 建议重复调用此方法, 直至得到的 data 为空, 即设备中数据已被全部取出;

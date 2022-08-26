@@ -215,6 +215,7 @@
 @property (nonatomic, assign) double hfp;
 @property (nonatomic, assign) double lfp;
 @property (nonatomic, assign) double vlfp;
+@property (nonatomic, assign) double lhfr;
 
 @property (nonatomic, strong) NSArray *histArr; // 直方图数组  Histogram array
 @property (nonatomic, strong) NSArray *hrvArr; //心率数组 Heart rate array
