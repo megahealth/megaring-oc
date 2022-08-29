@@ -511,7 +511,7 @@ en： 1. Test:
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceConnecteStateUpdated:) name:MRDeviceConnectStateUpdatedNotification object:nil];
     
-// ***** test use hrvData....
+// ***** test use hrv data....
     
 //  NSDictionary * dict =  [[NSUserDefaults standardUserDefaults]objectForKey:@"testHRVData"];
 //    

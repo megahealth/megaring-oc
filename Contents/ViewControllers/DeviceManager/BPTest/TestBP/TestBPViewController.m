@@ -34,6 +34,7 @@
     [self leave];
 }
 
+
 - (IBAction)submitClicked:(UIButton *)sender {
         int sbp = self._view.SBP;
         int dbp = self._view.DBP;
@@ -41,7 +42,6 @@
     
     [[NSUserDefaults standardUserDefaults]setValue:@(dbp) forKey:@"UserId_DBP"];
     [[NSUserDefaults standardUserDefaults]synchronize];
-    
     [self leave];
     
     return;
@@ -225,7 +225,11 @@
     if (count % 10 == 0) {
         int time = [stringFromDate(self.start, @"HHmm") intValue];
         NSDate *start = [NSDate date];
+        
+        @weakify(self);
         [MRApi parseBPData:self.data time:time caliSBP:self._view.SBP caliDBP:self._view.DBP block:^(MRBPReport *report, NSError *error) {
+            @strongify(self);
+            
             NSDate *end = [NSDate date];
             NSTimeInterval interval = [end timeIntervalSinceDate:start];
             NSLog(@"parse bp end: %@, cost:%f-----report.flag-------%d", stringFromDate(end, @"HH:mm:ss.SSS"), interval,report.flag);
@@ -251,6 +255,9 @@
             }
             if (finish) {
                 NSLog(@"start save bp report");
+                
+                [self.device setRawdataEnabled:NO]; // When blood pressure monitoring is turned on, [self. Device setrawdataenabled: Yes]; So  it can be set to no when leaving。
+                
                 [self saveReport:report] ;
                 [self._view.finishedButton setTitle:@"Complete" forState:UIControlStateNormal];
                 self._view.helpButtonConstraint.constant = 0;

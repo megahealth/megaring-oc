@@ -204,6 +204,7 @@
     self.helpButton.titleLabel.font = [UIFont boldSystemFontOfSize:20];
     [self.helpButton setTitle:@"Help" forState:UIControlStateNormal];
     [self.finishedButton setTitle:@"Complete" forState:UIControlStateNormal];
+    
     [self addShadowToBtn:self.positiveBtn];
     [self addShadowToBtn:self.negativeBtn];
     [self addShadowToBtn:self.sbpBtn];
