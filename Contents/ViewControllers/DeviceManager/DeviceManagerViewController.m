@@ -232,7 +232,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 }
 
 #pragma mark Delegate Methods - MRDeviceDelegate
-
+// device connect state delegate
 - (void)deviceDidUpdateConnectState {
     NSLog(@"connected:%d", self.device.connectState);
     
@@ -248,6 +248,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     [self.deviceManagerView refreshView];
 }
 
+#pragma mark -- bind ---
 - (void)bindDeviceResp:(MRBindResp)bindResp {
     switch (bindResp) {
         case MRBindRespNew:
@@ -277,7 +278,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
             break;
     }
 }
-
+#pragma mark -- Token returned after successful binding . (绑定成功后，返回的token)
 - (void)finishBindingWithToken:(NSString *)token {
     NSLog(@"new token:%@, sn:%@", token, self.device.sn);
     [self saveBindToken:token];
@@ -302,10 +303,17 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     NSLog(@"device time: %@", date);
 }
 
+#pragma mark -- Read the information of the ring .
+/***
+ *  You can view the btversion ，hwVersion,sw..
+ *  deviceOK..
+ *
+ */
 - (void)deviceInfoUpdated {
     [self.deviceManagerView.viewModel reloadModel];
     [self.deviceManagerView refreshView];
 }
+#pragma mark device battery charge information
 
 - (void)deviceBatteryUpdated {
     [self.deviceManagerView.viewModel updateBattery];
@@ -328,14 +336,14 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 }
 
 /***
- 1. 测试：
+zh： 1. 测试：
     1.1 点击关闭监测，查看数据的收取;
     1.2 点击断开设备，查看重连过程；
     1.3 上电，查看重连及收取数据；
     ......
     查看 self.titleNavView.text 的变化.
  
- 1. Test:
+en： 1. Test:
      1.1 click close monitoring to view data collection;
      1.2 click disconnect device to view the reconnection process;
      1.3 power on, check reconnection and collect data;

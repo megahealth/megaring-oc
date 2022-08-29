@@ -30,7 +30,7 @@ This text introduces the components of MRFramework, hoping to make it easier to 
 1. Set MRDevice.delegate.
 
 2. Implement method `-[MRDeviceDelegate bindUserIdentifier]` and `-[MRDeviceDelegate bindToken]` to provide user id and token. The userid is a 24-bit hexadecimal string. Use the token you get in step 6 to connect the old device.
-
+    Prompt: [userid is returned by the server to the app, and then bind is set to the ring; you can ask the server to generate a 24 bit hexadecimal string returned to the app (let the server search online, there are many)]; （ Example: @"5a4331011579a30038c790de"）
 3. Implement method `-[MRDeviceDelegate bindDeviceResp:]` to observe binding response. 
 
 4. A `MRBindRespOld` comes when the same user connect the same device. 
@@ -78,9 +78,9 @@ This text introduces the components of MRFramework, hoping to make it easier to 
 This are some methods that can help getting device's status in protocol `MRDeviceDelegate`:
 
 ```
-- (void)deviceDidUpdateConnectState;
+- (void)deviceDidUpdateConnectState; // Status of device connection
 
-- (void)deviceIsReady:(BOOL)isReady;
+- (void)deviceIsReady:(BOOL)isReady; // You can check whether the hardware of the ring is good？ ；isReady == YES --- > There is no problem with the hardware of the device 。
 
 - (void)deviceInfoUpdated; // btVersion, hwVersion, swVersion...
 
@@ -92,7 +92,9 @@ This are some methods that can help getting device's status in protocol `MRDevic
 
 - (void)liveDataValueUpdated:(NSArray *)liveData; // [SpO2, PR, state, duration, accx, accy, accz]
 
-- (void)deviceModeUpdated; // MRDeviceMode
+<!--- (void)deviceModeUpdated; // MRDeviceMode-->
+
+- (void)monitorModeUpdated; // MRDeviceMode--> When the device mode is successfully switched, this agent method will be used.(when the monitoring mode changes）----- For example, from sleep monitoring to turn off monitoring, or from normal status to turn on monitoring successfully, you can view the current mode .
 
 - (void)screenStateUpdated; // isScreenOff
 
@@ -106,9 +108,10 @@ This are some methods that can help getting device's status in protocol `MRDevic
 
 ### Data processing
 
-1. Call `-[MRDevice requestData:progress:finish:]` to get data from device. Call it again until the data is nil, which means there is no more data in it.
+1. Call `-[MRDevice requestData:progress:finish:]` to get data from device. Call it again until the data is nil, which means there is no more data in it. (you can view the use in the demo)
 	1. MRDataTypeMonitor, sport & sleep data
-	2. MRDataTypeDaily, daily data
+	2. MRDataTypeDaily, daily data 
+    3. 3. MHBLEDataRequestTypeHRV, It is a 28 ring (which supports blood pressure monitoring), and it generates HRV data when turning on sleep.   
     3. To prevent data operations from being synchronized all the time, after method finish: add xxxDevice.isDownloadingData = NO， Judge before calling this method：  when xxxDevice.isDownloadingData = YES，The return operation prevents ongoing data synchronization operations，（See DeviceManagerViewController+Methods.h use of instances）.   
 
 2. Call `+[MRApi parseMonitorData:completion:]` to parse data (And HRV data), you will receive a `MRReport` object.
@@ -169,7 +172,7 @@ One:
 4. When binding a new device, the ring does not shake.
 
 Two: Some situations of ending monitoring 
-     If the battery is low, charged, the space is full, and it is used for more than 12 hours, the monitoring will end -- > and it will switch to mrdevicemonitormodenormal mode;
+     If the battery is low, charged, the space is full,set timing end, and it is used for more than 12 hours, the monitoring will end -- > and it will switch to mrdevicemonitormodenormal mode;
 
 Three: When monitoring is enabled: [if the ring generates data every time a monitoring mode is enabled, the data in the ring will be collected to ensure that the data in the ring is empty before a monitoring mode is enabled]
 
@@ -178,4 +181,15 @@ Four:
 
         1. Data collection: after the monitoring is turned on, the ring generates data. After the monitoring is completed (after power failure and reconnection, and after restarting the app), the ring collects data: (as long as the post monitoring inspection mode is turned off, the data is collected at the beginning). You can check the simple process.
         
-        2. You can check the simple process of reconnecting after disconnection.
+        2. Demo the process of obtaining ring data:
+            (1) First get the dailydata data in the ring -- Type: MRDataTypeDaily.
+            (2) Get the sleep data generated in the ring again -- Type: MRDataTypeMonitor.
+            (3) Get HRV data in the ring -- Type: MHBLEDataRequestTypeHRV.
+            
+            ---------
+            
+            (4) [if you do not use daily daily data or generated HRV data in your project, these data are not needed. It's better to get these data; ensure that the data in the ring is empty before starting the monitoring. ( 'Three':  explanations.)] .
+            (5) our App also use the demo process; Of course, you can collect data of type MRDataTypeMonitor first, and then collect data of type MRDataTypeDaily ... 
+            (6)Please check the methods in the demo：[-（void) requestDailySleepHRVSportDataTest Data collection process and notes：In 'DeviceManagerViewController+Methods.h' -- there are also notes on this method ].
+            
+        3. You can check the simple process of reconnecting after disconnection.

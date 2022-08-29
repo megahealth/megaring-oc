@@ -40,6 +40,7 @@ MegaRing SDK & Demo for iOS in Objective-C
 
 1. 设置 MRDevice.delegate;
 2. 实现 -[MRDeviceDelegate bindUserIdentifier] 和 -[MRDeviceDelegate bindToken], 提供绑定用户的身份和 token 来验证是不是新用户。userid 格式是24位16进制字符串，token 在首次绑定获得;
+    提示：[userId是服务器返回给App的，然后bind设置给指环；您可以在让服务端生成返回给App -- 24位16进制字符串 (让服务端在网上搜，有很多)]; （ 示例: @"5a4331011579a30038c790de" ）.
 3. 实现 -[MRDeviceDelegate bindDeviceResp:] 接收验证结果, 老用户每次连接过程中只调用一次, 返回 MRBindRespOld 表示验证成功; 新用户完成连接过程中会调用三次, 若收到 MRBindRespChangeUser, 实现 -[MRDevice confirmChangingUser:] 决定是否继续连接, 若传入 YES, 会再收到 MRBindRespShake, 表示需要晃动指环来确认, 此时晃动指环, 最后收到 MRBindRespNew, 表示指环和新用户的绑定完成;
 4. 实现 -[MRDeviceDelegate finishBindingWithToken:] 接收指环与新用户绑定后生成的 token; 
 5. 实现 -[MRDeviceDelegate bindUserInfo] 设置用户体征信息;
@@ -48,14 +49,16 @@ MegaRing SDK & Demo for iOS in Objective-C
 
 MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, 如下:
 	
-	- (void)deviceDidUpdateConnectState;
-	- (void)deviceIsReady:(BOOL)isReady;
+	- (void)deviceDidUpdateConnectState; // 设备连接的状态
+	- (void)deviceIsReady:(BOOL)isReady; // 您可以查看指环的硬件是否是好的 。isReady == YES, 设备的硬件没有问题。
 	- (void)deviceInfoUpdated; // btVersion, hwVersion, swVersion...
 	- (void)deviceBatteryUpdated; // batState batValue
 	- (void)liveDataStateUpdated; // MRLiveDataState
 	- (void)monitorStateUpdated; // isMonitorOn
 	- (void)liveDataValueUpdated:(NSArray *)liveData; // [血氧,脉率,有效性,监测时长,accx,accy,accz]
-	- (void)deviceModeUpdated; // MRDeviceMode
+<!--	- (void)deviceModeUpdated; // MRDeviceMode-->
+    - (void)monitorModeUpdated; // MRDeviceMode--> 当设备模式切换成功后，会走此代理方法(即监测的模式发生改变的时候) -- 比如从睡眠监测到关闭监测或从normal到开启监测成功后,您可以查看当前的模式。 
+    
 	- (void)screenStateUpdated; // isScreenOff
 	- (void)operationFailWithErrorCode:(MRErrCode)errCode; 
 	- (void)rawdataUpdated:(NSArray *_Nullable)data; // 只对某些版本开放
@@ -77,9 +80,10 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 13. 调用 -[MRDevice setHrvModeEnable:] 设置YES 或 NO,来判断是否开启HRV功能；点击睡眠的时候默认是开启HRV功能的，当关闭HRV功能可以节约电池的电量; 注意：只有是28指环（支持血压监测功能的指环），而且固件版本大于等于5.0.11803的时候，才支持开关HRV功能. （如何判断请看demo.）
 
 ### 数据处理
-1. 调用 -[MRDevice requestData:progress:finish:] 检查和收取设备中的数据, 建议重复调用此方法, 直至得到的 data 为空, 即设备中数据已被全部取出;
+1. 调用 -[MRDevice requestData:progress:finish:] 检查和收取设备中的数据, 建议重复调用此方法, 直至得到的 data 为空, 即设备中数据已被全部取出; (可以查看Demo中的使用)
 	1. MRDataTypeMonitor 运动、睡眠监测数据
 	2. MRDataTypeDaily 日常监测数据
+    3. MHBLEDataRequestTypeHRV 是28指环（它支持血压监测的指环），它开启睡眠的时产生的HRV数据。   
     3. 为防止一直同步数据操作，在finish：后添加 xxxDevice.isDownloadingData = NO，多次调用此方法时，调用此方法前要判断 xxxDevice.isDownloadingData = YES时，进行return操作防止正在进行的同步数据操作，（可看DeviceManagerViewController+Methods.h实例的使用）;
 2. 调用 +[MRApi parseMonitorData:completion:] 解析数据 及(HRV数据), 生成 report;
 3. 调用 +[MRApi parseBPData:time:caliSBP:caliDBP:block:] 解析血压数据, 生成血压测量报告;
@@ -117,32 +121,45 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 
 ### 导入 Swift 工程
 
-将 framework 文件放入 Swift 工程，选择 Embed & Sign 即可。
+将 framework 文件放入 OC & Swift 工程，选择 Embed & Sign 即可。
 ![](./Embed.png)
 
-
+ 
 
 
 -------------------------------一些说明，如下------------------------
 
 
-
+    一. 
 ### ****** 开发注意---指环有时会出现断开  ****** 
-一. 
 
-1、信号比较弱时。
-2、短时间内频繁连接。
-3、监控模式在短时间内多次切换时。
-4、绑定新设备时，戒指没有抖动。
+    1、信号比较弱时。
+    2、短时间内频繁连接。
+    3、监控模式在短时间内多次切换时。
+    4、绑定新设备时，戒指没有抖动。
 
-二. 一些结束监测的情况
-    如低电, 充电, 空间已满, 使用超过 12 小时等会结束监测-->会切换到MRDeviceMonitorModeNormal 模式;
+    二. 一些结束监测的情况
+        如低电, 充电, 空间已满,定时结束, 使用超过 12 小时等会结束监测-->会切换到MRDeviceMonitorModeNormal 模式;
 
-三.在开启监测使用时：[每开启一个监测模式如果指环产生的数据，就收取指环内的数据，确保在开启一种监测模式之前，指环内的数据是空的]
+    三.在开启监测使用时：[每开启一个监测模式如果指环产生的数据，就收取指环内的数据，确保在开启一种监测模式之前，指环内的数据是空的]
 
-四. 
- *** 提示：在(DeviceManagerViewController.m 和 DeviceManagerViewController+Methods) 中测试查看以帮助您：
+    四. 
+     *** 提示：在(DeviceManagerViewController.m 和 DeviceManagerViewController+Methods) 中测试查看以帮助您：
 
-        1. 关于数据的收取： 开启监测后指环产生了数据结束监测后(断电重连后，重启App后)收取指环的数据： （只要关闭监测后检查模式后，开始就收取数据) 可以查看一下简单的流程。
-        2、关于断开后重连的简单流程可以查看一下。
+            1. 关于数据的收取： 开启监测后指环产生了数据结束监测后(断电重连后，重启App后)收取指环的数据： （只要关闭监测后检查模式后，开始就收取数据) 可以查看一下简单的流程。
+            
+            2. Demo获取指环数据的流程：
+            
+            （1)先获取指环中DailyData数据----类型：MRDataTypeDaily. 
+             (2)再获取指环中产生的睡眠数据---- 类型:MRDataTypeMonitor.
+             (3)获取指环中HRV数据. 
+             
+             ---------
+             
+             (4)[如果您项目中不用日常DailyData或产生的HRV数据，这些数据您都不用，最好把这些数据也进行获取了；确保在开启监测之前，指环内的数据是空的.(三 解释.)] .
+             
+             (5)我们的App也是使用Demo这个流程;当然您可以先收取MRDataTypeMonitor类型的数据，然后再收取MRDataTypeDaily类型的数据...  .
+             (6)请查看Demo中方法：[-（void) requestDailySleepHRVSportDataTest 收取的数据过程及注释说明等：在 'DeviceManagerViewController+Methods.h' 中 -- 同样有对此方法的注释说明 ].
+               
+            3. 关于断开后重连的简单流程可以查看一下。
 

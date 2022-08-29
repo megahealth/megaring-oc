@@ -111,7 +111,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 }
 
 
-#pragma mark test    method。
+#pragma mark test    method --- 在 'DeviceManagerViewController+Methods.h' 中有更多的注释.(en: There are more comments in 'DeviceManagerViewController+Methods.h')
 /***
  *
  *
@@ -132,12 +132,12 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
  requestdata: Finish: followed by   xxxdevice.isDownloadingData = NO;
  
  1.@Required
- 2.@ Required
+ 2.@Required
  
  */
 - (void)requestDailySleepHRVSportDataTest {
     
-    //    @Required
+    //   1. @Required
     if (self.device.isDownloadingData == YES) {
        NSLog(@"syncing data, mission cancel");
         return;
@@ -146,7 +146,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     [self.device requestData:MRDataTypeDaily progress:^(float progress) {
         NSLog(@"----get---progress:%.4f", progress);
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
-        self.device.isDownloadingData = NO; //    @Required
+        self.device.isDownloadingData = NO; //  1.  @Required
         NSLog(@"Dailydata:%@", data);
         
        if (data) {
@@ -186,15 +186,6 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
    3.当开启睡眠模式 --- > 至少82s产生日常血氧数据 ---- > 至少30分钟产生睡眠数据 ----->      至少30分钟产生hrv数据（在手指与指环一直保持不动的情况下）
      When the sleep mode is turned on -- > generate daily blood oxygen data for at least 82S -- > generate sleep data for at least 30 minutes -- > generate HRV data for 30 minutes (when the fingers and rings remain stationary)
  *
- *使用iOS SDK测试：
- *  1. 指环连接成功好之后， 然后开启睡眠监测（手指与指环至少保持30分钟静止不动）
- *
- *  2. 结束监测, 点击同步数据。（收取 daily data（MRDataTypeDaily） 和 MRDataTypeMonitor 数据  ） ios 测试方法：[self requestDailySleepHRVSportDataTest] ;
- *
- *  3. 当收取完成数据解析查看是否产生了（report.SDNN，report.rrArr...）---- > HRV (report.reportType == 10 hrv的类型);
- *
- *  （可查看(DeviceManagerViewContoller + methods)和（DeviceManagerViewController）的 测试使用情况）
- *
  *
  *
  */
@@ -204,12 +195,12 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
  requestdata: Finish: followed by   xxxdevice.isDownloadingData = NO;
  
  1.@Required
- 2.@ Required
+ 2.@Required
  
  */
 -(void)requestReportDataTestType:(MRDataType)type {
     
-    if (self.device.isDownloadingData == YES) {// @ Required
+    if (self.device.isDownloadingData == YES) {//1. @ Required
         NSLog(@"syncing data, mission cancel");
         return;
     }
@@ -225,15 +216,17 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
         
         
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
-        self.device.isDownloadingData = NO;// @ Required
+        self.device.isDownloadingData = NO;//2.  @ Required
         self.shouldSyncData = NO;
         
-        //deal data .
+        // you can deal data .
+        
         NSLog(@"data:%@----------mode----------%d", data,mode);
         
         if (data) {
             
-//            解析数据展示UI. 需要网络验证 ..
+//         you can parse data display UI Need network to verify。
+            
             [MRApi parseMonitorData:data completion:^(MRReport *report, NSError *error) {
                 
                     NSLog(@"report.reportType=======%d",report.reportType);
@@ -243,12 +236,11 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
                     NSLog(@"pr max:%d, min:%d, avg:%d", report.maxPr, report.minPr, report.avgPr);
                     NSLog(@"sp len:%lu, pr len:%lu", (unsigned long)report.spArr.count, (unsigned long)report.prArr.count);
                     
-//                    NSLog(@"SDNN===========%f",report.SDNN);
                 
-                if (report.reportType == 10) {
+                if (report.reportType == 10) { // Data of HRV .
 
                     NSLog(@"report.SDNN--------%f--------report.rrArr---------%@",report.SDNN,report.rrArr);
-//                 test ...  save hrv data ...
+//                 test ...  save hrv report data ...
                     [[NSUserDefaults standardUserDefaults]setValue:[report mj_keyValues] forKey:@"testHRVData"];
                     [[NSUserDefaults standardUserDefaults]synchronize];
 
