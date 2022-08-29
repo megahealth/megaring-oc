@@ -37,8 +37,8 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self._view.model.ecg = self.report.ecg;
-    [self._view updateEcg];
+//    self._view.model.ecg = self.report.ecg;
+//    [self._view updateEcg];
 }
 
 - (void)loadReport {
@@ -52,18 +52,18 @@
 
     
 ////    parse ecg :
-//    NSNumber * sbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserID_SBP"];
-//
-//    NSNumber * dbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserId_DBP"];
-//
-//    NSLog(@"sbp------%@------dbp-------%@",sbp,dbp);
-//    [MRApi parseBPData:self.report.data time:self.parseTime caliSBP:sbp.doubleValue caliDBP:dbp.doubleValue block:^(MRBPReport *report, NSError *error) {
-//
-////  or  in  viewDidAppear:
-//        self._view.model.ecg = report.ecg;
-//        [self._view updateEcg];
-//
-//    }];
+    NSNumber * sbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserID_SBP"];
+
+    NSNumber * dbp = [[NSUserDefaults standardUserDefaults]objectForKey:@"UserId_DBP"];
+
+    NSLog(@"sbp------%@------dbp-------%@",sbp,dbp);
+    [MRApi parseBPData:self.report.data time:self.parseTime caliSBP:sbp.doubleValue caliDBP:dbp.doubleValue block:^(MRBPReport *report, NSError *error) {
+
+// ***   or  in  viewDidAppear: open notes.
+        self._view.model.ecg = report.ecg;
+        [self._view updateEcg];
+
+    }];
 
 }
 
