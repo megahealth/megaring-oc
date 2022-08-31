@@ -315,7 +315,25 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 }
 #pragma mark device battery charge information
 
+
+/**
+ self.device.batState  == ??
+ 
+ typedef NS_ENUM(Byte, MRBatteryState) {
+     MRBatteryStateNormal                = 0x00, (MRBatteryNormal) (== 0, normal-- 电量正常)
+     MRBatteryStateCharging,   // ==0x01(Charging --- 充电中)
+     MRBatteryStateFull,    //  == 0x02(full -- 充满)
+     MRBatteryStateLowPower, /(== 0x03 low power --- 低电)
+     MRBatteryStateError, // = 4(eror -- 电池出现问题，错误)
+     MRBatteryStateShutdown, //= 5 (shut down -- 摇摆)
+ };
+ 
+ 
+ */
+// see self.device.batState=?  and self.device.batValue = ?
 - (void)deviceBatteryUpdated {
+    
+    
     [self.deviceManagerView.viewModel updateBattery];
     [self.deviceManagerView refreshView];
 }

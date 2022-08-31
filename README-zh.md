@@ -158,7 +158,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
              
              (4)[如果您项目中不用日常DailyData或产生的HRV数据，这些数据您都不用，最好把这些数据也进行获取了；确保在开启监测之前，指环内的数据是空的.(三 解释.)] .
              
-             (5)我们的App也是使用Demo这个流程;当然您可以先收取MRDataTypeMonitor类型的数据，然后再收取MRDataTypeDaily类型的数据...  .
+             (5)我们的App也是使用Demo收取指环数据的这个流程;当然您可以先收取MRDataTypeMonitor类型的数据，然后再收取MRDataTypeDaily类型的数据...  .
              (6)请查看Demo中方法：[-（void) requestDailySleepHRVSportDataTest 收取的数据过程及注释说明等：在 'DeviceManagerViewController+Methods.h' 中 -- 同样有对此方法的注释说明 ].
                
             3. 关于断开后重连的简单流程可以查看一下。

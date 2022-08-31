@@ -189,7 +189,7 @@ Four:
             ---------
             
             (4) [if you do not use daily daily data or generated HRV data in your project, these data are not needed. It's better to get these data; ensure that the data in the ring is empty before starting the monitoring. ( 'Three':  explanations.)] .
-            (5) our App also use the demo process; Of course, you can collect data of type MRDataTypeMonitor first, and then collect data of type MRDataTypeDaily ... 
+            (5) Our app also uses demo to collect ring data ; Of course, you can collect data of type MRDataTypeMonitor first, and then collect data of type MRDataTypeDaily ... 
             (6)Please check the methods in the demo：[-（void) requestDailySleepHRVSportDataTest Data collection process and notes：In 'DeviceManagerViewController+Methods.h' -- there are also notes on this method ].
             
         3. You can check the simple process of reconnecting after disconnection.
