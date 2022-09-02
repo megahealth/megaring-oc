@@ -336,8 +336,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     
     NSLog(@"self.device.batState------------%d-------self.dive.batValue---%d",self.device.batState,self.device.batValue);
     
-    
-    
     [self.deviceManagerView.viewModel updateBattery];
     [self.deviceManagerView refreshView];
 }

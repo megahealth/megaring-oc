@@ -1,6 +1,38 @@
 
 EN | [中文](./README-zh.md)
 
+
+
+##Update log
+|Version| description |time|
+|:-:|-|:-:|
+|1.12.2| Enable bitcode. |2022/08/30|
+|1.12.1| 5.0.11803 firmware version supports the function of closing and opening HRV. |2022/08/26|
+|1.12.0| fix the problem of scanning for old devices and restricting connections. |2022/08/15|
+|1.11.91| add some notes on readme file and project interface |2022/07/19|
+|V1.11.9| update the algorithm for parsing data (algorithm version: 11737)|2022/07/07|
+|1.11.8| 1. Add in the demo how to reconnect after the device is disconnected, and the simple process of collecting data (click to stop monitoring to collect data) <br/> 2. Add some descriptions of whether blood pressure measurement attributes and ECG are supported. |2022/07/03|
+|1.11.72| further description of ECG |2022/05/03|
+|1.11.7| add the blood pressure monitoring function and UI in the demo <br/> after generating ECG data, draw the details of the UI for ECG |2022/04/20|
+|1.11.61| solve the bug of 50% electricity always |2022/04/08|
+|1.11.5| verify the appid and appkey of SDK and add callback function |2022/02/25|
+|1.11.4| fix the failure of the method of starting glumode |2022/02/24|
+|1.11.3| fix the problem that HRV data cannot be parsed after it is generated |2022/02/22|
+|1.11.2| fixed the bug that the progress bar exceeded when obtaining the ring data |2022/01/28|
+|1.11.1| 1. Add the function of turning on and off logs <br/> 2. Modify the time of parsing HRV data |2022/01/12|
+
+...... For more information, please see the released release list .
+
+
+
+
+
+
+
+MegaRing SDK & Demo for iOS in Objective-C
+
+Please provide your own package name (i.e. BundleId) to the official to obtain a valid appID and AppKey. The SDK does not support simulators. Please use mobile phone for debugging.
+
 This text introduces the components of MRFramework, hoping to make it easier to use.
 
 
