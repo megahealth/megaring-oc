@@ -10,7 +10,7 @@ EN | [中文](./README-zh.md)
 |1.12.1| 5.0.11803 firmware version supports the function of closing and opening HRV. |2022/08/26|
 |1.12.0| fix the problem of scanning for old devices and restricting connections. |2022/08/15|
 |1.11.91| add some notes on readme file and project interface |2022/07/19|
-|V1.11.9| update the algorithm for parsing data (algorithm version: 11737)|2022/07/07|
+|1.11.9| update the algorithm for parsing data (algorithm version: 11737)|2022/07/07|
 |1.11.8| 1. Add in the demo how to reconnect after the device is disconnected, and the simple process of collecting data (click to stop monitoring to collect data) <br/> 2. Add some descriptions of whether blood pressure measurement attributes and ECG are supported. |2022/07/03|
 |1.11.72| further description of ECG |2022/05/03|
 |1.11.7| add the blood pressure monitoring function and UI in the demo <br/> after generating ECG data, draw the details of the UI for ECG |2022/04/20|
