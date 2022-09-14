@@ -23,15 +23,14 @@
 
 @property (nonatomic, copy) NSString *firmwareZip;
 
-
-
-
+@property (nonatomic ,strong)MRDevice * markDevice;
 @end
 
 @implementation DeviceUpgradeViewController
 
 - (instancetype)initWithDevice:(MRDevice *)device {
     if (self = [super init]) {
+        self.markDevice = device;
         self.device = device;
         [MRDeviceUpgrader defaultInstance].delegate = self;
     }
@@ -94,8 +93,9 @@
     NSString *zipName = @"";
     if (self.device.bloodPressureSupported) {
         zipName = @"Ring11699.zip";
-    }else{
+//        zipName = @"BLv08.zip";
         
+    }else{
         zipName = @"MegaRingV3_V11687.zip";
     }
     
@@ -134,6 +134,7 @@
         case MRUpgradeStateFinish:
             [self updateState:NSLocalizedString(MRUpgradeFinished, nil)];
             [[MRDeviceUpgrader defaultInstance] stop];
+            [self.navigationController popToRootViewControllerAnimated:YES];
             break;
             
         case MRUpgradeStateFail:
