@@ -17,6 +17,7 @@
 #import "MJExtension.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 
+
 #define TEST_USER_ID    @"5a4331011579a30038c790de"
 //#define TEST_USER_ID    @"c22a674665e1388d020d3c856"
 
@@ -33,6 +34,8 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 @property (nonatomic, assign) NSInteger scanTimerCount;
 
 @property (nonatomic, strong)UIButton * reconnectBtn;
+
+@property (nonatomic, strong)MRDevice * nearDevice;
 
 @end
 
@@ -236,8 +239,8 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 - (void)deviceDidUpdateConnectState {
     NSLog(@"connected:%d", self.device.connectState);
     
-    self.titleNavView.text = (self.device.connectState == 2) ? NSLocalizedString(MRDeviceConnected, nil) :NSLocalizedString(MRDeviceDisReconnecting, nil);
-    
+//    self.titleNavView.text = (self.device.connectState == 2) ? NSLocalizedString(MRDeviceConnected, nil) :NSLocalizedString(MRDeviceDisReconnecting, nil);
+//
     [self.deviceManagerView.viewModel reloadModel];
     [self.deviceManagerView refreshView];
 }
@@ -443,14 +446,14 @@ en： 1. Test:
 #pragma mark = connect  device
 - (void)connectNearestDevice {
     
-    MRDevice *device = [self getNearestDevice];
+    MRDevice *device = [self getNearestOldDevice];
     QMRLog(@"start connect:%@", device);
 //    [self stopScanningDevcie];
     [[MRConnecter defaultConnecter]connectDevice:device];
 }
 
 #pragma mark --- get near device...
-- (MRDevice *)getNearestDevice {
+- (MRDevice *)getNearestOldDevice {
     
     MRDevice *near = nil;
     
@@ -557,6 +560,9 @@ en： 1. Test:
     ///test mark Need to synchronize monitoring data
     self.shouldSyncData = YES;
     
+    
+    self.titleNavView.text = (self.device.connectState == 2) ? NSLocalizedString(MRDeviceConnected, nil) :NSLocalizedString(MRDeviceDisReconnecting, nil);
+    
     if (device.connectState == MRDeviceStateConnected) {
         device.isDownloadingData = NO;
         NSLog(@"connect successed");
@@ -572,6 +578,7 @@ en： 1. Test:
     }else{
         
     }
+  
     
     NSLog(@"%@ connecte state: %d", device.name, device.connectState);
 }

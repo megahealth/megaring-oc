@@ -23,14 +23,12 @@
 
 @property (nonatomic, copy) NSString *firmwareZip;
 
-@property (nonatomic ,strong)MRDevice * markDevice;
 @end
 
 @implementation DeviceUpgradeViewController
 
 - (instancetype)initWithDevice:(MRDevice *)device {
     if (self = [super init]) {
-        self.markDevice = device;
         self.device = device;
         [MRDeviceUpgrader defaultInstance].delegate = self;
     }
