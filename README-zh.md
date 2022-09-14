@@ -93,7 +93,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 ### 设备控制
 1. 调用 -[MRDevice switchToSleepMode] 来开启睡眠监测(至少监测30分钟得到有效数据);
 2. 调用 -[MRDevice switchToSportMode] 来开启运动监测（监测至少10分钟得到有效数据）;
-3. 调用 -[MRDevice switchToRealtimeMode] 来开启实时监测（监测至少82秒得到有效数据）;
+3. 调用 -[MRDevice switchToRealtimeMode] 来开启实时监测;
 4. 调用 -[MRDevice switchToPulseMode] 来开启脉诊仪模式;
 5. 调用 -[MRDevice switchToNormalModel] 关闭监测;
 6. 调用 -[MRDevice startLiveData] 开启实时数据后, 监测状态下会每秒上报一组数据, 需要实现 -[MRDeviceDelegate liveDataValueUpdated:];

@@ -13,6 +13,7 @@
 		237DEB35286EFBF200D68414 /* BPReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237DEB2C286EFBF200D68414 /* BPReportViewController.xib */; };
 		2389BE2A28BF2D2D00175DFA /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2389BE2828BF2D1B00175DFA /* MRFramework.framework */; platformFilter = ios; };
 		2389BE2B28BF2D2D00175DFA /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2389BE2828BF2D1B00175DFA /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		239000D728CB3767009D910A /* Ring11699.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239000D628CB3767009D910A /* Ring11699.zip */; };
 		2395DC6B280FEDF300193808 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC20280FEDF300193808 /* MJPropertyType.m */; };
 		2395DC6C280FEDF300193808 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC23280FEDF300193808 /* NSObject+MJKeyValue.m */; };
 		2395DC6D280FEDF300193808 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC24280FEDF300193808 /* MJProperty.m */; };
@@ -35,6 +36,7 @@
 		2395DD152810012D00193808 /* TestBPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2395DD0A2810012D00193808 /* TestBPViewController.xib */; };
 		2395DD1B281001B900193808 /* TestBPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DD18281001B800193808 /* TestBPView.m */; };
 		2395DD1C281001B900193808 /* TestBPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DD19281001B800193808 /* TestBPViewController.m */; };
+		239D78BB28D1A5280098C3E4 /* MegaRingV3_V11687.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239D78BA28D1A5280098C3E4 /* MegaRingV3_V11687.zip */; };
 		23A4EA4F2775DDE80090A840 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4C2775DDE80090A840 /* README.md */; };
 		23A4EA502775DDE80090A840 /* README-zh.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4D2775DDE80090A840 /* README-zh.md */; };
 		3C0842D025ECF4CC008508D4 /* MegaRingV3_V10761.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3C0842CF25ECF4CC008508D4 /* MegaRingV3_V10761.zip */; };
@@ -142,6 +144,7 @@
 		237DEB4A286EFC9800D68414 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MRDefaultView.strings; sourceTree = "<group>"; };
 		237DEB4B286EFC9B00D68414 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MRDefaultView.strings"; sourceTree = "<group>"; };
 		2389BE2828BF2D1B00175DFA /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
+		239000D628CB3767009D910A /* Ring11699.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring11699.zip; sourceTree = "<group>"; };
 		2395DC1D280FEDF300193808 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
 		2395DC1E280FEDF300193808 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
 		2395DC1F280FEDF300193808 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
@@ -188,6 +191,7 @@
 		2395DD1A281001B800193808 /* TestBPView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBPView.h; sourceTree = "<group>"; };
 		2395DD1D281001BF00193808 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
 		2395DD1E281001C100193808 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TestBPViewController.strings"; sourceTree = "<group>"; };
+		239D78BA28D1A5280098C3E4 /* MegaRingV3_V11687.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV3_V11687.zip; sourceTree = "<group>"; };
 		23A4EA4C2775DDE80090A840 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		23A4EA4D2775DDE80090A840 /* README-zh.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "README-zh.md"; sourceTree = "<group>"; };
 		3C0842CF25ECF4CC008508D4 /* MegaRingV3_V10761.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV3_V10761.zip; sourceTree = "<group>"; };
@@ -625,6 +629,8 @@
 		3C3E9AA72480B4870087FD85 /* Firmware */ = {
 			isa = PBXGroup;
 			children = (
+				239D78BA28D1A5280098C3E4 /* MegaRingV3_V11687.zip */,
+				239000D628CB3767009D910A /* Ring11699.zip */,
 				3C0842CF25ECF4CC008508D4 /* MegaRingV3_V10761.zip */,
 			);
 			path = Firmware;
@@ -853,6 +859,7 @@
 				3C0842E025ECF63B008508D4 /* data1-2 in Resources */,
 				23A4EA502775DDE80090A840 /* README-zh.md in Resources */,
 				3C0842E125ECF63B008508D4 /* data2-1 in Resources */,
+				239000D728CB3767009D910A /* Ring11699.zip in Resources */,
 				3C0842DE25ECF63A008508D4 /* data6-2 in Resources */,
 				3C0842E225ECF63B008508D4 /* data2-2 in Resources */,
 				CF665A20209B181B009EF6A6 /* LaunchScreen.storyboard in Resources */,
@@ -860,6 +867,7 @@
 				3C3E9AF92480B4870087FD85 /* Localizable.strings in Resources */,
 				CF665A1D209B181B009EF6A6 /* Assets.xcassets in Resources */,
 				3C3E9AE42480B4870087FD85 /* DeviceManagerViewController.xib in Resources */,
+				239D78BB28D1A5280098C3E4 /* MegaRingV3_V11687.zip in Resources */,
 				2395DC75280FEDF300193808 /* LICENSE in Resources */,
 				3C3E9AED2480B4870087FD85 /* SyncDailyViewController.xib in Resources */,
 				3C0842DD25ECF63A008508D4 /* data6-1 in Resources */,

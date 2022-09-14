@@ -88,8 +88,18 @@
     }];
 }
 
+#pragma mark -- firmwareZip --
+
 - (NSString *)firmwareZip {
-    NSString *zipName = @"MegaRingV3_V10961.zip";
+    NSString *zipName = @"";
+    if (self.device.bloodPressureSupported) {
+        zipName = @"Ring11699.zip";
+    }else{
+        
+        zipName = @"MegaRingV3_V11687.zip";
+    }
+    
+//    NSString *zipName = @"Ring11699.zip";
     NSString *zipPath = [[NSBundle mainBundle] pathForResource:zipName ofType:nil];
     return zipPath;
 }
