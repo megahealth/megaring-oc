@@ -11,8 +11,8 @@
 		237DEB33286EFBF200D68414 /* BPReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2A286EFBF200D68414 /* BPReportView.m */; };
 		237DEB34286EFBF200D68414 /* BPReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2B286EFBF200D68414 /* BPReportViewModel.m */; };
 		237DEB35286EFBF200D68414 /* BPReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237DEB2C286EFBF200D68414 /* BPReportViewController.xib */; };
-		2389BE2A28BF2D2D00175DFA /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2389BE2828BF2D1B00175DFA /* MRFramework.framework */; platformFilter = ios; };
-		2389BE2B28BF2D2D00175DFA /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2389BE2828BF2D1B00175DFA /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		238884B428D95F7000628B70 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238884B228D95F6500628B70 /* MRFramework.framework */; platformFilter = ios; };
+		238884B528D95F7000628B70 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 238884B228D95F6500628B70 /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		239000D728CB3767009D910A /* Ring11699.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239000D628CB3767009D910A /* Ring11699.zip */; };
 		2395DC6B280FEDF300193808 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC20280FEDF300193808 /* MJPropertyType.m */; };
 		2395DC6C280FEDF300193808 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC23280FEDF300193808 /* NSObject+MJKeyValue.m */; };
@@ -126,7 +126,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2389BE2B28BF2D2D00175DFA /* MRFramework.framework in CopyFiles */,
+				238884B528D95F7000628B70 /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +146,7 @@
 		237DEB41286EFC3E00D68414 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceUpgradeViewController.strings"; sourceTree = "<group>"; };
 		237DEB4A286EFC9800D68414 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MRDefaultView.strings; sourceTree = "<group>"; };
 		237DEB4B286EFC9B00D68414 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MRDefaultView.strings"; sourceTree = "<group>"; };
-		2389BE2828BF2D1B00175DFA /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
+		238884B228D95F6500628B70 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		239000D628CB3767009D910A /* Ring11699.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring11699.zip; sourceTree = "<group>"; };
 		2395DC1D280FEDF300193808 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
 		2395DC1E280FEDF300193808 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
@@ -315,7 +315,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2389BE2A28BF2D2D00175DFA /* MRFramework.framework in Frameworks */,
+				238884B428D95F7000628B70 /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,7 +739,7 @@
 		CF665A07209B181A009EF6A6 = {
 			isa = PBXGroup;
 			children = (
-				2389BE2828BF2D1B00175DFA /* MRFramework.framework */,
+				238884B228D95F6500628B70 /* MRFramework.framework */,
 				23A4EA4D2775DDE80090A840 /* README-zh.md */,
 				23A4EA4C2775DDE80090A840 /* README.md */,
 				3C3E9A4E2480B4870087FD85 /* Contents */,
@@ -1251,7 +1251,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.12.2;
+				CURRENT_PROJECT_VERSION = 1.12.3;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1268,7 +1268,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.12.2;
+				MARKETING_VERSION = 1.12.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.megahealth.MegaRingBLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1282,7 +1282,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.12.2;
+				CURRENT_PROJECT_VERSION = 1.12.3;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1299,7 +1299,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.12.2;
+				MARKETING_VERSION = 1.12.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.megahealth.MegaRingBLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

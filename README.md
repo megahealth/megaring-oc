@@ -150,8 +150,12 @@ This are some methods that can help getting device's status in protocol `MRDevic
 
 3. Call `+[MRApi parseBPData:time:caliSBP:caliDBP:block:]` to parse blood pressure data.
 
+    3.1. Tips:   +[MRApi parseMonitorData:completion:] and
+                 +[MRApi parseBPData:time:caliSBP:caliDBP:block:] methods need to verify the AppKey and AppID through the network, or an error will occur when parsing data.
+
+
 4. Call +[MRApi parseDaily:data] to parse daily data, then you'll get temperature data, only valid duration sleep monitoring;
-5. When generating an HRV data report, call + [MRApi parsemonitordata: completion:] to parse the data and generate an HRV report. You can view the attribute description of ([MRReport.h]).
+5. When generating an HRV data report, call + [MRApi parseMonitorData: completion:] to parse the data and generate an HRV report. You can view the attribute description of ([MRReport.h]).
 
 6. Description of HRV: after turning on sleep monitoring, HRV data will be generated when [fingers and rings remain stationary] for at least 28 minutes. (during the test, it's not easy to measure. It's best to test for a long time, because the HRV data may not be generated if the test finger shakes for a short time. It's recommended to start sleep monitoring when taking it home to sleep and collect the data the next day).
 

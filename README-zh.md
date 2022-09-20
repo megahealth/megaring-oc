@@ -113,6 +113,10 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
     3. 为防止一直同步数据操作，在finish：后添加 xxxDevice.isDownloadingData = NO，多次调用此方法时，调用此方法前要判断 xxxDevice.isDownloadingData = YES时，进行return操作防止正在进行的同步数据操作，（可看DeviceManagerViewController+Methods.h实例的使用）;
 2. 调用 +[MRApi parseMonitorData:completion:] 解析数据 及(HRV数据), 生成 report;
 3. 调用 +[MRApi parseBPData:time:caliSBP:caliDBP:block:] 解析血压数据, 生成血压测量报告;
+
+     3.1   注意:  +[MRApi parseMonitorData:completion:] 和
+                  +[MRApi parseBPData:time:caliSBP:caliDBP:block:]方法还需要通过网络验证AppKey 和 AppID (即绑定的BundleId), 不然解析数据时会发生错误.
+
 4. 调用 +[MRApi parseDaily:data] 解析日常数据，获得体温等数据，只在睡眠监测期间有温度数据;
 5. 当生成HRV数据报告时 +[MRApi parseMonitorData:completion:] 解析数据后，生成HRV的报告,可以查看 (MRReport.h) 的属性说明。
 6. HRV的说明：开启睡眠监测之后，当[手指与指环保持静止不动]至少28分钟，会产生HRV的数据。（测试的时候，不是很好测量，最好长时间进行测试，因为短时间测试手指晃动了可能就不会产生HRV数据了，建议带回家睡觉的时候开启睡眠监测，第二天开始收数据）。
@@ -188,4 +192,8 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
              (6)请查看Demo中方法：[-（void) requestDailySleepHRVSportDataTest 收取的数据过程及注释说明等：在 'DeviceManagerViewController+Methods.h' 中 -- 同样有对此方法的注释说明 ].
                
             3. 关于断开后重连的简单流程可以查看一下。
+            
+            
+            
+    
 

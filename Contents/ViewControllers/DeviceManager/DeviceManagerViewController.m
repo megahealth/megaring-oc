@@ -18,7 +18,7 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 
 
-#define TEST_USER_ID    @"5a4331011579a30038c790de"
+#define TEST_USER_ID    @"61a9c462706cde30f53f420a" // I
 //#define TEST_USER_ID    @"c22a674665e1388d020d3c856"
 
 static const NSInteger kCheckDiscoveredDeviceForConnectionDuration = 5;
@@ -240,7 +240,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     NSLog(@"connected:%d", self.device.connectState);
     
 //    self.titleNavView.text = (self.device.connectState == 2) ? NSLocalizedString(MRDeviceConnected, nil) :NSLocalizedString(MRDeviceDisReconnecting, nil);
-//
+//    MegaRingV2_V7964.zip
     [self.deviceManagerView.viewModel reloadModel];
     [self.deviceManagerView refreshView];
 }

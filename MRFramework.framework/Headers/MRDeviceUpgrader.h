@@ -35,6 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)defaultInstance;
 
+@property (nonatomic, strong) MRDevice *dfuDevice;
+
 @property (nonatomic, strong) MRDevice *_Nullable device;
 
 // 固件绝对路径
