@@ -94,7 +94,7 @@
 //        zipName = @"BLv08.zip";
         
     }else{
-        zipName = @"MegaRingV3_V10761.zip";
+        zipName = @"MegaRingV3_V11687.zip";
     }
     
 //    NSString *zipName = @"Ring11699.zip";
