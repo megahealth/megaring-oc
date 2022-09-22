@@ -4,6 +4,7 @@
 ## 更新日志
 |版本|说明|时间|
 |:-:|-|:-:|
+|1.12.3| 解决设备为nil时手动断开发生崩溃 |2022/9/21|
 |1.12.2| 开启Bitcode |2022/08/30|
 |1.12.1|5.0.11803固件版本支持关闭和打开HRV的功能.|2022/08/26|
 |1.12.0|修复扫描查找旧设备和限制连接的问题.|2022/08/15|
@@ -66,11 +67,11 @@ MegaRing SDK & Demo for iOS in Objective-C
 
 1. 设置 MRDevice.delegate;
 2. 实现 -[MRDeviceDelegate bindUserIdentifier] 和 -[MRDeviceDelegate bindToken], 提供绑定用户的身份和 token 来验证是不是新用户。userid 格式是24位16进制字符串，token 在首次绑定获得;
-    提示：[userId是服务器返回给App的，然后bind设置给指环；您可以在让服务端生成返回给App -- 24位16进制字符串 (让服务端在网上搜，有很多)]; （ 示例: @"5a4331011579a30038c790de" ）.
+    提示：[userId是服务器返回给App的，然后bind设置给指环；您可以在让服务端生成返回给App -- 24位16进制字符串 (让服务端在网上搜，有很多)]; （ 示例: @"5a4331011579a30038c790de" ）
 3. 实现 -[MRDeviceDelegate bindDeviceResp:] 接收验证结果, 老用户每次连接过程中只调用一次, 返回 MRBindRespOld 表示验证成功; 新用户完成连接过程中会调用三次, 若收到 MRBindRespChangeUser, 实现 -[MRDevice confirmChangingUser:] 决定是否继续连接, 若传入 YES, 会再收到 MRBindRespShake, 表示需要晃动指环来确认, 此时晃动指环, 最后收到 MRBindRespNew, 表示指环和新用户的绑定完成;
 4. 实现 -[MRDeviceDelegate finishBindingWithToken:] 接收指环与新用户绑定后生成的 token; 
 5. 实现 -[MRDeviceDelegate bindUserInfo] 设置用户体征信息;
-
+6. 开发提示：最好把连接的设备封装成单利...。
 ### 设备状态
 
 MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, 如下:
@@ -94,7 +95,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 1. 调用 -[MRDevice switchToSleepMode] 来开启睡眠监测(至少监测30分钟得到有效数据);
 2. 调用 -[MRDevice switchToSportMode] 来开启运动监测（监测至少10分钟得到有效数据）;
 3. 调用 -[MRDevice switchToRealtimeMode] 来开启实时监测;
-4. 调用 -[MRDevice switchToPulseMode] 来开启脉诊仪模式;
+4. 调用 -[MRDevice switchToPulseMode] 来开启脉诊仪模式--- 可以打开 [MRDevice setRawdataEnabled:YES]查看数据。
 5. 调用 -[MRDevice switchToNormalModel] 关闭监测;
 6. 调用 -[MRDevice startLiveData] 开启实时数据后, 监测状态下会每秒上报一组数据, 需要实现 -[MRDeviceDelegate liveDataValueUpdated:];
 7. 调用 -[MRDevice endLiveData] 关闭实时数据;
@@ -191,7 +192,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
              (5)我们的App也是使用Demo收取指环数据的这个流程;当然您可以先收取MRDataTypeMonitor类型的数据，然后再收取MRDataTypeDaily类型的数据...  .
              (6)请查看Demo中方法：[-（void) requestDailySleepHRVSportDataTest 收取的数据过程及注释说明等：在 'DeviceManagerViewController+Methods.h' 中 -- 同样有对此方法的注释说明 ].
                
-            3. 关于断开后重连的简单流程可以查看一下。
+            3. 关于断开后重连的简单流程可以测试查看一下。
             
             
             

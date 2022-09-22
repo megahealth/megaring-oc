@@ -6,6 +6,7 @@ EN | [中文](./README-zh.md)
 ##Update log
 |Version| description |time|
 |:-:|-|:-:|
+|1.12.3| Resolve whether the device is disconnected and crashes when it is nil |2022/9/21|
 |1.12.2| Enable bitcode. |2022/08/30|
 |1.12.1| 5.0.11803 firmware version supports the function of closing and opening HRV. |2022/08/26|
 |1.12.0| fix the problem of scanning for old devices and restricting connections. |2022/08/15|
