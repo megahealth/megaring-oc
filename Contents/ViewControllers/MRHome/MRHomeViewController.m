@@ -18,6 +18,46 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "MJExtension.h"
 
+
+
+
+/**
+ 
+ 
+     printf("///\n\
+ //                          _ooOoo_                          //\n\
+ //                         o8888888o                         //\n\
+ //                         88\" . \"88                         //\n\
+ //                         (| ^_^ |)                         //\n\
+ //                         O\\  =  /O                         //\n\
+ //                      ____/`---'\\____                      //\n\
+ //                    .'  \\\\|     |//  `.                    //\n\
+ //                   /  \\\\|||  :  |||//  \\                   //\n\
+ //                  /  _||||| -:- |||||-  \\                  //\n\
+ //                  |   | \\\\\\  -  /// |   |                  //\n\
+ //                  | \\_|  ''\\---/''  |   |                  //\n\
+ //                  \\  .-\\__  `-`  ___/-. /                  //\n\
+ //                ___`. .'  /--.--\\  `. . ___                //\n\
+ //               ."" '<  `.___\\_<|>_/___.'  >'"".                //\n\
+ //            | | :  `- \\`.;`\\ _ /`;.`/ - ` : | |            //\n\
+ //            \\  \\ `-.   \\_ __\\ /__ _/   .-` /  /            //\n\
+ //     ========`-.____`-.___\\_____/___.-`____.-'========     //\n\
+ //                          `=---='                          //\n\
+ //     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^     //\n\
+ //                      ~ Good Luck To You ~           //\n\
+ ///\n");
+ }
+
+ Tip *****************：
+ 
+ en:  When integrating SDKs, please first view the README or README zh file -- how to integrate and precautions. See Demo logic for details; Use SDK demo for testing. After getting familiar with the logic, integrate it into your own app.
+ 
+ 中文：集成SDK时,请先查看README 或 README-zh 文件 -- 如何集成及注意事项。具体查看Demo逻辑等; 多使用SDK demo 测测，熟悉了解逻辑后，再进行集成到自己的App中.
+ 
+ 
+ */
+
+
 @interface MRHomeViewController () <MRConnecterDelegate, CBCentralManagerDelegate>
 
 @property (nonatomic, assign) BOOL usingCustomConnecter;
