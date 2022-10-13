@@ -35,8 +35,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 
 @property (nonatomic, strong)UIButton * reconnectBtn;
 
-@property (nonatomic, strong)MRDevice * nearDevice;
-
 @end
 
 @implementation DeviceManagerViewController
@@ -70,9 +68,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 #pragma mark User Actions
 
 - (void)setUpViewActions {
-//    __weak typeof(self) weakself = self;
-    
-//    @strongify(self);
     
     @weakify(self);
     self.deviceManagerView.selectAction = ^(NSIndexPath *indexPath) {
@@ -115,11 +110,10 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 //1. （zh：）注意：开启睡眠的时候；默认开启了HRV功能； 只有在是28指环，并且固件版本 >= 5.0.11803 时才支持 开启 或 关闭 hrv 功能； 关闭HRV功能，可以节省电池的电量。 (5.0.11803固件版本 待发布更新)
                 
                 
-                
-                [self.device switchToSleepMode]; // open sleep.
-                
-                
-                
+                if (self.device.batState == MRBatteryStateNormal) {
+                    // When the power is normal, turn on the monitoring 电量正常时，开启监测.
+                    [self.device switchToSleepMode]; // open sleep.
+                }
                 
                 //2.  Close HRV .... use： as follows: （关闭HRV，查看下面的使用）
                 
@@ -137,19 +131,39 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 break;
                 
             case 5:
-                [self.device switchToSportMode];
+                
+                if (self.device.batState == MRBatteryStateNormal) {
+                    // When the power is normal, turn on the monitoring 电量正常时，开启监测.
+                    [self.device switchToSportMode];
+                }
+                
+                
+                
                 break;
                 
             case 6:
                 
-                [self.device switchToRealtimeMode];  //open realtime  mode //0XD7  See the notes below.
+                if (self.device.batState == MRBatteryStateNormal) {
+                    // When the power is normal, turn on the monitoring 电量正常时，开启监测.
+                    [self.device switchToRealtimeMode];
+                }
+                
+                 //open realtime  mode //0XD7  See the notes below. 查看下面的说明.
                 /***
+                 en:
                  
                  1.If you need data, you can turn on sleep monitoring.With the ring, 82s it will generate valid data;
                  
                  2.If you don't need data, you can turn on real-time monitoring mode，And view real-time data changes.
                  
                  3. When the sleep mode is turned on for at least 30 minutes, the sleep data can be obtained.
+                 
+                 
+                 zh：
+                 1.如果您需要数据，可以打开睡眠监测。使用环，大于82秒将生成有效数据；
+                 2.如果您不需要数据，可以打开实时监控模式，并查看实时数据。
+                 3.当睡眠模式打开至少30分钟时，可以获取睡眠数据。
+                 
                  
                  */
                                 
@@ -159,7 +173,13 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 break;
                 
             case 7:
-                [self.device switchToNormalModel]; // Turn off monitoring
+                
+                if (self.device.monitorMode == MRDeviceMonitorModeSleep || self.device.monitorMode == MRDeviceMonitorModeSport || self.device.monitorMode == MRDeviceMonitorModeRealTime) {
+                    
+                    [self.device switchToNormalModel]; // Turn off monitoring
+                }
+                
+               
                 break;
                 
                 
@@ -201,12 +221,13 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 
 // test:    View the measurement of test blood pressure and how the ECG UI plots.
                 
-                if (self.device.bloodPressureSupported) { // is if support bloodPressure?   (.bloodPressureSupported)
+                
+                if (self.device.bloodPressureSupported && self.device.batState == MRBatteryStateNormal) { // is if support bloodPressure?   (.bloodPressureSupported) （zh: 指环是否支持血压功能，电量正常时）
                     TestBPViewController *vc = [[TestBPViewController alloc] init];
                  
                      vc.device = self.device;
                     
-                    if (self.device.deviceOK == YES) { // device is ok
+                    if (self.device.deviceOK == YES) { // device is ok （zh：指环的硬件是ok的。）
                         [self.navigationController pushViewController:vc animated:YES];
                     }
                     
@@ -239,8 +260,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 - (void)deviceDidUpdateConnectState {
     NSLog(@"connected:%d", self.device.connectState);
     
-//    self.titleNavView.text = (self.device.connectState == 2) ? NSLocalizedString(MRDeviceConnected, nil) :NSLocalizedString(MRDeviceDisReconnecting, nil);
-//    MegaRingV2_V7964.zip
     [self.deviceManagerView.viewModel reloadModel];
     [self.deviceManagerView refreshView];
 }
@@ -336,7 +355,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 // see self.device.batState=?  and self.device.batValue = ?
 - (void)deviceBatteryUpdated {
     
-    
     NSLog(@"self.device.batState------------%d-------self.dive.batValue---%d",self.device.batState,self.device.batValue);
     
     [self.deviceManagerView.viewModel updateBattery];
@@ -346,7 +364,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 // [SpO2,heart rate,valid,duration,accx,accy,accz]
 - (void)liveDataValueUpdated:(NSArray *)liveData {
     NSString *liveDataStr = [NSString stringWithFormat:@"sp:%@, hr:%@, state:%@, duration:%@, accx:%@, accy:%@, accz:%@", liveData[0], liveData[1], liveData[2], liveData[3], liveData[4], liveData[5], liveData[6]];
-    NSLog(@"live:%@", liveDataStr);
+    NSLog(@"-----live:%@", liveDataStr);
     
     [self.deviceManagerView.viewModel updateLiveDataValue:liveData];
     [self.deviceManagerView refreshView];
@@ -378,16 +396,20 @@ en： 1. Test:
  */
 
 #pragma mark -- Devie  delegate :  After the mode switching, what needs to be done in which modes after the proxy connection is successful
+// en: 模式切换后，代理连接成功后，在哪些模式下需要做什么
 - (void)monitorModeUpdated {
     NSLog(@"DeviceManagerViewController --  monitorModeUpdated:%d", self.device.monitorMode);
     
     // test :
     
-    if ((self.device.monitorMode == MRDeviceMonitorModeIdle || self.device.monitorMode == MRDeviceMonitorModeNormal) && self.device.isDownloadingData == NO) {
+    BOOL isBatteryOKAndGetData = self.device.batState == MRBatteryStateFull || self.device.batState == MRBatteryStateCharging || self.device.batState == MRBatteryStateNormal; // Full charge, charging, data collection under normal conditions  （电量满，充电中，正常时 收取数据）
+    
+    
+    if ((self.device.monitorMode == MRDeviceMonitorModeIdle || self.device.monitorMode == MRDeviceMonitorModeNormal) && self.device.isDownloadingData == NO && isBatteryOKAndGetData) {
 
         [self requestDailySleepHRVSportDataTest];   //MARK: ---    Get ring data synchronously , Make sure to clear the data in the ring before starting the monitoring (that is, check the data in the ring)
         
-    }else if (self.device.monitorMode == MRDeviceMonitorModeSleep || self.device.monitorMode == MRDeviceMonitorModeSport){
+    }else if (self.device.monitorMode == MRDeviceMonitorModeSleep || self.device.monitorMode == MRDeviceMonitorModeSport || self.device.monitorMode == MRDeviceMonitorModeRealTime){
         
         [self startLiveData]; // is if open liveData ？
         
@@ -473,12 +495,6 @@ en： 1. Test:
     return near;
 }
 
-
-
-
-
-
-
 - (void)operationFailWithErrorCode:(MRErrCode)errCode {
     NSLog(@"err:%X", errCode);
 }
@@ -542,7 +558,7 @@ en： 1. Test:
 //    QMRLog(@"dict------------%@",dict);
 //    
 //    MRReport * report = [MRReport mj_objectWithKeyValues:dict];
-//    
+//
 }
 
 #pragma mark --click  reconnect ---
@@ -559,8 +575,6 @@ en： 1. Test:
     MRDevice *device = noti.object;
     ///test mark Need to synchronize monitoring data
     self.shouldSyncData = YES;
-    
-    
     self.titleNavView.text = (self.device.connectState == 2) ? NSLocalizedString(MRDeviceConnected, nil) :NSLocalizedString(MRDeviceDisReconnecting, nil);
     
     if (device.connectState == MRDeviceStateConnected) {

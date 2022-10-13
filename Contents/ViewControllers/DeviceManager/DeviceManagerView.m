@@ -10,10 +10,9 @@
 #import "DeviceManagerViewModel.h"
 #import "DeviceManagerViewCell.h"
 
-@implementation DeviceManagerView {
-    UINib	*_cellNib;
-}
+static NSString * deviceCellId = @"DeviceManageViewCellID";
 
+@implementation DeviceManagerView
 
 #pragma mark -
 #pragma mark Delegate Methods - UITableViewDelegate, UITableViewDataSource
@@ -23,13 +22,8 @@
 }
 
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    static NSString	*cellId = @"DeviceManagerViewCell";
-    if (_cellNib == nil) {
-        _cellNib = [UINib nibWithNibName:cellId bundle:nil];
-        [self.tableView registerNib:_cellNib forCellReuseIdentifier:cellId];
-    }
     
-    DeviceManagerViewCell	*cell = [self.tableView dequeueReusableCellWithIdentifier:cellId];
+    DeviceManagerViewCell	*cell = [self.tableView dequeueReusableCellWithIdentifier:deviceCellId];
     DeviceManagerViewCellModel	*cellModel = self.viewModel.modelArr[indexPath.section][indexPath.row];
     [cell setUpWithModel:cellModel];
     return cell;
@@ -62,7 +56,13 @@
     }
 }
 
-
+-(void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"DeviceManagerViewCell" bundle:nil] forCellReuseIdentifier:deviceCellId];
+    
+    
+}
 
 
 @end

@@ -27,14 +27,37 @@ EN | [中文](./README-zh.md)
 
 
 
-
-
-
 MegaRing SDK & Demo for iOS in Objective-C
 
 Please provide your own package name (i.e. BundleId) to the official to obtain a valid appID and AppKey. The SDK does not support simulators. Please use mobile phone for debugging.
 
 This text introduces the components of MRFramework, hoping to make it easier to use.
+
+
+
+
+## About the Ring
+
+### Connection and user identity verification
+- The user ID and token need to be provided for the bound user connection, and only the ID needs to be provided for the new user connection;
+- After the connection is completed, a token will be generated for the next connection;
+
+### Monitoring
+
+- After the ring is connected, it can be monitored through the mobile phone switch;
+- The function of opening real-time data is to receive the value of blood oxygen and pulse rate per second;
+- Monitoring may end automatically in some cases, such as low power, charging, space full, more than 12 hours, etc;
+
+### Data
+
+- 256 bytes of data are generated every 82 seconds of monitoring;
+- At the end of the monitoring, the ring will store the monitored data, and the part less than 256 bytes will be discarded;
+- Data is automatically deleted after being collected;
+- The inner space of the ring can store 12 hours of sleep monitoring. It is recommended to check and collect data before starting a new monitoring;
+
+
+
+## About SDK
 
 
 ### Initialize
@@ -211,9 +234,18 @@ One:
 Two: Some situations of ending monitoring 
      If the battery is low, charged, the space is full,set timing end, and it is used for more than 12 hours, the monitoring will end -- > and it will switch to mrdevicemonitormodenormal mode;
 
-Three: When monitoring is enabled: [if the ring generates data every time a monitoring mode is enabled, the data in the ring will be collected to ensure that the data in the ring is empty before a monitoring mode is enabled]
+Three: Failure to scan the device:
+    1. Low or no power  --> xxDevice.batState == MRBatteryStateLowPower ( == 3 ; low)
+    2. The device is being connected: it cannot be scanned when connected to other apps or its own app.
 
-Four: 
+Four: After the token expires: the binding needs to be shaken again
+    1. When connecting in other apps, the connection in this app will fail again
+    2. When the locally stored token is cleared, the token will become invalid when reconnecting
+
+
+Five: When monitoring is enabled: [if the ring generates data every time a monitoring mode is enabled, the data in the ring will be collected to ensure that the data in the ring is empty before a monitoring mode is enabled]
+
+Six: 
  *** Tip：please test the use in (DeviceManagerViewController.m and DeviceManagerViewController+Methods) to help you : 
 
         1. Data collection: after the monitoring is turned on, the ring generates data. After the monitoring is completed (after power failure and reconnection, and after restarting the app), the ring collects data: (as long as the post monitoring inspection mode is turned off, the data is collected at the beginning). You can check the simple process.

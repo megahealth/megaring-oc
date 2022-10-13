@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MRDefines.h"
+#import <MRFramework/MRDefines.h>
 
 
 @interface MRSpo2Event : NSObject

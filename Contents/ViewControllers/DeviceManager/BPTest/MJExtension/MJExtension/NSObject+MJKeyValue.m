@@ -16,6 +16,8 @@
 #import "NSString+MJExtension.h"
 #import "NSObject+MJClass.h"
 
+
+static int countddd = 0;
 @implementation NSDecimalNumber(MJKeyValue)
 
 - (id)mj_standardValueWithTypeCode:(NSString *)typeCode {
@@ -93,6 +95,7 @@ static const char MJReferenceReplacedKeyWhenCreatingKeyValuesKey = '\0';
 {
     // 获得JSON对象
     keyValues = [keyValues mj_JSONObject];
+    
     
     MJExtensionAssertError([keyValues isKindOfClass:[NSDictionary class]], self, [self class], @"keyValues参数不是一个字典");
     
@@ -350,11 +353,11 @@ static const char MJReferenceReplacedKeyWhenCreatingKeyValuesKey = '\0';
     MJExtensionAssertError(![MJFoundation isClassFromFoundation:[self class]], (NSMutableDictionary *)self, [self class], @"不是自定义的模型类")
     
     id keyValues = [NSMutableDictionary dictionary];
-    
+    countddd ++;
     Class clazz = [self class];
     NSArray *allowedPropertyNames = [clazz mj_totalAllowedPropertyNames];
     NSArray *ignoredPropertyNames = [clazz mj_totalIgnoredPropertyNames];
-    
+    NSLog(@"countddd----------%d",countddd);
     [clazz mj_enumerateProperties:^(MJProperty *property, BOOL *stop) {
         @try {
             // 0.检测是否被忽略
@@ -362,6 +365,12 @@ static const char MJReferenceReplacedKeyWhenCreatingKeyValuesKey = '\0';
             if ([ignoredPropertyNames containsObject:property.name]) return;
             if (keys.count && ![keys containsObject:property.name]) return;
             if ([ignoredKeys containsObject:property.name]) return;
+            
+            
+            if ([property.name isEqualToString:@"peripheral"]) {
+                return;
+            }
+            
             
             // 1.取出属性值
             id value = [property valueForObject:self];

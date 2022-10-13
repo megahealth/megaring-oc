@@ -35,6 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //此页面只是对获取日常数据的展示功能等.
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -79,9 +80,6 @@
         NSString *startStr = [fmt stringFromDate:start];
         NSDate *end = [NSDate dateWithTimeIntervalSince1970:step.end];
         NSString *endStr = [fmt stringFromDate:end];
-        
-        
-        
         NSString *stepInfo = [NSString stringWithFormat:@"%@-%@ steps:%d, hr:%d, intensity:%d\n", startStr, endStr, step.steps, step.hr, step.intensity];
         [info appendString:stepInfo];
     }

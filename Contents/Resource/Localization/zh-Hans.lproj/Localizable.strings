@@ -22,7 +22,7 @@
 "MRDeviceStatus" = "设备状态";
 "MRConnectStatus" = "连接状态";
 "MRBatteryStatus" = "电池状态";
-"MRBatteryCharging" = "充电";
+"MRBatteryCharging" = "充电中";
 "MRBatteryFull" = "满电";
 "MRBatteryNormal" = "正常";
 "MRBatteryLow" = "低电";

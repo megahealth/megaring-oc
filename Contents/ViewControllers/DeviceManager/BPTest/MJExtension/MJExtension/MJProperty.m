@@ -75,6 +75,14 @@
 {
     if (self.type.KVCDisabled) return [NSNull null];
     
+
+//    if ([object isKindOfClass:[NSPointerFunctions  class]]) {
+//        return [NSNull null];
+//    }
+//
+//    
+//    NSLog(@"object-----------%@--------self.name--------%@------self.type----------%d",object,self.name,self.type.KVCDisabled);
+//    
     id value = [object valueForKey:self.name];
     
     // 32位BOOL类型转换json后成Int类型

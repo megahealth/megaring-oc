@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MRDefines.h"
 
+#import <MRFramework/MRDefines.h>
 
 @class CBPeripheral;
 @protocol MRDeviceDelegate;

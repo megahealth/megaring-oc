@@ -34,7 +34,7 @@
 //Test method. test daily sleep and hrv data. 1
 - (void)requestDailySleepHRVSportDataTest;
 
-// get hrv data . 2.
+//only get hrv data . 2.
 -(void)requestReportDataTestType:(MRDataType)type;
 
 

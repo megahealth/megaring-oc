@@ -12,7 +12,7 @@
 
 @implementation MRHomeView
 
-
+static NSString * homeCellId = @"HomeCellID";
 #pragma mark -
 #pragma mark Methods & logical
 
@@ -45,15 +45,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString	*cellId;
-    static UINib	*cellNib;
-    if (cellNib == nil) {
-        cellId = NSStringFromClass([MRHomeViewCell class]);
-        cellNib = [UINib nibWithNibName:cellId bundle:nil];
-        [self.tableView registerNib:cellNib forCellReuseIdentifier:cellId];
-    }
     
-    MRHomeViewCell	*cell = [self.tableView dequeueReusableCellWithIdentifier:cellId];
+    MRHomeViewCell	*cell = [self.tableView dequeueReusableCellWithIdentifier:homeCellId];
     MRHomeViewCellModel	*cellModel = self.viewModel.modeArr[indexPath.row];
     [cell setUpWithModel:cellModel];
     return cell;
@@ -73,6 +66,9 @@
     [super awakeFromNib];
     self.tableView.rowHeight = 60;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"MRHomeViewCell" bundle:nil] forCellReuseIdentifier:homeCellId];
+    
 }
 
 

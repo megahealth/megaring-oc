@@ -100,7 +100,6 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
         // @ Required
         self.device.isDownloadingData = NO;
         
-    
         NSLog(@"daily data length:%lu, stopType:%d, mode:%d", (unsigned long)data.length, stopType, mode);
         
         if (data) {
@@ -137,7 +136,8 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
  */
 - (void)requestDailySleepHRVSportDataTest {
     
-    //   1. @Required
+    //   1. @Required     (在项目中把xxxdevice.isDownloadingData 的值赋上 如下.)
+    
     if (self.device.isDownloadingData == YES) {
        NSLog(@"syncing data, mission cancel");
         return;
@@ -150,7 +150,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
         NSLog(@"Dailydata:%@", data);
         
        if (data) {
-            NSArray *dailyReports = [MRApi parseDaily:data];
+            NSArray *dailyReports = [MRApi parseDaily:data];  // 
             NSLog(@"dailyReports----%@", dailyReports);
 //            1.  deal data ... save daily data.  可以保存daily data 到本地。
            
@@ -208,7 +208,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     [self.device requestData:type progress:^(float progress) {
         NSLog(@"progress:%.4f", progress);
         
-        self.titleNavView.text = [NSString stringWithFormat:@"%@: %.4f",NSLocalizedString(MRGetDataProgress, nil),progress];
+        self.titleNavView.text = [NSString stringWithFormat:@"%@ %.4f",NSLocalizedString(MRGetDataProgress, nil),progress];
         
         if (progress >=1) {
             self.titleNavView.text = NSLocalizedString(MRGetDataFinished, nil);
@@ -275,6 +275,8 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 
 - (void)saveBindToken:(NSString *)token {
     [[NSUserDefaults standardUserDefaults] setObject:token forKey:kBindTokenCacheKey];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (NSString *)cachedBindToken {

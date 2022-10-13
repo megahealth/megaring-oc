@@ -10,6 +10,8 @@
 #import <MRFramework/MRFramework.h>
 #import "SyncDailyViewController.h"
 
+#import "MJExtension.h"
+
 @implementation MRHomeViewController (Methods)
 
 - (void)setUp {
@@ -18,7 +20,7 @@
 
 
 - (void)testParseData {
-    NSString *dataName = @"64data.bin";
+    NSString *dataName = @"data1-2";
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:dataName ofType:nil];
     
     NSData *data = [[NSData alloc] initWithContentsOfFile:dataPath];
@@ -29,7 +31,7 @@
         NSLog(@"pr max:%d, min:%d, avg:%d", report.maxPr, report.minPr, report.avgPr);
         NSLog(@"sp len:%lu, pr len:%lu", (unsigned long)report.spArr.count, (unsigned long)report.prArr.count);
         
-        NSLog(@"%@", [NSThread currentThread]);
+        NSLog(@"%@------report---------%@", [NSThread currentThread],[report mj_keyValues]);
     }];
 }
 

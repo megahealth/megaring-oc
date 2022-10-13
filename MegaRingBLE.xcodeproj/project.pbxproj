@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		235C0FE328E5AA2C0017A120 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 235C0FE128E5AA2C0017A120 /* UIView+Toast.m */; };
 		237DEB32286EFBF200D68414 /* BPReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB27286EFBF200D68414 /* BPReportViewController.m */; };
 		237DEB33286EFBF200D68414 /* BPReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2A286EFBF200D68414 /* BPReportView.m */; };
 		237DEB34286EFBF200D68414 /* BPReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2B286EFBF200D68414 /* BPReportViewModel.m */; };
 		237DEB35286EFBF200D68414 /* BPReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237DEB2C286EFBF200D68414 /* BPReportViewController.xib */; };
-		238884B428D95F7000628B70 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238884B228D95F6500628B70 /* MRFramework.framework */; platformFilter = ios; };
-		238884B528D95F7000628B70 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 238884B228D95F6500628B70 /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		239000D728CB3767009D910A /* Ring11699.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239000D628CB3767009D910A /* Ring11699.zip */; };
 		2395DC6B280FEDF300193808 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC20280FEDF300193808 /* MJPropertyType.m */; };
 		2395DC6C280FEDF300193808 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC23280FEDF300193808 /* NSObject+MJKeyValue.m */; };
@@ -40,6 +39,8 @@
 		239D78BD28D1A6F20098C3E4 /* Ring11803.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239D78BC28D1A6F20098C3E4 /* Ring11803.zip */; };
 		239D78CA28D1AC150098C3E4 /* BLv07.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239D78C828D1AC150098C3E4 /* BLv07.zip */; };
 		239D78CB28D1AC150098C3E4 /* BLv08.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239D78C928D1AC150098C3E4 /* BLv08.zip */; };
+		239E1C1C28F816BB00240913 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239E1C1A28F816A900240913 /* MRFramework.framework */; platformFilter = ios; };
+		239E1C1D28F816BB00240913 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 239E1C1A28F816A900240913 /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		23A4EA4F2775DDE80090A840 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4C2775DDE80090A840 /* README.md */; };
 		23A4EA502775DDE80090A840 /* README-zh.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4D2775DDE80090A840 /* README-zh.md */; };
 		3C0842D025ECF4CC008508D4 /* MegaRingV3_V10761.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3C0842CF25ECF4CC008508D4 /* MegaRingV3_V10761.zip */; };
@@ -126,13 +127,15 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				238884B528D95F7000628B70 /* MRFramework.framework in CopyFiles */,
+				239E1C1D28F816BB00240913 /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		235C0FE128E5AA2C0017A120 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		235C0FE228E5AA2C0017A120 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		237DEB27286EFBF200D68414 /* BPReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportViewController.m; sourceTree = "<group>"; };
 		237DEB2A286EFBF200D68414 /* BPReportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportView.m; sourceTree = "<group>"; };
 		237DEB2B286EFBF200D68414 /* BPReportViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportViewModel.m; sourceTree = "<group>"; };
@@ -146,7 +149,6 @@
 		237DEB41286EFC3E00D68414 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceUpgradeViewController.strings"; sourceTree = "<group>"; };
 		237DEB4A286EFC9800D68414 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MRDefaultView.strings; sourceTree = "<group>"; };
 		237DEB4B286EFC9B00D68414 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MRDefaultView.strings"; sourceTree = "<group>"; };
-		238884B228D95F6500628B70 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		239000D628CB3767009D910A /* Ring11699.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring11699.zip; sourceTree = "<group>"; };
 		2395DC1D280FEDF300193808 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
 		2395DC1E280FEDF300193808 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		239D78BC28D1A6F20098C3E4 /* Ring11803.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring11803.zip; sourceTree = "<group>"; };
 		239D78C828D1AC150098C3E4 /* BLv07.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BLv07.zip; sourceTree = "<group>"; };
 		239D78C928D1AC150098C3E4 /* BLv08.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BLv08.zip; sourceTree = "<group>"; };
+		239E1C1A28F816A900240913 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		23A4EA4C2775DDE80090A840 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		23A4EA4D2775DDE80090A840 /* README-zh.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "README-zh.md"; sourceTree = "<group>"; };
 		3C0842CF25ECF4CC008508D4 /* MegaRingV3_V10761.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV3_V10761.zip; sourceTree = "<group>"; };
@@ -315,7 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				238884B428D95F7000628B70 /* MRFramework.framework in Frameworks */,
+				239E1C1C28F816BB00240913 /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +602,8 @@
 				3C3E9A7E2480B4870087FD85 /* MRIndicatorView.m */,
 				3C3E9A7D2480B4870087FD85 /* UIViewController+Extension.h */,
 				3C3E9A7C2480B4870087FD85 /* UIViewController+Extension.m */,
+				235C0FE228E5AA2C0017A120 /* UIView+Toast.h */,
+				235C0FE128E5AA2C0017A120 /* UIView+Toast.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -646,8 +651,8 @@
 				3C3E9A932480B4870087FD85 /* DeviceManagerViewModel.m */,
 				3C3E9A8F2480B4870087FD85 /* DeviceManagerView.h */,
 				3C3E9A962480B4870087FD85 /* DeviceManagerView.m */,
-				3C3E9A992480B4870087FD85 /* DeviceManagerViewCell.m */,
 				3C3E9A912480B4870087FD85 /* DeviceManagerViewCell.h */,
+				3C3E9A992480B4870087FD85 /* DeviceManagerViewCell.m */,
 				3C3E9A972480B4870087FD85 /* DeviceManagerViewCell.xib */,
 			);
 			path = DeviceManager;
@@ -739,7 +744,7 @@
 		CF665A07209B181A009EF6A6 = {
 			isa = PBXGroup;
 			children = (
-				238884B228D95F6500628B70 /* MRFramework.framework */,
+				239E1C1A28F816A900240913 /* MRFramework.framework */,
 				23A4EA4D2775DDE80090A840 /* README-zh.md */,
 				23A4EA4C2775DDE80090A840 /* README.md */,
 				3C3E9A4E2480B4870087FD85 /* Contents */,
@@ -1015,6 +1020,7 @@
 				3C3E9AD72480B4870087FD85 /* pwd2key.c in Sources */,
 				3C3E9ACF2480B4870087FD85 /* minishared.c in Sources */,
 				3C3E9AE52480B4870087FD85 /* DeviceManagerViewController.m in Sources */,
+				235C0FE328E5AA2C0017A120 /* UIView+Toast.m in Sources */,
 				3C3E9AEB2480B4870087FD85 /* DeviceUpgradeViewController.m in Sources */,
 				3C3E9AE32480B4870087FD85 /* DeviceManagerViewModel.m in Sources */,
 				3C3E9AD82480B4870087FD85 /* aestab.c in Sources */,
@@ -1251,7 +1257,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.12.3;
+				CURRENT_PROJECT_VERSION = 1.12.31;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1268,7 +1274,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.12.3;
+				MARKETING_VERSION = 1.12.31;
 				PRODUCT_BUNDLE_IDENTIFIER = com.megahealth.MegaRingBLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1282,7 +1288,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.12.3;
+				CURRENT_PROJECT_VERSION = 1.12.31;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1299,7 +1305,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.12.3;
+				MARKETING_VERSION = 1.12.31;
 				PRODUCT_BUNDLE_IDENTIFIER = com.megahealth.MegaRingBLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

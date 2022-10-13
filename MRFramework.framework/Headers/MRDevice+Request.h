@@ -6,8 +6,8 @@
 //  Copyright © 2018年 Superman. All rights reserved.
 //
 
-#import "MRDevice.h"
-#import "MRDefines.h"
+#import <MRFramework/MRDevice.h>
+#import <MRFramework/MRDefines.h>
 
 @interface MRDevice (Request)
 

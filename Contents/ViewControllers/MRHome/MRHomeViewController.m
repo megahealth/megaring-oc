@@ -16,7 +16,7 @@
 #import "MRIndicatorView.h"
 #import "MRDefaultView.h"
 #import <CoreBluetooth/CoreBluetooth.h>
-
+#import "MJExtension.h"
 
 @interface MRHomeViewController () <MRConnecterDelegate, CBCentralManagerDelegate>
 
@@ -39,11 +39,14 @@
 }
 
 - (void)setViewActions {
-    __weak typeof(self) weakself = self;
+    @weakify(self);
     self.homeView.selectAction = ^(NSIndexPath *indexPath) {
-        MRDevice	*device = weakself.homeView.viewModel.deviceArr[indexPath.row];
+        
+        @strongify(self);
+        MRDevice	*device = self.homeView.viewModel.deviceArr[indexPath.row];
+        
         DeviceManagerViewController	*deviceVC = [[DeviceManagerViewController alloc] initWithDevice:device];
-        [weakself.navigationController pushViewController:deviceVC animated:YES];
+        [self.navigationController pushViewController:deviceVC animated:YES];
     };
 }
 
@@ -98,6 +101,9 @@
 #pragma mark Notification Methods - kMRCentralStateUpdatedNotification
 
 - (void)MRCentralStateUpdated:(NSNotification *)noti {
+    
+    NSLog(@"-----noti----------%d",[MRConnecter defaultConnecter].isCentralPowerOn);
+    
     BOOL     isCentralPowerOn = [MRConnecter defaultConnecter].isCentralPowerOn;
     
     [MRDefaultView showDefaultView:isCentralPowerOn == NO];

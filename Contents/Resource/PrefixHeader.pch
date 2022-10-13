@@ -47,6 +47,10 @@
 
 #import "LocalStringKeys.h"
 
+#import "UIView+Toast.h"
+
+#import <CoreBluetooth/CoreBluetooth.h>
+
 
 
 #endif

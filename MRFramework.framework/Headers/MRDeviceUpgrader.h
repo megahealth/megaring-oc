@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MRDefines.h"
+#import <MRFramework/MRDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
