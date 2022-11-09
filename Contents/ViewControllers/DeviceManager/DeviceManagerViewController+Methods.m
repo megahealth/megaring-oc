@@ -60,8 +60,6 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 //        @Required
         self.device.isDownloadingData = NO;
         
-//        NSLog(@"data-----------: %@",data);
-        
         NSLog(@"daily data length:%lu, stopType:%d, mode:%d", (unsigned long)data.length, stopType, mode);
         
         if (data) {
@@ -189,6 +187,8 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
  *
  *
  */
+
+
 #pragma mark test method
 /**
  
@@ -213,7 +213,6 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
         if (progress >=1) {
             self.titleNavView.text = NSLocalizedString(MRGetDataFinished, nil);
         }
-        
         
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
         self.device.isDownloadingData = NO;//2.  @ Required

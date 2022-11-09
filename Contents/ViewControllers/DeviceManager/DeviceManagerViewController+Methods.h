@@ -45,7 +45,7 @@
 /****      More information，as follows.
  
  
- Zh: SDK 获取指环数据过程：方法简单注解 （何时收取的逻辑请查看demo）
+ Zh: SDK 获取指环数据过程：方法简单注解 （何时收取的逻辑请查看demo） ,最好按照下面的收取
  En: SDK process for obtaining ring data: simple annotation of the method (Please check the demo for the logic of when to charge)
 
  

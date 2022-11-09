@@ -92,11 +92,17 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 
             case 3:
                 
-                NSLog(@"(或 查看 点击关闭监测时 收取数据的过程) Or view the process of collecting data when clicking 'close monitoring'");
                 
+                // 关闭监测，再收取过程哦>
+                
+                NSLog(@"(或 查看 点击关闭监测时 收取数据的过程) Or view the process of collecting data when clicking 'close monitoring'");
                 
                 // sleep hrv ... data  You can view the notes of HRV and other data obtained by this test method
                 [self requestDailySleepHRVSportDataTest];
+                
+                
+                
+                
                 
                  //  Obtain HRV data through separate test
                  // [weakself requestReportDataTestType:MHBLEDataRequestTypeHRV];
@@ -375,6 +381,9 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     [self.deviceManagerView.viewModel updateMonitorState];
     [self.deviceManagerView refreshView];
 }
+
+
+//点击连接 -- > 成功与失败 --- 成功 --- > 进行绑定 ----> 获取指环信息-- > 查看指环模式 ---> 根据不同的状态开启模式
 
 /***
 zh： 1. 测试：
