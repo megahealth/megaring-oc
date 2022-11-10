@@ -111,28 +111,12 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 
             case 4:
                 
-                //1. （en：）Note: when turning on sleep; HRV function is enabled by default; Only when it is a 28 ring and the firmware version is > = 5.0.11803, the HRV function can be turned on or off；Turn off HRV function to save battery power.(5.0.11803 firmware version to be released)
-                
-                //1. （zh：）注意：开启睡眠的时候；默认开启了HRV功能； 只有在是28指环，并且固件版本 >= 5.0.11803 时才支持 开启 或 关闭 hrv 功能； 关闭HRV功能，可以节省电池的电量。 (5.0.11803固件版本 待发布更新)
-                
+            
                 
                 if (self.device.batState == MRBatteryStateNormal) {
                     // When the power is normal, turn on the monitoring 电量正常时，开启监测.
                     [self.device switchToSleepMode]; // open sleep.
                 }
-                
-                //2.  Close HRV .... use： as follows: （关闭HRV，查看下面的使用）
-                
-//                if (self.device.bloodPressureSupported) {
-//
-//                    NSArray * arraySw = [self.device.swVersion componentsSeparatedByString:@"."];
-//                    NSString * sws = arraySw[2];
-//                    if ([sws intValue] >= 11803) {
-//                    [self.device setHrvModeEnable:NO]; // close hrv
-//                    }
-//
-//                }
-//
                 
                 break;
                 

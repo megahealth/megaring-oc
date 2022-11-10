@@ -12,6 +12,7 @@
 		237DEB33286EFBF200D68414 /* BPReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2A286EFBF200D68414 /* BPReportView.m */; };
 		237DEB34286EFBF200D68414 /* BPReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2B286EFBF200D68414 /* BPReportViewModel.m */; };
 		237DEB35286EFBF200D68414 /* BPReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237DEB2C286EFBF200D68414 /* BPReportViewController.xib */; };
+		2382D62F291C91E700FAFEA7 /* Ring11804.zip in Resources */ = {isa = PBXBuildFile; fileRef = 2382D62E291C91E700FAFEA7 /* Ring11804.zip */; };
 		23891379291B44250080BC05 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23891377291B426E0080BC05 /* MRFramework.framework */; platformFilter = ios; };
 		2389137A291B44250080BC05 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23891377291B426E0080BC05 /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		239000D728CB3767009D910A /* Ring11699.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239000D628CB3767009D910A /* Ring11699.zip */; };
@@ -38,7 +39,6 @@
 		2395DD1B281001B900193808 /* TestBPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DD18281001B800193808 /* TestBPView.m */; };
 		2395DD1C281001B900193808 /* TestBPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DD19281001B800193808 /* TestBPViewController.m */; };
 		239D78BB28D1A5280098C3E4 /* MegaRingV3_V11687.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239D78BA28D1A5280098C3E4 /* MegaRingV3_V11687.zip */; };
-		239D78BD28D1A6F20098C3E4 /* Ring11803.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239D78BC28D1A6F20098C3E4 /* Ring11803.zip */; };
 		239D78CA28D1AC150098C3E4 /* BLv07.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239D78C828D1AC150098C3E4 /* BLv07.zip */; };
 		239D78CB28D1AC150098C3E4 /* BLv08.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239D78C928D1AC150098C3E4 /* BLv08.zip */; };
 		23A4EA4F2775DDE80090A840 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4C2775DDE80090A840 /* README.md */; };
@@ -149,6 +149,7 @@
 		237DEB41286EFC3E00D68414 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DeviceUpgradeViewController.strings"; sourceTree = "<group>"; };
 		237DEB4A286EFC9800D68414 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MRDefaultView.strings; sourceTree = "<group>"; };
 		237DEB4B286EFC9B00D68414 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MRDefaultView.strings"; sourceTree = "<group>"; };
+		2382D62E291C91E700FAFEA7 /* Ring11804.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring11804.zip; sourceTree = "<group>"; };
 		23891377291B426E0080BC05 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		239000D628CB3767009D910A /* Ring11699.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring11699.zip; sourceTree = "<group>"; };
 		2395DC1D280FEDF300193808 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
@@ -198,7 +199,6 @@
 		2395DD1D281001BF00193808 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TestBPViewController.strings; sourceTree = "<group>"; };
 		2395DD1E281001C100193808 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TestBPViewController.strings"; sourceTree = "<group>"; };
 		239D78BA28D1A5280098C3E4 /* MegaRingV3_V11687.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV3_V11687.zip; sourceTree = "<group>"; };
-		239D78BC28D1A6F20098C3E4 /* Ring11803.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring11803.zip; sourceTree = "<group>"; };
 		239D78C828D1AC150098C3E4 /* BLv07.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BLv07.zip; sourceTree = "<group>"; };
 		239D78C928D1AC150098C3E4 /* BLv08.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BLv08.zip; sourceTree = "<group>"; };
 		23A4EA4C2775DDE80090A840 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -464,7 +464,7 @@
 		239D78BE28D1A6FC0098C3E4 /* ZG28(Circul+)_Ring_Firmware */ = {
 			isa = PBXGroup;
 			children = (
-				239D78BC28D1A6F20098C3E4 /* Ring11803.zip */,
+				2382D62E291C91E700FAFEA7 /* Ring11804.zip */,
 				239000D628CB3767009D910A /* Ring11699.zip */,
 			);
 			path = "ZG28(Circul+)_Ring_Firmware";
@@ -932,13 +932,13 @@
 				CF665A1D209B181B009EF6A6 /* Assets.xcassets in Resources */,
 				3C3E9AE42480B4870087FD85 /* DeviceManagerViewController.xib in Resources */,
 				239D78BB28D1A5280098C3E4 /* MegaRingV3_V11687.zip in Resources */,
-				239D78BD28D1A6F20098C3E4 /* Ring11803.zip in Resources */,
 				2395DC75280FEDF300193808 /* LICENSE in Resources */,
 				3C3E9AED2480B4870087FD85 /* SyncDailyViewController.xib in Resources */,
 				3C0842DD25ECF63A008508D4 /* data6-1 in Resources */,
 				3C3E9AE72480B4870087FD85 /* DeviceManagerViewCell.xib in Resources */,
 				23A4EA4F2775DDE80090A840 /* README.md in Resources */,
 				CF665A1B209B181A009EF6A6 /* Main.storyboard in Resources */,
+				2382D62F291C91E700FAFEA7 /* Ring11804.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
