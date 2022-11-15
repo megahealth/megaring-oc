@@ -231,8 +231,8 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 //  1. sleep
                 NSDictionary  * dict  =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_SLEEP_DATA_KEY];
                  
-//                NSDictionary  * dict  =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_HRV_DATA_KEY];  // 获取测试的hrv数据.
-//                NSDictionary  * dict  =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_SPORT_DATA_KEY]; // 获取sport数据.
+//  2. hrv             NSDictionary  * dict  =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_HRV_DATA_KEY];  // 获取测试的hrv数据.
+//  3. sport            NSDictionary  * dict  =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_SPORT_DATA_KEY]; // 获取sport数据.
 //
 
             
