@@ -7,7 +7,6 @@
 //
 
 #import "MRHomeViewModel.h"
-#import <MRFramework/MRFramework.h>
 
 @implementation MRHomeViewModel
 

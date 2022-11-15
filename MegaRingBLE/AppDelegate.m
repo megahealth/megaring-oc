@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <MRFramework/MRFramework.h>
+
 
 @interface AppDelegate ()
 

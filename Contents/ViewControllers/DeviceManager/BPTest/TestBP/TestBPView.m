@@ -7,9 +7,7 @@
 //
 
 #import "TestBPView.h"
-//#import "SFDualWaySlider.h"
-//#import "HDReportsInfoCardView.h"
-#import <MRFramework/MRFramework.h>
+
 #import "UIViewExt.h"
 
 

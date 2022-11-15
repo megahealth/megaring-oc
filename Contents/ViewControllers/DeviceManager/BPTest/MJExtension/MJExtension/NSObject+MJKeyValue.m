@@ -357,7 +357,7 @@ static const char MJReferenceReplacedKeyWhenCreatingKeyValuesKey = '\0';
     Class clazz = [self class];
     NSArray *allowedPropertyNames = [clazz mj_totalAllowedPropertyNames];
     NSArray *ignoredPropertyNames = [clazz mj_totalIgnoredPropertyNames];
-    NSLog(@"countddd----------%d",countddd);
+//    NSLog(@"countddd----------%d",countddd);
     [clazz mj_enumerateProperties:^(MJProperty *property, BOOL *stop) {
         @try {
             // 0.检测是否被忽略

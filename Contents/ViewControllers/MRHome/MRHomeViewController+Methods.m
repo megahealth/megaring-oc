@@ -7,10 +7,7 @@
 //
 
 #import "MRHomeViewController+Methods.h"
-#import <MRFramework/MRFramework.h>
 #import "SyncDailyViewController.h"
-
-#import "MJExtension.h"
 
 @implementation MRHomeViewController (Methods)
 

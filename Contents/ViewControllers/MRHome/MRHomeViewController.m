@@ -7,7 +7,7 @@
 //
 
 #import "MRHomeViewController.h"
-#import <MRFramework/MRFramework.h>
+
 #import "MRHomeViewController+Methods.h"
 #import "MRNavigarionController.h"
 #import "MRHomeView.h"
@@ -16,7 +16,7 @@
 #import "MRIndicatorView.h"
 #import "MRDefaultView.h"
 #import <CoreBluetooth/CoreBluetooth.h>
-#import "MJExtension.h"
+
 
 
 
@@ -142,7 +142,7 @@
 
 - (void)MRCentralStateUpdated:(NSNotification *)noti {
     
-    NSLog(@"-----noti----------%d",[MRConnecter defaultConnecter].isCentralPowerOn);
+    NSLog(@"-----noti------open ble----%d",[MRConnecter defaultConnecter].isCentralPowerOn);
     
     BOOL     isCentralPowerOn = [MRConnecter defaultConnecter].isCentralPowerOn;
     

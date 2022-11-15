@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "No valid data"; ObjectID = "5gd-h1-O3t"; */
+"5gd-h1-O3t.text" = "无有效数据";
+
+/* Class = "UILabel"; text = "Minimum"; ObjectID = "7ei-bw-2l2"; */
+"7ei-bw-2l2.text" = "最低";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "8sT-No-FBx"; */
+"8sT-No-FBx.text" = "-";
+
+/* Class = "UILabel"; text = "HR"; ObjectID = "IB7-ih-aXO"; */
+"IB7-ih-aXO.text" = "运动心率";
+
+/* Class = "UILabel"; text = "Calories"; ObjectID = "KAu-Nw-WYR"; */
+"KAu-Nw-WYR.text" = "消耗";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "PzE-Eu-V6K"; */
+"PzE-Eu-V6K.text" = "-";
+
+/* Class = "UILabel"; text = "Steps"; ObjectID = "UV1-tZ-5M9"; */
+"UV1-tZ-5M9.text" = "步数";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "W5t-U6-qNc"; */
+"W5t-U6-qNc.text" = "-";
+
+/* Class = "UILabel"; text = "Maximum"; ObjectID = "hZZ-a6-ADf"; */
+"hZZ-a6-ADf.text" = "最高";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "jaX-vC-4CR"; */
+"jaX-vC-4CR.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "np8-eQ-KM1"; */
+"np8-eQ-KM1.text" = "-";
+
+/* Class = "UILabel"; text = "kcal"; ObjectID = "onb-Wf-5FC"; */
+"onb-Wf-5FC.text" = "千卡";
+
+/* Class = "UILabel"; text = "Average"; ObjectID = "uqx-EL-QYl"; */
+"uqx-EL-QYl.text" = "平均";
+
+/* Class = "UILabel"; text = "(bpm)"; ObjectID = "wEF-Xl-GkL"; */
+"wEF-Xl-GkL.text" = "(次/分)";

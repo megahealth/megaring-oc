@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   MegaRingBLE
 
@@ -72,7 +72,7 @@
 "MRSetPeriodicMonitor" = "Set Periodic Monitor";
 "MRGetPeriodicMonitor" = "Get Periodic Monitor";
 "MRStartBPMonitor" = "Measure Blood Pressure";
-"MRSyncDailyData" = "Sync daily data";
+"MRSyncDailyData" = "View report details after collecting data";
 "MRStarGLU" = "Start GLU";
 "MRDeviceConnected" = "Device connected";
 "MRDeviceDisconnected" = "Device disconnected";
@@ -80,3 +80,18 @@
 "MRClickReconnect" = "Reconnect";
 "MRGetDataProgress" = "Get data progress:";
 "MRGetDataFinished" = "Get data finished";
+"MHSleepTitleImageName" = "SleepEnglish_Image";
+"MHSportTitleImageName" = "SportEnglish_titleImage";
+
+"MHHours" = " h ";
+"MHMinutes" = " min ";
+"MHSeconds" = " s ";
+
+"MHTimeHour" = "HH";
+"MHTimeMinute" = "mm";
+"MHTimeSecond" = "ss";
+
+"MHDay" = "Day";
+"MHWeek" = "Week";
+"MHMonth" = "Month";
+"MHToday" = "Today";

@@ -47,10 +47,41 @@
 
 #import "LocalStringKeys.h"
 
-#import "UIView+Toast.h"
+#import "UIView+Toast.h" // Tripartite library
+#import "IBCustomView.h"
 
+#import "MJExtension.h" // Tripartite library
+
+#import <MRFramework/MRFramework.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
+
+#define RGBACOLOR(r, g, b, a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)*1.f]
+#define RGBCOLOR(r, g, b) RGBACOLOR(r, g, b, 1.f)
+
+// Random color(随机色)
+#define RANDCOLOR RGBCOLOR(arc4random()%256, arc4random()%256, arc4random()%256);
+
+
+// Hexadecimal color value, such as # 000000. Note: HEXCOLOR is written as 0x000000 when using  ZH: 16进制颜色值, 如:#000000. 注意: 在使用的时候HEXCOLOR写成:0x000000
+#define HEXCOLOR(hexValue) RGBCOLOR((hexValue & 0xFF0000) >> 16, (hexValue & 0xFF00) >> 8, hexValue & 0xFF)
+
+#define SP_COLOR            0x0e85ff        //Color of blood oxygen during sleep 睡眠血氧颜色
+#define PR_COLOR            0x1dab24        // Sleep pulse rate color 睡眠脉率颜色
+#define HR_COLOR            0xDC5C40        // Color of exercise heart rate 运动心率颜色
+#define SPALERT_COLOR       0xEE5253        // Color of blood oxygen alarm血氧告警颜色
+#define LIVE_INVALID_COLOR  0x666666        // Invalid real-time color 无效实时颜色
+
+
+
+
+#define SPALERT_LOW_DEFAULT         90
+
+#define  Temporary_Daily_DATA_KEY   @"Temp_dailyDataKey"
+#define  TEST_SAVE_HRV_DATA_KEY     @"TestSaveHRVDataKey" //TestSaveHRVDataKey
+//TestSaveSleepDataKey
+#define  TEST_SAVE_SLEEP_DATA_KEY   @"testSleepData"
+#define  TEST_SAVE_SPORT_DATA_KEY   @"TestSaveSportDataKey"
 
 
 #endif

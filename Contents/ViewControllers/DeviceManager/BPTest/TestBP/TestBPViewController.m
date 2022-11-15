@@ -8,9 +8,7 @@
 
 #import "TestBPViewController.h"
 #import "TestBPView.h"
-#import <MRFramework/MRFramework.h>
 #import "BPReportViewController.h"
-#import "MJExtension.h"
 
 @interface TestBPViewController ()<MRDeviceDelegate>
 @property (strong, nonatomic) IBOutlet TestBPView *_view;

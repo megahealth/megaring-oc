@@ -7,9 +7,9 @@
 //
 
 #import "DeviceManagerViewController+Methods.h"
-#import <MRFramework/MRFramework.h>
+
 #import "UIViewController+Extension.h"
-#import "MJExtension.h"
+
 #import "DeviceUpgradeViewController.h"
 static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 
@@ -150,6 +150,9 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
        if (data) {
             NSArray *dailyReports = [MRApi parseDaily:data];  // 
             NSLog(@"dailyReports----%@", dailyReports);
+           
+           [self saveDailyData:dailyReports];
+           
 //            1.  deal data ... save daily data.  可以保存daily data 到本地。
            
            //2. Method....
@@ -169,7 +172,26 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     }];
     
 }
-
+-(void)saveDailyData:(NSArray<MRDailyReport *> *) dailyArray {
+    
+    NSMutableArray *newArray = [NSMutableArray arrayWithCapacity:2];
+    [newArray addObjectsFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:Temporary_Daily_DATA_KEY]];
+    
+    for (MRDailyReport * dailyReport in dailyArray) {
+        
+        NSDictionary * dict =  [dailyReport mj_keyValues];
+//        NSLog(@"---dailyReport--------------%@",[dailyReport mj_keyValues]);
+        
+        if ([newArray containsObject:dict] == NO) {
+            [newArray addObject:dict];
+        }
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:newArray.copy forKey:Temporary_Daily_DATA_KEY];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    
+    
+}
 
 #pragma mark test  hrv  method。
 /***
@@ -228,19 +250,55 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
             
             [MRApi parseMonitorData:data completion:^(MRReport *report, NSError *error) {
                 
-                    NSLog(@"report.reportType=======%d",report.reportType);
-                    NSLog(@"user:%@, report type:%d", report.userId, report.reportType);
-                    NSLog(@"start:%d, duration:%d", report.startTime, report.duration);
+                // 解析完数据后查看报告.
+              NSArray * array =  [[NSUserDefaults standardUserDefaults]objectForKey:Temporary_Daily_DATA_KEY];
+                
+                NSLog(@"ARRAY-TEMP----------------%@",array);
+                
+                if (array.count > 0) {
+                    report.tempArr = array;
+                    
+                    [[NSUserDefaults standardUserDefaults]removeObjectForKey:Temporary_Daily_DATA_KEY];
+                    [[NSUserDefaults standardUserDefaults]synchronize];
+                }
+                
+                NSLog(@"report.reportType=======%d",report.reportType);
+                NSLog(@"user:%@, report type:%d", report.userId, report.reportType);
+                NSLog(@"start:%d, duration:%d", report.startTime, report.duration);
                     NSLog(@"sp avg:%.f, min:%.f", report.avgSp, report.minSp);
                     NSLog(@"pr max:%d, min:%d, avg:%d", report.maxPr, report.minPr, report.avgPr);
                     NSLog(@"sp len:%lu, pr len:%lu", (unsigned long)report.spArr.count, (unsigned long)report.prArr.count);
-                    
                 
-                if (report.reportType == 10) { // Data of HRV .
+                //  ******** test ****  save report data.
+                
+              /*en: [The simplest storage NSUserDefaults is used in this demo for demonstration. You can use SQLITE, CoreData... ------  To view report details, after data collection -- click the last line].
+               
+               zh: [本demo中使用 NSUserDefaults 简单的存储以便演示，您可以使用SQLITE ,CoreData... , 要查看报告详情收取完数据后 -- 查看点击最后一行.]
+               
+               */
+                
+                
+                
+                if (report.reportType == MRDeviceMonitorModeHRV) { // Data of HRV .
 
                     NSLog(@"report.SDNN--------%f--------report.rrArr---------%@",report.SDNN,report.rrArr);
 //                 test ...  save hrv report data ...
-                    [[NSUserDefaults standardUserDefaults]setValue:[report mj_keyValues] forKey:@"testHRVData"];
+                    [[NSUserDefaults standardUserDefaults]setValue:[report mj_keyValues] forKey:TEST_SAVE_HRV_DATA_KEY];
+                    [[NSUserDefaults standardUserDefaults]synchronize];
+
+                }else if (report.reportType == MRDeviceMonitorModeSleep){
+                    //Data of  Sleep.
+
+                    [self.view makeToast:@"Sleep report save success" duration:2 position:CSToastPositionCenter];
+
+                    [[NSUserDefaults standardUserDefaults]setValue:[report mj_keyValues] forKey:TEST_SAVE_SLEEP_DATA_KEY];
+                    [[NSUserDefaults standardUserDefaults]synchronize];
+
+                }else if (report.reportType == MRDeviceMonitorModeSport){
+
+                    [self.view makeToast:@"Sport report save success" duration:2 position:CSToastPositionCenter];
+
+                    [[NSUserDefaults standardUserDefaults]setValue:[report mj_keyValues] forKey:TEST_SAVE_SPORT_DATA_KEY];
                     [[NSUserDefaults standardUserDefaults]synchronize];
 
                 }

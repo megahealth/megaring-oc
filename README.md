@@ -263,3 +263,12 @@ Six:
             (6)Please check the methods in the demo：[-（void) requestDailySleepHRVSportDataTest Data collection process and notes：In 'DeviceManagerViewController+Methods.h' -- there are also notes on this method ].
             
         3. You can check the simple process of reconnecting after disconnection.
+
+
+
+  Seven:
+      Prompt description: 
+      
+        7.1 If you want to view the details of the UI generating the report, After obtaining the data, jump to SleepReportViewController, HRVReportViewController, and WorkoutReportViewController.
+        
+        7.2 If you want to view the UI of blood pressure monitoring and blood pressure details, TestBPViewController(UI of blood pressure monitoring), click Finish to view BPReportViewController(UI of blood pressure details).

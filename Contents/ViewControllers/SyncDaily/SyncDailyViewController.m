@@ -7,7 +7,6 @@
 //
 
 #import "SyncDailyViewController.h"
-#import <MRFramework/MRFramework.h>
 
 @interface SyncDailyViewController ()
 @property (nonatomic, strong) MRDevice *device;

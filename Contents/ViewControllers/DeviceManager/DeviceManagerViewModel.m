@@ -8,7 +8,6 @@
 
 #import "DeviceManagerViewModel.h"
 #import <UIKit/UIKit.h>
-#import <MRFramework/MRFramework.h>
 
 @implementation DeviceManagerViewModel
 

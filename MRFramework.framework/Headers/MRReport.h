@@ -224,6 +224,7 @@
 
 @property (nonatomic, assign) BOOL durationValid;
 
+@property (nonatomic, strong) NSArray * tempArr;
 
 @end
 

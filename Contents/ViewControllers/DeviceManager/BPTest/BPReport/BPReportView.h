@@ -29,8 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UILabel *dbp;
 
-@property (nonatomic, strong) UIImage *shareImg;
-
 
 - (void)updateData;
 - (void)updateEcg;

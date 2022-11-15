@@ -1,0 +1,102 @@
+
+/* Class = "UILabel"; text = "Analytic heart beat times"; ObjectID = "0cV-pp-Qpv"; */
+"0cV-pp-Qpv.text" = "分析心跳次数";
+
+/* Class = "UILabel"; text = "Nbr of beats"; ObjectID = "3Z5-2v-aZE"; */
+"3Z5-2v-aZE.text" = "Nbr of beats";
+
+/* Class = "UILabel"; text = "Monitor time/hour"; ObjectID = "8Nj-JU-5ek"; */
+"8Nj-JU-5ek.text" = "监控时间/小时";
+
+/* Class = "UILabel"; text = "Maximum heart rate"; ObjectID = "AIn-KN-3E2"; */
+"AIn-KN-3E2.text" = "最大心率";
+
+/* Class = "UILabel"; text = "NN50"; ObjectID = "AaM-bb-boz"; */
+"AaM-bb-boz.text" = "NN50";
+
+/* Class = "UILabel"; text = "Occurrence time"; ObjectID = "DSb-jd-rra"; */
+"DSb-jd-rra.text" = "发生时间";
+
+/* Class = "UILabel"; text = "Bradycardia beats times\n(<40bpm)"; ObjectID = "ECH-qk-Ve3"; */
+"ECH-qk-Ve3.text" = "心动过缓搏动次数\n（<40bpm)";
+
+/* Class = "UILabel"; text = "R-R interval scatter plot"; ObjectID = "Ewl-5S-pDL"; */
+"Ewl-5S-pDL.text" = "RR间隔散点图";
+
+/* Class = "UILabel"; text = "Average heart rate"; ObjectID = "GqC-cj-TsC"; */
+"GqC-cj-TsC.text" = "平均心率";
+
+/* Class = "UILabel"; text = "LFP(%)"; ObjectID = "H5f-Uq-5x6"; */
+"H5f-Uq-5x6.text" = "LFP";
+
+/* Class = "UILabel"; text = "Maximum R-R interval"; ObjectID = "Jtj-T3-fah"; */
+"Jtj-T3-fah.text" = "最大RR间隔";
+
+/* Class = "UILabel"; text = "Record end time"; ObjectID = "M8e-W3-oKU"; */
+"M8e-W3-oKU.text" = "记录结束时间";
+
+/* Class = "UILabel"; text = "Occurrence time"; ObjectID = "MSd-Ih-mvU"; */
+"MSd-Ih-mvU.text" = "发生时间";
+
+/* Class = "UILabel"; text = "Record duration"; ObjectID = "NiT-n8-WLX"; */
+"NiT-n8-WLX.text" = "记录持续时间";
+
+/* Class = "UILabel"; text = "Spectrogram"; ObjectID = "P70-Hw-Nod"; */
+"P70-Hw-Nod.text" = "频谱图";
+
+/* Class = "UILabel"; text = "VLFP(%)"; ObjectID = "RVN-Tk-FWj"; */
+"RVN-Tk-FWj.text" = "VLFP";
+
+/* Class = "UILabel"; text = "HFP(%)"; ObjectID = "Tqr-bK-yuN"; */
+"Tqr-bK-yuN.text" = "LHFR";
+
+/* Class = "UILabel"; text = "rMSSD"; ObjectID = "Uz0-zA-fr5"; */
+"Uz0-zA-fr5.text" = "rMSSD";
+
+/* Class = "UILabel"; text = "Heart rate"; ObjectID = "Xzs-YN-if3"; */
+"Xzs-YN-if3.text" = "心率";
+
+/* Class = "UILabel"; text = "Minimum heart rate"; ObjectID = "aII-dD-m8D"; */
+"aII-dD-m8D.text" = "最小心率";
+
+/* Class = "UILabel"; text = "Record start time"; ObjectID = "aPZ-nX-I7d"; */
+"aPZ-nX-I7d.text" = "记录开始时间";
+
+/* Class = "UILabel"; text = "Tachycardia beats times\n(>120bpm)"; ObjectID = "b5p-CW-Kqb"; */
+"b5p-CW-Kqb.text" = "心动过速搏动次数\n（>120bpm）";
+
+/* Class = "UILabel"; text = "pNN50"; ObjectID = "bUz-th-RpR"; */
+"bUz-th-RpR.text" = "pNN50";
+
+/* Class = "UILabel"; text = "HRV"; ObjectID = "ch0-IP-VBv"; */
+"ch0-IP-VBv.text" = "HRV";
+
+/* Class = "UILabel"; text = "Triangleldx"; ObjectID = "cjh-um-bhB"; */
+"cjh-um-bhB.text" = "Triangleldx";
+
+/* Class = "UILabel"; text = "Proportion"; ObjectID = "dHh-yM-REr"; */
+"dHh-yM-REr.text" = "占比";
+
+/* Class = "UILabel"; text = "Sequence diagram"; ObjectID = "g2u-fg-6HI"; */
+"g2u-fg-6HI.text" = "序列图";
+
+/* Class = "UILabel"; text = "RR(s)"; ObjectID = "gYa-e3-mFF"; */
+"gYa-e3-mFF.text" = "RR(s)";
+
+/* Class = "UILabel"; text = "RR Distribution"; ObjectID = "gcD-t6-Op9"; */
+"gcD-t6-Op9.text" = "RR分布";
+
+/* Class = "UILabel"; text = "Occurrence time"; ObjectID = "s04-2l-YhT"; */
+"s04-2l-YhT.text" = "发生时间";
+
+/* Class = "UILabel"; text = "Heart rate"; ObjectID = "saK-IM-DWq"; */
+"saK-IM-DWq.text" = "心率";
+
+/* Class = "UILabel"; text = "SDNN"; ObjectID = "syd-Gk-8cg"; */
+"syd-Gk-8cg.text" = "SDNN";
+
+/* Class = "UILabel"; text = "SDANN"; ObjectID = "yfP-BO-F9r"; */
+"yfP-BO-F9r.text" = "SDANN";
+
+/* Class = "UILabel"; text = "Proportion"; ObjectID = "zgj-q3-FgX"; */
+"zgj-q3-FgX.text" = "占比";

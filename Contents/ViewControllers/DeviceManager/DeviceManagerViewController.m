@@ -14,9 +14,13 @@
 #import "DeviceUpgradeViewController.h"
 #import "SyncDailyViewController.h"
 #import "TestBPViewController.h"
-#import "MJExtension.h"
+
 #import <CoreBluetooth/CoreBluetooth.h>
 
+#import "SleepReportViewController.h"
+#import "WorkoutReportViewController.h"
+
+#import "HRVReportViewController.h"
 
 #define TEST_USER_ID    @"61a9c462706cde30f53f420a" // I
 //#define TEST_USER_ID    @"c22a674665e1388d020d3c856"
@@ -91,28 +95,14 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 break;
                 
             case 3:
-                
-                
                 // 关闭监测，再收取过程哦>
-                
                 NSLog(@"(或 查看 点击关闭监测时 收取数据的过程) Or view the process of collecting data when clicking 'close monitoring'");
                 
                 // sleep hrv ... data  You can view the notes of HRV and other data obtained by this test method
                 [self requestDailySleepHRVSportDataTest];
-                
-                
-                
-                
-                
-                 //  Obtain HRV data through separate test
-                 // [weakself requestReportDataTestType:MHBLEDataRequestTypeHRV];
-                
                 break;
                 
             case 4:
-                
-            
-                
                 if (self.device.batState == MRBatteryStateNormal) {
                     // When the power is normal, turn on the monitoring 电量正常时，开启监测.
                     [self.device switchToSleepMode]; // open sleep.
@@ -126,9 +116,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                     // When the power is normal, turn on the monitoring 电量正常时，开启监测.
                     [self.device switchToSportMode];
                 }
-                
-                
-                
                 break;
                 
             case 6:
@@ -209,8 +196,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 
             case 14: {
                 
-// test:    View the measurement of test blood pressure and how the ECG UI plots.
-                
+// test:   ZG(28) Ring  View the measurement of test blood pressure and how the ECG UI plots.
                 
                 if (self.device.bloodPressureSupported && self.device.batState == MRBatteryStateNormal) { // is if support bloodPressure?   (.bloodPressureSupported) （zh: 指环是否支持血压功能，电量正常时）
                     TestBPViewController *vc = [[TestBPViewController alloc] init];
@@ -234,8 +220,41 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 
             case 15: {
                 
-                NSLog(@"This method has been transferred-----see  Line 4: Click Sync data (data collection process  Or click to close the process of collecting data during monitoring)  Method:   [self requestDailySleepHRVSportDataTest];   zh：直接查看第四行，收取数据的过程 或点击 关闭监测时 收取数据的过程.....");
+//                NSLog(@"This method has been transferred-----see  Line 4: Click Sync data (data collection process  Or click to close the process of collecting data during monitoring)  Method:   [self requestDailySleepHRVSportDataTest];   zh：直接查看第四行，收取数据的过程 或点击 关闭监测时 收取数据的过程.....");
 //                [self requestDailyData];
+                
+              
+                
+                
+              //  *************
+                
+//  1. sleep
+                NSDictionary  * dict  =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_SLEEP_DATA_KEY];
+                 
+//                NSDictionary  * dict  =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_HRV_DATA_KEY];  // 获取测试的hrv数据.
+//                NSDictionary  * dict  =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_SPORT_DATA_KEY]; // 获取sport数据.
+//
+
+            
+                if (dict == nil) {
+                    [self.view makeToast:@"Report Data == nil，Please check again after retesting" duration:2 position:CSToastPositionCenter];
+                    return;
+                }
+                
+                MRReport * report = [MRReport mj_objectWithKeyValues:dict];
+                
+                
+                //1. see sleep report detail
+                     SleepReportViewController * vc = [[SleepReportViewController alloc]initWithReport:report];
+                              
+                //2. see  hrv report detail
+//                     HRVReportViewController * vc = [[HRVReportViewController alloc]initWithReport:report];
+                
+                //3. see sport report
+                    //WorkoutReportViewController * vc = [[WorkoutReportViewController alloc]initWithReport:report];
+                
+                    [self.navigationController pushViewController:vc animated:YES];
+                
             }
                 break;
                 
@@ -545,7 +564,7 @@ en： 1. Test:
     
 // ***** test use hrv data....
     
-//  NSDictionary * dict =  [[NSUserDefaults standardUserDefaults]objectForKey:@"testHRVData"];
+//  NSDictionary * dict =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_HRV_DATA_KEY];
 //    
 //    
 //    QMRLog(@"dict------------%@",dict);

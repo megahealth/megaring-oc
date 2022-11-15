@@ -72,7 +72,7 @@
 "MRSetPeriodicMonitor" = "设置定时监测";
 "MRGetPeriodicMonitor" = "获取定时监测状态";
 "MRStartBPMonitor" = "测量血压";
-"MRSyncDailyData" = "同步日常数据";
+"MRSyncDailyData" = "收取完数据后查看报告详情";
 "MRStarGLU" = "开启血糖";
 "MRDeviceConnected" = "设备已连接";
 "MRDeviceDisconnected" = "设备已断开";
@@ -80,3 +80,24 @@
 "MRClickReconnect" = "点击重连";
 "MRGetDataProgress" = "获取数据的进度:";
 "MRGetDataFinished" = "数据获取完成";
+"MHSleepTitleImageName" = "SleepChinese_Image";
+"MHSportTitleImageName" = "SportChinese_titleImage";
+
+
+"MHHours" = "小时";
+"MHMinutes" = "分钟";
+"MHSeconds" = "秒";
+
+"MHTimeHour" = "时";
+"MHTimeMinute" = "分";
+"MHTimeSecond" = "秒";
+
+"MHDay" = "日";
+"MHWeek" = "周";
+"MHMonth" = "月";
+
+"MHToday" = "今天";
+
+
+
+

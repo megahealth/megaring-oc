@@ -80,3 +80,17 @@ extern NSString *const MRDeviceDisReconnecting;
 extern NSString *const MRClickReconnect;
 extern NSString *const MRGetDataProgress;
 extern NSString *const MRGetDataFinished;
+extern NSString *const MHSleepTitleImageName;
+extern NSString *const MHSportTitleImageName;
+extern NSString *const MHHours;
+extern NSString *const MHMinutes;
+extern NSString *const MHSeconds;
+
+extern NSString *const MHTimeHour;
+extern NSString *const MHTimeMinute;
+extern NSString *const MHTimeSecond;
+
+extern NSString *const MHDay;
+extern NSString *const MHWeek;
+extern NSString *const MHMonth;
+extern NSString *const MHToday;

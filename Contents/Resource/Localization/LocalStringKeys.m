@@ -80,3 +80,17 @@ NSString *const MRDeviceDisReconnecting = @"MRDeviceDisReconnecting";
 NSString *const MRClickReconnect = @"MRClickReconnect";
 NSString *const MRGetDataProgress = @"MRGetDataProgress";
 NSString *const MRGetDataFinished = @"MRGetDataFinished";
+NSString *const MHSleepTitleImageName = @"MHSleepTitleImageName";
+NSString *const MHSportTitleImageName = @"MHSportTitleImageName";
+NSString *const MHHours = @"MHHours";
+NSString *const MHMinutes = @"MHMinutes";
+NSString *const MHSeconds = @"MHSeconds";
+
+NSString *const MHTimeHour = @"MHTimeHour";
+NSString *const MHTimeMinute = @"MHTimeMinute";
+NSString *const MHTimeSecond = @"MHTimeSecond";
+
+NSString *const MHDay = @"MHDay";
+NSString *const MHWeek = @"MHWeek";
+NSString *const MHMonth = @"MHMonth";
+NSString *const MHToday = @"MHToday";

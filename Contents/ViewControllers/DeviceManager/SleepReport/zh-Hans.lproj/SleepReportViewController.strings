@@ -1,0 +1,192 @@
+
+/* Class = "UILabel"; text = "Sleep stage"; ObjectID = "1PK-OA-sHB"; */
+"1PK-OA-sHB.text" = "睡眠分期";
+
+/* Class = "UILabel"; text = "<95%"; ObjectID = "1wy-94-O3J"; */
+"1wy-94-O3J.text" = "<95%";
+
+/* Class = "UILabel"; text = "REM:"; ObjectID = "1zu-Yv-ufX"; */
+"1zu-Yv-ufX.text" = "眼动:";
+
+/* Class = "UILabel"; text = "Minimum"; ObjectID = "2Zp-QQ-UyE"; */
+"2Zp-QQ-UyE.text" = "最低";
+
+/* Class = "UILabel"; text = "95"; ObjectID = "3P8-Nw-1D0"; */
+"3P8-Nw-1D0.text" = "95";
+
+/* Class = "UILabel"; text = "No valid data"; ObjectID = "3qJ-7E-tiR"; */
+"3qJ-7E-tiR.text" = "无有效数据";
+
+/* Class = "UILabel"; text = "SpO2 Range"; ObjectID = "4fx-wi-mo6"; */
+"4fx-wi-mo6.text" = "血氧分布";
+
+/* Class = "UILabel"; text = "80"; ObjectID = "6Mn-op-XxE"; */
+"6Mn-op-XxE.text" = "80";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "6My-y7-dNQ"; */
+"6My-y7-dNQ.text" = "-";
+
+/* Class = "UILabel"; text = "Sleep latency"; ObjectID = "9od-8K-mkc"; */
+"9od-8K-mkc.text" = "入睡时长";
+
+/* Class = "UILabel"; text = "85"; ObjectID = "BNW-8W-qk0"; */
+"BNW-8W-qk0.text" = "85";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "BqL-ze-Tjv"; */
+"BqL-ze-Tjv.text" = "-";
+
+/* Class = "UILabel"; text = "Range"; ObjectID = "EPT-SQ-IgJ"; */
+"EPT-SQ-IgJ.text" = "分布";
+
+/* Class = "UILabel"; text = "(%)"; ObjectID = "EUU-8f-vPl"; */
+"EUU-8f-vPl.text" = "(%)";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "GSP-T3-ue6"; */
+"GSP-T3-ue6.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "HCQ-Xb-KsY"; */
+"HCQ-Xb-KsY.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "Hhi-9C-7a2"; */
+"Hhi-9C-7a2.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "JpU-Cp-rq7"; */
+"JpU-Cp-rq7.text" = "-";
+
+/* Class = "UILabel"; text = "Duration (Minutes)"; ObjectID = "KfW-RI-AZ8"; */
+"KfW-RI-AZ8.text" = "时长 (分钟)";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "Knn-kR-cTz"; */
+"Knn-kR-cTz.text" = "-";
+
+/* Class = "UILabel"; text = "＜90%"; ObjectID = "MBN-oR-7UV"; */
+"MBN-oR-7UV.text" = "＜90%";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "NCx-9y-oj5"; */
+"NCx-9y-oj5.text" = "-";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "PuW-Wo-Uij"; */
+"PuW-Wo-Uij.text" = "100";
+
+/* Class = "UILabel"; text = "＜80%"; ObjectID = "Qox-Z2-zqk"; */
+"Qox-Z2-zqk.text" = "＜80%";
+
+/* Class = "UILabel"; text = "Light:"; ObjectID = "RHu-Xy-L3g"; */
+"RHu-Xy-L3g.text" = "浅睡:";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "RKy-bR-3qZ"; */
+"RKy-bR-3qZ.text" = "-";
+
+/* Class = "UILabel"; text = "90"; ObjectID = "RLI-Hf-bGf"; */
+"RLI-Hf-bGf.text" = "90";
+
+/* Class = "UILabel"; text = "SpO2"; ObjectID = "Rvw-5S-MpM"; */
+"Rvw-5S-MpM.text" = "血氧饱和度";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "TGX-Zp-b4g"; */
+"TGX-Zp-b4g.text" = "-";
+
+/* Class = "UILabel"; text = "Maximum"; ObjectID = "UP8-1L-jsc"; */
+"UP8-1L-jsc.text" = "最高";
+
+/* Class = "UILabel"; text = "Minimum"; ObjectID = "UwO-y5-sTH"; */
+"UwO-y5-sTH.text" = "最低";
+
+/* Class = "UILabel"; text = "Percent"; ObjectID = "V31-Fh-ZaX"; */
+"V31-Fh-ZaX.text" = "占比（%）";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "VjK-sv-0As"; */
+"VjK-sv-0As.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "VtK-Ez-VGi"; */
+"VtK-Ez-VGi.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "X2O-LK-2JG"; */
+"X2O-LK-2JG.text" = "-";
+
+/* Class = "UILabel"; text = "Sleep monitoring duration is less than 4 hours, no sleep stages graph"; ObjectID = "XAo-JG-rxN"; */
+"XAo-JG-rxN.text" = "睡眠监测时长不足4小时，无分期数据";
+
+/* Class = "UILabel"; text = "low"; ObjectID = "ZMy-AS-UoJ"; */
+"ZMy-AS-UoJ.text" = "偏低";
+
+/* Class = "UILabel"; text = "Duration"; ObjectID = "bY1-CU-iJy"; */
+"bY1-CU-iJy.text" = "时长";
+
+/* Class = "UILabel"; text = "Average"; ObjectID = "bdI-hl-mWx"; */
+"bdI-hl-mWx.text" = "平均";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "bhx-Rt-Z2d"; */
+"bhx-Rt-Z2d.text" = "-";
+
+/* Class = "UILabel"; text = "ODI"; ObjectID = "clU-XW-TlJ"; */
+"clU-XW-TlJ.text" = "氧减指数";
+
+/* Class = "UILabel"; text = "Sleep Time"; ObjectID = "cs6-ob-CxB"; */
+"cs6-ob-CxB.text" = "睡眠时间";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "hSs-S6-27B"; */
+"hSs-S6-27B.text" = "-";
+
+/* Class = "UILabel"; text = "PR"; ObjectID = "hky-tB-f9N"; */
+"hky-tB-f9N.text" = "静息脉率";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "iyr-KA-E2n"; */
+"iyr-KA-E2n.text" = "-";
+
+/* Class = "UILabel"; text = "No valid data"; ObjectID = "ks1-aG-MfO"; */
+"ks1-aG-MfO.text" = "无有效数据";
+
+/* Class = "UILabel"; text = "(bpm)"; ObjectID = "nCm-0I-bPf"; */
+"nCm-0I-bPf.text" = "(次/分)";
+
+/* Class = "UILabel"; text = "Average"; ObjectID = "ooO-Y7-mKu"; */
+"ooO-Y7-mKu.text" = "平均";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "p85-Qd-CGi"; */
+"p85-Qd-CGi.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "qs5-WY-a2N"; */
+"qs5-WY-a2N.text" = "-";
+
+/* Class = "UILabel"; text = "Deep:"; ObjectID = "qyp-fI-wXe"; */
+"qyp-fI-wXe.text" = "深睡:";
+
+/* Class = "UILabel"; text = "Awake:"; ObjectID = "rRp-a3-Eux"; */
+"rRp-a3-Eux.text" = "清醒:";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "s3r-kx-qAp"; */
+"s3r-kx-qAp.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "sPE-du-kZ1"; */
+"sPE-du-kZ1.text" = "-";
+
+/* Class = "UILabel"; text = "75"; ObjectID = "sUk-Gi-ZPE"; */
+"sUk-Gi-ZPE.text" = "75";
+
+/* Class = "UILabel"; text = "Start"; ObjectID = "se2-x9-Igq"; */
+"se2-x9-Igq.text" = "开始时间";
+
+/* Class = "UILabel"; text = "＜85%"; ObjectID = "t5x-qj-33w"; */
+"t5x-qj-33w.text" = "＜85%";
+
+/* Class = "UILabel"; text = "No valid data"; ObjectID = "tzD-4v-hBU"; */
+"tzD-4v-hBU.text" = "无有效数据";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "waV-qe-Mbo"; */
+"waV-qe-Mbo.text" = "-";
+
+/* Class = "UILabel"; text = "睡眠报告"; ObjectID = "wdt-kV-hAc"; */
+"wdt-kV-hAc.text" = "睡眠报告";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "we7-r9-Ges"; */
+"we7-r9-Ges.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "z4U-Ga-tVL"; */
+"z4U-Ga-tVL.text" = "-";
+
+/* Class = "UILabel"; text = "平均体温"; ObjectID = "QhB-7f-Kfs"; */
+"QhB-7f-Kfs.text" = "平均";
+
+/* Class = "UILabel"; text = "体温趋势"; ObjectID = "YQ0-YU-9XY"; */
+"YQ0-YU-9XY.text" = "手指温度";

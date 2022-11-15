@@ -7,7 +7,7 @@
 //
 
 #import "DeviceManagerViewController.h"
-#import <MRFramework/MRFramework.h>
+
 @interface DeviceManagerViewController (Methods)
 
 - (void)connectDevice;
@@ -122,7 +122,7 @@
 
        //                    NSLog(@"report.SDNN--------%f--------report.rrArr---------%@",report.SDNN,report.rrArr);
  ////                 test ...  save hrv data ...
- //                    [[NSUserDefaults standardUserDefaults]setValue:[report mj_keyValues] forKey:@"testHRVData"];
+ //                    [[NSUserDefaults standardUserDefaults]setValue:[report mj_keyValues] forKey:TEST_SAVE_HRV_DATA_KEY];
  //                    [[NSUserDefaults standardUserDefaults]synchronize];
  //
  //                }

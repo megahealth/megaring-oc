@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BPReportViewController">
             <connections>
                 <outlet property="_view" destination="i5M-Pr-FkT" id="pxi-UP-KNG"/>
-                <outlet property="shareItem" destination="CpW-by-0hL" id="xEi-M6-COQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -317,14 +316,8 @@
             </connections>
             <point key="canvasLocation" x="636" y="22"/>
         </view>
-        <barButtonItem image="分享" id="CpW-by-0hL">
-            <connections>
-                <action selector="shareClicked:" destination="-1" id="wFR-5p-rhh"/>
-            </connections>
-        </barButtonItem>
     </objects>
     <resources>
-        <image name="分享" width="22" height="22"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
