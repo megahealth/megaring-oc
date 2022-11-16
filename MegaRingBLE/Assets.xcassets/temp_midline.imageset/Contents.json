@@ -5,12 +5,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "警戒值@2x.png",
+      "filename" : "redLine@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "警戒值@3x.png",
+      "filename" : "redLine@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

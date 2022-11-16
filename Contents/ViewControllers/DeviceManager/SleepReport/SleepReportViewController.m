@@ -105,7 +105,6 @@
     } else {
         self._view.tempUnit.text = @"℉";
     }
-    
     if (arrayTemper.count > 0) {
         self._view.tempHightCons.constant = 320;
         [self._view layoutIfNeeded];

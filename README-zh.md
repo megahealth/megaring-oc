@@ -205,7 +205,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
             3. 关于断开后重连的简单流程可以测试查看一下。
          
             
-     七. 提示说明： 
+     七. 提示说明：报告字段或UI界面以供您参考.  
             7.1 如果要查看产生报告的UI详情,收取完数据后，跳转到 SleepReportViewController（睡眠报告UI详情），HRVReportViewController（HRV报告UI详情），WorkoutReportViewController（运动报告UI详情）.
             
             7.2 如果查看血压监测及血压详情的UI，TestBPViewController (血压监测的UI)，点击完成查看 BPReportViewController（血压详情UI）.

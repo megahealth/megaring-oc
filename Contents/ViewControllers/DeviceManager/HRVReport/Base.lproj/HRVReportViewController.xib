@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -367,7 +365,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="vmK-DF-dRj"/>
                                                     </constraints>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="问号"/>
+                                                    <state key="normal" image="TipImage"/>
                                                     <connections>
                                                         <action selector="helpButtonClick:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="3fG-dI-lOe"/>
                                                     </connections>
@@ -573,7 +571,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="smq-HT-1x8"/>
                                                     </constraints>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="问号"/>
+                                                    <state key="normal" image="TipImage"/>
                                                     <connections>
                                                         <action selector="helpButtonClick:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="g09-Wp-4ac"/>
                                                     </connections>
@@ -832,7 +830,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="LL6-on-I9a"/>
                                                     </constraints>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="问号"/>
+                                                    <state key="normal" image="TipImage"/>
                                                     <connections>
                                                         <action selector="helpButtonClick:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="4Cd-pt-2Oo"/>
                                                     </connections>
@@ -1123,7 +1121,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="z8G-ZB-PQo"/>
                                                     </constraints>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="问号"/>
+                                                    <state key="normal" image="TipImage"/>
                                                     <connections>
                                                         <action selector="helpButtonClick:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="EOf-nk-P0d"/>
                                                     </connections>
@@ -1392,7 +1390,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="J2P-h7-Vum"/>
                                                     </constraints>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="问号"/>
+                                                    <state key="normal" image="TipImage"/>
                                                     <connections>
                                                         <action selector="helpButtonClick:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="oiJ-9T-AYQ"/>
                                                     </connections>
@@ -1699,7 +1697,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="our-rs-Qbz"/>
                                                     </constraints>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="问号"/>
+                                                    <state key="normal" image="TipImage"/>
                                                     <connections>
                                                         <action selector="helpButtonClick:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="6QM-qV-KEw"/>
                                                     </connections>
@@ -1849,7 +1847,7 @@
         </view>
     </objects>
     <resources>
-        <image name="问号" width="11.5" height="11.5"/>
+        <image name="TipImage" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

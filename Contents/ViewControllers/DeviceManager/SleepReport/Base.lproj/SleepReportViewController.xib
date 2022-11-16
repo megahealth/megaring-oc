@@ -188,7 +188,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="CFg-f8-6At"/>
                                                         <constraint firstAttribute="height" constant="30" id="iHl-ZS-ZAR"/>
                                                     </constraints>
-                                                    <state key="normal" image="问号"/>
+                                                    <state key="normal" image="TipImage"/>
                                                     <connections>
                                                         <action selector="helpButtonClicked:" destination="22A-kD-AX8" eventType="touchUpInside" id="1MH-S1-Web"/>
                                                     </connections>
@@ -454,10 +454,10 @@
                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="太阳" translatesAutoresizingMaskIntoConstraints="NO" id="MmW-uP-L5m">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sun" translatesAutoresizingMaskIntoConstraints="NO" id="MmW-uP-L5m">
                                                                     <rect key="frame" x="440" y="9.5" width="12" height="11"/>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="月亮" translatesAutoresizingMaskIntoConstraints="NO" id="ru1-2u-tge">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moon" translatesAutoresizingMaskIntoConstraints="NO" id="ru1-2u-tge">
                                                                     <rect key="frame" x="-16" y="9.5" width="11" height="11"/>
                                                                 </imageView>
                                                             </subviews>
@@ -602,7 +602,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="56f-rC-Ecs"/>
                                                         <constraint firstAttribute="width" constant="30" id="9KL-3A-J69"/>
                                                     </constraints>
-                                                    <state key="normal" image="问号"/>
+                                                    <state key="normal" image="TipImage"/>
                                                     <connections>
                                                         <action selector="helpButtonClicked:" destination="22A-kD-AX8" eventType="touchUpInside" id="CNz-ku-USH"/>
                                                     </connections>
@@ -613,7 +613,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="3S7-Vt-abB"/>
                                                         <constraint firstAttribute="height" constant="30" id="vIj-Pr-wmP"/>
                                                     </constraints>
-                                                    <state key="normal" image="问号"/>
+                                                    <state key="normal" image="TipImage"/>
                                                     <connections>
                                                         <action selector="helpButtonClicked:" destination="22A-kD-AX8" eventType="touchUpInside" id="qqE-XB-ozy"/>
                                                     </connections>
@@ -845,10 +845,10 @@
                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="太阳" translatesAutoresizingMaskIntoConstraints="NO" id="KeF-CI-B7Z">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sun" translatesAutoresizingMaskIntoConstraints="NO" id="KeF-CI-B7Z">
                                                                     <rect key="frame" x="440" y="9.5" width="12" height="11"/>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="月亮" translatesAutoresizingMaskIntoConstraints="NO" id="h2i-f4-U3l">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moon" translatesAutoresizingMaskIntoConstraints="NO" id="h2i-f4-U3l">
                                                                     <rect key="frame" x="-16" y="9.5" width="11" height="11"/>
                                                                 </imageView>
                                                             </subviews>
@@ -974,7 +974,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="Ck6-jg-F37"/>
                                                         <constraint firstAttribute="height" constant="30" id="mtz-zg-OIs"/>
                                                     </constraints>
-                                                    <state key="normal" image="问号"/>
+                                                    <state key="normal" image="TipImage"/>
                                                     <connections>
                                                         <action selector="helpButtonClicked:" destination="22A-kD-AX8" eventType="touchUpInside" id="ZIl-Gf-ZMq"/>
                                                     </connections>
@@ -1050,7 +1050,7 @@
                                                                         <constraint firstAttribute="height" constant="30" id="NeS-0l-rRR"/>
                                                                         <constraint firstAttribute="width" constant="30" id="fMa-QE-1Yb"/>
                                                                     </constraints>
-                                                                    <state key="normal" image="问号"/>
+                                                                    <state key="normal" image="TipImage"/>
                                                                     <connections>
                                                                         <action selector="helpButtonClicked:" destination="22A-kD-AX8" eventType="touchUpInside" id="oTY-wj-A17"/>
                                                                     </connections>
@@ -1383,7 +1383,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="Bcs-ZT-4gU"/>
                                                         <constraint firstAttribute="height" constant="30" id="SgP-u1-HoA"/>
                                                     </constraints>
-                                                    <state key="normal" image="问号"/>
+                                                    <state key="normal" image="TipImage"/>
                                                     <connections>
                                                         <action selector="helpButtonClicked:" destination="22A-kD-AX8" eventType="touchUpInside" id="v8J-tP-Ibp"/>
                                                     </connections>
@@ -1421,10 +1421,10 @@
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="太阳" translatesAutoresizingMaskIntoConstraints="NO" id="G1F-XY-PpC">
-                                                            <rect key="frame" x="406" y="4.5" width="12" height="11"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sun" translatesAutoresizingMaskIntoConstraints="NO" id="G1F-XY-PpC">
+                                                            <rect key="frame" x="406" y="4.5" width="12" height="11.5"/>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="月亮" translatesAutoresizingMaskIntoConstraints="NO" id="yyB-tb-dGW">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moon" translatesAutoresizingMaskIntoConstraints="NO" id="yyB-tb-dGW">
                                                             <rect key="frame" x="4" y="4.5" width="11" height="11"/>
                                                         </imageView>
                                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKy-bR-3qZ">
@@ -1787,7 +1787,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="2Mu-kz-Iab"/>
                                                                 <constraint firstAttribute="width" constant="30" id="OQd-IG-dPs"/>
                                                             </constraints>
-                                                            <state key="normal" image="问号"/>
+                                                            <state key="normal" image="TipImage"/>
                                                             <connections>
                                                                 <action selector="helpButtonClicked:" destination="22A-kD-AX8" eventType="touchUpInside" id="U7L-pO-0xy"/>
                                                             </connections>
@@ -2033,10 +2033,10 @@
                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="太阳" translatesAutoresizingMaskIntoConstraints="NO" id="MiR-Bm-q0L">
+                                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sun" translatesAutoresizingMaskIntoConstraints="NO" id="MiR-Bm-q0L">
                                                                     <rect key="frame" x="440" y="9.5" width="12" height="11"/>
                                                                 </imageView>
-                                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="月亮" translatesAutoresizingMaskIntoConstraints="NO" id="hNi-6a-tEe">
+                                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moon" translatesAutoresizingMaskIntoConstraints="NO" id="hNi-6a-tEe">
                                                                     <rect key="frame" x="-16" y="9.5" width="11" height="11"/>
                                                                 </imageView>
                                                             </subviews>
@@ -2170,7 +2170,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="9Ua-C9-ncS"/>
                                                         <constraint firstAttribute="height" constant="30" id="ibq-4h-01u"/>
                                                     </constraints>
-                                                    <state key="normal" image="问号"/>
+                                                    <state key="normal" image="TipImage"/>
                                                     <connections>
                                                         <action selector="helpButtonClicked:" destination="22A-kD-AX8" eventType="touchUpInside" id="hle-5m-v3e"/>
                                                     </connections>
@@ -2375,14 +2375,14 @@
         </view>
     </objects>
     <resources>
+        <image name="Moon" width="11" height="11"/>
         <image name="SleepEnglish_Image" width="375" height="68"/>
+        <image name="Sun" width="12" height="11.5"/>
+        <image name="TipImage" width="11.5" height="11.5"/>
         <image name="dashline_gray" width="2" height="200"/>
         <image name="dashline_red" width="350" height="2"/>
         <image name="temp_icon" width="30" height="30"/>
         <image name="temp_midline" width="15" height="2"/>
-        <image name="太阳" width="12" height="11.5"/>
-        <image name="月亮" width="11" height="11"/>
-        <image name="问号" width="11.5" height="11.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -240,58 +240,22 @@
         lab.text = [NSString stringWithFormat:@"%d", self.model.respiScaleTop-i*self.model.respiScaleStep];
     }
         
-    }
-    
-    
-    
-    
-    
+    }  
 }
 
 
 - (void)showTemp:(NSArray *)tempArr {
     self.tempArr = tempArr;
-//    float sum = 0;
-//    int count = 0;
-//    for (NSNumber *temp in tempArr) {
-//        float t = [temp floatValue];
-//
-//        if (t > 0) {
-//            sum += t;
-//            count ++;
-//        }
-//
-//        if (t > self.maxTemp) {
-//            self.maxTemp = t;
-//        }
-//        if (t > 0 && (t < self.minTemp || self.minTemp <= 0)) {
-//            self.minTemp = t;
-//        }
-//    }
-//
-//    self.avgTemp = sum / (count ?: 1);
-//
-   
+    
     NSNumber *avg = [tempArr valueForKeyPath:@"@avg.floatValue"];
-    
-    
     NSNumber *max = [tempArr valueForKeyPath:@"@max.floatValue"];
     NSNumber *min = [tempArr valueForKeyPath:@"@min.floatValue"];
-    
     NSString * avgg = [NSString stringWithFormat:@"%.2f",[avg floatValue]];
     NSString * maxx = [NSString stringWithFormat:@"%.2f",[max floatValue]];
     NSString * minn = [NSString stringWithFormat:@"%.2f",[min floatValue]];
-    
-    
     self.maxTemp = [maxx  floatValue];
     self.minTemp = [minn floatValue];
     self.avgTemp = [avgg floatValue];
-    
-    
-    
-    
-    
-    
     [self calculateYAxis];
     [self refreshXAxis];
     [self refreshYAxis];
@@ -364,8 +328,9 @@
     }
     
     float offset = value - self.avgTemp;
-    CGFloat x = i * self.tempTrendView.width / (self.tempArr.count-1);
+    CGFloat x = i * (SCREEN_WIDTH - 65) / (self.tempArr.count-1);
     CGFloat y2 = (self.tempRange / 2 - offset) / MAX(self.tempRange, 0.1) * self.tempTrendView.height;
+    
     return CGPointMake(x, y2);
 }
 

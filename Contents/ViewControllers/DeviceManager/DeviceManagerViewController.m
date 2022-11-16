@@ -230,12 +230,10 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 
 //  1. sleep
                 NSDictionary  * dict  =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_SLEEP_DATA_KEY];
-                 
+        
 //  2. hrv             NSDictionary  * dict  =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_HRV_DATA_KEY];  // 获取测试的hrv数据.
 //  3. sport            NSDictionary  * dict  =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_SPORT_DATA_KEY]; // 获取sport数据.
-//
-
-            
+                
                 if (dict == nil) {
                     [self.view makeToast:@"Report Data == nil，Please check again after retesting" duration:2 position:CSToastPositionCenter];
                     return;
@@ -384,9 +382,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     [self.deviceManagerView.viewModel updateMonitorState];
     [self.deviceManagerView refreshView];
 }
-
-
-//点击连接 -- > 成功与失败 --- 成功 --- > 进行绑定 ----> 获取指环信息-- > 查看指环模式 ---> 根据不同的状态开启模式
 
 /***
 zh： 1. 测试：
@@ -562,15 +557,6 @@ en： 1. Test:
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceConnecteStateUpdated:) name:MRDeviceConnectStateUpdatedNotification object:nil];
     
-// ***** test use hrv data....
-    
-//  NSDictionary * dict =  [[NSUserDefaults standardUserDefaults]objectForKey:TEST_SAVE_HRV_DATA_KEY];
-//    
-//    
-//    QMRLog(@"dict------------%@",dict);
-//    
-//    MRReport * report = [MRReport mj_objectWithKeyValues:dict];
-//
 }
 
 #pragma mark --click  reconnect ---

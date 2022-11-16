@@ -13,6 +13,15 @@
 		237DEB34286EFBF200D68414 /* BPReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2B286EFBF200D68414 /* BPReportViewModel.m */; };
 		237DEB35286EFBF200D68414 /* BPReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237DEB2C286EFBF200D68414 /* BPReportViewController.xib */; };
 		2382D62F291C91E700FAFEA7 /* Ring11804.zip in Resources */ = {isa = PBXBuildFile; fileRef = 2382D62E291C91E700FAFEA7 /* Ring11804.zip */; };
+		238918C72924BEC400931323 /* SleepReportPrTrendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918B82924BEC400931323 /* SleepReportPrTrendView.m */; };
+		238918C82924BEC400931323 /* SleepReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918B92924BEC400931323 /* SleepReportView.m */; };
+		238918C92924BEC400931323 /* SleepReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918BA2924BEC400931323 /* SleepReportViewController.m */; };
+		238918CA2924BEC400931323 /* SleepReportSpTrendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918BB2924BEC400931323 /* SleepReportSpTrendView.m */; };
+		238918CB2924BEC400931323 /* SleepReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 238918BC2924BEC400931323 /* SleepReportViewController.xib */; };
+		238918CC2924BEC400931323 /* SleepReportStageTrendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918BE2924BEC400931323 /* SleepReportStageTrendView.m */; };
+		238918CD2924BEC400931323 /* SleepReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918BF2924BEC400931323 /* SleepReportViewModel.m */; };
+		238918CE2924BEC400931323 /* SleepReportTempTrendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918C02924BEC400931323 /* SleepReportTempTrendView.m */; };
+		238918CF2924BEC400931323 /* HDReportsAxisTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918C12924BEC400931323 /* HDReportsAxisTimeView.m */; };
 		238A8EE529236B5000299C1C /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238A8EE329236B3900299C1C /* MRFramework.framework */; platformFilter = ios; };
 		238A8EE629236B5000299C1C /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 238A8EE329236B3900299C1C /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		239000D728CB3767009D910A /* Ring11699.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239000D628CB3767009D910A /* Ring11699.zip */; };
@@ -43,15 +52,6 @@
 		239D78CB28D1AC150098C3E4 /* BLv08.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239D78C928D1AC150098C3E4 /* BLv08.zip */; };
 		23A4EA4F2775DDE80090A840 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4C2775DDE80090A840 /* README.md */; };
 		23A4EA502775DDE80090A840 /* README-zh.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4D2775DDE80090A840 /* README-zh.md */; };
-		23D9E29429220BC300852ADA /* SleepReportPrTrendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E28629220BC300852ADA /* SleepReportPrTrendView.m */; };
-		23D9E29529220BC300852ADA /* SleepReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E28729220BC300852ADA /* SleepReportView.m */; };
-		23D9E29629220BC300852ADA /* SleepReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E28829220BC300852ADA /* SleepReportViewController.m */; };
-		23D9E29729220BC300852ADA /* SleepReportSpTrendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E28929220BC300852ADA /* SleepReportSpTrendView.m */; };
-		23D9E29829220BC300852ADA /* SleepReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D9E28A29220BC300852ADA /* SleepReportViewController.xib */; };
-		23D9E29929220BC300852ADA /* SleepReportStageTrendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E28C29220BC300852ADA /* SleepReportStageTrendView.m */; };
-		23D9E29A29220BC300852ADA /* SleepReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E28D29220BC300852ADA /* SleepReportViewModel.m */; };
-		23D9E29B29220BC300852ADA /* SleepReportTempTrendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E28E29220BC300852ADA /* SleepReportTempTrendView.m */; };
-		23D9E2A02922159200852ADA /* HDReportsAxisTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E29F2922159100852ADA /* HDReportsAxisTimeView.m */; };
 		23D9E2B529223DBD00852ADA /* WorkoutReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E2AD29223DBD00852ADA /* WorkoutReportViewModel.m */; };
 		23D9E2B629223DBD00852ADA /* WorkoutReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D9E2AE29223DBD00852ADA /* WorkoutReportViewController.xib */; };
 		23D9E2B729223DBD00852ADA /* WorkoutReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E2B029223DBD00852ADA /* WorkoutReportViewController.m */; };
@@ -172,6 +172,25 @@
 		237DEB4A286EFC9800D68414 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MRDefaultView.strings; sourceTree = "<group>"; };
 		237DEB4B286EFC9B00D68414 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MRDefaultView.strings"; sourceTree = "<group>"; };
 		2382D62E291C91E700FAFEA7 /* Ring11804.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring11804.zip; sourceTree = "<group>"; };
+		238918B12924BEC400931323 /* SleepReportViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportViewModel.h; sourceTree = "<group>"; };
+		238918B52924BEC400931323 /* SleepReportStageTrendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportStageTrendView.h; sourceTree = "<group>"; };
+		238918B62924BEC400931323 /* HDReportsAxisTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDReportsAxisTimeView.h; sourceTree = "<group>"; };
+		238918B72924BEC400931323 /* SleepReportTempTrendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportTempTrendView.h; sourceTree = "<group>"; };
+		238918B82924BEC400931323 /* SleepReportPrTrendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportPrTrendView.m; sourceTree = "<group>"; };
+		238918B92924BEC400931323 /* SleepReportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportView.m; sourceTree = "<group>"; };
+		238918BA2924BEC400931323 /* SleepReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportViewController.m; sourceTree = "<group>"; };
+		238918BB2924BEC400931323 /* SleepReportSpTrendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportSpTrendView.m; sourceTree = "<group>"; };
+		238918BD2924BEC400931323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SleepReportViewController.xib; sourceTree = "<group>"; };
+		238918BE2924BEC400931323 /* SleepReportStageTrendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportStageTrendView.m; sourceTree = "<group>"; };
+		238918BF2924BEC400931323 /* SleepReportViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportViewModel.m; sourceTree = "<group>"; };
+		238918C02924BEC400931323 /* SleepReportTempTrendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportTempTrendView.m; sourceTree = "<group>"; };
+		238918C12924BEC400931323 /* HDReportsAxisTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDReportsAxisTimeView.m; sourceTree = "<group>"; };
+		238918C22924BEC400931323 /* SleepReportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportView.h; sourceTree = "<group>"; };
+		238918C32924BEC400931323 /* SleepReportPrTrendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportPrTrendView.h; sourceTree = "<group>"; };
+		238918C42924BEC400931323 /* SleepReportSpTrendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportSpTrendView.h; sourceTree = "<group>"; };
+		238918C52924BEC400931323 /* SleepReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportViewController.h; sourceTree = "<group>"; };
+		238918D02924BED600931323 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SleepReportViewController.strings; sourceTree = "<group>"; };
+		238918D12924BED900931323 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SleepReportViewController.strings"; sourceTree = "<group>"; };
 		238A8EE329236B3900299C1C /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		239000D628CB3767009D910A /* Ring11699.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring11699.zip; sourceTree = "<group>"; };
 		2395DC1D280FEDF300193808 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
@@ -225,25 +244,6 @@
 		239D78C928D1AC150098C3E4 /* BLv08.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BLv08.zip; sourceTree = "<group>"; };
 		23A4EA4C2775DDE80090A840 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		23A4EA4D2775DDE80090A840 /* README-zh.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "README-zh.md"; sourceTree = "<group>"; };
-		23D9E27F29220BC300852ADA /* SleepReportViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportViewModel.h; sourceTree = "<group>"; };
-		23D9E28429220BC300852ADA /* SleepReportStageTrendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportStageTrendView.h; sourceTree = "<group>"; };
-		23D9E28529220BC300852ADA /* SleepReportTempTrendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportTempTrendView.h; sourceTree = "<group>"; };
-		23D9E28629220BC300852ADA /* SleepReportPrTrendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportPrTrendView.m; sourceTree = "<group>"; };
-		23D9E28729220BC300852ADA /* SleepReportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportView.m; sourceTree = "<group>"; };
-		23D9E28829220BC300852ADA /* SleepReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportViewController.m; sourceTree = "<group>"; };
-		23D9E28929220BC300852ADA /* SleepReportSpTrendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportSpTrendView.m; sourceTree = "<group>"; };
-		23D9E28B29220BC300852ADA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SleepReportViewController.xib; sourceTree = "<group>"; };
-		23D9E28C29220BC300852ADA /* SleepReportStageTrendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportStageTrendView.m; sourceTree = "<group>"; };
-		23D9E28D29220BC300852ADA /* SleepReportViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportViewModel.m; sourceTree = "<group>"; };
-		23D9E28E29220BC300852ADA /* SleepReportTempTrendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepReportTempTrendView.m; sourceTree = "<group>"; };
-		23D9E28F29220BC300852ADA /* SleepReportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportView.h; sourceTree = "<group>"; };
-		23D9E29029220BC300852ADA /* SleepReportPrTrendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportPrTrendView.h; sourceTree = "<group>"; };
-		23D9E29129220BC300852ADA /* SleepReportSpTrendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportSpTrendView.h; sourceTree = "<group>"; };
-		23D9E29229220BC300852ADA /* SleepReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportViewController.h; sourceTree = "<group>"; };
-		23D9E29C29220C0400852ADA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SleepReportViewController.strings; sourceTree = "<group>"; };
-		23D9E29D29220C0700852ADA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SleepReportViewController.strings"; sourceTree = "<group>"; };
-		23D9E29E2922159100852ADA /* HDReportsAxisTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDReportsAxisTimeView.h; sourceTree = "<group>"; };
-		23D9E29F2922159100852ADA /* HDReportsAxisTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDReportsAxisTimeView.m; sourceTree = "<group>"; };
 		23D9E2A929223DBD00852ADA /* WorkoutReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutReportViewController.h; sourceTree = "<group>"; };
 		23D9E2AB29223DBD00852ADA /* WorkoutReportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutReportView.h; sourceTree = "<group>"; };
 		23D9E2AC29223DBD00852ADA /* WorkoutReportTrendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutReportTrendView.h; sourceTree = "<group>"; };
@@ -422,6 +422,30 @@
 			path = BPReport;
 			sourceTree = "<group>";
 		};
+		238918B02924BEC400931323 /* SleepReport */ = {
+			isa = PBXGroup;
+			children = (
+				238918C52924BEC400931323 /* SleepReportViewController.h */,
+				238918BA2924BEC400931323 /* SleepReportViewController.m */,
+				238918BC2924BEC400931323 /* SleepReportViewController.xib */,
+				238918B52924BEC400931323 /* SleepReportStageTrendView.h */,
+				238918C22924BEC400931323 /* SleepReportView.h */,
+				238918B92924BEC400931323 /* SleepReportView.m */,
+				238918B62924BEC400931323 /* HDReportsAxisTimeView.h */,
+				238918C12924BEC400931323 /* HDReportsAxisTimeView.m */,
+				238918B72924BEC400931323 /* SleepReportTempTrendView.h */,
+				238918C02924BEC400931323 /* SleepReportTempTrendView.m */,
+				238918C42924BEC400931323 /* SleepReportSpTrendView.h */,
+				238918BB2924BEC400931323 /* SleepReportSpTrendView.m */,
+				238918BE2924BEC400931323 /* SleepReportStageTrendView.m */,
+				238918B12924BEC400931323 /* SleepReportViewModel.h */,
+				238918BF2924BEC400931323 /* SleepReportViewModel.m */,
+				238918C32924BEC400931323 /* SleepReportPrTrendView.h */,
+				238918B82924BEC400931323 /* SleepReportPrTrendView.m */,
+			);
+			path = SleepReport;
+			sourceTree = "<group>";
+		};
 		2395DC1A280FEDF300193808 /* BPTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,30 +604,6 @@
 			children = (
 			);
 			path = "ZG18(Circul)_Ring_NoBootLoader-This is a document";
-			sourceTree = "<group>";
-		};
-		23D9E27E29220BC300852ADA /* SleepReport */ = {
-			isa = PBXGroup;
-			children = (
-				23D9E29229220BC300852ADA /* SleepReportViewController.h */,
-				23D9E28829220BC300852ADA /* SleepReportViewController.m */,
-				23D9E28A29220BC300852ADA /* SleepReportViewController.xib */,
-				23D9E28F29220BC300852ADA /* SleepReportView.h */,
-				23D9E28729220BC300852ADA /* SleepReportView.m */,
-				23D9E27F29220BC300852ADA /* SleepReportViewModel.h */,
-				23D9E28D29220BC300852ADA /* SleepReportViewModel.m */,
-				23D9E28429220BC300852ADA /* SleepReportStageTrendView.h */,
-				23D9E28C29220BC300852ADA /* SleepReportStageTrendView.m */,
-				23D9E28529220BC300852ADA /* SleepReportTempTrendView.h */,
-				23D9E28E29220BC300852ADA /* SleepReportTempTrendView.m */,
-				23D9E29129220BC300852ADA /* SleepReportSpTrendView.h */,
-				23D9E28929220BC300852ADA /* SleepReportSpTrendView.m */,
-				23D9E29029220BC300852ADA /* SleepReportPrTrendView.h */,
-				23D9E28629220BC300852ADA /* SleepReportPrTrendView.m */,
-				23D9E29E2922159100852ADA /* HDReportsAxisTimeView.h */,
-				23D9E29F2922159100852ADA /* HDReportsAxisTimeView.m */,
-			);
-			path = SleepReport;
 			sourceTree = "<group>";
 		};
 		23D9E2A529223DBD00852ADA /* WorkoutReport */ = {
@@ -772,9 +772,9 @@
 		3C3E9A8D2480B4870087FD85 /* DeviceManager */ = {
 			isa = PBXGroup;
 			children = (
+				238918B02924BEC400931323 /* SleepReport */,
 				23D9E2BF292250A900852ADA /* HRVReport */,
 				23D9E2A529223DBD00852ADA /* WorkoutReport */,
-				23D9E27E29220BC300852ADA /* SleepReport */,
 				2395DC1A280FEDF300193808 /* BPTest */,
 				3C3E9A902480B4870087FD85 /* DeviceManagerViewController.h */,
 				3C3E9A952480B4870087FD85 /* DeviceManagerViewController.m */,
@@ -1026,6 +1026,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				ja,
 			);
 			mainGroup = CF665A07209B181A009EF6A6;
 			productRefGroup = CF665A11209B181A009EF6A6 /* Products */;
@@ -1044,7 +1045,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23D9E29829220BC300852ADA /* SleepReportViewController.xib in Resources */,
 				3C3E9AFD2480B4870087FD85 /* MRDefaultView.xib in Resources */,
 				3C3E9ADD2480B4870087FD85 /* MRHomeViewController.xib in Resources */,
 				3C0842DF25ECF63A008508D4 /* data1-1 in Resources */,
@@ -1053,6 +1053,7 @@
 				23D9E2B629223DBD00852ADA /* WorkoutReportViewController.xib in Resources */,
 				23D9E2D8292250A900852ADA /* HRVReportViewController.xib in Resources */,
 				237DEB35286EFBF200D68414 /* BPReportViewController.xib in Resources */,
+				238918CB2924BEC400931323 /* SleepReportViewController.xib in Resources */,
 				239D78CB28D1AC150098C3E4 /* BLv08.zip in Resources */,
 				3C3E9AE12480B4870087FD85 /* MRHomeViewCell.xib in Resources */,
 				3C3E9AFA2480B4870087FD85 /* InfoPlist.strings in Resources */,
@@ -1103,23 +1104,23 @@
 				3C3E9AD42480B4870087FD85 /* sha1.c in Sources */,
 				3C3E9ADB2480B4870087FD85 /* MRIndicatorView.m in Sources */,
 				23D9E2B929223DBD00852ADA /* WorkoutReportView.m in Sources */,
+				238918C92924BEC400931323 /* SleepReportViewController.m in Sources */,
 				23D9E2B829223DBD00852ADA /* WorkoutReportTrendView.m in Sources */,
+				238918C82924BEC400931323 /* SleepReportView.m in Sources */,
 				3C3E9AD12480B4870087FD85 /* hmac.c in Sources */,
+				238918C72924BEC400931323 /* SleepReportPrTrendView.m in Sources */,
 				2395DC87280FEDF300193808 /* UIView+View.m in Sources */,
-				23D9E2A02922159200852ADA /* HDReportsAxisTimeView.m in Sources */,
-				23D9E29B29220BC300852ADA /* SleepReportTempTrendView.m in Sources */,
 				2395DC6D280FEDF300193808 /* MJProperty.m in Sources */,
+				238918CC2924BEC400931323 /* SleepReportStageTrendView.m in Sources */,
 				23D9E2F12922516D00852ADA /* HRVReportView.m in Sources */,
 				2395DC74280FEDF300193808 /* MJFoundation.m in Sources */,
 				3C3E9ACE2480B4870087FD85 /* ioapi_mem.c in Sources */,
 				3C3E9AFB2480B4870087FD85 /* LocalStringKeys.m in Sources */,
 				3C3E9AD22480B4870087FD85 /* aescrypt.c in Sources */,
 				2395DC82280FEDF300193808 /* UIView+Animations.m in Sources */,
-				23D9E29729220BC300852ADA /* SleepReportSpTrendView.m in Sources */,
 				2395DC73280FEDF300193808 /* MJPropertyKey.m in Sources */,
 				2395DC83280FEDF300193808 /* UIView+Rect.m in Sources */,
 				23D9E2F02922516D00852ADA /* HRVReportDistView.m in Sources */,
-				23D9E29429220BC300852ADA /* SleepReportPrTrendView.m in Sources */,
 				CF408681209C026F00E3E8E7 /* MRNavigarionController.m in Sources */,
 				23D9E2EE2922516D00852ADA /* HRVReportHrvView.m in Sources */,
 				2395DC72280FEDF300193808 /* NSString+MJExtension.m in Sources */,
@@ -1128,14 +1129,16 @@
 				2395DC84280FEDF300193808 /* UIView+Location.m in Sources */,
 				3C3E9AD02480B4870087FD85 /* aeskey.c in Sources */,
 				2395DC6E280FEDF300193808 /* NSObject+MJCoding.m in Sources */,
+				238918CF2924BEC400931323 /* HDReportsAxisTimeView.m in Sources */,
 				237DEB33286EFBF200D68414 /* BPReportView.m in Sources */,
 				3C3E9ACA2480B4870087FD85 /* unzip.c in Sources */,
 				3C3E9AD62480B4870087FD85 /* prng.c in Sources */,
+				238918CE2924BEC400931323 /* SleepReportTempTrendView.m in Sources */,
 				3C3E9AEE2480B4870087FD85 /* SyncDailyViewController.m in Sources */,
 				2395DD1C281001B900193808 /* TestBPViewController.m in Sources */,
 				3C3E9ACD2480B4870087FD85 /* ioapi_buf.c in Sources */,
+				238918CD2924BEC400931323 /* SleepReportViewModel.m in Sources */,
 				23D9E2ED2922516D00852ADA /* HRVReportViewModel.m in Sources */,
-				23D9E29529220BC300852ADA /* SleepReportView.m in Sources */,
 				2395DC6F280FEDF300193808 /* MJExtensionConst.m in Sources */,
 				23D9E2F32922516D00852ADA /* HRVReportSpectView.m in Sources */,
 				2395DC71280FEDF300193808 /* NSObject+MJClass.m in Sources */,
@@ -1153,9 +1156,7 @@
 				3C3E9AC92480B4870087FD85 /* crypt.c in Sources */,
 				CF665A15209B181A009EF6A6 /* AppDelegate.m in Sources */,
 				2395DC81280FEDF300193808 /* UIColor+Extension.m in Sources */,
-				23D9E29929220BC300852ADA /* SleepReportStageTrendView.m in Sources */,
 				23D9E2F22922516D00852ADA /* HRVReportViewController.m in Sources */,
-				23D9E29629220BC300852ADA /* SleepReportViewController.m in Sources */,
 				2395DD1B281001B900193808 /* TestBPView.m in Sources */,
 				23D9E2B529223DBD00852ADA /* WorkoutReportViewModel.m in Sources */,
 				3C3E9ACC2480B4870087FD85 /* ioapi.c in Sources */,
@@ -1165,13 +1166,13 @@
 				2395DC70280FEDF300193808 /* NSObject+MJProperty.m in Sources */,
 				3C3E9AE92480B4870087FD85 /* DeviceManagerViewCell.m in Sources */,
 				2395DC80280FEDF300193808 /* UIImage+Extension.m in Sources */,
-				23D9E29A29220BC300852ADA /* SleepReportViewModel.m in Sources */,
 				2395DC86280FEDF300193808 /* IBCustomButton.m in Sources */,
 				2395DC6C280FEDF300193808 /* NSObject+MJKeyValue.m in Sources */,
 				3C3E9AE02480B4870087FD85 /* MRHomeViewModel.m in Sources */,
 				3C3E9AE62480B4870087FD85 /* DeviceManagerView.m in Sources */,
 				3C3E9AFF2480B4870087FD85 /* MRDefaultView.m in Sources */,
 				237DEB34286EFBF200D68414 /* BPReportViewModel.m in Sources */,
+				238918CA2924BEC400931323 /* SleepReportSpTrendView.m in Sources */,
 				2395DC6B280FEDF300193808 /* MJPropertyType.m in Sources */,
 				3C3E9AD72480B4870087FD85 /* pwd2key.c in Sources */,
 				3C3E9ACF2480B4870087FD85 /* minishared.c in Sources */,
@@ -1225,6 +1226,16 @@
 			name = BPReportViewController.xib;
 			sourceTree = "<group>";
 		};
+		238918BC2924BEC400931323 /* SleepReportViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				238918BD2924BEC400931323 /* Base */,
+				238918D02924BED600931323 /* en */,
+				238918D12924BED900931323 /* zh-Hans */,
+			);
+			name = SleepReportViewController.xib;
+			sourceTree = "<group>";
+		};
 		2395DD0A2810012D00193808 /* TestBPViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1233,16 +1244,6 @@
 				2395DD1E281001C100193808 /* zh-Hans */,
 			);
 			name = TestBPViewController.xib;
-			sourceTree = "<group>";
-		};
-		23D9E28A29220BC300852ADA /* SleepReportViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				23D9E28B29220BC300852ADA /* Base */,
-				23D9E29C29220C0400852ADA /* en */,
-				23D9E29D29220C0700852ADA /* zh-Hans */,
-			);
-			name = SleepReportViewController.xib;
 			sourceTree = "<group>";
 		};
 		23D9E2AE29223DBD00852ADA /* WorkoutReportViewController.xib */ = {
