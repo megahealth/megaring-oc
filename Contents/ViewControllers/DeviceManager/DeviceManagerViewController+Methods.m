@@ -136,7 +136,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     
     //   1. @Required     (在项目中把xxxdevice.isDownloadingData 的值赋上 如下.)
     
-    if (self.device.isDownloadingData == YES) {
+    if (self.device.isDownloadingData == YES) {// 1. @ Required
        NSLog(@"syncing data, mission cancel");
         return;
     }
@@ -144,7 +144,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     [self.device requestData:MRDataTypeDaily progress:^(float progress) {
         NSLog(@"----get---progress:%.4f", progress);
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
-        self.device.isDownloadingData = NO; //  1.  @Required
+        self.device.isDownloadingData = NO; //  2.  @Required
         NSLog(@"Dailydata:%@", data);
         
        if (data) {
@@ -210,7 +210,6 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
  *
  */
 
-
 #pragma mark test method
 /**
  
@@ -248,7 +247,17 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
             
 //         you can parse data display UI Need network to verify。
             
+            NSMutableArray * arrayMM = [NSMutableArray arrayWithCapacity:2];
+
+            [arrayMM addObject:data];
+            
+            [[NSUserDefaults standardUserDefaults]setValue:arrayMM.copy forKey:@"Ring_Data"];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            
+            
             [MRApi parseMonitorData:data completion:^(MRReport *report, NSError *error) {
+                
+                NSLog(@"report------------%@--------error---------%@",report,error);
                 
                 // 解析完数据后查看报告.
               NSArray * array =  [[NSUserDefaults standardUserDefaults]objectForKey:Temporary_Daily_DATA_KEY];

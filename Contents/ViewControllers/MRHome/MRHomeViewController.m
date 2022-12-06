@@ -17,10 +17,6 @@
 #import "MRDefaultView.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 
-
-
-
-
 /**
  
  

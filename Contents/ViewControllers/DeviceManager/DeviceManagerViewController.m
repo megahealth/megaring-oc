@@ -95,11 +95,11 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 break;
                 
             case 3:
-                // 关闭监测，再收取过程哦>
-                NSLog(@"(或 查看 点击关闭监测时 收取数据的过程) Or view the process of collecting data when clicking 'close monitoring'");
+                // 【请查看 点击 关闭监测 收取数据的过程】
+                NSLog(@"(请查看 点击关闭监测时 收取数据的过程) Please view the process of collecting data when clicking 'close monitoring'");
                 
                 // sleep hrv ... data  You can view the notes of HRV and other data obtained by this test method
-                [self requestDailySleepHRVSportDataTest];
+//                [self requestDailySleepHRVSportDataTest];
                 break;
                 
             case 4:
@@ -417,7 +417,7 @@ en： 1. Test:
         [self requestDailySleepHRVSportDataTest];   //MARK: ---    Get ring data synchronously , Make sure to clear the data in the ring before starting the monitoring (that is, check the data in the ring)
         
     }else if (self.device.monitorMode == MRDeviceMonitorModeSleep || self.device.monitorMode == MRDeviceMonitorModeSport || self.device.monitorMode == MRDeviceMonitorModeRealTime){
-        
+        self.shouldSyncData = YES;
         [self startLiveData]; // is if open liveData ？
         
     }else {

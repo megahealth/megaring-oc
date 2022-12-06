@@ -41,9 +41,91 @@
 @end
 
 
-
-/****      More information，as follows.
+/***        < 1 >
  
+ Data collection process:
+
+ I.   Collect (MRDataTypeDaily) data first.
+
+    1.1 There are (MRDataTypeDaily) types of data that have not been collected completely, so continue to collect them.
+    1.2 If there is no (MRDataTypeDaily) type data, start to collect (MRDataTypeMonitor) type data.
+
+ II.   Collect (MRDataTypeMonitor) monitoring type data.
+
+      2.1 Data with (MRDataTypeMonitor or MHBLEDataRequestTypeHRV) type can be saved or parsed into report data for viewing.
+      2.2 Then collect the data of HRV (MHBLEDataRequestTypeHRV) in the ring.
+
+
+ For your better understanding,  Here is a simple way to write：
+
+ -(void)getDailyDataForTheRing {  //  I.    Collect (MRDataTypeDaily) data first.
+
+ if(xxDevice.isDownloadingData == YES){ // @Required
+           return;
+     }
+
+   [xxDevice requestData:MRDataTypeDaily progress:^(float progress) {
+
+       NSLog(@"----get---progress:%.4f", progress);
+
+   } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
+           xxDevice.isDownloadingData == NO;  // @Required
+
+              if(data){
+                [self   getDailyDataForTheRing]; //  1.1 There are (MRDataTypeDaily) types of data that have not been collected completely, so continue to collect them. (Called recursively by this method)
+              }else{
+               [self getMonitorDataType:MRDataTypeMonitor]; //   1.2 If there is no (MRDataTypeDaily) type data, start to collect (MRDataTypeMonitor) type data.
+            }
+    }];
+
+ }
+
+ -(void)getMonitorDataType:(MRDataType)type {   II.  Collect (MRDataTypeMonitor) monitoring type data.
+
+      if(xxDevice.isDownloadingData == YES){ //@Required
+          Return;
+     }
+
+   [xxDevice requestData:type progress:^(float progress) {  //  Tip:  Please check the change of Progress here.
+
+         self.xxTitle. text = [NSString stringWithFormat:@" Get data progress:  %.4f"),progress];
+        if (progress >=1) {
+           self.xxTitle.text = @“Get Ring Data Finished~”;
+        }
+
+   } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
+             xxDevice.isDownloadingData == NO; // @Required
+
+              if(data){    //  2.1 Data with (MRDataTypeMonitor or MHBLEDataRequestTypeHRV) type can be saved or parsed into report data for viewing.
+
+               …….   parse data ….   [MRApi parseMonitorData: completion:] …
+              }
+
+          if (type != MHBLEDataRequestTypeHRV) { //  2.2 Then collect the data of HRV (MHBLEDataRequestTypeHRV) in the ring.
+
+                [self getMonitorDataType: MHBLEDataRequestTypeHRV];
+           }
+
+    }];
+ }
+
+
+   The above simple data collection function method corresponds to the method '- (void) requestDailySleepHRVSportDataTest and - (void) requestReportDataTestType: (MRDataType) type' in the SDK Demo ( < 2 > ). Please check this method carefully，there are also many notes. (And It is recommended that you first try the methods or logic in the SDK demo.)
+ 
+ 
+ 
+ 
+ **/
+
+
+
+
+
+
+/****     < 2 >
+ 
+ 
+ More information，as follows.
  
  Zh: SDK 获取指环数据过程：方法简单注解 （何时收取的逻辑请查看demo） ,最好按照下面的收取
  En: SDK process for obtaining ring data: simple annotation of the method (Please check the demo for the logic of when to charge)
