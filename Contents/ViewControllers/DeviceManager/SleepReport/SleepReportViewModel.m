@@ -38,10 +38,18 @@ static int  sleepStageValidMinutes = 3*60;
     self.percent85 = [NSString stringWithFormat:@"%.2f", round(report.percentUnder85*100*100)/100];
     self.percent80 = [NSString stringWithFormat:@"%.2f", round(report.percentUnder80*100*100)/100];
     
+  
     self.prArr = report.prArr;
+    
+    
     self.maxPr = [NSString stringWithFormat:@"%d", report.maxPr];
+    
     self.avgPr = [NSString stringWithFormat:@"%d", report.avgPr];
+    
     self.minPr = [NSString stringWithFormat:@"%d", report.minPr];
+    
+    
+    
     
     
     self.stageValid = report.duration >= (sleepStageValidMinutes*60/82*82);

@@ -94,3 +94,4 @@ NSString *const MHDay = @"MHDay";
 NSString *const MHWeek = @"MHWeek";
 NSString *const MHMonth = @"MHMonth";
 NSString *const MHToday = @"MHToday";
+NSString *const MHUpgradeFirmwareComplete = @"MHUpgradeFirmwareComplete";

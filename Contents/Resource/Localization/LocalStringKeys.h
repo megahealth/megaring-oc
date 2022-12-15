@@ -94,3 +94,4 @@ extern NSString *const MHDay;
 extern NSString *const MHWeek;
 extern NSString *const MHMonth;
 extern NSString *const MHToday;
+extern NSString *const MHUpgradeFirmwareComplete;

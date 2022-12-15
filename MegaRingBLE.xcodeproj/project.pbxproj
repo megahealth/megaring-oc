@@ -22,8 +22,6 @@
 		238918CD2924BEC400931323 /* SleepReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918BF2924BEC400931323 /* SleepReportViewModel.m */; };
 		238918CE2924BEC400931323 /* SleepReportTempTrendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918C02924BEC400931323 /* SleepReportTempTrendView.m */; };
 		238918CF2924BEC400931323 /* HDReportsAxisTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918C12924BEC400931323 /* HDReportsAxisTimeView.m */; };
-		238A8EE529236B5000299C1C /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238A8EE329236B3900299C1C /* MRFramework.framework */; platformFilter = ios; };
-		238A8EE629236B5000299C1C /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 238A8EE329236B3900299C1C /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		239000D728CB3767009D910A /* Ring11699.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239000D628CB3767009D910A /* Ring11699.zip */; };
 		2395DC6B280FEDF300193808 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC20280FEDF300193808 /* MJPropertyType.m */; };
 		2395DC6C280FEDF300193808 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395DC23280FEDF300193808 /* NSObject+MJKeyValue.m */; };
@@ -50,6 +48,9 @@
 		239D78BB28D1A5280098C3E4 /* MegaRingV3_V11687.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239D78BA28D1A5280098C3E4 /* MegaRingV3_V11687.zip */; };
 		239D78CA28D1AC150098C3E4 /* BLv07.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239D78C828D1AC150098C3E4 /* BLv07.zip */; };
 		239D78CB28D1AC150098C3E4 /* BLv08.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239D78C928D1AC150098C3E4 /* BLv08.zip */; };
+		23A3F14B294AFB7100986DF2 /* MRDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A3F14A294AFB7100986DF2 /* MRDeviceManager.m */; };
+		23A3F159294B182600986DF2 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A3F157294B181D00986DF2 /* MRFramework.framework */; platformFilter = ios; };
+		23A3F15A294B182600986DF2 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23A3F157294B181D00986DF2 /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		23A4EA4F2775DDE80090A840 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4C2775DDE80090A840 /* README.md */; };
 		23A4EA502775DDE80090A840 /* README-zh.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4D2775DDE80090A840 /* README-zh.md */; };
 		23D9E2B529223DBD00852ADA /* WorkoutReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E2AD29223DBD00852ADA /* WorkoutReportViewModel.m */; };
@@ -149,7 +150,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				238A8EE629236B5000299C1C /* MRFramework.framework in CopyFiles */,
+				23A3F15A294B182600986DF2 /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +192,6 @@
 		238918C52924BEC400931323 /* SleepReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportViewController.h; sourceTree = "<group>"; };
 		238918D02924BED600931323 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SleepReportViewController.strings; sourceTree = "<group>"; };
 		238918D12924BED900931323 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SleepReportViewController.strings"; sourceTree = "<group>"; };
-		238A8EE329236B3900299C1C /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		239000D628CB3767009D910A /* Ring11699.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring11699.zip; sourceTree = "<group>"; };
 		2395DC1D280FEDF300193808 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
 		2395DC1E280FEDF300193808 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
@@ -242,6 +242,9 @@
 		239D78BA28D1A5280098C3E4 /* MegaRingV3_V11687.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV3_V11687.zip; sourceTree = "<group>"; };
 		239D78C828D1AC150098C3E4 /* BLv07.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BLv07.zip; sourceTree = "<group>"; };
 		239D78C928D1AC150098C3E4 /* BLv08.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = BLv08.zip; sourceTree = "<group>"; };
+		23A3F149294AFB7100986DF2 /* MRDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRDeviceManager.h; sourceTree = "<group>"; };
+		23A3F14A294AFB7100986DF2 /* MRDeviceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRDeviceManager.m; sourceTree = "<group>"; };
+		23A3F157294B181D00986DF2 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		23A4EA4C2775DDE80090A840 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		23A4EA4D2775DDE80090A840 /* README-zh.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "README-zh.md"; sourceTree = "<group>"; };
 		23D9E2A929223DBD00852ADA /* WorkoutReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutReportViewController.h; sourceTree = "<group>"; };
@@ -387,7 +390,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				238A8EE529236B5000299C1C /* MRFramework.framework in Frameworks */,
+				23A3F159294B182600986DF2 /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,6 +791,8 @@
 				3C3E9A912480B4870087FD85 /* DeviceManagerViewCell.h */,
 				3C3E9A992480B4870087FD85 /* DeviceManagerViewCell.m */,
 				3C3E9A972480B4870087FD85 /* DeviceManagerViewCell.xib */,
+				23A3F149294AFB7100986DF2 /* MRDeviceManager.h */,
+				23A3F14A294AFB7100986DF2 /* MRDeviceManager.m */,
 			);
 			path = DeviceManager;
 			sourceTree = "<group>";
@@ -878,9 +883,9 @@
 		CF665A07209B181A009EF6A6 = {
 			isa = PBXGroup;
 			children = (
-				238A8EE329236B3900299C1C /* MRFramework.framework */,
 				23A4EA4D2775DDE80090A840 /* README-zh.md */,
 				23A4EA4C2775DDE80090A840 /* README.md */,
+				23A3F157294B181D00986DF2 /* MRFramework.framework */,
 				3C3E9A4E2480B4870087FD85 /* Contents */,
 				CF665A12209B181A009EF6A6 /* MegaRingBLE */,
 				CF665A2B209B181B009EF6A6 /* MegaRingBLETests */,
@@ -1114,6 +1119,7 @@
 				238918CC2924BEC400931323 /* SleepReportStageTrendView.m in Sources */,
 				23D9E2F12922516D00852ADA /* HRVReportView.m in Sources */,
 				2395DC74280FEDF300193808 /* MJFoundation.m in Sources */,
+				23A3F14B294AFB7100986DF2 /* MRDeviceManager.m in Sources */,
 				3C3E9ACE2480B4870087FD85 /* ioapi_mem.c in Sources */,
 				3C3E9AFB2480B4870087FD85 /* LocalStringKeys.m in Sources */,
 				3C3E9AD22480B4870087FD85 /* aescrypt.c in Sources */,
@@ -1444,7 +1450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.12.5;
+				CURRENT_PROJECT_VERSION = 1.12.61;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1461,7 +1467,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.12.5;
+				MARKETING_VERSION = 1.12.61;
 				PRODUCT_BUNDLE_IDENTIFIER = com.megahealth.MegaRingBLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1475,7 +1481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.12.5;
+				CURRENT_PROJECT_VERSION = 1.12.61;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1492,7 +1498,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.12.5;
+				MARKETING_VERSION = 1.12.61;
 				PRODUCT_BUNDLE_IDENTIFIER = com.megahealth.MegaRingBLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

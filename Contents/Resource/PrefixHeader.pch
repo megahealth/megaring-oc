@@ -72,7 +72,7 @@
 #define SPALERT_COLOR       0xEE5253        // Color of blood oxygen alarm血氧告警颜色
 #define LIVE_INVALID_COLOR  0x666666        // Invalid real-time color 无效实时颜色
 
-
+#define MR_KEYWINDOW [UIApplication sharedApplication].keyWindow
 
 
 #define SPALERT_LOW_DEFAULT         90

@@ -30,6 +30,7 @@
 - (instancetype)initWithDevice:(MRDevice *)device {
     if (self = [super init]) {
         self.device = device;
+        NSLog(@"device-------------%@",device);
         [MRDeviceUpgrader defaultInstance].delegate = self;
     }
     return self;
@@ -89,11 +90,11 @@
 
 - (NSString *)firmwareZip {
     NSString *zipName = @"";
-    if (self.device.bloodPressureSupported) {
-        zipName = @"Ring11699.zip";
+    if (self.device.bloodPressureSupported) { //  CIRCLU+ Ring
+        zipName = @"Ring11804.zip";
 //        zipName = @"BLv08.zip";
         
-    }else{
+    }else{ // Circul Ring
         zipName = @"MegaRingV3_V11687.zip";
     }
     
@@ -101,9 +102,6 @@
     NSString *zipPath = [[NSBundle mainBundle] pathForResource:zipName ofType:nil];
     return zipPath;
 }
-
-
-
 // MARK: MRDeviceUpgraderDelegate
 
 - (void)upgradeStateUpdated:(MRUpgradeState)state {
@@ -132,7 +130,12 @@
         case MRUpgradeStateFinish:
             [self updateState:NSLocalizedString(MRUpgradeFinished, nil)];
             [[MRDeviceUpgrader defaultInstance] stop];
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+            [MR_KEYWINDOW makeToast:NSLocalizedString(MHUpgradeFirmwareComplete, nil) duration:3 position:CSToastPositionCenter];
+            
+            [self.navigationController popViewControllerAnimated:YES];
+            
+//            [self.navigationController popToRootViewControllerAnimated:YES];
             break;
             
         case MRUpgradeStateFail:

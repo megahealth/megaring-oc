@@ -42,6 +42,7 @@ FOUNDATION_EXTERN NSNotificationName const MRRingDataProgressNotification;
 FOUNDATION_EXTERN int kMRAlgorithmVersion;
 
 FOUNDATION_EXTERN NSString *kMRFrameworkVersion;
+FOUNDATION_EXTERN NSString * const VERIFIEDOFAPPDK;
 
 
 @interface MRApi : NSObject

@@ -95,3 +95,6 @@
 "MHWeek" = "Week";
 "MHMonth" = "Month";
 "MHToday" = "Today";
+
+"MHUpgradeFirmwareComplete" = "Upgrade completed";
+

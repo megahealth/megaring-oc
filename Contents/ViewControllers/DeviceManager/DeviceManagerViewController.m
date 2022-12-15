@@ -21,6 +21,7 @@
 #import "WorkoutReportViewController.h"
 
 #import "HRVReportViewController.h"
+#import "MRDeviceManager.h"
 
 #define TEST_USER_ID    @"61a9c462706cde30f53f420a" // I
 //#define TEST_USER_ID    @"c22a674665e1388d020d3c856"
@@ -28,21 +29,16 @@
 static const NSInteger kCheckDiscoveredDeviceForConnectionDuration = 5;
 static const NSInteger kScanDeviceTimeoutDuration = 30;
 
-
 @interface DeviceManagerViewController () <MRDeviceDelegate>
-
 @property (nonatomic, strong) NSMutableData *bpData;
 @property (nonatomic, strong) NSDate *bpStart;
-
 @property (nonatomic, strong) NSTimer *scanTimer;
 @property (nonatomic, assign) NSInteger scanTimerCount;
-
 @property (nonatomic, strong)UIButton * reconnectBtn;
 
 @end
 
 @implementation DeviceManagerViewController
-
 
 -(UILabel *)titleNavView {
     if (_titleNavView == nil) {
@@ -343,8 +339,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     [self.deviceManagerView refreshView];
 }
 #pragma mark device battery charge information
-
-
 /**
  self.device.batState  == ??
  
@@ -356,8 +350,6 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
      MRBatteryStateError, // = 4(eror -- 电池出现问题，错误)
      MRBatteryStateShutdown, //= 5 (shut down -- 摇摆)
  };
- 
- 
  */
 // see self.device.batState=?  and self.device.batValue = ?
 - (void)deviceBatteryUpdated {
@@ -408,9 +400,7 @@ en： 1. Test:
     NSLog(@"DeviceManagerViewController --  monitorModeUpdated:%d", self.device.monitorMode);
     
     // test :
-    
     BOOL isBatteryOKAndGetData = self.device.batState == MRBatteryStateFull || self.device.batState == MRBatteryStateCharging || self.device.batState == MRBatteryStateNormal; // Full charge, charging, data collection under normal conditions  （电量满，充电中，正常时 收取数据）
-    
     
     if ((self.device.monitorMode == MRDeviceMonitorModeIdle || self.device.monitorMode == MRDeviceMonitorModeNormal) && self.device.isDownloadingData == NO && isBatteryOKAndGetData) {
 
@@ -474,10 +464,8 @@ en： 1. Test:
 }
 #pragma mark = connect  device
 - (void)connectNearestDevice {
-    
     MRDevice *device = [self getNearestOldDevice];
     QMRLog(@"start connect:%@", device);
-//    [self stopScanningDevcie];
     [[MRConnecter defaultConnecter]connectDevice:device];
 }
 
@@ -487,18 +475,15 @@ en： 1. Test:
     MRDevice *near = nil;
     
     for (MRDevice * nearDevice in [MRConnecter defaultConnecter].discoveredDevices) {
-        
-        if ([nearDevice.sn isEqualToString:self.device.sn]) {
-            
+
+        if ([nearDevice.sn isEqualToString: [MRDeviceManager sharedDeviceManager].managerDevice.sn]) {
             NSLog(@"======have old device===");
-            
             near = nearDevice;
-            
+            self.device = nearDevice;
             break;
-            
+
         }
     }
-    
     return near;
 }
 
@@ -531,6 +516,8 @@ en： 1. Test:
 - (instancetype)initWithDevice:(MRDevice *)device {
     if (self = [super init]) {
         self.device = device;
+        
+        [MRDeviceManager sharedDeviceManager].managerDevice = device;
     }
     return self;
 }
@@ -545,23 +532,18 @@ en： 1. Test:
     self.titleNavView.text = NSLocalizedString(MRDevicemanager, nil);
 //    test mark
     self.shouldSyncData = YES;
-    
     self.navigationItem.titleView = self.titleNavView;
-    
     UIBarButtonItem * barItem = [[UIBarButtonItem alloc]initWithCustomView:self.reconnectBtn];
     self.navigationItem.rightBarButtonItem = barItem;
     self.deviceManagerView.viewModel = [[DeviceManagerViewModel alloc] initWithDevice:self.device];
     [self setUpViewActions];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MRCentralStateUpdated:) name:kMRCentralStateUpdatedNotification object:nil];
-    
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceConnecteStateUpdated:) name:MRDeviceConnectStateUpdatedNotification object:nil];
     
 }
 
 #pragma mark --click  reconnect ---
 -(void)buttonClickReconnect:(UIBarButtonItem *)item {
-    
     self.titleNavView.text =  NSLocalizedString(MRDeviceDisReconnecting, nil);
 //     @"Device disconnected，Reconnecting...
     [self startScanningDevice];
@@ -590,8 +572,6 @@ en： 1. Test:
     }else{
         
     }
-  
-    
     NSLog(@"%@ connecte state: %d", device.name, device.connectState);
 }
 

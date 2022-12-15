@@ -7,9 +7,7 @@
 //
 
 #import "DeviceManagerViewController+Methods.h"
-
 #import "UIViewController+Extension.h"
-
 #import "DeviceUpgradeViewController.h"
 static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
 

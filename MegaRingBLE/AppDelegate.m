@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 
-
+#define kAppID   @"D4CE5DD515F81247"
+#define kAppKey  @"uedQ2MgVEFlsGIWSgofHYHNdZSyHmmJ5"
 @interface AppDelegate ()
 
 @end
@@ -21,10 +22,9 @@
     [MRApi setMRLogEnabled:YES]; // open log
 
      // BundleId:com.megahealth.MegaRingBLE
-    [MRApi setUpWithAppId:@"D4CE5DD515F81247" appKey:@"uedQ2MgVEFlsGIWSgofHYHNdZSyHmmJ5" completion:^(BOOL isValid, NSError *error) {  //isValid == 1 --- valid; 0 --- invalid
+    [MRApi setUpWithAppId:kAppID appKey:kAppKey completion:^(BOOL isValid, NSError *error) {  //isValid == 1 --- valid; 0 --- invalid
         
         NSLog(@"isValid-----------%d-------error-------%ld",isValid,(long)error.code);
-        
     }];
     return YES;
 }
