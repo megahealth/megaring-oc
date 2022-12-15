@@ -192,9 +192,9 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 
             case 14: {
                 
-// test:   ZG(28) Ring  View the measurement of test blood pressure and how the ECG UI plots.
+// test:   ZG(28)  Circul+ Ring  View the measurement of test blood pressure and how the ECG UI plots.
                 
-                if (self.device.bloodPressureSupported && self.device.batState == MRBatteryStateNormal) { // is if support bloodPressure?   (.bloodPressureSupported) （zh: 指环是否支持血压功能，电量正常时）
+                if (self.device.bloodPressureSupported && self.device.batState == MRBatteryStateNormal) { // is if support bloodPressure? --- Circul+ ring support bloodPressure      (.bloodPressureSupported)  ----- （zh: 指环是否支持血压功能，电量正常时---只有Circul+ （ZG28）指环支持血压功能）
                     TestBPViewController *vc = [[TestBPViewController alloc] init];
                  
                      vc.device = self.device;
