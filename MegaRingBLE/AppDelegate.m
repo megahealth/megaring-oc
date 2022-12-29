@@ -20,10 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [MRApi setMRLogEnabled:YES]; // open log
-
      // BundleId:com.megahealth.MegaRingBLE
     [MRApi setUpWithAppId:kAppID appKey:kAppKey completion:^(BOOL isValid, NSError *error) {  //isValid == 1 --- valid; 0 --- invalid
-        
         NSLog(@"isValid-----------%d-------error-------%ld",isValid,(long)error.code);
     }];
     return YES;

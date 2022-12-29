@@ -6,7 +6,7 @@ EN | [中文](./README-zh.md)
 ##Update log
 |Version| description |time|
 |:-:|-|:-:|
-|1.12.6 | Solve the problem that data cannot be parsed when there is a network error | 2022/12/8|
+|1.12.6 | Solve the problem that data cannot be parsed when there is a network error | 2022/12/29|
 |1.12.5| After collecting the ring data, add the report details UI page of sleep, HRV and  sport |2022/11/15|
 |1.12.4| SN adaptations of different ring models are added (mainly C11H, P11G, P11H) |2022/11/9|
 |1.12.3| Resolve whether the device is disconnected and crashes when it is nil |2022/9/21|
