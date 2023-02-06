@@ -119,7 +119,8 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 3. 调用 +[MRApi parseBPData:time:caliSBP:caliDBP:block:] 解析血压数据, 生成血压测量报告;
 
      3.1   注意:  +[MRApi parseMonitorData:completion:] 和
-                  +[MRApi parseBPData:time:caliSBP:caliDBP:block:]方法还需要通过网络验证AppKey 和 AppID (即绑定的BundleId), 不然解析数据时会发生错误.
+                  +[MRApi parseBPData:time:caliSBP:caliDBP:block:]方法
+                  在SDK v1.12.6及以后不再需要通过网络验证AppID和AppKey了，只要[MRApi setUpWithAppId: appKey: completion:]验证成功就可以使用了。
 
 4. 调用 +[MRApi parseDaily:data] 解析日常数据，获得体温等数据，只在睡眠监测期间有温度数据;
 5. 当生成HRV数据报告时 +[MRApi parseMonitorData:completion:] 解析数据后，生成HRV的报告,可以查看 (MRReport.h) 的属性说明。

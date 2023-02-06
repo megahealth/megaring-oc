@@ -25,7 +25,7 @@
  //                         o8888888o                         //\n\
  //                        88\" . \"88                         //\n\
  //                         (| ^_^ |)                         //\n\
- //                         O\\  =  /O                         //\n\
+ //                        O\\  =  /O                         //\n\
  //                      ____/`---'\\____                      //\n\
  //                    .'  \\\\|     |//  `.                    //\n\
  //                   /  \\\\|||  :  |||//  \\                   //\n\
@@ -91,11 +91,19 @@
 #pragma mark Delegate Methods - MRConnecterDelegate
 
 - (void)connecter:(MRConnecter *)connecter didDiscoverDevice:(MRDevice *)device {
+//    NSLog(@"device------sn--------%@",device.sn);
+    if (device.sn) { //Filter out empty sn （过滤掉空sn）
+        
     NSInteger	 index = [self.homeView.viewModel deviceDiscovered:device];
     [self.homeView reloadTableAtIndex:index];
+    }
+    
 }
 
 - (void)connecter:(MRConnecter *)connecter didUpdateDeviceConnectState:(MRDevice *)device {
+    
+    if (device.sn) { //Filter out empty sn （过滤掉空sn）
+        
     NSInteger	 index = [self.homeView.viewModel updateOldDevice:device];
     [self.homeView reloadTableAtIndex:index];
     
@@ -103,6 +111,8 @@
         if ([vc isKindOfClass:[DeviceManagerViewController class]]) {
             vc.device = device;
         }
+    }
+        
     }
 }
 

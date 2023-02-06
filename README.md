@@ -149,7 +149,7 @@ This are some methods that can help getting device's status in protocol `MRDevic
 
 - (void)monitorStateUpdated; // isMonitorOn
 
-- (void)liveDataValueUpdated:(NSArray *)liveData; // [SpO2, PR, state, duration, accx, accy, accz]
+- (void)liveDataValueUpdated:(NSArray *)liveData; // [SpO2, PR, state == 0（Valid） ==1（invalid） , duration, accx, accy, accz]
 
 <!--- (void)deviceModeUpdated; // MRDeviceMode-->
 
@@ -178,7 +178,8 @@ This are some methods that can help getting device's status in protocol `MRDevic
 3. Call `+[MRApi parseBPData:time:caliSBP:caliDBP:block:]` to parse blood pressure data.
 
     3.1. Tips:   +[MRApi parseMonitorData:completion:] and
-                 +[MRApi parseBPData:time:caliSBP:caliDBP:block:] methods need to verify the AppKey and AppID through the network, or an error will occur when parsing data.
+                 +[MRApi parseBPData:time:caliSBP:caliDBP:block:] methods :
+                  Latest tips:   no need to verify the AppKey and AppID through the network  after v1.12.6；As long as [MRApi setUpWithAppId: appKey: completion:] successfully verifies the AppId and appKey。
 
 
 4. Call +[MRApi parseDaily:data] to parse daily data, then you'll get temperature data, only valid duration sleep monitoring;
