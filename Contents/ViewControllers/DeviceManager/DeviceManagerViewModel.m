@@ -55,7 +55,7 @@
 - (void)updateLiveDataValue:(NSArray *)liveData {
     DeviceManagerViewCellModel	*cellModel = self.modelArr[1][3];
     if (liveData.count >= 4) {
-        NSString    *liveDataStr = [NSString stringWithFormat:@"%@ %@ %@ %@", liveData[0], liveData[1], liveData[2], liveData[3]];
+        NSString    *liveDataStr = [NSString stringWithFormat:@"Sp:%@ Hr:%@ ST:%@ DU:%@ accx:%@ accy:%@ accz:%@", liveData[0], liveData[1], liveData[2], liveData[3],liveData[4],liveData[5],liveData[6]];
         cellModel.detail = liveDataStr;
         cellModel.isFresh = YES;
     }

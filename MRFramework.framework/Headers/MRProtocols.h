@@ -96,6 +96,7 @@
 - (void)screenStateUpdated;
 
 
+//-(void)gLUModeUpdated; //glu.
 
 - (void)operationFailWithErrorCode:(MRErrCode)errCode;
 

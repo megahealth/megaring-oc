@@ -158,7 +158,7 @@
     
     
     
-    int respiAAAA = 0;
+    int respiAAAA = 0; // 暂未开发完成
 //    self.model.respiArr.count
     if (respiAAAA == 0) {
         self.respiView.hidden = YES;

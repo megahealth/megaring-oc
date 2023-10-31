@@ -37,6 +37,9 @@
 /*
  * 切换模式
  */
+
+- (void)findMe ; // ZG28指环固件版本大于等于5.0.11992的指环支持查找功能的，发送查找命令后绿灯闪烁20秒(If the ZG28 ring firmware version is greater than or equal to 5.0.11992 and the ring supports the search function, the green light flashes for 20 seconds after sending the search command) 
+
 - (void)switchToSleepMode;      // 睡眠监测
 
 - (void)switchToSportMode;      // 运动监测
@@ -77,10 +80,19 @@
 
 - (void)getMonitorTimer;
 
+-(void)getResportLists:(Byte)twoCommand;
+-(void)getReportBlocksCount:(short)reportId;
+-(void)getReportBlockData:(short)reportId blockID:(short)blockId ;
+-(void)zg29_finishedBlockData ;
+-(void)zg29_clearDataAboutReportID:(short)reportId;
+
 // Added by chengxr, 28/09/2021
 // Software with version 11312 or less is not supported.
 - (void)clearCache;
 
+- (void)clearSleepMonitorData; // zg28.
+
+- (void)requestDataWithOpenRawDataType:(MRDataType)type;
 
 
 @end

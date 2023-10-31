@@ -145,7 +145,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self prepareData];
     
-    self.device.isOpenBloodNoti = YES; // if set YES , MRDeviceDelegate method ---> - (void)bpDataUpdated:(NSData *)data (invalid) use notification --->  notification name: (MRRawdataReceivedNotification)   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bpDataUpdatednoti:) name:MRRawdataReceivedNotification object:nil]; See below
+//    self.device.isOpenBloodNoti = YES; // if set YES , MRDeviceDelegate method ---> - (void)bpDataUpdated:(NSData *)data (invalid) use notification --->  notification name: (MRRawdataReceivedNotification)   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bpDataUpdatednoti:) name:MRRawdataReceivedNotification object:nil]; See below
     
     self.device.delegate = self;
     self._view.progress = TestBPProgressAttention;
@@ -182,9 +182,12 @@
  if  set  self.device.isOpenBloodNoti = YES , MRDeviceDelegate method ---> - (void)bpDataUpdated:(NSData *)data (invalid) use notification --->  notification name: (MRRawdataReceivedNotification)  see viewDidLoad----
  */
 
-//- (void)bpDataUpdated:(NSData *)data {
-//    [self bpDataWithReportEcg:data];
-//}
+- (void)bpDataUpdated:(NSData *)data {
+    
+    NSLog(@"bpdataUpdta-------");
+    
+    [self bpDataWithReportEcg:data];
+}
 /**
  *
  *
@@ -236,6 +239,9 @@
                 self._view.ecg = report.ecg;
                 [self._view startEcg];
             }
+            
+            
+            NSLog(@"duration========:%d",duration);
             
             BOOL finish = report.flag == 1;
             BOOL failure = report.flag == 2 || duration >= 60;  // failed or timeout

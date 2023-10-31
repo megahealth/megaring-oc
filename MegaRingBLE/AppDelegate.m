@@ -8,8 +8,15 @@
 
 #import "AppDelegate.h"
 
-#define kAppID   @"D4CE5DD515F81247"
-#define kAppKey  @"uedQ2MgVEFlsGIWSgofHYHNdZSyHmmJ5"
+//#define kAppID   @"D4CE5DD515F81247"
+//#define kAppKey  @"uedQ2MgVEFlsGIWSgofHYHNdZSyHmmJ5"
+
+
+#define kAppID   @"tzxelVzzRv"
+#define kAppKey  @"C2FqJcVlYNjz0b6wzgx0qeAO37OKUb5t"
+
+
+
 @interface AppDelegate ()
 
 @end
@@ -20,10 +27,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [MRApi setMRLogEnabled:YES]; // open log
+    
+    [MRApi setLogsPathName:@"xxxddMegaXX" tempLogFileName:@"Megaxx.txt" pathSize:500000 noTempLogFile:YES]; // Set the content path of the log.
+    
+    
      // BundleId:com.megahealth.MegaRingBLE
     [MRApi setUpWithAppId:kAppID appKey:kAppKey completion:^(BOOL isValid, NSError *error) {  //isValid == 1 --- valid; 0 --- invalid
         NSLog(@"isValid-----------%d-------error-------%ld",isValid,(long)error.code);
     }];
+    
+  
+    
+    
+    
     return YES;
 }
 

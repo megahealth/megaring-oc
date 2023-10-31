@@ -91,9 +91,8 @@
 - (NSString *)firmwareZip {
     NSString *zipName = @"";
     if (self.device.bloodPressureSupported) { //  CIRCLU+ Ring
-        zipName = @"Ring11804.zip";
-//        zipName = @"BLv08.zip";
-        
+        zipName = @"Ring12292.zip";
+//        zipName = @"BLv08.zip"
     }else{ // Circul Ring
         zipName = @"MegaRingV3_V11687.zip";
     }
@@ -129,7 +128,7 @@
             
         case MRUpgradeStateFinish:
             [self updateState:NSLocalizedString(MRUpgradeFinished, nil)];
-            [[MRDeviceUpgrader defaultInstance] stop];
+          //  [[MRDeviceUpgrader defaultInstance] stop];
             
             [MR_KEYWINDOW makeToast:NSLocalizedString(MHUpgradeFirmwareComplete, nil) duration:3 position:CSToastPositionCenter];
             

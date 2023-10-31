@@ -15,6 +15,9 @@
 
 @interface MRDevice : NSObject
 
+@property (nonatomic,assign)int totalRawLen;
+@property (nonatomic,strong)NSMutableData * rawData;
+
 @property (nonatomic, assign) MRDeviceType deviceType;
 @property (nonatomic, assign) MRDeviceHome home;
 @property (nonatomic, copy) NSString    *deviceSize;
@@ -81,7 +84,7 @@
 @property (nonatomic, assign, getter=isScreenOff) BOOL	 screenOff;
 
 @property (nonatomic, assign) BOOL isDFUMode;
-@property (nonatomic ,assign) BOOL isOpenBloodNoti; // if set YES , MRDeviceDelegate method ---> - (void)bpDataUpdated:(NSData *)data (invalid) use notification --->  name: (MRRawdataReceivedNotification) ;
+@property (nonatomic ,assign) BOOL isOpenBloodNoti;// if set YES , MRDeviceDelegate method ---> - (void)bpDataUpdated:(NSData *)data (invalid) use notification --->  name: (MRRawdataReceivedNotification) ;
 
 
 @property (nonatomic, weak) id<MRDeviceDelegate>	 delegate;

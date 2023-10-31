@@ -17,7 +17,7 @@
 
 
 - (void)testParseData {
-    NSString *dataName = @"data1-2";
+    NSString *dataName = @"mock_spo2.bin";
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:dataName ofType:nil];
     
     NSData *data = [[NSData alloc] initWithContentsOfFile:dataPath];
@@ -28,7 +28,7 @@
         NSLog(@"pr max:%d, min:%d, avg:%d", report.maxPr, report.minPr, report.avgPr);
         NSLog(@"sp len:%lu, pr len:%lu", (unsigned long)report.spArr.count, (unsigned long)report.prArr.count);
         
-        NSLog(@"%@------report---------%@", [NSThread currentThread],[report mj_keyValues]);
+        QMRLog(@"%@------report---------%@", [NSThread currentThread],[report mj_keyValues]);
     }];
 }
 

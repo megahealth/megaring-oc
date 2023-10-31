@@ -51,7 +51,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     }
     
     @weakify(self);
-    [self.device requestData:MRDataTypeMonitor progress:^(float progress) {
+    [self.device requestData:MRDataTypeGLU progress:^(float progress) {
         NSLog(@"progress:%.4f", progress);
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
         @strongify(self);
@@ -224,6 +224,14 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
         return;
     }
     
+    int version = [[[self.device.swVersion componentsSeparatedByString:@"."] lastObject] intValue];
+    NSLog(@"version========:%d",version);
+//    if(version > 12048 && type == MRDataTypeMonitor)  {
+//
+//        [self.device setRawdataEnabled:NO];
+//        [self.device setRawdataEnabled:YES];
+//
+//    }
     [self.device requestData:type progress:^(float progress) {
         NSLog(@"progress:%.4f", progress);
         
@@ -236,6 +244,12 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
     } finish:^(NSData *data, MRMonitorStopType stopType, MRDeviceMonitorMode mode) {
         self.device.isDownloadingData = NO;//2.  @ Required
         self.shouldSyncData = NO;
+        
+        
+        
+//        if(version > 12048 && type == MRDataTypeMonitor)  {
+//            [self.device setRawdataEnabled:NO];
+//        }
         
         // you can deal data .
         
@@ -269,6 +283,10 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
                     [[NSUserDefaults standardUserDefaults]synchronize];
                 }
                 
+                
+                NSLog(@"report.data=======%@",report.data);
+                
+            
                 NSLog(@"report.reportType=======%d",report.reportType);
                 NSLog(@"user:%@, report type:%d", report.userId, report.reportType);
                 NSLog(@"start:%d, duration:%d", report.startTime, report.duration);
@@ -314,7 +332,7 @@ static NSString *kBindTokenCacheKey = @"kBindTokenCacheKey";
             }];
         }
         
-        if (type != MHBLEDataRequestTypeHRV) {
+        if (type != MHBLEDataRequestTypeHRV && self.device.bloodPressureSupported) { //note：(zh)过滤ZG18指环，不获取HRVdata， 只要ZG28 （Circul+ ）指环开启睡眠监测后，会产生HRV数据的. (en)ZG28(Circul+) Ring Turn on sleep monitoring  -- > Generate HRV data . (ZG18(Circul) ring --> Hrv is not supported)
             [self requestReportDataTestType: MHBLEDataRequestTypeHRV];
         }
     }];

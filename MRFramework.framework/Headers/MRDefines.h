@@ -26,11 +26,19 @@ typedef NS_ENUM(Byte, MRBatteryState) {
     MRBatteryStateShutdown,
 };
 
+
 typedef NS_ENUM(Byte, MRCMD) {
+    MRCMDGetResportLists                = 0X10,
+    MRCMDGetReportBlocksCount           = 0X11,
+    MRCMDGetReportBlockData             = 0X12,
+    MRCMDFinishedBlockData              = 0X13,
+    MRCMDClearDataAboutReportID         = 0X15,
     MRCMDBind                         	= 0XB0,      	// Bind 绑定
     MRCMDShake                        	= 0XB1,
     MRCMDShutdown                       = 0XB2,
-    MRCMDOpenOrCloseHrv              = 0XCD,         //hrv
+    MRCMDClearMonitorData               = 0XB8,
+    
+    MRCMDOpenOrCloseHrv                 = 0XCD,         //hrv
     MRCMDSetMonitor                     = 0XD0,			// 血氧监测模式 sleep
     MRCMDSetBloodPressure            	= 0XD4,			// 血压模式 blood pressure mode
     MRCMDSetSport                     	= 0XD5,			// 运动模式 sport mode
@@ -57,6 +65,7 @@ typedef NS_ENUM(Byte, MRCMD) {
     
     MRCMDCrashLog                       = 0XF3,
     MRCMDGetMonitorMode                 = 0XF6,
+    MHBLECMDGetStartTime                = 0XF7,
     MRCMDGetMonitorTimer                = 0XF8,
     MRCMDClearCache                     = 0XFC,
 };
@@ -92,6 +101,7 @@ typedef NS_ENUM(Byte, MRDeviceMonitorMode) {
     MRDeviceMonitorModeGLU      = 0x09, // 9 Blood glucose pattern 血糖模式
     MRDeviceMonitorModeHRV      = 0x0a, // 10 Turn on sleep to generate HRV data  hrv 开启睡眠后，手指与指环保持不动至少30 会产生HRV type 的数据。
     MRDeviceMonitorModeNone     = 0x0f, // no mode.
+    
 };
 
 
@@ -138,11 +148,12 @@ typedef NS_ENUM(Byte, MRDataType) {
     MRDataTypeMonitor                	= 0XEF,
     MRDataTypeDaily                   	= 0XF1,
     MRDataTypeGLU                       = 0XFA,
-    MHBLEDataRequestTypeHRV                 = 0XFB,
+    MHBLEDataRequestTypeHRV              = 0XFB,
 };
 
 
 typedef NS_ENUM(Byte, MRNotiType) {
+    MRNotiTypeZG29ReportData            = 0X14,
     MRNotiTypeBatValue                	= 0XD2,
     MRNotiTypeLiveData                	= 0XED,
     MRNotiTypeReportDataMax          	= 0X6C, // 首字节小于此值的均是监测数据

@@ -82,12 +82,14 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 [self startLiveData];
                 
 //                [self.device setRawdataEnabled:YES]; // You can open it to receive raw data
-                
+//              Ruh.amoto.25.34@gmail.com
+//                Puru-0720@i.softbank.jp
+//                Yusk18-kinyoku6@ezweb.ne.jp
                 break;
                 
             case 2:
-                [self endLiveData];
-                
+//                [self endLiveData];
+                [self.device setRawdataEnabled:YES];
                 break;
                 
             case 3:
@@ -95,7 +97,9 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 NSLog(@"(请查看 点击关闭监测时 收取数据的过程) Please view the process of collecting data when clicking 'close monitoring'");
                 
                 // sleep hrv ... data  You can view the notes of HRV and other data obtained by this test method
-//                [self requestDailySleepHRVSportDataTest];
+                
+                [self requestDailySleepHRVSportDataTest];
+                
                 break;
                 
             case 4:
@@ -119,6 +123,13 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 if (self.device.batState == MRBatteryStateNormal) {
                     // When the power is normal, turn on the monitoring 电量正常时，开启监测.
                     [self.device switchToRealtimeMode];
+                    
+                    
+                    
+//                    [self.device setRawdataEnabled:YES];
+//                    [self startLiveData];
+                    
+                    
                 }
                 
                  //open realtime  mode //0XD7  See the notes below. 查看下面的说明.
@@ -175,6 +186,8 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
             case 11:{
                 [self.device setGLUMode:MRGLUModeInterval5Mins];;
             }
+                
+                
                 break;
             case 12: {
                 BOOL on = NO;
@@ -186,7 +199,9 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                 break;
                 
             case 13: {
-                [self.device getMonitorTimer];
+                [self startScanningDevice];
+                
+//                [self.device getMonitorTimer];
             }
                 break;
                 
@@ -235,8 +250,14 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
                     return;
                 }
                 
+/***
+ 
+ Turn on or off the comments below， you see all reports For UI.... (打开或关闭下面的注释，您可以去查看各个报告的UI.)
+ 
+ 
+ */
+
                 MRReport * report = [MRReport mj_objectWithKeyValues:dict];
-                
                 
                 //1. see sleep report detail
                      SleepReportViewController * vc = [[SleepReportViewController alloc]initWithReport:report];
@@ -245,7 +266,7 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 //                     HRVReportViewController * vc = [[HRVReportViewController alloc]initWithReport:report];
                 
                 //3. see sport report
-                    //WorkoutReportViewController * vc = [[WorkoutReportViewController alloc]initWithReport:report];
+//                    WorkoutReportViewController * vc = [[WorkoutReportViewController alloc]initWithReport:report];
                 
                     [self.navigationController pushViewController:vc animated:YES];
                 
@@ -261,8 +282,8 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
 #pragma mark Delegate Methods - MRDeviceDelegate
 // device connect state delegate
 - (void)deviceDidUpdateConnectState {
-    NSLog(@"connected:%d", self.device.connectState);
-    
+    NSLog(@"-------------connected:%d", self.device.connectState);
+//deviceConnecteStateUpdated:
     [self.deviceManagerView.viewModel reloadModel];
     [self.deviceManagerView refreshView];
 }
@@ -433,6 +454,7 @@ en： 1. Test:
     }
       QMRLog(@"scan timer valid:%d", self.scanTimer.isValid);
 }
+
 #pragma mark -- 2. timer method.
 - (void)scanTimerAction:(NSTimer *)timer {
     
@@ -476,7 +498,7 @@ en： 1. Test:
     
     for (MRDevice * nearDevice in [MRConnecter defaultConnecter].discoveredDevices) {
 
-        if ([nearDevice.sn isEqualToString: [MRDeviceManager sharedDeviceManager].managerDevice.sn]) {
+        if ([nearDevice.sn isEqualToString: self.device.sn]) {
             NSLog(@"======have old device===");
             near = nearDevice;
             self.device = nearDevice;
@@ -516,7 +538,6 @@ en： 1. Test:
 - (instancetype)initWithDevice:(MRDevice *)device {
     if (self = [super init]) {
         self.device = device;
-        
         [MRDeviceManager sharedDeviceManager].managerDevice = device;
     }
     return self;
@@ -540,6 +561,12 @@ en： 1. Test:
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MRCentralStateUpdated:) name:kMRCentralStateUpdatedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceConnecteStateUpdated:) name:MRDeviceConnectStateUpdatedNotification object:nil];
     
+    
+//    NSDictionary * dict = [self.device mj_keyValues];
+    
+   // NSLog(@"DICT========:%@",dict);
+    
+    
 }
 
 #pragma mark --click  reconnect ---
@@ -551,6 +578,11 @@ en： 1. Test:
 
 #pragma mark --    connect notificationi --
 -(void)deviceConnecteStateUpdated:(NSNotification *)noti {
+    
+    
+    
+    NSLog(@"woowowwo-----deviceConnecteStateUpdated:---------");
+    
     
     MRDevice *device = noti.object;
     ///test mark Need to synchronize monitoring data

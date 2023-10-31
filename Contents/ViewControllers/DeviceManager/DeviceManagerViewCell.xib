@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVA-o3-2b0">
-                                <rect key="frame" x="15" y="0.0" width="128" height="44"/>
+                                <rect key="frame" x="15" y="0.0" width="96" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,14 +38,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IF0-n5-kT0">
-                                <rect key="frame" x="153" y="0.0" width="146" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="121" y="0.0" width="178" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="hVA-o3-2b0" firstAttribute="width" secondItem="VXI-Bo-nmn" secondAttribute="width" multiplier="0.4" id="BjG-Fv-5BY"/>
+                            <constraint firstItem="hVA-o3-2b0" firstAttribute="width" secondItem="VXI-Bo-nmn" secondAttribute="width" multiplier="0.3" id="BjG-Fv-5BY"/>
                             <constraint firstAttribute="trailing" secondItem="NZl-Zr-Oj9" secondAttribute="trailing" constant="10" id="HJe-rA-WLz"/>
                             <constraint firstItem="hVA-o3-2b0" firstAttribute="leading" secondItem="VXI-Bo-nmn" secondAttribute="leading" constant="15" id="Jha-py-OMk"/>
                             <constraint firstAttribute="bottom" secondItem="hVA-o3-2b0" secondAttribute="bottom" id="NIB-WU-Q74"/>
@@ -87,8 +87,8 @@
                     <constraint firstItem="VXI-Bo-nmn" firstAttribute="leading" secondItem="Xb3-fO-UVR" secondAttribute="leading" id="nUT-tk-iwH"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="tintColor" red="0.054901960780000002" green="0.4823529412" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="ZCs-KK-fHE"/>
+            <color key="tintColor" red="0.054901960780000002" green="0.4823529412" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="actionTitleLab" destination="J5C-nV-Cw2" id="GEs-et-LqL"/>
                 <outlet property="actionView" destination="zAm-TT-L99" id="OlJ-QI-x6e"/>

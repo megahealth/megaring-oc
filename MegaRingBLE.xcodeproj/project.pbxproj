@@ -3,18 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230906192AF1169D004C73FF /* Ring12288.zip in Resources */ = {isa = PBXBuildFile; fileRef = 230906182AF1169C004C73FF /* Ring12288.zip */; };
+		2309078D2AF11F05004C73FF /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2309078B2AF11EFE004C73FF /* MRFramework.framework */; };
+		2309078E2AF11F05004C73FF /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2309078B2AF11EFE004C73FF /* MRFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		231230422A32C42B0077FF0B /* mock_spo2.bin in Resources */ = {isa = PBXBuildFile; fileRef = 231230412A32C42B0077FF0B /* mock_spo2.bin */; };
 		235C0FE328E5AA2C0017A120 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 235C0FE128E5AA2C0017A120 /* UIView+Toast.m */; };
 		237DEB32286EFBF200D68414 /* BPReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB27286EFBF200D68414 /* BPReportViewController.m */; };
 		237DEB33286EFBF200D68414 /* BPReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2A286EFBF200D68414 /* BPReportView.m */; };
 		237DEB34286EFBF200D68414 /* BPReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 237DEB2B286EFBF200D68414 /* BPReportViewModel.m */; };
 		237DEB35286EFBF200D68414 /* BPReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237DEB2C286EFBF200D68414 /* BPReportViewController.xib */; };
 		2382D62F291C91E700FAFEA7 /* Ring11804.zip in Resources */ = {isa = PBXBuildFile; fileRef = 2382D62E291C91E700FAFEA7 /* Ring11804.zip */; };
-		23854343295D2FD2005885E8 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23854341295D2FBE005885E8 /* MRFramework.framework */; platformFilter = ios; };
-		23854344295D2FD2005885E8 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23854341295D2FBE005885E8 /* MRFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		238918C72924BEC400931323 /* SleepReportPrTrendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918B82924BEC400931323 /* SleepReportPrTrendView.m */; };
 		238918C82924BEC400931323 /* SleepReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918B92924BEC400931323 /* SleepReportView.m */; };
 		238918C92924BEC400931323 /* SleepReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238918BA2924BEC400931323 /* SleepReportViewController.m */; };
@@ -53,6 +55,7 @@
 		23A3F14B294AFB7100986DF2 /* MRDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A3F14A294AFB7100986DF2 /* MRDeviceManager.m */; };
 		23A4EA4F2775DDE80090A840 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4C2775DDE80090A840 /* README.md */; };
 		23A4EA502775DDE80090A840 /* README-zh.md in Resources */ = {isa = PBXBuildFile; fileRef = 23A4EA4D2775DDE80090A840 /* README-zh.md */; };
+		23CBD2382A90FA0D005AB29C /* colorview.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CBD2372A90FA0D005AB29C /* colorview.m */; };
 		23D9E2B529223DBD00852ADA /* WorkoutReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E2AD29223DBD00852ADA /* WorkoutReportViewModel.m */; };
 		23D9E2B629223DBD00852ADA /* WorkoutReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D9E2AE29223DBD00852ADA /* WorkoutReportViewController.xib */; };
 		23D9E2B729223DBD00852ADA /* WorkoutReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E2B029223DBD00852ADA /* WorkoutReportViewController.m */; };
@@ -66,6 +69,7 @@
 		23D9E2F12922516D00852ADA /* HRVReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E2E72922516C00852ADA /* HRVReportView.m */; };
 		23D9E2F22922516D00852ADA /* HRVReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E2EB2922516C00852ADA /* HRVReportViewController.m */; };
 		23D9E2F32922516D00852ADA /* HRVReportSpectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D9E2EC2922516C00852ADA /* HRVReportSpectView.m */; };
+		23F53D242A2F1D2300577067 /* Ring12048.zip in Resources */ = {isa = PBXBuildFile; fileRef = 23F53D232A2F1D2300577067 /* Ring12048.zip */; };
 		3C0842D025ECF4CC008508D4 /* MegaRingV3_V10761.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3C0842CF25ECF4CC008508D4 /* MegaRingV3_V10761.zip */; };
 		3C0842DD25ECF63A008508D4 /* data6-1 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0842D725ECF63A008508D4 /* data6-1 */; };
 		3C0842DE25ECF63A008508D4 /* data6-2 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0842D825ECF63A008508D4 /* data6-2 */; };
@@ -150,13 +154,16 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				23854344295D2FD2005885E8 /* MRFramework.framework in CopyFiles */,
+				2309078E2AF11F05004C73FF /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		230906182AF1169C004C73FF /* Ring12288.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring12288.zip; sourceTree = "<group>"; };
+		2309078B2AF11EFE004C73FF /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
+		231230412A32C42B0077FF0B /* mock_spo2.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = mock_spo2.bin; sourceTree = "<group>"; };
 		235C0FE128E5AA2C0017A120 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		235C0FE228E5AA2C0017A120 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		237DEB27286EFBF200D68414 /* BPReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReportViewController.m; sourceTree = "<group>"; };
@@ -173,7 +180,6 @@
 		237DEB4A286EFC9800D68414 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MRDefaultView.strings; sourceTree = "<group>"; };
 		237DEB4B286EFC9B00D68414 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MRDefaultView.strings"; sourceTree = "<group>"; };
 		2382D62E291C91E700FAFEA7 /* Ring11804.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring11804.zip; sourceTree = "<group>"; };
-		23854341295D2FBE005885E8 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		238918B12924BEC400931323 /* SleepReportViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportViewModel.h; sourceTree = "<group>"; };
 		238918B52924BEC400931323 /* SleepReportStageTrendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepReportStageTrendView.h; sourceTree = "<group>"; };
 		238918B62924BEC400931323 /* HDReportsAxisTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDReportsAxisTimeView.h; sourceTree = "<group>"; };
@@ -247,6 +253,8 @@
 		23A3F14A294AFB7100986DF2 /* MRDeviceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRDeviceManager.m; sourceTree = "<group>"; };
 		23A4EA4C2775DDE80090A840 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		23A4EA4D2775DDE80090A840 /* README-zh.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "README-zh.md"; sourceTree = "<group>"; };
+		23CBD2362A90FA0D005AB29C /* colorview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = colorview.h; sourceTree = "<group>"; };
+		23CBD2372A90FA0D005AB29C /* colorview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = colorview.m; sourceTree = "<group>"; };
 		23D9E2A929223DBD00852ADA /* WorkoutReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutReportViewController.h; sourceTree = "<group>"; };
 		23D9E2AB29223DBD00852ADA /* WorkoutReportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutReportView.h; sourceTree = "<group>"; };
 		23D9E2AC29223DBD00852ADA /* WorkoutReportTrendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutReportTrendView.h; sourceTree = "<group>"; };
@@ -275,6 +283,7 @@
 		23D9E2EA2922516C00852ADA /* HRVReportDistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRVReportDistView.h; sourceTree = "<group>"; };
 		23D9E2EB2922516C00852ADA /* HRVReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRVReportViewController.m; sourceTree = "<group>"; };
 		23D9E2EC2922516C00852ADA /* HRVReportSpectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRVReportSpectView.m; sourceTree = "<group>"; };
+		23F53D232A2F1D2300577067 /* Ring12048.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring12048.zip; sourceTree = "<group>"; };
 		3C0842CF25ECF4CC008508D4 /* MegaRingV3_V10761.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MegaRingV3_V10761.zip; sourceTree = "<group>"; };
 		3C0842D725ECF63A008508D4 /* data6-1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "data6-1"; sourceTree = "<group>"; };
 		3C0842D825ECF63A008508D4 /* data6-2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "data6-2"; sourceTree = "<group>"; };
@@ -390,7 +399,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23854343295D2FD2005885E8 /* MRFramework.framework in Frameworks */,
+				2309078D2AF11F05004C73FF /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +569,8 @@
 		239D78BE28D1A6FC0098C3E4 /* ZG28(Circul+)_Ring_Firmware */ = {
 			isa = PBXGroup;
 			children = (
+				230906182AF1169C004C73FF /* Ring12288.zip */,
+				23F53D232A2F1D2300577067 /* Ring12048.zip */,
 				2382D62E291C91E700FAFEA7 /* Ring11804.zip */,
 				239000D628CB3767009D910A /* Ring11699.zip */,
 			);
@@ -738,6 +749,8 @@
 				3C3E9A7C2480B4870087FD85 /* UIViewController+Extension.m */,
 				235C0FE228E5AA2C0017A120 /* UIView+Toast.h */,
 				235C0FE128E5AA2C0017A120 /* UIView+Toast.m */,
+				23CBD2362A90FA0D005AB29C /* colorview.h */,
+				23CBD2372A90FA0D005AB29C /* colorview.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -756,6 +769,7 @@
 		3C3E9A802480B4870087FD85 /* MRHome */ = {
 			isa = PBXGroup;
 			children = (
+				231230412A32C42B0077FF0B /* mock_spo2.bin */,
 				3C3E9A872480B4870087FD85 /* MRHomeViewController.h */,
 				3C3E9A812480B4870087FD85 /* MRHomeViewController.m */,
 				3C3E9A822480B4870087FD85 /* MRHomeViewController.xib */,
@@ -885,7 +899,7 @@
 			children = (
 				23A4EA4D2775DDE80090A840 /* README-zh.md */,
 				23A4EA4C2775DDE80090A840 /* README.md */,
-				23854341295D2FBE005885E8 /* MRFramework.framework */,
+				2309078B2AF11EFE004C73FF /* MRFramework.framework */,
 				3C3E9A4E2480B4870087FD85 /* Contents */,
 				CF665A12209B181A009EF6A6 /* MegaRingBLE */,
 				CF665A2B209B181B009EF6A6 /* MegaRingBLETests */,
@@ -1073,6 +1087,7 @@
 				3C3E9AF92480B4870087FD85 /* Localizable.strings in Resources */,
 				239D78CA28D1AC150098C3E4 /* BLv07.zip in Resources */,
 				CF665A1D209B181B009EF6A6 /* Assets.xcassets in Resources */,
+				230906192AF1169D004C73FF /* Ring12288.zip in Resources */,
 				3C3E9AE42480B4870087FD85 /* DeviceManagerViewController.xib in Resources */,
 				239D78BB28D1A5280098C3E4 /* MegaRingV3_V11687.zip in Resources */,
 				2395DC75280FEDF300193808 /* LICENSE in Resources */,
@@ -1081,7 +1096,9 @@
 				3C3E9AE72480B4870087FD85 /* DeviceManagerViewCell.xib in Resources */,
 				23A4EA4F2775DDE80090A840 /* README.md in Resources */,
 				CF665A1B209B181A009EF6A6 /* Main.storyboard in Resources */,
+				231230422A32C42B0077FF0B /* mock_spo2.bin in Resources */,
 				2382D62F291C91E700FAFEA7 /* Ring11804.zip in Resources */,
+				23F53D242A2F1D2300577067 /* Ring12048.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1110,6 +1127,7 @@
 				3C3E9ADB2480B4870087FD85 /* MRIndicatorView.m in Sources */,
 				23D9E2B929223DBD00852ADA /* WorkoutReportView.m in Sources */,
 				238918C92924BEC400931323 /* SleepReportViewController.m in Sources */,
+				23CBD2382A90FA0D005AB29C /* colorview.m in Sources */,
 				23D9E2B829223DBD00852ADA /* WorkoutReportTrendView.m in Sources */,
 				238918C82924BEC400931323 /* SleepReportView.m in Sources */,
 				3C3E9AD12480B4870087FD85 /* hmac.c in Sources */,
@@ -1450,7 +1468,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.12.6;
+				CURRENT_PROJECT_VERSION = 1.12.9;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1467,8 +1485,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.12.6;
-				PRODUCT_BUNDLE_IDENTIFIER = com.megahealth.MegaRingBLE;
+				MARKETING_VERSION = 1.12.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mac.uniapptest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -1481,7 +1499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.12.6;
+				CURRENT_PROJECT_VERSION = 1.12.9;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1498,8 +1516,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.12.6;
-				PRODUCT_BUNDLE_IDENTIFIER = com.megahealth.MegaRingBLE;
+				MARKETING_VERSION = 1.12.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mac.uniapptest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_WORKSPACE = NO;

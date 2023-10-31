@@ -226,5 +226,14 @@
 
 @property (nonatomic, strong) NSArray * tempArr;
 
+//@property (nonatomic, assign) int heartRate;
+//
+//@property (nonatomic, assign) int tempearate;
+//@property (nonatomic, assign) int g_sensor;
+//
+//@property (nonatomic, assign) int spo2;
+//@property (nonatomic, assign) int step;
+
+
 @end
 

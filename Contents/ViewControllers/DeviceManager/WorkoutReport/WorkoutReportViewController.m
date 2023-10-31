@@ -38,6 +38,8 @@
     [self loadReport];
     self.title = @"Sport Report Detail";
 //    NSLocalizedString(MHReportDetail, nil);
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

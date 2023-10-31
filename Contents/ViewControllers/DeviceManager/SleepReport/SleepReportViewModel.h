@@ -32,7 +32,7 @@
 
 @property (nonatomic, strong) NSArray *prArr;
 
-@property (nonatomic, strong) NSArray * respiArr;
+@property (nonatomic, strong) NSArray * respiArr; // 暂时没有
 
 @property (nonatomic, copy) NSString *maxPr;
 @property (nonatomic, copy) NSString *avgPr;
