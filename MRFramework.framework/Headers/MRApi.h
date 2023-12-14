@@ -12,7 +12,7 @@
 @class MRReport;
 @class MRBPReport;
 @class MRDailyReport;
-
+@class MRRespiratoryReport;
 
 #ifdef DEBUG
 #    define PMRLog(FORMAT, ...)    [MRApi PMRLogWithString:[NSString stringWithFormat:FORMAT, ##__VA_ARGS__]]
@@ -99,6 +99,8 @@ FOUNDATION_EXTERN NSString * const VERIFIEDOFAPPDK;
 + (void)parseBPData:(NSData *)data time:(int)time caliSBP:(double)caliSBP caliDBP:(double)caliDBP block:(void (^)(MRBPReport *report, NSError *error))completion;
 //parse Daily data
 + (NSArray<MRDailyReport *> *)parseDaily:(NSData *)data;
+//Parsing respiratory data
++ (void)parseRespiratoryData:(NSData *)data block:(void (^)(MRRespiratoryReport *report, NSError * error))block;
 
 + (void)setDataUploadEnabled:(BOOL)isEnabled;
 

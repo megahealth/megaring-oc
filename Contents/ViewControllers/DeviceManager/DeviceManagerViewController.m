@@ -381,9 +381,9 @@ static const NSInteger kScanDeviceTimeoutDuration = 30;
     [self.deviceManagerView refreshView];
 }
 
-// [SpO2,heart rate,valid,duration,accx,accy,accz]
+// [SpO2,heart rate,valid,duration,accx,accy,accz, breath rate]
 - (void)liveDataValueUpdated:(NSArray *)liveData {
-    NSString *liveDataStr = [NSString stringWithFormat:@"sp:%@, hr:%@, state:%@, duration:%@, accx:%@, accy:%@, accz:%@", liveData[0], liveData[1], liveData[2], liveData[3], liveData[4], liveData[5], liveData[6]];
+    NSString *liveDataStr = [NSString stringWithFormat:@"sp:%@, hr:%@, state:%@, duration:%@, accx:%@, accy:%@, accz:%@, breathRate: %@", liveData[0], liveData[1], liveData[2], liveData[3], liveData[4], liveData[5], liveData[6], liveData[7]];
     NSLog(@"-----live:%@", liveDataStr);
     
     [self.deviceManagerView.viewModel updateLiveDataValue:liveData];

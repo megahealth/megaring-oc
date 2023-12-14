@@ -148,7 +148,8 @@ typedef NS_ENUM(Byte, MRDataType) {
     MRDataTypeMonitor                	= 0XEF,
     MRDataTypeDaily                   	= 0XF1,
     MRDataTypeGLU                       = 0XFA,
-    MHBLEDataRequestTypeHRV              = 0XFB,
+    MHBLEDataRequestTypeHRV             = 0XFB,
+    MHBLEDataRequestTypeRespiratory     = 0XFC,
 };
 
 

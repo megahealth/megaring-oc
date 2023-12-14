@@ -14,6 +14,7 @@
 @class MRReport;
 @class MRBPReport;
 @class MRDailyReport;
+@class MRRespiratoryReport;
 
 @interface MRDataParser : NSObject
 
@@ -26,5 +27,6 @@
 
 + (NSArray<MRDailyReport *> *)parseDaily:(NSData *)data;
 
++ (void)parseRespiratoryData:(NSData *)data block:(void (^)(MRRespiratoryReport *report))block;
 
 @end
