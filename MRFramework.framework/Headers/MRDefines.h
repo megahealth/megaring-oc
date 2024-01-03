@@ -62,6 +62,7 @@ typedef NS_ENUM(Byte, MRCMD) {
     MRCMDDailyDataDetail                = 0XF1,
     MRCMDGLUDataDetail                  = 0XFA,
     MRCMDHRVDataDetail                  = 0XFB,
+    MRCMDRespiratoryDataDetail          = 0XFC,
     
     MRCMDCrashLog                       = 0XF3,
     MRCMDGetMonitorMode                 = 0XF6,
