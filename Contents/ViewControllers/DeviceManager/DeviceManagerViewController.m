@@ -518,6 +518,10 @@ en： 1. Test:
     NSLog(@"---rawData-------%@", arr);
 }
 
+- (void)rawdataUpdatedData:(NSData *)data {
+    NSLog(@"----rawData---%@", data);
+}
+
 - (void)didSetPeriodicMonitorState:(MRPeriodicMonitorState)state start:(NSString *)start duration:(int)duration repeat:(BOOL)repeat {
     NSLog(@"set perioidic state:%d repeat:%d start:%@ duration:%d", state, repeat, start, duration);
 }

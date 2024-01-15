@@ -101,6 +101,8 @@
 - (void)operationFailWithErrorCode:(MRErrCode)errCode;
 
 - (void)rawdataUpdated:(NSArray<MRRawData *> *_Nonnull)arr;
+//Returns the binary data of the rawdata channel
+- (void)rawdataUpdatedData:(NSData *)data;
 
 - (void)bpDataUpdated:(NSData *)data;
 

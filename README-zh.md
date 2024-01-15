@@ -5,6 +5,7 @@
 |版本|说明|时间|
 |:-:|-|:-:|
 
+|1.13.3| 添加返回rawData数据流的回调 |2024/1/15|
 |1.13.2| 更新解析数据的算法（算法版本：12292) |2024/1/9|
 |1.13.1| 修复拉取呼吸率数据问题和HRV解析时长错误问题 |2024/1/3|
 |1.13.0| 添加实时监测数据返回呼吸率，呼吸类型数据解析 |2023/12/14|
@@ -85,7 +86,8 @@ MegaRing SDK & Demo for iOS in Objective-C
 ### 设备状态
 
 MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, 如下:
-	
+
+```
 	- (void)deviceDidUpdateConnectState; // 设备连接的状态
 	- (void)deviceIsReady:(BOOL)isReady; // 您可以查看指环的硬件是否是好的 。isReady == YES, 设备的硬件没有问题。
 	- (void)deviceInfoUpdated; // btVersion, hwVersion, swVersion...
@@ -99,7 +101,9 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 	- (void)screenStateUpdated; // isScreenOff
 	- (void)operationFailWithErrorCode:(MRErrCode)errCode; 
 	- (void)rawdataUpdated:(NSArray *_Nullable)data; // 只对某些版本开放
+    - (void)rawdataUpdatedData:(NSData *)data;//用于在 MRDeviceMonitorModeSleep、MRDeviceMonitorModeRealTime 和 MRDeviceMonitorModePulse 模式下接收 rawData 通道数据流的回调。例如：在MRDeviceMonitorModeRealTime模式下，每个原始数据包有182字节。 第一个字节是 0x5e。
 	- (void)bpDataUpdated:(NSData *)data // 接收血压测量数据
+```
 
 ### 设备控制
 1. 调用 -[MRDevice switchToSleepMode] 来开启睡眠监测(至少监测30分钟得到有效数据);
@@ -109,7 +113,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 5. 调用 -[MRDevice switchToNormalModel] 关闭监测;
 6. 调用 -[MRDevice startLiveData] 开启实时数据后, 监测状态下会每秒上报一组数据, 需要实现 -[MRDeviceDelegate liveDataValueUpdated:];
 7. 调用 -[MRDevice endLiveData] 关闭实时数据;
-8. 调用 -[MRDevice setRawdataEnabled:] 开关原始数据上报，目前支持睡眠，运动，脉诊仪几种模式;
+8. 调用 -[MRDevice setRawdataEnabled:] 开关rawData通道，目前支持睡眠，运动，脉诊仪几种模式，实现方法' -[MRDeviceDelegate rawdataupdate:] '或' -[MRDeviceDelegate rawdataUpdatedData:] '来接收rawData;
 9. 调用 -[MRDevice setPeriodicMonitorOn:afterSeconds:duration:repeat:] 来设置定时监测，参数分别为开/关，开始时间距离现在的秒数，监测持续时长，是否每天重复;
 10. 调用 -[MRDevice getMonitorTimer] 来获取定时监测的状态;
 11. 调用 -[MRDevice clearCache] 清除指环中的监测数据，版本在11312及以下的固件不支持此功能。

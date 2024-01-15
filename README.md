@@ -7,6 +7,7 @@ EN | [中文](./README-zh.md)
 |Version| description |time|
 |:-:|-|:-:|
 
+|1.13.3| Add a callback that returns the rawData data stream |2024/1/15|
 |1.13.2| Update the algorithm for parsing data (algorithm version: 12292) |2024/1/9|
 |1.13.1| Fixed the problem of pulling respiratory rate data and the wrong HRV parsing time |2024/1/3|
 |1.13.0| Add real-time monitoring data to return respiratory rate and respiratory type data analysis |2023/12/14|
@@ -125,7 +126,7 @@ This text introduces the components of MRFramework, hoping to make it easier to 
 
 7. Call `-[MRDevice switchToPulseMode]` to start pulse monitoring.
 
-8. Call `-[MRDevice setRawdataEnabled:]` to enable rawData, implement method `-[MRDeviceDelegate rawdataUpdated:]` to receive rawData. Only certain versions are available.
+8. Call `-[MRDevice setRawdataEnabled:]` to enable rawData, implement method `-[MRDeviceDelegate rawdataUpdated:]` or `-[MRDeviceDelegate rawdataUpdatedData:]` to receive rawData. Only certain versions are available.
 
 9. Call -[MRDevice setPeriodicMonitorOn:afterSeconds:duration:repeat:] to set periodic monitor, the paras are on/off, seconds between now and start time, monitor duration, is repeat everyday;
 
@@ -167,7 +168,7 @@ This are some methods that can help getting device's status in protocol `MRDevic
 - (void)operationFailWithErrorCode:(MRErrCode)errCode; 
 
 - (void)rawdataUpdated:(NSArray *_Nullable)data; 
-
+- (void)rawdataUpdatedData:(NSData *)data;//Callback for receiving rawData channel data stream in MRDeviceMonitorModeSleep, MRDeviceMonitorModeRealTime and MRDeviceMonitorModePulse modes. eg: In MRDeviceMonitorModeRealTime mode, Every rawdata packet has 182 bytes. The first byte is 0x5e.
 - (void)bpDataUpdated:(NSData *)data // receive blood pressure data
 ```
 
