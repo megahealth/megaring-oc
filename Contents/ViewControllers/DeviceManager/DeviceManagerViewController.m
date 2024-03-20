@@ -443,9 +443,7 @@ en： 1. Test:
 #pragma mark -- 1. start scanning --
 
 - (void)startScanningDevice {
-    
     if ([MRConnecter defaultConnecter].centralManager.isScanning  == NO && self.device.connectState == MRDeviceStateDisconnected && [MRConnecter defaultConnecter].isCentralPowerOn == YES) {
-        
         [[MRConnecter defaultConnecter] startScanning];
         if (self.scanTimer.valid == NO) {
             self.scanTimerCount = 0;
@@ -488,22 +486,18 @@ en： 1. Test:
 - (void)connectNearestDevice {
     MRDevice *device = [self getNearestOldDevice];
     QMRLog(@"start connect:%@", device);
-    [[MRConnecter defaultConnecter]connectDevice:device];
+    [[MRConnecter defaultConnecter] connectDevice:device];
 }
 
 #pragma mark --- get near device...
 - (MRDevice *)getNearestOldDevice {
-    
     MRDevice *near = nil;
-    
     for (MRDevice * nearDevice in [MRConnecter defaultConnecter].discoveredDevices) {
-
         if ([nearDevice.sn isEqualToString: self.device.sn]) {
             NSLog(@"======have old device===");
             near = nearDevice;
             self.device = nearDevice;
             break;
-
         }
     }
     return near;
@@ -564,13 +558,6 @@ en： 1. Test:
     [self setUpViewActions];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MRCentralStateUpdated:) name:kMRCentralStateUpdatedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceConnecteStateUpdated:) name:MRDeviceConnectStateUpdatedNotification object:nil];
-    
-    
-//    NSDictionary * dict = [self.device mj_keyValues];
-    
-   // NSLog(@"DICT========:%@",dict);
-    
-    
 }
 
 #pragma mark --click  reconnect ---

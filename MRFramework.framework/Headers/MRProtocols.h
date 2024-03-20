@@ -101,7 +101,6 @@
 - (void)operationFailWithErrorCode:(MRErrCode)errCode;
 
 - (void)rawdataUpdated:(NSArray<MRRawData *> *_Nonnull)arr;
-//Returns the binary data of the rawdata channel
 - (void)rawdataUpdatedData:(NSData *)data;
 
 - (void)bpDataUpdated:(NSData *)data;
@@ -110,7 +109,7 @@
 
 - (void)didGetPeriodicMonitorState:(MRPeriodicMonitorState)state start:(NSString *_Nullable)start duration:(int)duration repeat:(BOOL)repeat;
 
-
+- (void)rawDataReceived:(NSData *)data;
 
 @end
 

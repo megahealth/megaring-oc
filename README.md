@@ -6,6 +6,7 @@ EN | [中文](./README-zh.md)
 ##Update log
 |Version| description |time|
 |:-:|-|:-:|
+|1.13.4| Fixed the issue where the 'monitorModeUpdated' proxy method is not called after some models of ring are connected. |2024/3/20|
 
 |1.13.3| Add a callback that returns the rawData data stream |2024/1/15|
 |1.13.2| Update the algorithm for parsing data (algorithm version: 12292) |2024/1/9|

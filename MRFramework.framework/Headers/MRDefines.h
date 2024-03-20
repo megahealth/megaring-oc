@@ -146,11 +146,11 @@ typedef NS_ENUM(NSInteger, MRDeviceType) {
 
 
 typedef NS_ENUM(Byte, MRDataType) {
-    MRDataTypeMonitor                	= 0XEF,
-    MRDataTypeDaily                   	= 0XF1,
-    MRDataTypeGLU                       = 0XFA,
-    MHBLEDataRequestTypeHRV             = 0XFB,
-    MHBLEDataRequestTypeRespiratory     = 0XFC,
+    MRDataTypeMonitor                	= 0XEF,//239
+    MRDataTypeDaily                   	= 0XF1,//241
+    MRDataTypeGLU                       = 0XFA,//250
+    MHBLEDataRequestTypeHRV             = 0XFB,//251
+    MHBLEDataRequestTypeRespiratory     = 0XFC,//252
 };
 
 
