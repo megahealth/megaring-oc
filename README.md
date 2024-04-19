@@ -7,6 +7,8 @@ EN | [中文](./README-zh.md)
 |Version| description |time|
 |:-:|-|:-:|
 
+|1.13.6| Fix the incompatibility issue between MRFramework and Xcode 15.3 version. |2024/4/19|
+
 |1.13.5| AppID and AppKey adapt to wildcard bundleId verification |2024/4/12|
 
 |1.13.4| Fixed the issue where the 'monitorModeUpdated' proxy method is not called after some models of ring are connected. |2024/3/20|
