@@ -38,8 +38,9 @@
 @property (nonatomic, strong) NSData *snData;
 @property (nonatomic, strong) NSData *verData;
 
-@property (nonatomic, strong) CBPeripheral    *peripheral;
+@property (nonatomic, strong) CBPeripheral * peripheral;
 // 通过查看IICOk ，GSensorOk， 4404Ok 查看硬件是否 OK; 都是等于 == 1 说明硬件没有问题；否则有问题；（Translated as: Check whether the hardware is OK by checking iicok, gsensorok and 4404ok; All are equal to = = 1, indicating that there is no problem with the hardware; Otherwise there will be problems;）
+@property (nonatomic, strong) NSDictionary * adData;
 @property (nonatomic, assign) BOOL	 isIICOk;          	// IIC OK
 @property (nonatomic, assign) BOOL	 isGSensorOk;      	// GSensor OK
 @property (nonatomic, assign) BOOL	 is4404Ok;         	// 4404 OK
@@ -47,10 +48,7 @@
 //MARK://TODO...
 @property (nonatomic, assign) BOOL     deviceOK;             // The above three are yes, the watch is the ring is good （example：(device.deviceOK == YES)）
 
-
-
 @property (nonatomic, assign) BOOL lmRegistered;
-
 
 // 设备就绪
 @property (nonatomic, assign, getter=isReady) BOOL	 ready;
@@ -64,8 +62,6 @@
 @property (nonatomic, assign) BOOL isScreenOn;
 
 @property (nonatomic, assign) BOOL isDownloadingData; // is if syn data ？ YES  is syn data . 
-
-@property (nonatomic, assign) BOOL isReady;
 
 @property (nonatomic, assign) int chargeDuration;        // 充电分钟数
 
@@ -93,6 +89,7 @@
 
 - (void)stopTimer;
 
+- (instancetype)initWithPeripheral:(CBPeripheral *)peripheral adData:(NSDictionary *)adData RSSI:(NSNumber *)RSSI;
 @end
 
 

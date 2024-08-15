@@ -5,6 +5,8 @@
 |版本|说明|时间|
 |:-:|-|:-:|
 
+|1.13.8| 支持C11G/H型号指环SN解析。 |2024/8/15|
+
 |1.13.6| 修复 MRFramework 与 Xcode 15.3 版本不兼容的问题。|2024/4/19|
 
 |1.13.5| AppID和AppKey适配通配bundleId校验 |2024/4/12|
@@ -122,7 +124,7 @@ MRDeviceDelegate 中也声明了一些用来获取指环实时状态的方法, �
 8. 调用 -[MRDevice setRawdataEnabled:] 开关rawData通道，目前支持睡眠，运动，脉诊仪几种模式，实现方法' -[MRDeviceDelegate rawdataupdate:] '或' -[MRDeviceDelegate rawdataUpdatedData:] '来接收rawData;
 9. 调用 -[MRDevice setPeriodicMonitorOn:afterSeconds:duration:repeat:] 来设置定时监测，参数分别为开/关，开始时间距离现在的秒数，监测持续时长，是否每天重复;
 10. 调用 -[MRDevice getMonitorTimer] 来获取定时监测的状态;
-11. 调用 -[MRDevice clearCache] 清除指环中的监测数据，版本在11312及以下的固件不支持此功能。
+<!--11. 调用 -[MRDevice clearCache] 清除指环中的监测数据，已废弃。-->
 12. 调用 -[MRDevice switchToBPMode] 测量血压，见 DeviceManagerViewController.m。
 13. 调用 -[MRDevice setHrvModeEnable:] 设置YES 或 NO,来判断是否开启HRV功能；点击睡眠的时候默认是开启HRV功能的，当关闭HRV功能可以节约电池的电量; 注意：只有是28指环（支持血压监测功能的指环），而且固件版本大于等于5.0.11803的时候，才支持开关HRV功能. （如何判断请看demo.）
 

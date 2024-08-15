@@ -86,10 +86,6 @@
 -(void)zg29_finishedBlockData ;
 -(void)zg29_clearDataAboutReportID:(short)reportId;
 
-// Added by chengxr, 28/09/2021
-// Software with version 11312 or less is not supported.
-- (void)clearCache;
-
 - (void)clearSleepMonitorData; // zg28.
 
 - (void)requestDataWithOpenRawDataType:(MRDataType)type;

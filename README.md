@@ -7,6 +7,8 @@ EN | [中文](./README-zh.md)
 |Version| description |time|
 |:-:|-|:-:|
 
+|1.13.8| Supports analysis of C11G/H model ring SN. |2024/8/15|
+
 |1.13.6| Fix the incompatibility issue between MRFramework and Xcode 15.3 version. |2024/4/19|
 
 |1.13.5| AppID and AppKey adapt to wildcard bundleId verification |2024/4/12|
@@ -138,7 +140,7 @@ This text introduces the components of MRFramework, hoping to make it easier to 
 
 10. Call -[MRDevice getMonitorTimer] to get current periodic monitor state;
 
-11. Call -[MRDevice clearCache] to clear ring's monitor data if you don't want it. Software with version 11312 or less is not supported.
+<!--11. Call -[MRDevice clearCache] to clear the monitoring data in the ring has been deprecated.-->
 
 12. Call -[MRDevice switchToBPMode] to measure blood pressure, see  DeviceManagerViewController.m.
 

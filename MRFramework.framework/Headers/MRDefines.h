@@ -68,7 +68,6 @@ typedef NS_ENUM(Byte, MRCMD) {
     MRCMDGetMonitorMode                 = 0XF6,
     MHBLECMDGetStartTime                = 0XF7,
     MRCMDGetMonitorTimer                = 0XF8,
-    MRCMDClearCache                     = 0XFC,
 };
 
 
