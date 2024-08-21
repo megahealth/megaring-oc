@@ -118,8 +118,8 @@
 		3C3E9AFD2480B4870087FD85 /* MRDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC52480B4870087FD85 /* MRDefaultView.xib */; };
 		3C3E9AFE2480B4870087FD85 /* IBCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC72480B4870087FD85 /* IBCustomView.m */; };
 		3C3E9AFF2480B4870087FD85 /* MRDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC82480B4870087FD85 /* MRDefaultView.m */; };
-		4992184E2C7580A8008E2E0C /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4992184D2C7580A8008E2E0C /* MRFramework.framework */; };
-		4992184F2C7580CB008E2E0C /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4992184D2C7580A8008E2E0C /* MRFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		499218512C75BCC1008E2E0C /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499218502C75BCC1008E2E0C /* MRFramework.framework */; };
+		499218522C75BCE4008E2E0C /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 499218502C75BCC1008E2E0C /* MRFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF408681209C026F00E3E8E7 /* MRNavigarionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF408680209C026F00E3E8E7 /* MRNavigarionController.m */; };
 		CF665A15209B181A009EF6A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF665A14209B181A009EF6A6 /* AppDelegate.m */; };
 		CF665A1B209B181A009EF6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF665A19209B181A009EF6A6 /* Main.storyboard */; };
@@ -154,7 +154,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4992184F2C7580CB008E2E0C /* MRFramework.framework in CopyFiles */,
+				499218522C75BCE4008E2E0C /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +375,7 @@
 		3C3E9AC62480B4870087FD85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MRDefaultView.xib; sourceTree = "<group>"; };
 		3C3E9AC72480B4870087FD85 /* IBCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCustomView.m; sourceTree = "<group>"; };
 		3C3E9AC82480B4870087FD85 /* MRDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRDefaultView.m; sourceTree = "<group>"; };
-		4992184D2C7580A8008E2E0C /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
+		499218502C75BCC1008E2E0C /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		CF40867F209C026F00E3E8E7 /* MRNavigarionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRNavigarionController.h; sourceTree = "<group>"; };
 		CF408680209C026F00E3E8E7 /* MRNavigarionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRNavigarionController.m; sourceTree = "<group>"; };
 		CF665A10209B181A009EF6A6 /* MegaRingBLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MegaRingBLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -399,7 +399,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4992184E2C7580A8008E2E0C /* MRFramework.framework in Frameworks */,
+				499218512C75BCC1008E2E0C /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,7 +899,7 @@
 			children = (
 				23A4EA4D2775DDE80090A840 /* README-zh.md */,
 				23A4EA4C2775DDE80090A840 /* README.md */,
-				4992184D2C7580A8008E2E0C /* MRFramework.framework */,
+				499218502C75BCC1008E2E0C /* MRFramework.framework */,
 				3C3E9A4E2480B4870087FD85 /* Contents */,
 				CF665A12209B181A009EF6A6 /* MegaRingBLE */,
 				CF665A2B209B181B009EF6A6 /* MegaRingBLETests */,

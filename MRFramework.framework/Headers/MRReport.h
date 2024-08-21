@@ -63,7 +63,8 @@
 @property (nonatomic, assign) int durationUnder65;
 @property (nonatomic, assign) int durationUnder60;
 
-@property (nonatomic, assign) float percentUnder100; // 血氧饱和度低于100%的时长占比 (percent of duration that SpO2 value below 95%)
+
+@property (nonatomic, assign) float percentUnder100; // 血氧饱和度低于100%的时长占比，例如：值为0.1，表示比例为10% (percent of duration that SpO2 value below 95%，Eg: the value is 0.1, which means the proportion is 10%)
 @property (nonatomic, assign) float percentUnder95;
 @property (nonatomic, assign) float percentUnder90;
 @property (nonatomic, assign) float percentUnder85;
@@ -111,7 +112,8 @@
 @property (nonatomic, assign) int ODI3Less65Cnt;
 @property (nonatomic, assign) int ODI3Less60Cnt;    // 血氧低于60的事件个数 (Number of events with blood oxygen lower than 60)
 
-@property (nonatomic, assign) float ODI3Less100Percent; // 血氧低于100高于95的事件占比(Proportion of events with blood oxygen lower than 100 and higher than 95)
+#pragma message("血氧事件比例的所有字段值均与Android SDK存在差异 (All field values ​​of blood oxygen event ratio are different from those of Android SDK)")
+@property (nonatomic, assign) float ODI3Less100Percent; // 血氧低于100高于95的事件占比，例如：值为0.1，表示比例为10% (Proportion of events with blood oxygen lower than 100 and higher than 95，Eg: the value is 0.1, which means the proportion is 10%)
 @property (nonatomic, assign) float ODI3Less95Percent;  // 血氧低于95高于90的事件占比(Proportion of events with blood oxygen lower than 95 and higher than 90)
 @property (nonatomic, assign) float ODI3Less90Percent;
 @property (nonatomic, assign) float ODI3Less85Percent;
@@ -129,7 +131,8 @@
 @property (nonatomic, assign) int ODI3Less60sCnt;
 @property (nonatomic, assign) int ODI3Longer60sCnt;     // 时间大于60秒的事件个数(Number of events with time greater than 60 seconds)
 
-@property (nonatomic, assign) float ODI3Less10sPercent; // 时间少于10秒的事件占比(Proportion of events with time less than 10 seconds)
+#pragma message("时间范围的事件个数比例的所有字段值均与Android SDK存在差异 (All field values ​​of the event count ratio in the time range are different from those of the Android SDK)")
+@property (nonatomic, assign) float ODI3Less10sPercent; // 时间少于10秒的事件占比，例如：值为0.1，表示比例为10% (Proportion of events with time less than 10 seconds，Eg: the value is 0.1, which means the proportion is 10%)
 @property (nonatomic, assign) float ODI3Less20sPercent; // 时间少于20秒大于10秒的事件占比(Proportion of events with time less than 20 seconds and more than 10 seconds)
 @property (nonatomic, assign) float ODI3Less30sPercent;
 @property (nonatomic, assign) float ODI3Less40sPercent;
@@ -138,8 +141,7 @@
 @property (nonatomic, assign) float ODI3Longer60sPercent;   // 时间大于60秒的事件占比(Proportion of events with time greater than 60 seconds)
 
 
-// ODI4 result --- as  oid3...
-
+//ODI4 的字段含义解释与ODI3的对应字段相同 (The meaning of ODI4 fields is the same as that of ODI3 fields.)
 @property (nonatomic, assign) int ODI4Less100Cnt;
 @property (nonatomic, assign) int ODI4Less95Cnt;
 @property (nonatomic, assign) int ODI4Less90Cnt;
