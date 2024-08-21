@@ -7,6 +7,8 @@ EN | [中文](./README-zh.md)
 |Version| description |time|
 |:-:|-|:-:|
 
+|1.13.9| Fixed the issue of incorrect parsing of monitoring report duration when leaving the hand |2024/8/21|
+
 |1.13.8| Supports analysis of C11G/H model ring SN. |2024/8/15|
 
 |1.13.6| Fix the incompatibility issue between MRFramework and Xcode 15.3 version. |2024/4/19|
