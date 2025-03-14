@@ -91,8 +91,6 @@ FOUNDATION_EXTERN NSString * const VERIFIEDOFAPPDK;
 + (void)switchToNewLog;       // Switch to a new log
 + (NSArray *)getLogsForUpload; // get logs path
 
-
-
 // parse data to report;
 + (void)parseMonitorData:(NSData *)data completion:(void (^)(MRReport *report, NSError *error))completion;
 //parse BP data to report;

@@ -1,11 +1,13 @@
 
 EN | [中文](./README-zh.md)
 
-
+### This demo does not support running on the simulator. If you encounter an error when using the simulator, try switching to running on a real device.
 
 ##Update log
 |Version| description |time|
 |:-:|-|:-:|
+
+|1.13.10| Compatible with firmware version 6.0 |2025/3/14|
 
 |1.13.9| Fixed the issue of incorrect parsing of monitoring report duration when leaving the hand |2024/8/21|
 
