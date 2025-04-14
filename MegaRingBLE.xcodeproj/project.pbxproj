@@ -118,7 +118,8 @@
 		3C3E9AFD2480B4870087FD85 /* MRDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC52480B4870087FD85 /* MRDefaultView.xib */; };
 		3C3E9AFE2480B4870087FD85 /* IBCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC72480B4870087FD85 /* IBCustomView.m */; };
 		3C3E9AFF2480B4870087FD85 /* MRDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC82480B4870087FD85 /* MRDefaultView.m */; };
-		490B67422D843FD100D7E985 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490B67412D843FD100D7E985 /* MRFramework.framework */; };
+		49E593872DACD4FC003E9A12 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490B67412D843FD100D7E985 /* MRFramework.framework */; };
+		49E593882DACD4FC003E9A12 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 490B67412D843FD100D7E985 /* MRFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF408681209C026F00E3E8E7 /* MRNavigarionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF408680209C026F00E3E8E7 /* MRNavigarionController.m */; };
 		CF665A15209B181A009EF6A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF665A14209B181A009EF6A6 /* AppDelegate.m */; };
 		CF665A1B209B181A009EF6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF665A19209B181A009EF6A6 /* Main.storyboard */; };
@@ -153,6 +154,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				49E593882DACD4FC003E9A12 /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +399,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490B67422D843FD100D7E985 /* MRFramework.framework in Frameworks */,
+				49E593872DACD4FC003E9A12 /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
