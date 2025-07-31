@@ -7,6 +7,8 @@ EN | [中文](./README-zh.md)
 |Version| description |time|
 |:-:|-|:-:|
 
+|1.13.11| Fixed the crash issue when continuously upgrading firmware |2025/7/31|
+
 |1.13.10| Compatible with firmware version 6.0 |2025/3/14|
 
 |1.13.9| Fixed the issue of incorrect parsing of monitoring report duration when leaving the hand |2024/8/21|

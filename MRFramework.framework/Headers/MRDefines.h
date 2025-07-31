@@ -100,6 +100,7 @@ typedef NS_ENUM(Byte, MRDeviceMonitorMode) {
     MRDeviceMonitorModePulse,           // 6 Pulse detector mode 脉诊仪模式
     MRDeviceMonitorModeGLU      = 0x09, // 9 Blood glucose pattern 血糖模式
     MRDeviceMonitorModeHRV      = 0x0a, // 10 Turn on sleep to generate HRV data  hrv 开启睡眠后，手指与指环保持不动至少30 会产生HRV type 的数据。
+    MRDeviceMonitorModeRespiratory = 0x0b,//Respiratory data
     MRDeviceMonitorModeNone     = 0x0f, // no mode.
     
 };

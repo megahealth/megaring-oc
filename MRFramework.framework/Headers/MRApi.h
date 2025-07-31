@@ -101,5 +101,8 @@ FOUNDATION_EXTERN NSString * const VERIFIEDOFAPPDK;
 + (void)parseRespiratoryData:(NSData *)data block:(void (^)(MRRespiratoryReport *report, NSError * error))block;
 
 + (void)setDataUploadEnabled:(BOOL)isEnabled;
+//Split data for different reports
++ (NSArray<NSData *> *)splitMonitorData:(NSData *)data;
++ (NSArray<NSData *> *)splitRespiratoryData:(NSData *)data;
 
 @end
