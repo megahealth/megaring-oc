@@ -226,7 +226,7 @@
 
 @property (nonatomic, assign) BOOL durationValid;
 
-@property (nonatomic, strong) NSArray * tempArr;
+@property (nonatomic, strong) NSArray * tempArr;//Temperature data for rings with firmware versions >= 5.0.12656 or >= 6.0.12652
 
 //@property (nonatomic, assign) int heartRate;
 //

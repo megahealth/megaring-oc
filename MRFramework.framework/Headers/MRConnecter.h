@@ -50,6 +50,7 @@
 
 - (void)disconnectDevice:(MRDevice *)device;
 
+- (void)resetBLECentralManager;
 
 @end
 

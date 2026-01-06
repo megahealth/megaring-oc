@@ -104,5 +104,6 @@ FOUNDATION_EXTERN NSString * const VERIFIEDOFAPPDK;
 //Split data for different reports
 + (NSArray<NSData *> *)splitMonitorData:(NSData *)data;
 + (NSArray<NSData *> *)splitRespiratoryData:(NSData *)data;
++ (NSArray<NSData *> *)splitHRVData:(NSData *)data;
 
 @end

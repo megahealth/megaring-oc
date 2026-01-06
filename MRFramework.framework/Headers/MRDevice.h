@@ -16,7 +16,6 @@
 @interface MRDevice : NSObject
 
 @property (nonatomic,assign)int totalRawLen;
-@property (nonatomic,strong)NSMutableData * rawData;
 
 @property (nonatomic, assign) MRDeviceType deviceType;
 @property (nonatomic, assign) MRDeviceHome home;

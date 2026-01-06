@@ -153,7 +153,6 @@ typedef NS_ENUM(Byte, MRDataType) {
     MHBLEDataRequestTypeRespiratory     = 0XFC,//252
 };
 
-
 typedef NS_ENUM(Byte, MRNotiType) {
     MRNotiTypeZG29ReportData            = 0X14,
     MRNotiTypeBatValue                	= 0XD2,

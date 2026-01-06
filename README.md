@@ -7,6 +7,8 @@ EN | [中文](./README-zh.md)
 |Version| description |time|
 |:-:|-|:-:|
 
+|1.13.13| Added report splitting logic; Supported the fast-collection mode for new firmware reports. |2026/1/6|
+
 |1.13.11| Fixed the crash issue when continuously upgrading firmware |2025/7/31|
 
 |1.13.10| Compatible with firmware version 6.0 |2025/3/14|

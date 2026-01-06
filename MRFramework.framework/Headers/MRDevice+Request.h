@@ -86,9 +86,6 @@
 -(void)zg29_finishedBlockData ;
 -(void)zg29_clearDataAboutReportID:(short)reportId;
 
-- (void)clearSleepMonitorData; // zg28.
-
-- (void)requestDataWithOpenRawDataType:(MRDataType)type;
-
+- (void)clearMonitorDataWithType:(MRDeviceMonitorMode)type; // zg28.
 
 @end
