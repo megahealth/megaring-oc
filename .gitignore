@@ -1,0 +1,18 @@
+# Xcode 用户本地数据（每人每台 Mac 不同，不要提交）
+xcuserdata/
+*.xcuserstate
+*.xcbkptlist
+
+# Xcode 构建产物
+build/
+DerivedData/
+*.moved-aside
+*.hmap
+
+# 打包产物
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# macOS
+.DS_Store

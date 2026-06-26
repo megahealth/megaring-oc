@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045A4DAB2FEE2BAC001F1494 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045A4DA92FEE2BA5001F1494 /* MRFramework.framework */; };
+		045A4DAC2FEE2BAC001F1494 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 045A4DA92FEE2BA5001F1494 /* MRFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		230906192AF1169D004C73FF /* Ring12288.zip in Resources */ = {isa = PBXBuildFile; fileRef = 230906182AF1169C004C73FF /* Ring12288.zip */; };
 		231230422A32C42B0077FF0B /* mock_spo2.bin in Resources */ = {isa = PBXBuildFile; fileRef = 231230412A32C42B0077FF0B /* mock_spo2.bin */; };
 		235C0FE328E5AA2C0017A120 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 235C0FE128E5AA2C0017A120 /* UIView+Toast.m */; };
@@ -118,8 +120,6 @@
 		3C3E9AFD2480B4870087FD85 /* MRDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC52480B4870087FD85 /* MRDefaultView.xib */; };
 		3C3E9AFE2480B4870087FD85 /* IBCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC72480B4870087FD85 /* IBCustomView.m */; };
 		3C3E9AFF2480B4870087FD85 /* MRDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9AC82480B4870087FD85 /* MRDefaultView.m */; };
-		49C5EFB92F0D0EAE006B7426 /* MRFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C5EFB72F0D0EA4006B7426 /* MRFramework.framework */; };
-		49C5EFBA2F0D0EAE006B7426 /* MRFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49C5EFB72F0D0EA4006B7426 /* MRFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF408681209C026F00E3E8E7 /* MRNavigarionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF408680209C026F00E3E8E7 /* MRNavigarionController.m */; };
 		CF665A15209B181A009EF6A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF665A14209B181A009EF6A6 /* AppDelegate.m */; };
 		CF665A1B209B181A009EF6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF665A19209B181A009EF6A6 /* Main.storyboard */; };
@@ -154,13 +154,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				49C5EFBA2F0D0EAE006B7426 /* MRFramework.framework in CopyFiles */,
+				045A4DAC2FEE2BAC001F1494 /* MRFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		045A4DA92FEE2BA5001F1494 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		230906182AF1169C004C73FF /* Ring12288.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Ring12288.zip; sourceTree = "<group>"; };
 		231230412A32C42B0077FF0B /* mock_spo2.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = mock_spo2.bin; sourceTree = "<group>"; };
 		235C0FE128E5AA2C0017A120 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
@@ -375,7 +376,6 @@
 		3C3E9AC62480B4870087FD85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MRDefaultView.xib; sourceTree = "<group>"; };
 		3C3E9AC72480B4870087FD85 /* IBCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCustomView.m; sourceTree = "<group>"; };
 		3C3E9AC82480B4870087FD85 /* MRDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRDefaultView.m; sourceTree = "<group>"; };
-		49C5EFB72F0D0EA4006B7426 /* MRFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MRFramework.framework; sourceTree = "<group>"; };
 		CF40867F209C026F00E3E8E7 /* MRNavigarionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRNavigarionController.h; sourceTree = "<group>"; };
 		CF408680209C026F00E3E8E7 /* MRNavigarionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRNavigarionController.m; sourceTree = "<group>"; };
 		CF665A10209B181A009EF6A6 /* MegaRingBLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MegaRingBLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -399,7 +399,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49C5EFB92F0D0EAE006B7426 /* MRFramework.framework in Frameworks */,
+				045A4DAB2FEE2BAC001F1494 /* MRFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,7 +899,7 @@
 			children = (
 				23A4EA4D2775DDE80090A840 /* README-zh.md */,
 				23A4EA4C2775DDE80090A840 /* README.md */,
-				49C5EFB72F0D0EA4006B7426 /* MRFramework.framework */,
+				045A4DA92FEE2BA5001F1494 /* MRFramework.framework */,
 				3C3E9A4E2480B4870087FD85 /* Contents */,
 				CF665A12209B181A009EF6A6 /* MegaRingBLE */,
 				CF665A2B209B181B009EF6A6 /* MegaRingBLETests */,
@@ -1468,7 +1468,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.13.13;
+				CURRENT_PROJECT_VERSION = 1.13.14;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1485,7 +1485,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.13.13;
+				MARKETING_VERSION = 1.13.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mac.uniapptest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1499,7 +1499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.13.13;
+				CURRENT_PROJECT_VERSION = 1.13.14;
 				DEVELOPMENT_TEAM = TF253L9KC9;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1516,7 +1516,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MRFramework/MRFramework/parse",
 				);
-				MARKETING_VERSION = 1.13.13;
+				MARKETING_VERSION = 1.13.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mac.uniapptest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
